@@ -1,15 +1,22 @@
 module	lcd_display_string( 
-	clk, 
-	rst, 
-	
-	index, 
-	data_cnt,
-	out);
+										clk, 
+										rst, 
+										sec_1,
+										sec_10,
+										min_1,
+										min_10,
+										hour_1,
+										hour_10,
+										index,
+										out);
 	
 	input				clk;
 	input				rst;
-	input		[16:0] bin_watch;
-	input		[4:0] hour;
+	input		[3:0] sec_1, min_1, hour_1;
+	input		[2:0] sec_10, min_10;
+	input		[1:0] hour_10;
+	input		[4:0] index;
+
 	output	[7:0] out;
 	
 	wire		[4:0] index;
@@ -38,19 +45,12 @@ module	lcd_display_string(
 				15 : out	<=	8'h20;
 				
 				// line2
-				16 : case (bin_watch[)
+				16 : case (hour_10)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
-						3 : out	<= 8'h33;
-						4 : out	<= 8'h34;
-						5 : out	<= 8'h35;
-						6 : out	<= 8'h36;
-						7 : out	<= 8'h37;
-						8 : out	<= 8'h38;
-						9 : out	<= 8'h39;
 					  endcase
-				17 : case (data_cnt[7:4])
+				17 : case (hour_1)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -63,19 +63,15 @@ module	lcd_display_string(
 						9 : out	<= 8'h39;
 					  endcase
 				18 : out	<=	8'h3A;
-				19 : case (data_cnt[11:8])
+				19 : case (min_10)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
 						3 : out	<= 8'h33;
 						4 : out	<= 8'h34;
 						5 : out	<= 8'h35;
-						6 : out	<= 8'h36;
-						7 : out	<= 8'h37;
-						8 : out	<= 8'h38;
-						9 : out	<= 8'h39;
 					  endcase
-				20 : case (data_cnt[15:12])
+				20 : case (min_1)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -88,19 +84,15 @@ module	lcd_display_string(
 						9 : out	<= 8'h39;
 					  endcase
 				21 : out	<=	8'h3A;
-				22 : case (data_cnt[19:16])
+				22 : case (sec_10)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
 						3 : out	<= 8'h33;
 						4 : out	<= 8'h34;
 						5 : out	<= 8'h35;
-						6 : out	<= 8'h36;
-						7 : out	<= 8'h37;
-						8 : out	<= 8'h38;
-						9 : out	<= 8'h39;
 					  endcase
-				23 : case (data_cnt[23:20])
+				23 : case (sec_1)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;

@@ -18,14 +18,13 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 17:56:06  May 28, 2021
+# Date created = 15:54:57  May 28, 2021
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "18.1"
-DATE = "17:56:06  May 28, 2021"
+DATE = "15:54:57  May 28, 2021"
 
 # Revisions
 
-PROJECT_REVISION = "Verilog_watch_second"
 PROJECT_REVISION = "digital_clock"

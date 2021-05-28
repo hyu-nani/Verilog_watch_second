@@ -1,0 +1,8 @@
+module	digital_clock	(
+									clk,
+									rst);
+									
+	
+	wire			en_1hz;
+	wire			[5:0] minute, second;
+	wire			[4:0] hour;
