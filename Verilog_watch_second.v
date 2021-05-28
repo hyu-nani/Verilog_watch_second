@@ -47,6 +47,12 @@ module Verilog_watch_second(
    lcd_display_string 	STR(
       .clk    		(clk),
       .rst    		(rst),
+		.tenH			(tenH),
+		.oneH			(oneH),
+		.tenM			(tenM),
+		.oneM			(oneM),
+		.tenS			(tenS),
+		.oneS			(oneS),
       .index  		(index_char),
       .out    		(data_char));
       
