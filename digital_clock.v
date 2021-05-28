@@ -21,7 +21,7 @@ module	digital_clock	(
 	
 	assign		rstn = ~rst;
 	
-		en_clk					U0		(
+	en_clk					U0		(
 										.clk			(clk),
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
@@ -35,7 +35,8 @@ module	digital_clock	(
 										.min_1		(min_1),
 										.min_10		(min_10),
 										.hour_1		(hour_1),
-										.hour_10		(hour_10) );
+										.hour_10		(hour_10),
+										.en_day		(en_day) );
 										
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),

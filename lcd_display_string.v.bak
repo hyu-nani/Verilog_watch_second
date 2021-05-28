@@ -27,16 +27,16 @@ module	lcd_display_string(
 			out	<=	8'h00;
 		else
 			case (index)
-				00 : out	<=	8'h32;
-				01 : out	<=	8'h30;
-				02 : out	<=	8'h32;
-				03 : out	<=	8'h31;
-				04 : out	<=	8'h2F;
-				05 : out	<=	8'h30;
-				06 : out	<=	8'h36;
-				07 : out	<=	8'h2F;
-				08 : out	<=	8'h30;
-				09 : out	<=	8'h36;
+				00 : out	<=	8'h20;
+				01 : out	<=	8'h20;
+				02 : out	<=	8'h20;
+				03 : out	<=	8'h20;
+				04 : out	<=	8'h20;
+				05 : out	<=	8'h20;
+				06 : out	<=	8'h20;
+				07 : out	<=	8'h20;
+				08 : out	<=	8'h20;
+				09 : out	<=	8'h20;
 				10 : out	<=	8'h20;
 				11 : out	<=	8'h20;
 				12 : out	<=	8'h20;
