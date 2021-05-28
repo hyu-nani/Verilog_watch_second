@@ -71,7 +71,7 @@ module lcd_driver(
       DISP_CLEAR  :   next_state  <=  DISP_ON;
       DISP_ON     :   next_state  <=  MODE_SET;
       MODE_SET    :   next_state  <=  PRINT_STRING;
-      PRINT_STRING: if(index_char ==  15)
+      PRINT_STRING: if		(index_char == 15)
                       next_state  <=  LINE2;
                     else if(index_char == 31)
                       next_state  <=  RETURN_HOME;
