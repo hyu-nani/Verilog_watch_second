@@ -1,0 +1,12 @@
+
+State Machine - |Verilog_watch_second|lcd_driver:DRV|state
+Name state.LINE2 state.PRINT_STRING state.MODE_SET state.DISP_ON state.DISP_CLEAR state.DISP_OFF state.FUNC_SET state.IDLE state.RETURN_HOME 
+state.IDLE 0 0 0 0 0 0 0 0 0 
+state.FUNC_SET 0 0 0 0 0 0 1 1 0 
+state.DISP_OFF 0 0 0 0 0 1 0 1 0 
+state.DISP_CLEAR 0 0 0 0 1 0 0 1 0 
+state.DISP_ON 0 0 0 1 0 0 0 1 0 
+state.MODE_SET 0 0 1 0 0 0 0 1 0 
+state.PRINT_STRING 0 1 0 0 0 0 0 1 0 
+state.LINE2 1 0 0 0 0 0 0 1 0 
+state.RETURN_HOME 0 0 0 0 0 0 0 1 1 
