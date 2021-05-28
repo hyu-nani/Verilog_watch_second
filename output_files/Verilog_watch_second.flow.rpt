@@ -1,5 +1,5 @@
 Flow report for Verilog_watch_second
-Fri May 28 18:48:13 2021
+Fri May 28 19:00:00 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri May 28 18:48:13 2021       ;
+; Flow Status                        ; Successful - Fri May 28 19:00:00 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Verilog_watch_second                        ;
 ; Top-level Entity Name              ; Verilog_watch_second                        ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 05/28/2021 18:47:49  ;
+; Start date & time ; 05/28/2021 18:59:36  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; Verilog_watch_second ;
 +-------------------+----------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 174508023526339.162219526804192        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 174508023526339.162219597601932        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -94,12 +94,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4760 MB             ; 00:00:25                           ;
-; Fitter               ; 00:00:04     ; 1.0                     ; 5476 MB             ; 00:00:05                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4761 MB             ; 00:00:25                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 5475 MB             ; 00:00:05                           ;
 ; Assembler            ; 00:00:01     ; 1.0                     ; 4666 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4745 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4745 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4633 MB             ; 00:00:01                           ;
-; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:34                           ;
+; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:34                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

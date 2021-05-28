@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "Verilog_watch_second")
-  (DATE "05/28/2021 18:48:13")
+  (DATE "05/28/2021 19:00:00")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition")
@@ -2748,7 +2748,7 @@
   )
   (CELL
     (CELLTYPE "dffeas")
-    (INSTANCE STR\|out\[1\])
+    (INSTANCE STR\|out\[3\])
     (DELAY
       (ABSOLUTE
         (PORT clk (751:751:751) (769:769:769))

@@ -1,5 +1,5 @@
 Timing Analyzer report for Verilog_watch_second
-Fri May 28 18:48:11 2021
+Fri May 28 18:59:58 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -98,13 +98,13 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.5%      ;
-;     Processors 3-4         ;   0.5%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processors 3-4         ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -288,7 +288,7 @@ No paths to report.
 ; 0.453 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.454 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
 ; 0.492 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.098      ; 0.802      ;
-; 0.529 ; lcd_display_string:STR|out[1]     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.822      ;
+; 0.529 ; lcd_display_string:STR|out[3]     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.822      ;
 ; 0.623 ; lcd_driver:DRV|cnt_init[7]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.574      ; 1.409      ;
 ; 0.641 ; lcd_display_string:STR|out[5]     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.934      ;
 ; 0.642 ; lcd_driver:DRV|state.DISP_OFF     ; lcd_driver:DRV|state.DISP_CLEAR   ; clk          ; clk         ; 0.000        ; 0.080      ; 0.934      ;
@@ -375,13 +375,13 @@ No paths to report.
 ; 0.963 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.256      ;
 ; 0.965 ; lcd_driver:DRV|cnt_init[10]       ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.535      ; 1.712      ;
 ; 0.969 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[4]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.262      ;
-; 0.971 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[1]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.264      ;
+; 0.971 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[3]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.264      ;
 ; 0.971 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.264      ;
 ; 1.042 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.335      ;
 ; 1.043 ; lcd_driver:DRV|cnt_init[1]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.574      ; 1.829      ;
 ; 1.047 ; en_clk_lcd:LCLK|cnt_en[1]         ; en_clk_lcd:LCLK|en_clk            ; clk          ; clk         ; 0.000        ; 0.080      ; 1.339      ;
 ; 1.050 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.343      ;
-; 1.057 ; lcd_driver:DRV|index_char[0]      ; lcd_display_string:STR|out[1]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.350      ;
+; 1.057 ; lcd_driver:DRV|index_char[0]      ; lcd_display_string:STR|out[3]     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.350      ;
 ; 1.060 ; lcd_driver:DRV|cnt_init[0]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.574      ; 1.846      ;
 ; 1.063 ; lcd_driver:DRV|cnt_init[9]        ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.535      ; 1.810      ;
 ; 1.071 ; lcd_driver:DRV|cnt_init[13]       ; lcd_driver:DRV|cnt_init[19]       ; clk          ; clk         ; 0.000        ; 0.537      ; 1.820      ;
@@ -559,7 +559,7 @@ No paths to report.
 ; 0.401 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
 ; 0.402 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.453 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.089      ; 0.737      ;
-; 0.494 ; lcd_display_string:STR|out[1]     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.762      ;
+; 0.494 ; lcd_display_string:STR|out[3]     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.762      ;
 ; 0.573 ; lcd_driver:DRV|cnt_init[7]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.531      ; 1.299      ;
 ; 0.594 ; lcd_driver:DRV|cnt_init[20]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.497      ; 1.286      ;
 ; 0.597 ; lcd_display_string:STR|out[5]     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.865      ;
@@ -645,7 +645,7 @@ No paths to report.
 ; 0.850 ; lcd_driver:DRV|cnt_init[11]       ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.497      ; 1.542      ;
 ; 0.869 ; lcd_driver:DRV|cnt_init[10]       ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.495      ; 1.559      ;
 ; 0.880 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.073      ; 1.148      ;
-; 0.884 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[1]     ; clk          ; clk         ; 0.000        ; 0.073      ; 1.152      ;
+; 0.884 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[3]     ; clk          ; clk         ; 0.000        ; 0.073      ; 1.152      ;
 ; 0.885 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.073      ; 1.153      ;
 ; 0.891 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[4]     ; clk          ; clk         ; 0.000        ; 0.073      ; 1.159      ;
 ; 0.934 ; lcd_driver:DRV|cnt_init[1]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.531      ; 1.660      ;
@@ -655,7 +655,7 @@ No paths to report.
 ; 0.948 ; lcd_driver:DRV|cnt_init[0]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.531      ; 1.674      ;
 ; 0.960 ; lcd_driver:DRV|cnt_init[9]        ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.495      ; 1.650      ;
 ; 0.967 ; lcd_driver:DRV|cnt_init[14]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.497      ; 1.659      ;
-; 0.969 ; lcd_driver:DRV|index_char[0]      ; lcd_display_string:STR|out[1]     ; clk          ; clk         ; 0.000        ; 0.073      ; 1.237      ;
+; 0.969 ; lcd_driver:DRV|index_char[0]      ; lcd_display_string:STR|out[3]     ; clk          ; clk         ; 0.000        ; 0.073      ; 1.237      ;
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -820,7 +820,7 @@ No paths to report.
 ; 0.187 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.197 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.044      ; 0.325      ;
-; 0.208 ; lcd_display_string:STR|out[1]     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.328      ;
+; 0.208 ; lcd_display_string:STR|out[3]     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.328      ;
 ; 0.252 ; lcd_driver:DRV|state.DISP_OFF     ; lcd_driver:DRV|state.DISP_CLEAR   ; clk          ; clk         ; 0.000        ; 0.037      ; 0.373      ;
 ; 0.253 ; lcd_display_string:STR|out[5]     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.373      ;
 ; 0.254 ; lcd_display_string:STR|out[4]     ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.374      ;
@@ -901,7 +901,7 @@ No paths to report.
 ; 0.366 ; lcd_driver:DRV|cnt_init[6]        ; lcd_driver:DRV|cnt_init[6]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.486      ;
 ; 0.372 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.038      ; 0.494      ;
 ; 0.377 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[4]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.497      ;
-; 0.378 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[1]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.498      ;
+; 0.378 ; lcd_driver:DRV|index_char[4]      ; lcd_display_string:STR|out[3]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.498      ;
 ; 0.379 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.499      ;
 ; 0.389 ; lcd_driver:DRV|cnt_init[3]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.233      ; 0.706      ;
 ; 0.397 ; lcd_driver:DRV|cnt_init[15]       ; lcd_driver:DRV|cnt_init[19]       ; clk          ; clk         ; 0.000        ; 0.223      ; 0.704      ;
@@ -910,7 +910,7 @@ No paths to report.
 ; 0.406 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.038      ; 0.528      ;
 ; 0.408 ; lcd_driver:DRV|cnt_init[14]       ; lcd_driver:DRV|cnt_init[19]       ; clk          ; clk         ; 0.000        ; 0.223      ; 0.715      ;
 ; 0.409 ; en_clk_lcd:LCLK|cnt_en[1]         ; en_clk_lcd:LCLK|en_clk            ; clk          ; clk         ; 0.000        ; 0.036      ; 0.529      ;
-; 0.415 ; lcd_driver:DRV|index_char[0]      ; lcd_display_string:STR|out[1]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.535      ;
+; 0.415 ; lcd_driver:DRV|index_char[0]      ; lcd_display_string:STR|out[3]     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.535      ;
 ; 0.416 ; lcd_driver:DRV|cnt_init[10]       ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.221      ; 0.721      ;
 ; 0.423 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.036      ; 0.543      ;
 ; 0.427 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.038      ; 0.549      ;
@@ -1150,7 +1150,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 28 18:48:09 2021
+    Info: Processing started: Fri May 28 18:59:56 2021
 Info: Command: quartus_sta Verilog_watch_second -c Verilog_watch_second
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1223,7 +1223,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4745 megabytes
-    Info: Processing ended: Fri May 28 18:48:11 2021
+    Info: Processing ended: Fri May 28 18:59:58 2021
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -10,6 +10,9 @@ module Verilog_watch_second(
     output        lcd_rs,lcd_rw,lcd_e;
     output  [7:0] lcd_data;
     
+	 wire		[7:0]	hour,minute,second;
+	 wire		[3:0]	tenH,oneH,tenM,oneM,tenS,oneS;
+	 
     wire    [4:0] index_char;
     wire    [7:0] data_char;
     wire          en_clk;

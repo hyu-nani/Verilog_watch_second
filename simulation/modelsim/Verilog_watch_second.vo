@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
-// DATE "05/28/2021 18:48:13"
+// DATE "05/28/2021 19:00:00"
 
 // 
 // Device: Altera EP4CE6E22C8 Package TQFP144
@@ -3506,7 +3506,7 @@ defparam \STR|Mux2~1 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: FF_X23_Y20_N29
-dffeas \STR|out[1] (
+dffeas \STR|out[3] (
 	.clk(\clk~inputclkctrl_outclk ),
 	.d(\STR|Mux2~1_combout ),
 	.asdata(vcc),
@@ -3517,22 +3517,22 @@ dffeas \STR|out[1] (
 	.ena(vcc),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\STR|out [1]),
+	.q(\STR|out [3]),
 	.prn(vcc));
 // synopsys translate_off
-defparam \STR|out[1] .is_wysiwyg = "true";
-defparam \STR|out[1] .power_up = "low";
+defparam \STR|out[3] .is_wysiwyg = "true";
+defparam \STR|out[3] .power_up = "low";
 // synopsys translate_on
 
 // Location: LCCOMB_X23_Y20_N2
 cycloneive_lcell_comb \DRV|Selector7~0 (
 // Equation(s):
-// \DRV|Selector7~0_combout  = (\DRV|state.MODE_SET~q ) # ((\DRV|state.PRINT_STRING~q  & \STR|out [1]))
+// \DRV|Selector7~0_combout  = (\DRV|state.MODE_SET~q ) # ((\DRV|state.PRINT_STRING~q  & \STR|out [3]))
 
 	.dataa(\DRV|state.PRINT_STRING~q ),
 	.datab(gnd),
 	.datac(\DRV|state.MODE_SET~q ),
-	.datad(\STR|out [1]),
+	.datad(\STR|out [3]),
 	.cin(gnd),
 	.combout(\DRV|Selector7~0_combout ),
 	.cout());
@@ -3599,12 +3599,12 @@ defparam \DRV|data_bus[2] .power_up = "low";
 // Location: LCCOMB_X22_Y20_N30
 cycloneive_lcell_comb \DRV|Selector5~0 (
 // Equation(s):
-// \DRV|Selector5~0_combout  = (\DRV|state.FUNC_SET~q ) # ((\DRV|state.DISP_OFF~q ) # ((\DRV|state.PRINT_STRING~q  & \STR|out [1])))
+// \DRV|Selector5~0_combout  = (\DRV|state.FUNC_SET~q ) # ((\DRV|state.DISP_OFF~q ) # ((\DRV|state.PRINT_STRING~q  & \STR|out [3])))
 
 	.dataa(\DRV|state.PRINT_STRING~q ),
 	.datab(\DRV|state.FUNC_SET~q ),
 	.datac(\DRV|state.DISP_OFF~q ),
-	.datad(\STR|out [1]),
+	.datad(\STR|out [3]),
 	.cin(gnd),
 	.combout(\DRV|Selector5~0_combout ),
 	.cout());

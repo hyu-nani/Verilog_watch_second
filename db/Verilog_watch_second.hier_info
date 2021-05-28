@@ -1,17 +1,17 @@
 |Verilog_watch_second
 clk => clk.IN4
 rst => rst.IN4
-lcd_rs << lcd_driver:DRV.lcd_rs
-lcd_rw << lcd_driver:DRV.lcd_rw
-lcd_e << lcd_driver:DRV.lcd_e
-lcd_data[0] << lcd_driver:DRV.lcd_data
-lcd_data[1] << lcd_driver:DRV.lcd_data
-lcd_data[2] << lcd_driver:DRV.lcd_data
-lcd_data[3] << lcd_driver:DRV.lcd_data
-lcd_data[4] << lcd_driver:DRV.lcd_data
-lcd_data[5] << lcd_driver:DRV.lcd_data
-lcd_data[6] << lcd_driver:DRV.lcd_data
-lcd_data[7] << lcd_driver:DRV.lcd_data
+lcd_rs <= lcd_driver:DRV.lcd_rs
+lcd_rw <= lcd_driver:DRV.lcd_rw
+lcd_e <= lcd_driver:DRV.lcd_e
+lcd_data[0] <= lcd_driver:DRV.lcd_data
+lcd_data[1] <= lcd_driver:DRV.lcd_data
+lcd_data[2] <= lcd_driver:DRV.lcd_data
+lcd_data[3] <= lcd_driver:DRV.lcd_data
+lcd_data[4] <= lcd_driver:DRV.lcd_data
+lcd_data[5] <= lcd_driver:DRV.lcd_data
+lcd_data[6] <= lcd_driver:DRV.lcd_data
+lcd_data[7] <= lcd_driver:DRV.lcd_data
 
 
 |Verilog_watch_second|clock:TIME
