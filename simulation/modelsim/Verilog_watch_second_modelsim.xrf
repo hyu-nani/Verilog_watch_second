@@ -1,5 +1,8 @@
 vendor_name = ModelSim
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v
+source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v
+source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2BCD.v
+source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clkone_gen.v
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_string.v
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v

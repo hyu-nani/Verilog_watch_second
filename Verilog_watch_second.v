@@ -14,20 +14,43 @@ module Verilog_watch_second(
     wire    [7:0] data_char;
     wire          en_clk;
     
-	 
-	 
-    en_clk_lcd          LCLK(
+	clock						TIME(
+		.clk			(clk),
+		.rst			(rst),
+		.year			(year),
+		.month		(month),
+		.day			(day),
+		.hour			(hour),
+		.minute		(minute),
+		.second		(second));
+	
+	bin2BCD					CON0(
+		.bin			(hour),
+		.tens			(tenH),
+		.ones			(oneH));
+		
+	bin2BCD					CON1(
+		.bin			(minute),
+		.tens			(tenM),
+		.ones			(oneM));
+	
+	bin2BCD					CON2(
+		.bin			(second),
+		.tens			(tenS),
+		.ones			(oneS));
+		
+   en_clk_lcd        	LCLK(
       .clk    		(clk),
       .rst    		(rst),
       .en_clk 		(en_clk));
       
-    lcd_display_string  STR(
+   lcd_display_string 	STR(
       .clk    		(clk),
       .rst    		(rst),
       .index  		(index_char),
       .out    		(data_char));
       
-    lcd_driver          DRV(
+   lcd_driver         	DRV(
       .clk        (clk),
       .rst        (rst),
       .en_clk     (en_clk),

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Verilog_watch_second
-Fri May 28 17:31:58 2021
+Fri May 28 18:30:31 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -18,10 +18,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Parameter Settings for User Entity Instance: lcd_driver:DRV
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
+ 13. Port Connectivity Checks: "bin2BCD:CON2"
+ 14. Port Connectivity Checks: "bin2BCD:CON1"
+ 15. Port Connectivity Checks: "bin2BCD:CON0"
+ 16. Port Connectivity Checks: "clock:TIME"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,7 +51,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 28 17:31:58 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri May 28 18:30:31 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Verilog_watch_second                        ;
 ; Top-level Entity Name              ; Verilog_watch_second                        ;
@@ -173,6 +177,9 @@ refer to the applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 ; Verilog_watch_second.v           ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v ;         ;
+; clock.v                          ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v                ;         ;
+; bin2BCD.v                        ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2BCD.v              ;         ;
+; clkone_gen.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clkone_gen.v           ;         ;
 ; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v           ;         ;
 ; lcd_display_string.v             ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_string.v   ;         ;
 ; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v           ;         ;
@@ -300,6 +307,62 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2BCD:CON2"                                                                                                                               ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                     ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "bin[7..1]" will be connected to GND. ;
+; tens ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "tens[3..1]" have no fanouts                     ;
+; tens ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
+; ones ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ones[3..1]" have no fanouts                     ;
+; ones ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2BCD:CON1"                                                                                                                               ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                     ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "bin[7..1]" will be connected to GND. ;
+; tens ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "tens[3..1]" have no fanouts                     ;
+; tens ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
+; ones ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ones[3..1]" have no fanouts                     ;
+; ones ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2BCD:CON0"                                                                                                                               ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                     ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; bin  ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "bin[7..1]" will be connected to GND. ;
+; tens ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "tens[3..1]" have no fanouts                     ;
+; tens ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
+; ones ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ones[3..1]" have no fanouts                     ;
+; ones ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
++------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock:TIME"                                                                                                                 ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                   ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; year   ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "year[7..1]" have no fanouts   ;
+; year   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; month  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "month[7..1]" have no fanouts  ;
+; month  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; day    ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "day[7..1]" have no fanouts    ;
+; day    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                       ;
+; hour   ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "hour[7..1]" have no fanouts   ;
+; minute ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "minute[7..1]" have no fanouts ;
+; second ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "second[7..1]" have no fanouts ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -341,26 +404,48 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 28 17:31:46 2021
+    Info: Processing started: Fri May 28 18:30:19 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Verilog_watch_second -c Verilog_watch_second
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file verilog_watch_second.v
     Info (12023): Found entity 1: Verilog_watch_second File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clock.v
+    Info (12023): Found entity 1: clock File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
+    Info (12023): Found entity 1: bin2BCD File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2BCD.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(20): created implicit net for "year" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 20
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(21): created implicit net for "month" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 21
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(22): created implicit net for "day" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(23): created implicit net for "hour" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(24): created implicit net for "minute" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(25): created implicit net for "second" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 25
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(29): created implicit net for "tenH" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 29
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(30): created implicit net for "oneH" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 30
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(34): created implicit net for "tenM" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(35): created implicit net for "oneM" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 35
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(39): created implicit net for "tenS" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(40): created implicit net for "oneS" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 40
 Info (12127): Elaborating entity "Verilog_watch_second" for the top level hierarchy
+Info (12128): Elaborating entity "clock" for hierarchy "clock:TIME" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 25
+Warning (12125): Using design file clkone_gen.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: clkone_gen File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clkone_gen.v Line: 1
+Info (12128): Elaborating entity "clkone_gen" for hierarchy "clock:TIME|clkone_gen:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 21
+Info (12128): Elaborating entity "bin2BCD" for hierarchy "bin2BCD:CON0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 30
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk_lcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v Line: 1
-Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 20
+Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 45
 Warning (12125): Using design file lcd_display_string.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: lcd_display_string File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_string.v Line: 1
-Info (12128): Elaborating entity "lcd_display_string" for hierarchy "lcd_display_string:STR" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 26
+Info (12128): Elaborating entity "lcd_display_string" for hierarchy "lcd_display_string:STR" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 51
 Warning (12125): Using design file lcd_driver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: lcd_driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 1
-Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 37
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 62
 Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 201
 Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 48
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "lcd_display_string:STR|Ram0" is uninferred due to inappropriate RAM size File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_string.v Line: 18
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
@@ -372,9 +457,9 @@ Info (21057): Implemented 132 device resources after synthesis - the final resou
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 119 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4766 megabytes
-    Info: Processing ended: Fri May 28 17:31:58 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4759 megabytes
+    Info: Processing ended: Fri May 28 18:30:31 2021
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:24
 

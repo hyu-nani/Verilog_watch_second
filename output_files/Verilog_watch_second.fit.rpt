@@ -1,5 +1,5 @@
 Fitter report for Verilog_watch_second
-Fri May 28 17:32:04 2021
+Fri May 28 18:30:36 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri May 28 17:32:04 2021       ;
+; Fitter Status                      ; Successful - Fri May 28 18:30:36 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Verilog_watch_second                        ;
 ; Top-level Entity Name              ; Verilog_watch_second                        ;
@@ -154,12 +154,13 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.5%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processors 3-4         ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -986,7 +987,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.17 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -994,8 +995,8 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/Verilog_watch_second.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5474 megabytes
-    Info: Processing ended: Fri May 28 17:32:04 2021
+    Info: Peak virtual memory: 5473 megabytes
+    Info: Processing ended: Fri May 28 18:30:37 2021
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:06
 
