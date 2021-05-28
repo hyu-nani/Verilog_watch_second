@@ -14,8 +14,6 @@ module Verilog_watch_second(
     wire    [7:0] data_char;
     wire          en_clk;
     
-	 
-	 
     en_clk_lcd          LCLK(
       .clk    		(clk),
       .rst    		(rst),
