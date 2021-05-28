@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Verilog_watch_second
-Fri May 28 19:04:40 2021
+Fri May 28 19:34:59 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,15 +15,16 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |Verilog_watch_second|lcd_driver:DRV|state
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: lcd_driver:DRV
- 13. Port Connectivity Checks: "clock:TIME|clkone_gen:U0"
- 14. Port Connectivity Checks: "clock:TIME"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
- 18. Analysis & Synthesis Suppressed Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: lcd_driver:DRV
+ 14. Port Connectivity Checks: "clock:TIME|clkone_gen:U0"
+ 15. Port Connectivity Checks: "clock:TIME"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+ 19. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -49,7 +50,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 28 19:04:40 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri May 28 19:34:59 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Verilog_watch_second                        ;
 ; Top-level Entity Name              ; Verilog_watch_second                        ;
@@ -247,19 +248,51 @@ Encoding Type:  One-Hot
 +--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                ;
-+---------------------------------------+-------------------------------------------+
-; Register name                         ; Reason for Removal                        ;
-+---------------------------------------+-------------------------------------------+
-; lcd_driver:DRV|lcd_rw                 ; Stuck at GND due to stuck port data_in    ;
-; lcd_display_string:STR|out[0,2,6,7]   ; Stuck at GND due to stuck port data_in    ;
-; lcd_display_string:STR|out[1]         ; Merged with lcd_display_string:STR|out[3] ;
-; lcd_driver:DRV|state~13               ; Lost fanout                               ;
-; lcd_driver:DRV|state~14               ; Lost fanout                               ;
-; lcd_driver:DRV|state~15               ; Lost fanout                               ;
-; Total Number of Removed Registers = 9 ;                                           ;
-+---------------------------------------+-------------------------------------------+
++------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                 ;
++----------------------------------------+-------------------------------------------+
+; Register name                          ; Reason for Removal                        ;
++----------------------------------------+-------------------------------------------+
+; lcd_driver:DRV|lcd_rw                  ; Stuck at GND due to stuck port data_in    ;
+; lcd_display_string:STR|out[6,7]        ; Stuck at GND due to stuck port data_in    ;
+; bin2BCD:CON2|ones[0]                   ; Stuck at GND due to stuck port data_in    ;
+; bin2BCD:CON1|ones[0]                   ; Stuck at GND due to stuck port data_in    ;
+; bin2BCD:CON0|ones[0]                   ; Stuck at GND due to stuck port data_in    ;
+; bin2BCD:CON1|tens[0]                   ; Merged with bin2BCD:CON0|tens[0]          ;
+; bin2BCD:CON2|tens[0]                   ; Merged with bin2BCD:CON0|tens[0]          ;
+; bin2BCD:CON1|tens[1]                   ; Merged with bin2BCD:CON0|tens[1]          ;
+; bin2BCD:CON2|tens[1]                   ; Merged with bin2BCD:CON0|tens[1]          ;
+; bin2BCD:CON1|ones[1]                   ; Merged with bin2BCD:CON0|ones[1]          ;
+; bin2BCD:CON2|ones[1]                   ; Merged with bin2BCD:CON0|ones[1]          ;
+; bin2BCD:CON1|tens[2]                   ; Merged with bin2BCD:CON0|tens[2]          ;
+; bin2BCD:CON2|tens[2]                   ; Merged with bin2BCD:CON0|tens[2]          ;
+; bin2BCD:CON1|ones[2]                   ; Merged with bin2BCD:CON0|ones[2]          ;
+; bin2BCD:CON2|ones[2]                   ; Merged with bin2BCD:CON0|ones[2]          ;
+; bin2BCD:CON1|tens[3]                   ; Merged with bin2BCD:CON0|tens[3]          ;
+; bin2BCD:CON2|tens[3]                   ; Merged with bin2BCD:CON0|tens[3]          ;
+; bin2BCD:CON1|ones[3]                   ; Merged with bin2BCD:CON0|ones[3]          ;
+; bin2BCD:CON2|ones[3]                   ; Merged with bin2BCD:CON0|ones[3]          ;
+; bin2BCD:CON0|tens[0..3]                ; Stuck at GND due to stuck port data_in    ;
+; bin2BCD:CON0|ones[1..3]                ; Stuck at GND due to stuck port data_in    ;
+; lcd_display_string:STR|out[0,2]        ; Stuck at GND due to stuck port data_in    ;
+; lcd_display_string:STR|out[3]          ; Merged with lcd_display_string:STR|out[1] ;
+; lcd_driver:DRV|state~13                ; Lost fanout                               ;
+; lcd_driver:DRV|state~14                ; Lost fanout                               ;
+; lcd_driver:DRV|state~15                ; Lost fanout                               ;
+; Total Number of Removed Registers = 33 ;                                           ;
++----------------------------------------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                               ;
++----------------------+---------------------------+----------------------------------------+
+; Register name        ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------+---------------------------+----------------------------------------+
+; bin2BCD:CON2|ones[0] ; Stuck at GND              ; lcd_display_string:STR|out[0]          ;
+;                      ; due to stuck port data_in ;                                        ;
+; bin2BCD:CON0|tens[2] ; Stuck at GND              ; lcd_display_string:STR|out[2]          ;
+;                      ; due to stuck port data_in ;                                        ;
++----------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -370,7 +403,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 28 19:04:28 2021
+    Info: Processing started: Fri May 28 19:34:47 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Verilog_watch_second -c Verilog_watch_second
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -400,16 +433,16 @@ Warning (10034): Output port "second" at clock.v(12) has no driver File: C:/User
 Warning (12125): Using design file clkone_gen.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clkone_gen File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clkone_gen.v Line: 1
 Info (12128): Elaborating entity "clkone_gen" for hierarchy "clock:TIME|clkone_gen:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 21
-Info (12128): Elaborating entity "bin2BCD" for hierarchy "bin2BCD:CON0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 33
+Info (12128): Elaborating entity "bin2BCD" for hierarchy "bin2BCD:CON0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 35
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk_lcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v Line: 1
-Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 48
+Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 54
 Warning (12125): Using design file lcd_display_string.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: lcd_display_string File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_string.v Line: 1
-Info (12128): Elaborating entity "lcd_display_string" for hierarchy "lcd_display_string:STR" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 60
+Info (12128): Elaborating entity "lcd_display_string" for hierarchy "lcd_display_string:STR" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 66
 Warning (12125): Using design file lcd_driver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: lcd_driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 1
-Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 71
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 77
 Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 201
 Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 48
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -426,9 +459,9 @@ Info (21057): Implemented 122 device resources after synthesis - the final resou
     Info (21061): Implemented 109 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
     Info: Peak virtual memory: 4760 megabytes
-    Info: Processing ended: Fri May 28 19:04:40 2021
+    Info: Processing ended: Fri May 28 19:34:59 2021
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+

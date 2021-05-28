@@ -1,17 +1,17 @@
 |Verilog_watch_second
-clk => clk.IN4
-rst => rst.IN4
-lcd_rs << lcd_driver:DRV.lcd_rs
-lcd_rw << lcd_driver:DRV.lcd_rw
-lcd_e << lcd_driver:DRV.lcd_e
-lcd_data[0] << lcd_driver:DRV.lcd_data
-lcd_data[1] << lcd_driver:DRV.lcd_data
-lcd_data[2] << lcd_driver:DRV.lcd_data
-lcd_data[3] << lcd_driver:DRV.lcd_data
-lcd_data[4] << lcd_driver:DRV.lcd_data
-lcd_data[5] << lcd_driver:DRV.lcd_data
-lcd_data[6] << lcd_driver:DRV.lcd_data
-lcd_data[7] << lcd_driver:DRV.lcd_data
+clk => clk.IN7
+rst => rst.IN7
+lcd_rs <= lcd_driver:DRV.lcd_rs
+lcd_rw <= lcd_driver:DRV.lcd_rw
+lcd_e <= lcd_driver:DRV.lcd_e
+lcd_data[0] <= lcd_driver:DRV.lcd_data
+lcd_data[1] <= lcd_driver:DRV.lcd_data
+lcd_data[2] <= lcd_driver:DRV.lcd_data
+lcd_data[3] <= lcd_driver:DRV.lcd_data
+lcd_data[4] <= lcd_driver:DRV.lcd_data
+lcd_data[5] <= lcd_driver:DRV.lcd_data
+lcd_data[6] <= lcd_driver:DRV.lcd_data
+lcd_data[7] <= lcd_driver:DRV.lcd_data
 
 
 |Verilog_watch_second|clock:TIME
@@ -124,7 +124,23 @@ clk1 <= clk1~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Verilog_watch_second|bin2BCD:CON0
-bin[0] => ones[0].DATAIN
+clk => ones[0]~reg0.CLK
+clk => ones[1]~reg0.CLK
+clk => ones[2]~reg0.CLK
+clk => ones[3]~reg0.CLK
+clk => tens[0]~reg0.CLK
+clk => tens[1]~reg0.CLK
+clk => tens[2]~reg0.CLK
+clk => tens[3]~reg0.CLK
+rst => ones[0]~reg0.ACLR
+rst => ones[1]~reg0.ACLR
+rst => ones[2]~reg0.ACLR
+rst => ones[3]~reg0.ACLR
+rst => tens[0]~reg0.ACLR
+rst => tens[1]~reg0.ACLR
+rst => tens[2]~reg0.ACLR
+rst => tens[3]~reg0.ACLR
+bin[0] => ones[0]~reg0.DATAIN
 bin[1] => LessThan6.IN8
 bin[1] => Add6.IN8
 bin[1] => ones.DATAA
@@ -146,18 +162,34 @@ bin[6] => ones.DATAA
 bin[7] => LessThan0.IN4
 bin[7] => Add0.IN4
 bin[7] => ones.DATAA
-tens[0] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-tens[1] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-tens[2] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-tens[3] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-ones[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
-ones[1] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-ones[2] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-ones[3] <= ones.DB_MAX_OUTPUT_PORT_TYPE
+tens[0] <= tens[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[1] <= tens[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[2] <= tens[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[3] <= tens[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[0] <= ones[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[1] <= ones[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[2] <= ones[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[3] <= ones[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Verilog_watch_second|bin2BCD:CON1
-bin[0] => ones[0].DATAIN
+clk => ones[0]~reg0.CLK
+clk => ones[1]~reg0.CLK
+clk => ones[2]~reg0.CLK
+clk => ones[3]~reg0.CLK
+clk => tens[0]~reg0.CLK
+clk => tens[1]~reg0.CLK
+clk => tens[2]~reg0.CLK
+clk => tens[3]~reg0.CLK
+rst => ones[0]~reg0.ACLR
+rst => ones[1]~reg0.ACLR
+rst => ones[2]~reg0.ACLR
+rst => ones[3]~reg0.ACLR
+rst => tens[0]~reg0.ACLR
+rst => tens[1]~reg0.ACLR
+rst => tens[2]~reg0.ACLR
+rst => tens[3]~reg0.ACLR
+bin[0] => ones[0]~reg0.DATAIN
 bin[1] => LessThan6.IN8
 bin[1] => Add6.IN8
 bin[1] => ones.DATAA
@@ -179,18 +211,34 @@ bin[6] => ones.DATAA
 bin[7] => LessThan0.IN4
 bin[7] => Add0.IN4
 bin[7] => ones.DATAA
-tens[0] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-tens[1] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-tens[2] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-tens[3] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-ones[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
-ones[1] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-ones[2] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-ones[3] <= ones.DB_MAX_OUTPUT_PORT_TYPE
+tens[0] <= tens[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[1] <= tens[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[2] <= tens[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[3] <= tens[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[0] <= ones[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[1] <= ones[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[2] <= ones[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[3] <= ones[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Verilog_watch_second|bin2BCD:CON2
-bin[0] => ones[0].DATAIN
+clk => ones[0]~reg0.CLK
+clk => ones[1]~reg0.CLK
+clk => ones[2]~reg0.CLK
+clk => ones[3]~reg0.CLK
+clk => tens[0]~reg0.CLK
+clk => tens[1]~reg0.CLK
+clk => tens[2]~reg0.CLK
+clk => tens[3]~reg0.CLK
+rst => ones[0]~reg0.ACLR
+rst => ones[1]~reg0.ACLR
+rst => ones[2]~reg0.ACLR
+rst => ones[3]~reg0.ACLR
+rst => tens[0]~reg0.ACLR
+rst => tens[1]~reg0.ACLR
+rst => tens[2]~reg0.ACLR
+rst => tens[3]~reg0.ACLR
+bin[0] => ones[0]~reg0.DATAIN
 bin[1] => LessThan6.IN8
 bin[1] => Add6.IN8
 bin[1] => ones.DATAA
@@ -212,14 +260,14 @@ bin[6] => ones.DATAA
 bin[7] => LessThan0.IN4
 bin[7] => Add0.IN4
 bin[7] => ones.DATAA
-tens[0] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-tens[1] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-tens[2] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-tens[3] <= tens.DB_MAX_OUTPUT_PORT_TYPE
-ones[0] <= bin[0].DB_MAX_OUTPUT_PORT_TYPE
-ones[1] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-ones[2] <= ones.DB_MAX_OUTPUT_PORT_TYPE
-ones[3] <= ones.DB_MAX_OUTPUT_PORT_TYPE
+tens[0] <= tens[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[1] <= tens[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[2] <= tens[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tens[3] <= tens[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[0] <= ones[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[1] <= ones[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[2] <= ones[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ones[3] <= ones[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Verilog_watch_second|en_clk_lcd:LCLK

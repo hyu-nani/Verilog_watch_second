@@ -28,16 +28,22 @@ module Verilog_watch_second(
 		.second		(second));
 	
 	bin2BCD					CON0(
+		.clk			(clk),
+		.rst			(rst),
 		.bin			(hour),
 		.tens			(tenH),
 		.ones			(oneH));
 		
 	bin2BCD					CON1(
+		.clk			(clk),
+		.rst			(rst),
 		.bin			(minute),
 		.tens			(tenM),
 		.ones			(oneM));
 	
 	bin2BCD					CON2(
+		.clk			(clk),
+		.rst			(rst),
 		.bin			(second),
 		.tens			(tenS),
 		.ones			(oneS));
@@ -50,12 +56,12 @@ module Verilog_watch_second(
    lcd_display_string 	STR(
       .clk    		(clk),
       .rst    		(rst),
-		.tenH			(4'd1),
-		.oneH			(4'd1),
-		.tenM			(4'd3),
-		.oneM			(4'd5),
-		.tenS			(4'd5),
-		.oneS			(4'd2),
+		.tenH			(tenH),
+		.oneH			(oneH),
+		.tenM			(tenM),
+		.oneM			(oneM),
+		.tenS			(tenS),
+		.oneS			(oneS),
       .index  		(index_char),
       .out    		(data_char));
       
