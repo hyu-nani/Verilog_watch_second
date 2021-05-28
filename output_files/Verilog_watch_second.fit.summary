@@ -1,11 +1,11 @@
-Fitter Status : Successful - Fri May 28 19:35:05 2021
+Fitter Status : Successful - Fri May 28 19:04:45 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Verilog_watch_second
 Top-level Entity Name : Verilog_watch_second
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 111 / 6,272 ( 2 % )
+Total logic elements : 110 / 6,272 ( 2 % )
     Total combinational functions : 101 / 6,272 ( 2 % )
     Dedicated logic registers : 78 / 6,272 ( 1 % )
 Total registers : 78
