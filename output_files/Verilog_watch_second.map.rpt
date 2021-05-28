@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Verilog_watch_second
-Fri May 28 18:38:59 2021
+Fri May 28 18:48:00 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -22,11 +22,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  14. Port Connectivity Checks: "bin2BCD:CON2"
  15. Port Connectivity Checks: "bin2BCD:CON1"
  16. Port Connectivity Checks: "bin2BCD:CON0"
- 17. Port Connectivity Checks: "clock:TIME"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
- 21. Analysis & Synthesis Suppressed Messages
+ 17. Port Connectivity Checks: "clock:TIME|clkone_gen:U0"
+ 18. Port Connectivity Checks: "clock:TIME"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,15 +53,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 28 18:38:59 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri May 28 18:48:00 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Verilog_watch_second                        ;
 ; Top-level Entity Name              ; Verilog_watch_second                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 197                                         ;
-;     Total combinational functions  ; 189                                         ;
-;     Dedicated logic registers      ; 127                                         ;
-; Total registers                    ; 127                                         ;
+; Total logic elements               ; 108                                         ;
+;     Total combinational functions  ; 100                                         ;
+;     Dedicated logic registers      ; 78                                          ;
+; Total registers                    ; 78                                          ;
 ; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -192,20 +193,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 197       ;
+; Estimated Total logic elements              ; 108       ;
 ;                                             ;           ;
-; Total combinational functions               ; 189       ;
+; Total combinational functions               ; 100       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 49        ;
-;     -- 3 input functions                    ; 8         ;
-;     -- <=2 input functions                  ; 132       ;
+;     -- 4 input functions                    ; 21        ;
+;     -- 3 input functions                    ; 6         ;
+;     -- <=2 input functions                  ; 73        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 96        ;
-;     -- arithmetic mode                      ; 93        ;
+;     -- normal mode                          ; 50        ;
+;     -- arithmetic mode                      ; 50        ;
 ;                                             ;           ;
-; Total registers                             ; 127       ;
-;     -- Dedicated logic registers            ; 127       ;
+; Total registers                             ; 78        ;
+;     -- Dedicated logic registers            ; 78        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 13        ;
@@ -213,24 +214,22 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 127       ;
-; Total fan-out                               ; 959       ;
-; Average fan-out                             ; 2.80      ;
+; Maximum fan-out                             ; 78        ;
+; Total fan-out                               ; 563       ;
+; Average fan-out                             ; 2.76      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                           ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Entity Name          ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+----------------------+--------------+
-; |Verilog_watch_second       ; 189 (1)             ; 127 (0)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |Verilog_watch_second                          ; Verilog_watch_second ; work         ;
-;    |clock:TIME|             ; 86 (41)             ; 48 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|clock:TIME               ; clock                ; work         ;
-;       |clkone_gen:U0|       ; 45 (45)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|clock:TIME|clkone_gen:U0 ; clkone_gen           ; work         ;
-;    |en_clk_lcd:LCLK|        ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|en_clk_lcd:LCLK          ; en_clk_lcd           ; work         ;
-;    |lcd_display_string:STR| ; 6 (6)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|lcd_display_string:STR   ; lcd_display_string   ; work         ;
-;    |lcd_driver:DRV|         ; 67 (67)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|lcd_driver:DRV           ; lcd_driver           ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+----------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name          ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+----------------------+--------------+
+; |Verilog_watch_second       ; 100 (1)             ; 78 (0)                    ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |Verilog_watch_second                        ; Verilog_watch_second ; work         ;
+;    |en_clk_lcd:LCLK|        ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|en_clk_lcd:LCLK        ; en_clk_lcd           ; work         ;
+;    |lcd_display_string:STR| ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|lcd_display_string:STR ; lcd_display_string   ; work         ;
+;    |lcd_driver:DRV|         ; 67 (67)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Verilog_watch_second|lcd_driver:DRV         ; lcd_driver           ; work         ;
++-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -252,22 +251,20 @@ Encoding Type:  One-Hot
 +--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                 ;
-+----------------------------------------+-------------------------------------------+
-; Register name                          ; Reason for Removal                        ;
-+----------------------------------------+-------------------------------------------+
-; lcd_driver:DRV|lcd_rw                  ; Stuck at GND due to stuck port data_in    ;
-; lcd_display_string:STR|out[6,7]        ; Stuck at GND due to stuck port data_in    ;
-; lcd_display_string:STR|out[3]          ; Merged with lcd_display_string:STR|out[1] ;
-; lcd_display_string:STR|out[2]          ; Stuck at GND due to stuck port data_in    ;
-; lcd_driver:DRV|state~13                ; Lost fanout                               ;
-; lcd_driver:DRV|state~14                ; Lost fanout                               ;
-; lcd_driver:DRV|state~15                ; Lost fanout                               ;
-; clock:TIME|clkone_gen:U0|cnt_clk1[0]   ; Merged with en_clk_lcd:LCLK|cnt_en[0]     ;
-; clock:TIME|clkone_gen:U0|cnt_clk1[1]   ; Merged with en_clk_lcd:LCLK|cnt_en[1]     ;
-; Total Number of Removed Registers = 10 ;                                           ;
-+----------------------------------------+-------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++---------------------------------------+-------------------------------------------+
+; Register name                         ; Reason for Removal                        ;
++---------------------------------------+-------------------------------------------+
+; lcd_driver:DRV|lcd_rw                 ; Stuck at GND due to stuck port data_in    ;
+; lcd_display_string:STR|out[6,7]       ; Stuck at GND due to stuck port data_in    ;
+; lcd_display_string:STR|out[3]         ; Merged with lcd_display_string:STR|out[1] ;
+; lcd_display_string:STR|out[0,2]       ; Stuck at GND due to stuck port data_in    ;
+; lcd_driver:DRV|state~13               ; Lost fanout                               ;
+; lcd_driver:DRV|state~14               ; Lost fanout                               ;
+; lcd_driver:DRV|state~15               ; Lost fanout                               ;
+; Total Number of Removed Registers = 9 ;                                           ;
++---------------------------------------+-------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -275,12 +272,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 127   ;
+; Total registers                              ; 78    ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 22    ;
-; Number of registers using Asynchronous Clear ; 127   ;
+; Number of registers using Asynchronous Clear ; 78    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Clock Enable       ; 23    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -290,9 +287,7 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Verilog_watch_second|lcd_driver:DRV|cnt_en_clk[4] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Verilog_watch_second|clock:TIME|hour[6]           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Verilog_watch_second|clock:TIME|minute[1]         ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Verilog_watch_second|lcd_driver:DRV|cnt_en_clk[3] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Verilog_watch_second|lcd_driver:DRV|state         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 
@@ -363,6 +358,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock:TIME|clkone_gen:U0"                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; clk1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "clock:TIME"                                                                                                                 ;
 +--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
@@ -386,24 +390,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 127                         ;
-;     CLR               ; 65                          ;
+; cycloneiii_ff         ; 78                          ;
+;     CLR               ; 33                          ;
 ;     CLR SLD           ; 22                          ;
-;     ENA CLR           ; 30                          ;
+;     ENA CLR           ; 13                          ;
 ;     ENA CLR SCLR      ; 10                          ;
-; cycloneiii_lcell_comb ; 189                         ;
-;     arith             ; 93                          ;
-;         2 data inputs ; 91                          ;
-;         3 data inputs ; 2                           ;
-;     normal            ; 96                          ;
+; cycloneiii_lcell_comb ; 100                         ;
+;     arith             ; 50                          ;
+;         2 data inputs ; 50                          ;
+;     normal            ; 50                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 32                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 18                          ;
 ;         3 data inputs ; 6                           ;
-;         4 data inputs ; 49                          ;
+;         4 data inputs ; 21                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.85                        ;
+; Average LUT depth     ; 2.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -422,7 +425,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 28 18:38:47 2021
+    Info: Processing started: Fri May 28 18:47:48 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Verilog_watch_second -c Verilog_watch_second
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -446,6 +449,18 @@ Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(39):
 Warning (10236): Verilog HDL Implicit Net warning at Verilog_watch_second.v(40): created implicit net for "oneS" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 40
 Info (12127): Elaborating entity "Verilog_watch_second" for the top level hierarchy
 Info (12128): Elaborating entity "clock" for hierarchy "clock:TIME" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/Verilog_watch_second.v Line: 25
+Critical Warning (10237): Verilog HDL warning at clock.v(58): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 58
+Critical Warning (10237): Verilog HDL warning at clock.v(59): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 59
+Critical Warning (10237): Verilog HDL warning at clock.v(60): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 60
+Critical Warning (10237): Verilog HDL warning at clock.v(61): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 61
+Critical Warning (10237): Verilog HDL warning at clock.v(62): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 62
+Critical Warning (10237): Verilog HDL warning at clock.v(63): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 63
+Warning (10034): Output port "year" at clock.v(12) has no driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 12
+Warning (10034): Output port "month" at clock.v(12) has no driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 12
+Warning (10034): Output port "day" at clock.v(12) has no driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 12
+Warning (10034): Output port "hour" at clock.v(12) has no driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 12
+Warning (10034): Output port "minute" at clock.v(12) has no driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 12
+Warning (10034): Output port "second" at clock.v(12) has no driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 12
 Warning (12125): Using design file clkone_gen.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clkone_gen File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clkone_gen.v Line: 1
 Info (12128): Elaborating entity "clkone_gen" for hierarchy "clock:TIME|clkone_gen:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clock.v Line: 21
@@ -469,15 +484,15 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/Verilog_watch_second.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 212 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 122 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 199 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 4761 megabytes
-    Info: Processing ended: Fri May 28 18:38:59 2021
+    Info (21061): Implemented 109 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 4760 megabytes
+    Info: Processing ended: Fri May 28 18:48:00 2021
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+

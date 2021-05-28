@@ -20,7 +20,7 @@ module clock(
 		.rst		(rst),
 		.clk1		(clk_1Hz));
 		
-	always @(posedge clk or negedge rst) begin
+	always @(posedge clk_1Hz or negedge rst) begin
 		if(!rst)	begin
 			year	<=	8'd0;
 			month	<=	8'd0;
@@ -51,18 +51,16 @@ module clock(
 				year		<=	year + 1'd1;
 			end
 			if(year == 8'd99) 
-					year		<=	8'd0;
-			if(clk_1Hz)
-				second <= second + 1'd1;
-			else begin
-				year 	<= year;
-				month	<= month;
-				day	<= day;
-				hour	<=	hour;
-				minute<=	minute;
-				second<=	second;
-			end
+				year		<=	8'd0;
+			second <= second + 1'd1;
+			
 		end
+		year 	<= year;
+		month	<= month;
+		day	<= day;
+		hour	<=	hour;
+		minute<=	minute;
+		second<=	second;
 	end
 
 endmodule
