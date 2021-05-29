@@ -103,6 +103,7 @@ rst => hour_1[2]~reg0.ACLR
 rst => hour_1[3]~reg0.ACLR
 rst => hour_10[0]~reg0.ACLR
 rst => hour_10[1]~reg0.ACLR
+rst => en_day~reg0.ENA
 sec_1[0] <= sec_1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 sec_1[1] <= sec_1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 sec_1[2] <= sec_1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -123,7 +124,7 @@ hour_1[2] <= hour_1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 hour_1[3] <= hour_1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 hour_10[0] <= hour_10[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 hour_10[1] <= hour_10[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_day <= <GND>
+en_day <= en_day~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |digital_clock|en_clk_lcd:LCLK

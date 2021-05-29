@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Fri May 28 22:32:35 2021
+Sat May 29 21:09:01 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -48,13 +48,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 28 22:32:35 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sat May 29 21:09:01 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 239                                         ;
-;     Total combinational functions  ; 231                                         ;
+; Total logic elements               ; 240                                         ;
+;     Total combinational functions  ; 232                                         ;
 ;     Dedicated logic registers      ; 131                                         ;
 ; Total registers                    ; 131                                         ;
 ; Total pins                         ; 13                                          ;
@@ -164,7 +164,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -187,16 +188,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 239       ;
+; Estimated Total logic elements              ; 240       ;
 ;                                             ;           ;
-; Total combinational functions               ; 231       ;
+; Total combinational functions               ; 232       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 91        ;
+;     -- 4 input functions                    ; 92        ;
 ;     -- 3 input functions                    ; 22        ;
 ;     -- <=2 input functions                  ; 118       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 157       ;
+;     -- normal mode                          ; 158       ;
 ;     -- arithmetic mode                      ; 74        ;
 ;                                             ;           ;
 ; Total registers                             ; 131       ;
@@ -209,7 +210,7 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
 ; Maximum fan-out                             ; 131       ;
-; Total fan-out                               ; 1136      ;
+; Total fan-out                               ; 1140      ;
 ; Average fan-out                             ; 2.93      ;
 +---------------------------------------------+-----------+
 
@@ -219,12 +220,12 @@ refer to the applicable agreement for further details.
 +-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Entity Name        ; Library Name ;
 +-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------+--------------+
-; |digital_clock              ; 231 (1)             ; 131 (0)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |digital_clock                        ; digital_clock      ; work         ;
+; |digital_clock              ; 232 (1)             ; 131 (0)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |digital_clock                        ; digital_clock      ; work         ;
 ;    |en_clk:U0|              ; 39 (39)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0              ; en_clk             ; work         ;
 ;    |en_clk_lcd:LCLK|        ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK        ; en_clk_lcd         ; work         ;
 ;    |lcd_display_string:STR| ; 69 (69)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_string:STR ; lcd_display_string ; work         ;
 ;    |lcd_driver:comb_4|      ; 68 (68)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:comb_4      ; lcd_driver         ; work         ;
-;    |watch:TIME|             ; 25 (25)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch:TIME             ; watch              ; work         ;
+;    |watch:TIME|             ; 26 (26)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch:TIME             ; watch              ; work         ;
 +-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -284,8 +285,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:comb_4|cnt_en_clk[7] ;
-; 38:1               ; 3 bits    ; 75 LEs        ; 18 LEs               ; 57 LEs                 ; Yes        ; |digital_clock|lcd_display_string:STR|out[5]   ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:comb_4|cnt_en_clk[5] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |digital_clock|watch:TIME|hour_1[3]            ;
+; 38:1               ; 3 bits    ; 75 LEs        ; 18 LEs               ; 57 LEs                 ; Yes        ; |digital_clock|lcd_display_string:STR|out[6]   ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:comb_4|state         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
@@ -329,16 +331,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR SLD           ; 22                          ;
 ;     ENA CLR           ; 15                          ;
 ;     ENA CLR SCLR      ; 10                          ;
-; cycloneiii_lcell_comb ; 231                         ;
+; cycloneiii_lcell_comb ; 232                         ;
 ;     arith             ; 74                          ;
 ;         2 data inputs ; 73                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 157                         ;
+;     normal            ; 158                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 10                          ;
 ;         2 data inputs ; 34                          ;
 ;         3 data inputs ; 21                          ;
-;         4 data inputs ; 91                          ;
+;         4 data inputs ; 92                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
 ; Average LUT depth     ; 2.97                        ;
@@ -360,7 +362,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 28 22:32:24 2021
+    Info: Processing started: Sat May 29 21:08:50 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -382,9 +384,8 @@ Warning (10230): Verilog HDL assignment warning at watch.v(35): truncated value 
 Warning (10230): Verilog HDL assignment warning at watch.v(52): truncated value with size 32 to match size of target (3) File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 52
 Warning (10230): Verilog HDL assignment warning at watch.v(69): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 69
 Warning (10230): Verilog HDL assignment warning at watch.v(86): truncated value with size 32 to match size of target (3) File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 86
-Warning (10230): Verilog HDL assignment warning at watch.v(103): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 103
-Warning (10230): Verilog HDL assignment warning at watch.v(120): truncated value with size 32 to match size of target (2) File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 120
-Critical Warning (10237): Verilog HDL warning at watch.v(121): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 121
+Warning (10230): Verilog HDL assignment warning at watch.v(108): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 108
+Warning (10230): Verilog HDL assignment warning at watch.v(124): truncated value with size 32 to match size of target (2) File: C:/intelFPGA_lite/Quartus_Projects/watch_my/watch.v Line: 124
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk_lcd File: C:/intelFPGA_lite/Quartus_Projects/watch_my/en_clk_lcd.v Line: 1
 Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/intelFPGA_lite/Quartus_Projects/watch_my/digital_clock.v Line: 44
@@ -402,14 +403,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 254 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 255 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 241 logic cells
+    Info (21061): Implemented 242 logic cells
 Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Quartus_Projects/watch_my/output_files/digital_clock.map.smsg
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4759 megabytes
-    Info: Processing ended: Fri May 28 22:32:35 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4776 megabytes
+    Info: Processing ended: Sat May 29 21:09:01 2021
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:22
 

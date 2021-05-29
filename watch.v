@@ -94,6 +94,11 @@ module	watch	(
 			en_hour_10	<= 0;
 		end
 
+		else if(hour_10 ==2 && hour_1 == 3) begin				// 24시가 되면 00시로
+			hour_1		<= 0;
+			en_hour_10	<= 1;
+		end
+		
 		else if(hour_1 == 9) begin
 			hour_1		<= 0;
 			en_hour_10	<= 1;
@@ -108,7 +113,6 @@ module	watch	(
 	always @ (posedge en_hour_10 or negedge rst) begin		// 시 십의 자리
 		if(!rst) begin
 			hour_10		<= 0;
-			en_day		<= 0;
 		end
 		
 		else if ( hour_10 == 2 ) begin
@@ -116,9 +120,10 @@ module	watch	(
 			en_day		<= 1;
 		end
 		
-		else
+		else begin
 			hour_10		<= hour_10 + 1;
 			en_day		<= 0;
+		end
 	end
 	
 endmodule

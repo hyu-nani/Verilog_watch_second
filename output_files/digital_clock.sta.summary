@@ -3,42 +3,46 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.980
-TNS   : -276.129
-
-Type  : Slow 1200mV 85C Model Setup 'watch:TIME|en_min_1'
-Slack : -0.588
-TNS   : -1.937
+Slack : -4.237
+TNS   : -282.017
 
 Type  : Slow 1200mV 85C Model Setup 'watch:TIME|en_hour_1'
-Slack : -0.527
-TNS   : -1.727
+Slack : -1.345
+TNS   : -3.538
+
+Type  : Slow 1200mV 85C Model Setup 'watch:TIME|en_min_1'
+Slack : -0.572
+TNS   : -2.023
 
 Type  : Slow 1200mV 85C Model Setup 'en_clk:U0|en_1hz'
-Slack : -0.518
-TNS   : -1.873
-
-Type  : Slow 1200mV 85C Model Setup 'watch:TIME|en_sec_10'
-Slack : -0.387
-TNS   : -1.115
+Slack : -0.437
+TNS   : -1.586
 
 Type  : Slow 1200mV 85C Model Setup 'watch:TIME|en_min_10'
-Slack : -0.355
+Slack : -0.366
+TNS   : -1.043
+
+Type  : Slow 1200mV 85C Model Setup 'watch:TIME|en_sec_10'
+Slack : -0.352
 TNS   : -1.032
 
 Type  : Slow 1200mV 85C Model Setup 'watch:TIME|en_hour_10'
-Slack : -0.035
-TNS   : -0.060
+Slack : -0.164
+TNS   : -0.204
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.453
+Slack : 0.434
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'watch:TIME|en_hour_1'
 Slack : 0.453
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME|en_min_10'
+Type  : Slow 1200mV 85C Model Hold 'watch:TIME|en_min_1'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'watch:TIME|en_sec_10'
 Slack : 0.453
 TNS   : 0.000
 
@@ -46,11 +50,7 @@ Type  : Slow 1200mV 85C Model Hold 'en_clk:U0|en_1hz'
 Slack : 0.454
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME|en_min_1'
-Slack : 0.454
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME|en_sec_10'
+Type  : Slow 1200mV 85C Model Hold 'watch:TIME|en_min_10'
 Slack : 0.454
 TNS   : 0.000
 
@@ -87,35 +87,35 @@ Slack : -1.487
 TNS   : -2.974
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.707
-TNS   : -249.849
+Slack : -3.943
+TNS   : -253.881
 
 Type  : Slow 1200mV 0C Model Setup 'watch:TIME|en_hour_1'
-Slack : -0.427
-TNS   : -1.222
+Slack : -1.151
+TNS   : -2.903
 
 Type  : Slow 1200mV 0C Model Setup 'watch:TIME|en_min_1'
-Slack : -0.424
-TNS   : -1.390
+Slack : -0.456
+TNS   : -1.452
 
 Type  : Slow 1200mV 0C Model Setup 'en_clk:U0|en_1hz'
-Slack : -0.408
-TNS   : -1.360
-
-Type  : Slow 1200mV 0C Model Setup 'watch:TIME|en_sec_10'
-Slack : -0.250
-TNS   : -0.692
+Slack : -0.299
+TNS   : -1.031
 
 Type  : Slow 1200mV 0C Model Setup 'watch:TIME|en_min_10'
-Slack : -0.219
-TNS   : -0.619
+Slack : -0.224
+TNS   : -0.632
+
+Type  : Slow 1200mV 0C Model Setup 'watch:TIME|en_sec_10'
+Slack : -0.213
+TNS   : -0.620
 
 Type  : Slow 1200mV 0C Model Setup 'watch:TIME|en_hour_10'
-Slack : 0.063
-TNS   : 0.000
+Slack : -0.088
+TNS   : -0.088
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.402
+Slack : 0.383
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'en_clk:U0|en_1hz'
@@ -126,16 +126,16 @@ Type  : Slow 1200mV 0C Model Hold 'watch:TIME|en_hour_1'
 Slack : 0.402
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'watch:TIME|en_min_1'
+Slack : 0.402
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Hold 'watch:TIME|en_min_10'
 Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'watch:TIME|en_sec_10'
 Slack : 0.402
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'watch:TIME|en_min_1'
-Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'watch:TIME|en_hour_10'
@@ -171,34 +171,42 @@ Slack : -1.487
 TNS   : -2.974
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.169
-TNS   : -61.678
-
-Type  : Fast 1200mV 0C Model Setup 'watch:TIME|en_min_1'
-Slack : 0.291
-TNS   : 0.000
+Slack : -1.306
+TNS   : -63.765
 
 Type  : Fast 1200mV 0C Model Setup 'watch:TIME|en_hour_1'
-Slack : 0.324
+Slack : -0.033
+TNS   : -0.066
+
+Type  : Fast 1200mV 0C Model Setup 'watch:TIME|en_min_1'
+Slack : 0.300
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'en_clk:U0|en_1hz'
-Slack : 0.325
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'watch:TIME|en_sec_10'
-Slack : 0.391
+Slack : 0.364
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'watch:TIME|en_min_10'
+Slack : 0.398
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'watch:TIME|en_sec_10'
 Slack : 0.401
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'watch:TIME|en_hour_10'
-Slack : 0.548
+Slack : 0.479
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'watch:TIME|en_min_10'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'watch:TIME|en_sec_10'
 Slack : 0.186
 TNS   : 0.000
 
@@ -214,21 +222,13 @@ Type  : Fast 1200mV 0C Model Hold 'watch:TIME|en_min_1'
 Slack : 0.187
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'watch:TIME|en_min_10'
-Slack : 0.187
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'watch:TIME|en_sec_10'
-Slack : 0.187
-TNS   : 0.000
-
 Type  : Fast 1200mV 0C Model Hold 'watch:TIME|en_hour_10'
 Slack : 0.194
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -116.034
+TNS   : -116.060
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'en_clk:U0|en_1hz'
 Slack : -1.000
