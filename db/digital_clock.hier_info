@@ -1,17 +1,20 @@
 |digital_clock
-clk => clk.IN4
-rst => rstn.IN5
-lcd_rs << lcd_driver:comb_4.lcd_rs
-lcd_rw << lcd_driver:comb_4.lcd_rw
-lcd_e << lcd_driver:comb_4.lcd_e
-lcd_data[0] << lcd_driver:comb_4.lcd_data
-lcd_data[1] << lcd_driver:comb_4.lcd_data
-lcd_data[2] << lcd_driver:comb_4.lcd_data
-lcd_data[3] << lcd_driver:comb_4.lcd_data
-lcd_data[4] << lcd_driver:comb_4.lcd_data
-lcd_data[5] << lcd_driver:comb_4.lcd_data
-lcd_data[6] << lcd_driver:comb_4.lcd_data
-lcd_data[7] << lcd_driver:comb_4.lcd_data
+clk => clk.IN7
+rst => rstn.IN8
+lcd_rs <= lcd_driver:comb_4.lcd_rs
+lcd_rw <= lcd_driver:comb_4.lcd_rw
+lcd_e <= lcd_driver:comb_4.lcd_e
+lcd_data[0] <= lcd_driver:comb_4.lcd_data
+lcd_data[1] <= lcd_driver:comb_4.lcd_data
+lcd_data[2] <= lcd_driver:comb_4.lcd_data
+lcd_data[3] <= lcd_driver:comb_4.lcd_data
+lcd_data[4] <= lcd_driver:comb_4.lcd_data
+lcd_data[5] <= lcd_driver:comb_4.lcd_data
+lcd_data[6] <= lcd_driver:comb_4.lcd_data
+lcd_data[7] <= lcd_driver:comb_4.lcd_data
+sw_in[0] => sw_in[0].IN1
+sw_in[1] => sw_in[1].IN1
+sw_in[2] => sw_in[2].IN1
 
 
 |digital_clock|en_clk:U0
@@ -70,6 +73,297 @@ rst => cnt_en_1hz[23].ACLR
 rst => cnt_en_1hz[24].ACLR
 rst => cnt_en_1hz[25].ACLR
 en_1hz <= en_1hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW0
+clk => clk.IN3
+rst => rst.IN5
+in => in.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW0|clk_div:U0
+clk => myclk~reg0.CLK
+clk => cnt_myclk[0].CLK
+clk => cnt_myclk[1].CLK
+clk => cnt_myclk[2].CLK
+clk => cnt_myclk[3].CLK
+clk => cnt_myclk[4].CLK
+clk => cnt_myclk[5].CLK
+clk => cnt_myclk[6].CLK
+clk => cnt_myclk[7].CLK
+clk => cnt_myclk[8].CLK
+clk => cnt_myclk[9].CLK
+clk => cnt_myclk[10].CLK
+clk => cnt_myclk[11].CLK
+clk => cnt_myclk[12].CLK
+clk => cnt_myclk[13].CLK
+clk => cnt_myclk[14].CLK
+clk => cnt_myclk[15].CLK
+clk => cnt_myclk[16].CLK
+clk => cnt_myclk[17].CLK
+clk => cnt_myclk[18].CLK
+clk => cnt_myclk[19].CLK
+clk => cnt_myclk[20].CLK
+clk => cnt_myclk[21].CLK
+rst => myclk~reg0.ACLR
+rst => cnt_myclk[0].ACLR
+rst => cnt_myclk[1].ACLR
+rst => cnt_myclk[2].ACLR
+rst => cnt_myclk[3].ACLR
+rst => cnt_myclk[4].ACLR
+rst => cnt_myclk[5].ACLR
+rst => cnt_myclk[6].ACLR
+rst => cnt_myclk[7].ACLR
+rst => cnt_myclk[8].ACLR
+rst => cnt_myclk[9].ACLR
+rst => cnt_myclk[10].ACLR
+rst => cnt_myclk[11].ACLR
+rst => cnt_myclk[12].ACLR
+rst => cnt_myclk[13].ACLR
+rst => cnt_myclk[14].ACLR
+rst => cnt_myclk[15].ACLR
+rst => cnt_myclk[16].ACLR
+rst => cnt_myclk[17].ACLR
+rst => cnt_myclk[18].ACLR
+rst => cnt_myclk[19].ACLR
+rst => cnt_myclk[20].ACLR
+rst => cnt_myclk[21].ACLR
+myclk <= myclk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW0|d_ff:U1
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW0|d_ff:U2
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW0|d_ff:U3
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW0|d_ff:U4
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW1
+clk => clk.IN3
+rst => rst.IN5
+in => in.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW1|clk_div:U0
+clk => myclk~reg0.CLK
+clk => cnt_myclk[0].CLK
+clk => cnt_myclk[1].CLK
+clk => cnt_myclk[2].CLK
+clk => cnt_myclk[3].CLK
+clk => cnt_myclk[4].CLK
+clk => cnt_myclk[5].CLK
+clk => cnt_myclk[6].CLK
+clk => cnt_myclk[7].CLK
+clk => cnt_myclk[8].CLK
+clk => cnt_myclk[9].CLK
+clk => cnt_myclk[10].CLK
+clk => cnt_myclk[11].CLK
+clk => cnt_myclk[12].CLK
+clk => cnt_myclk[13].CLK
+clk => cnt_myclk[14].CLK
+clk => cnt_myclk[15].CLK
+clk => cnt_myclk[16].CLK
+clk => cnt_myclk[17].CLK
+clk => cnt_myclk[18].CLK
+clk => cnt_myclk[19].CLK
+clk => cnt_myclk[20].CLK
+clk => cnt_myclk[21].CLK
+rst => myclk~reg0.ACLR
+rst => cnt_myclk[0].ACLR
+rst => cnt_myclk[1].ACLR
+rst => cnt_myclk[2].ACLR
+rst => cnt_myclk[3].ACLR
+rst => cnt_myclk[4].ACLR
+rst => cnt_myclk[5].ACLR
+rst => cnt_myclk[6].ACLR
+rst => cnt_myclk[7].ACLR
+rst => cnt_myclk[8].ACLR
+rst => cnt_myclk[9].ACLR
+rst => cnt_myclk[10].ACLR
+rst => cnt_myclk[11].ACLR
+rst => cnt_myclk[12].ACLR
+rst => cnt_myclk[13].ACLR
+rst => cnt_myclk[14].ACLR
+rst => cnt_myclk[15].ACLR
+rst => cnt_myclk[16].ACLR
+rst => cnt_myclk[17].ACLR
+rst => cnt_myclk[18].ACLR
+rst => cnt_myclk[19].ACLR
+rst => cnt_myclk[20].ACLR
+rst => cnt_myclk[21].ACLR
+myclk <= myclk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW1|d_ff:U1
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW1|d_ff:U2
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW1|d_ff:U3
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW1|d_ff:U4
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW2
+clk => clk.IN3
+rst => rst.IN5
+in => in.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW2|clk_div:U0
+clk => myclk~reg0.CLK
+clk => cnt_myclk[0].CLK
+clk => cnt_myclk[1].CLK
+clk => cnt_myclk[2].CLK
+clk => cnt_myclk[3].CLK
+clk => cnt_myclk[4].CLK
+clk => cnt_myclk[5].CLK
+clk => cnt_myclk[6].CLK
+clk => cnt_myclk[7].CLK
+clk => cnt_myclk[8].CLK
+clk => cnt_myclk[9].CLK
+clk => cnt_myclk[10].CLK
+clk => cnt_myclk[11].CLK
+clk => cnt_myclk[12].CLK
+clk => cnt_myclk[13].CLK
+clk => cnt_myclk[14].CLK
+clk => cnt_myclk[15].CLK
+clk => cnt_myclk[16].CLK
+clk => cnt_myclk[17].CLK
+clk => cnt_myclk[18].CLK
+clk => cnt_myclk[19].CLK
+clk => cnt_myclk[20].CLK
+clk => cnt_myclk[21].CLK
+rst => myclk~reg0.ACLR
+rst => cnt_myclk[0].ACLR
+rst => cnt_myclk[1].ACLR
+rst => cnt_myclk[2].ACLR
+rst => cnt_myclk[3].ACLR
+rst => cnt_myclk[4].ACLR
+rst => cnt_myclk[5].ACLR
+rst => cnt_myclk[6].ACLR
+rst => cnt_myclk[7].ACLR
+rst => cnt_myclk[8].ACLR
+rst => cnt_myclk[9].ACLR
+rst => cnt_myclk[10].ACLR
+rst => cnt_myclk[11].ACLR
+rst => cnt_myclk[12].ACLR
+rst => cnt_myclk[13].ACLR
+rst => cnt_myclk[14].ACLR
+rst => cnt_myclk[15].ACLR
+rst => cnt_myclk[16].ACLR
+rst => cnt_myclk[17].ACLR
+rst => cnt_myclk[18].ACLR
+rst => cnt_myclk[19].ACLR
+rst => cnt_myclk[20].ACLR
+rst => cnt_myclk[21].ACLR
+myclk <= myclk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW2|d_ff:U1
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW2|d_ff:U2
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW2|d_ff:U3
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|debouncer_clk:SW2|d_ff:U4
+clk => q~reg0.CLK
+rst => q.IN0
+rst => q~reg0.ACLR
+set => q.IN1
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qb <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |digital_clock|watch:TIME

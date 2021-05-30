@@ -1,12 +1,14 @@
 module	digital_clock	(
-									clk,
-									rst,
-									lcd_rs,
-									lcd_rw,
-									lcd_e,
-									lcd_data);
+							clk,
+							rst,
+							lcd_rs,
+							lcd_rw,
+							lcd_e,
+							lcd_data,
+							sw_in);
 									
 	input					clk, rst;
+	input			[2:0]	sw_in;
 	output				lcd_rs;
 	output				lcd_rw;
 	output				lcd_e;
@@ -19,6 +21,9 @@ module	digital_clock	(
 	wire			[7:0] data_char;
 	wire					en_clk;
 	
+	wire			[2:0]	sw_in;
+	
+	
 	assign		rstn = ~rst;
 	
 	en_clk					U0		(
@@ -26,6 +31,23 @@ module	digital_clock	(
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
 	
+	debouncer_clk			SW0	(
+										.clk			(clk),
+										.rst			(rstn),
+										.in			(sw_in[0]),
+										.out			());
+										
+	debouncer_clk			SW1	(
+										.clk			(clk),
+										.rst			(rstn),
+										.in			(sw_in[1]),
+										.out			());
+	
+	debouncer_clk			SW2	(
+										.clk			(clk),
+										.rst			(rstn),
+										.in			(sw_in[2]),
+										.out			());
 										
 	watch						TIME (
 										.clk			(en_1hz),
