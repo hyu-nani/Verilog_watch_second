@@ -1,6 +1,6 @@
 module watch_date(
 	clk,
-	en_1hz,
+	clk1sec,
 	rst,
 	set_time,
 	bin_time,
@@ -12,7 +12,7 @@ module watch_date(
 	second);
 	
 	input						clk,rst;
-	input						en_1hz;
+	input						clk1sec;
 	input						set_time;
 	input		[20:0]		bin_time;
 	
@@ -60,7 +60,7 @@ module watch_date(
 			minute	<=	minute;
 			second	<=	second;
 			
-			if (clk_1hz) begin
+			if (clk1sec) begin
 				casez({year, month, day, hour, minute, second})
 					{12'd4095, 4'd12, max_date, 5'd23, 6'd59, 6'd59} : begin
 						year		<= 1'd1;

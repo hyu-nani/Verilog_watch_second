@@ -45,9 +45,8 @@ module	digital_clock	(
 	
 	watch_date				TIME1	(
 										.clk			(clk),
-										.en_1hz		(en_1hz),
+										.clk1sec		(en_1hz),
 										.rst			(rstn),
-										.en_day		(en_day),
 										.set_time	(1'b0),
 										.bin_time	(),
 										.year			(year),
