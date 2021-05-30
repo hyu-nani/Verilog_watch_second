@@ -6,7 +6,10 @@ module watch_date(
 	bin_date,
 	year,
 	month,
-	day);
+	day,
+	hour,
+	minute,
+	second);
 	
 	input						clk,rst;
 	input						en_day;
@@ -16,6 +19,9 @@ module watch_date(
 	output	[11:0]		year;
 	output	[3:0]			month;
 	output	[4:0]			day;
+	output	[4:0]			hour;
+	output	[5:0]			minute;
+	output	[5:0]			second;
 	
 	wire						en_day;
 	wire						set_date;
@@ -24,6 +30,9 @@ module watch_date(
 	reg		[11:0]		year;
 	reg		[3:0]			month;
 	reg		[4:0]			day;
+	reg		[4:0]			hour;
+	reg		[5:0]			minute;
+	reg		[5:0]			second;
 	reg		[4:0]			max_date;
 	
 	always @(*)
@@ -49,29 +58,68 @@ module watch_date(
 			day		<= day;
 			
 			if (en_day) begin
-				casez({year, month, day})
-					{12'd4095, 4'd12, max_date} : begin
-						year	<= 1'd1;
+				casez({year, month, day, hour, minute, second})
+					{12'd4095, 4'd12, max_date, 5'd23, 6'd59, 6'd59} : begin
+						year		<= 1'd1;
 						month 	<= 1'd1;
 						day		<= 1'd1;
+						hour		<=	1'd0;
+						minute	<=	1'd0;
+						second	<=	1'd0;
 					end
 					
-					{12'd?, 4'd12, max_date} : begin
-						year	<= year + 1'd1;
-						month	<= 1'd1;
+					{12'd?, 4'd12, max_date, 5'd23, 6'd59, 6'd59} : begin
+						year		<= year + 1'd1;
+						month 	<= 1'd1;
 						day		<= 1'd1;
+						hour		<=	1'd0;
+						minute	<=	1'd0;
+						second	<=	1'd0;
 					end
 					
-					{12'd?, 4'd?, max_date} : begin
-						year	<= year;
-						month	<= month + 1'd1;
+					{12'd?, 4'd?, max_date, 5'd23, 6'd59, 6'd59} : begin
+						year		<= year;
+						month 	<= month + 1'd1;
 						day		<= 1'd1;
+						hour		<=	1'd0;
+						minute	<=	1'd0;
+						second	<=	1'd0;
+					end
+					
+					{12'd?, 4'd?, 5'd?, 5'd23, 6'd59, 6'd59} : begin
+						year		<= year; 
+						month 	<= month;
+						day		<= day + 1'd1;
+						hour		<=	1'd0;
+						minute	<=	1'd0;
+						second	<=	1'd0;
+					end
+					
+					{12'd?, 4'd?, 5'd?, 5'd?, 6'd59, 6'd59} : begin
+						year		<= year; 
+						month 	<= month;
+						day		<= day;
+						hour		<=	hour + 1'd1;
+						minute	<=	1'd0;
+						second	<=	1'd0;
+					end
+					
+					{12'd?, 4'd?, 5'd?, 5'd?, 6'd?, 6'd59} : begin
+						year		<= year; 
+						month 	<= month;
+						day		<= day;
+						hour		<=	hour;
+						minute	<=	minute + 1'd1;
+						second	<=	1'd0;
 					end
 					
 					default : begin
-						year	<= year;
-						month	<= month;
-						day		<= day + 1'd1;
+						year		<= year; 
+						month 	<= month;
+						day		<= day;
+						hour		<=	hour;
+						minute	<=	minute;
+						second	<=	second + 1'd1;
 					end
 				endcase
 			end
