@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Sun May 30 16:15:37 2021
+Analysis & Synthesis Status : Successful - Sun May 30 18:00:52 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : digital_clock
 Top-level Entity Name : digital_clock
@@ -7,7 +7,7 @@ Total logic elements : 240
     Total combinational functions : 232
     Dedicated logic registers : 131
 Total registers : 131
-Total pins : 16
+Total pins : 17
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

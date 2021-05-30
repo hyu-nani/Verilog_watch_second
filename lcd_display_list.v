@@ -1,6 +1,7 @@
-module	lcd_display_string( 
+module	lcd_display_list( 
 										clk, 
-										rst, 
+										rst,
+										sw_in,
 										sec_1,
 										sec_10,
 										min_1,
@@ -12,6 +13,7 @@ module	lcd_display_string(
 	
 	input				clk;
 	input				rst;
+	input		[3:0]	sw_in;
 	input		[3:0] sec_1, min_1, hour_1;
 	input		[2:0] sec_10, min_10;
 	input		[1:0] hour_10;
@@ -19,24 +21,53 @@ module	lcd_display_string(
 
 	output	[7:0] out;
 	
+	wire		[3:0]	sw;
 	wire		[4:0] index;
 	reg		[7:0] out;
+	
+	integer			i;
+	integer 			mode;
+	
+	debouncer_clk			SW0	(
+										.clk			(clk),
+										.rst			(rst),
+										.in			(sw_in[0]),
+										.out			(sw[0]));
+										
+	debouncer_clk			SW1	(
+										.clk			(clk),
+										.rst			(rst),
+										.in			(sw_in[1]),
+										.out			(sw[1]));
+	
+	debouncer_clk			SW2	(
+										.clk			(clk),
+										.rst			(rst),
+										.in			(sw_in[2]),
+										.out			(sw[2]));
+										
+	debouncer_clk			SW3	(
+										.clk			(clk),
+										.rst			(rst),
+										.in			(sw_in[3]),
+										.out			(sw[3]));
+	
 	
 	always @ ( posedge clk or negedge rst )
 		if(!rst)
 			out	<=	8'h00;
 		else
 			case (index)
-				00 : out	<=	8'h20;
-				01 : out	<=	8'h20;
-				02 : out	<=	8'h20;
-				03 : out	<=	8'h20;
-				04 : out	<=	8'h20;
-				05 : out	<=	8'h20;
-				06 : out	<=	8'h20;
-				07 : out	<=	8'h20;
-				08 : out	<=	8'h20;
-				09 : out	<=	8'h20;
+				00 : out	<=	8'h32;
+				01 : out	<=	8'h30;
+				02 : out	<=	8'h32;
+				03 : out	<=	8'h31;
+				04 : out	<=	8'h2F;
+				05 : out	<=	8'h30;
+				06 : out	<=	8'h36;
+				07 : out	<=	8'h2F;
+				08 : out	<=	8'h30;
+				09 : out	<=	8'h36;
 				10 : out	<=	8'h20;
 				11 : out	<=	8'h20;
 				12 : out	<=	8'h20;

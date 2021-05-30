@@ -1,5 +1,5 @@
 
-State Machine - |digital_clock|lcd_driver:comb_4|state
+State Machine - |digital_clock|lcd_driver:DRV|state
 Name state.LINE2 state.PRINT_STRING state.MODE_SET state.DISP_ON state.DISP_CLEAR state.DISP_OFF state.FUNC_SET state.IDLE state.RETURN_HOME 
 state.IDLE 0 0 0 0 0 0 0 0 0 
 state.FUNC_SET 0 0 0 0 0 0 1 1 0 

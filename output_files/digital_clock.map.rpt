@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Sun May 30 16:15:37 2021
+Sun May 30 18:00:52 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,23 +13,24 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |digital_clock|lcd_driver:comb_4|state
+  8. State Machine - |digital_clock|lcd_driver:DRV|state
   9. Registers Removed During Synthesis
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: lcd_driver:comb_4
- 13. Port Connectivity Checks: "watch:TIME"
- 14. Port Connectivity Checks: "debouncer_clk:SW2"
- 15. Port Connectivity Checks: "debouncer_clk:SW1"
- 16. Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U4"
- 17. Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U3"
- 18. Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U2"
- 19. Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U1"
- 20. Port Connectivity Checks: "debouncer_clk:SW0"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
+ 12. Parameter Settings for User Entity Instance: lcd_driver:DRV
+ 13. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW3"
+ 14. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW2"
+ 15. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW1"
+ 16. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U4"
+ 17. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U3"
+ 18. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U2"
+ 19. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U1"
+ 20. Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0"
+ 21. Port Connectivity Checks: "watch_date:TIME1"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,7 +56,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 30 16:15:37 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun May 30 18:00:52 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
@@ -64,7 +65,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 232                                         ;
 ;     Dedicated logic registers      ; 131                                         ;
 ; Total registers                    ; 131                                         ;
-; Total pins                         ; 16                                          ;
+; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -176,21 +177,22 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
-; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v      ;         ;
-; en_clk.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v             ;         ;
-; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v      ;         ;
-; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v            ;         ;
-; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v               ;         ;
-; watch.v                          ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v              ;         ;
-; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v         ;         ;
-; lcd_display_string.v             ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_string.v ;         ;
-; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v         ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v    ;         ;
+; watch_date.v                     ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v       ;         ;
+; en_clk.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v           ;         ;
+; watch.v                          ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v            ;         ;
+; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v       ;         ;
+; lcd_display_list.v               ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v ;         ;
+; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v    ;         ;
+; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v          ;         ;
+; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v             ;         ;
+; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v       ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -214,35 +216,35 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 131       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 16        ;
+; I/O pins                                    ; 17        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; rst~input ;
 ; Maximum fan-out                             ; 131       ;
-; Total fan-out                               ; 1143      ;
-; Average fan-out                             ; 2.89      ;
+; Total fan-out                               ; 1144      ;
+; Average fan-out                             ; 2.88      ;
 +---------------------------------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Entity Name        ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------+--------------+
-; |digital_clock              ; 232 (1)             ; 131 (0)                   ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |digital_clock                        ; digital_clock      ; work         ;
-;    |en_clk:U0|              ; 39 (39)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0              ; en_clk             ; work         ;
-;    |en_clk_lcd:LCLK|        ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK        ; en_clk_lcd         ; work         ;
-;    |lcd_display_string:STR| ; 69 (69)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_string:STR ; lcd_display_string ; work         ;
-;    |lcd_driver:comb_4|      ; 68 (68)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:comb_4      ; lcd_driver         ; work         ;
-;    |watch:TIME|             ; 26 (26)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch:TIME             ; watch              ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
+; |digital_clock             ; 232 (1)             ; 131 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |digital_clock                      ; digital_clock    ; work         ;
+;    |en_clk:U0|             ; 39 (39)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0            ; en_clk           ; work         ;
+;    |en_clk_lcd:LCLK|       ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK      ; en_clk_lcd       ; work         ;
+;    |lcd_display_list:STL|  ; 69 (69)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_list:STL ; lcd_display_list ; work         ;
+;    |lcd_driver:DRV|        ; 68 (68)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV       ; lcd_driver       ; work         ;
+;    |watch:TIME0|           ; 26 (26)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch:TIME0          ; watch            ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |digital_clock|lcd_driver:comb_4|state                                                                                                                       ;
+; State Machine - |digital_clock|lcd_driver:DRV|state                                                                                                                          ;
 +--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
 ; Name               ; state.LINE2 ; state.PRINT_STRING ; state.MODE_SET ; state.DISP_ON ; state.DISP_CLEAR ; state.DISP_OFF ; state.FUNC_SET ; state.IDLE ; state.RETURN_HOME ;
 +--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
@@ -258,21 +260,21 @@ Encoding Type:  One-Hot
 +--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                ;
-+---------------------------------------+-------------------------------------------+
-; Register name                         ; Reason for Removal                        ;
-+---------------------------------------+-------------------------------------------+
-; lcd_driver:comb_4|lcd_rw              ; Stuck at GND due to stuck port data_in    ;
-; lcd_display_string:STR|out[7]         ; Merged with lcd_display_string:STR|out[6] ;
-; lcd_display_string:STR|out[6]         ; Stuck at GND due to stuck port data_in    ;
-; lcd_driver:comb_4|state~13            ; Lost fanout                               ;
-; lcd_driver:comb_4|state~14            ; Lost fanout                               ;
-; lcd_driver:comb_4|state~15            ; Lost fanout                               ;
-; en_clk:U0|cnt_en_1hz[0]               ; Merged with en_clk_lcd:LCLK|cnt_en[0]     ;
-; en_clk:U0|cnt_en_1hz[1]               ; Merged with en_clk_lcd:LCLK|cnt_en[1]     ;
-; Total Number of Removed Registers = 8 ;                                           ;
-+---------------------------------------+-------------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++---------------------------------------+-----------------------------------------+
+; Register name                         ; Reason for Removal                      ;
++---------------------------------------+-----------------------------------------+
+; lcd_driver:DRV|lcd_rw                 ; Stuck at GND due to stuck port data_in  ;
+; lcd_display_list:STL|out[7]           ; Merged with lcd_display_list:STL|out[6] ;
+; lcd_display_list:STL|out[6]           ; Stuck at GND due to stuck port data_in  ;
+; lcd_driver:DRV|state~13               ; Lost fanout                             ;
+; lcd_driver:DRV|state~14               ; Lost fanout                             ;
+; lcd_driver:DRV|state~15               ; Lost fanout                             ;
+; en_clk:U0|cnt_en_1hz[0]               ; Merged with en_clk_lcd:LCLK|cnt_en[0]   ;
+; en_clk:U0|cnt_en_1hz[1]               ; Merged with en_clk_lcd:LCLK|cnt_en[1]   ;
+; Total Number of Removed Registers = 8 ;                                         ;
++---------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -290,66 +292,66 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:comb_4|cnt_en_clk[5] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |digital_clock|watch:TIME|hour_1[3]            ;
-; 38:1               ; 3 bits    ; 75 LEs        ; 18 LEs               ; 57 LEs                 ; Yes        ; |digital_clock|lcd_display_string:STR|out[6]   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:comb_4|state         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[5] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |digital_clock|watch:TIME0|hour_1[3]        ;
+; 38:1               ; 3 bits    ; 75 LEs        ; 18 LEs               ; 57 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[6]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: lcd_driver:comb_4 ;
-+----------------+---------+-------------------------------------+
-; Parameter Name ; Value   ; Type                                ;
-+----------------+---------+-------------------------------------+
-; IDLE           ; 0000    ; Unsigned Binary                     ;
-; FUNC_SET       ; 0001    ; Unsigned Binary                     ;
-; DISP_OFF       ; 0010    ; Unsigned Binary                     ;
-; DISP_CLEAR     ; 0011    ; Unsigned Binary                     ;
-; DISP_ON        ; 0100    ; Unsigned Binary                     ;
-; MODE_SET       ; 0101    ; Unsigned Binary                     ;
-; PRINT_STRING   ; 0110    ; Unsigned Binary                     ;
-; LINE2          ; 0111    ; Unsigned Binary                     ;
-; RETURN_HOME    ; 1000    ; Unsigned Binary                     ;
-; T_PW           ; 2499999 ; Signed Integer                      ;
-+----------------+---------+-------------------------------------+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd_driver:DRV ;
++----------------+---------+----------------------------------+
+; Parameter Name ; Value   ; Type                             ;
++----------------+---------+----------------------------------+
+; IDLE           ; 0000    ; Unsigned Binary                  ;
+; FUNC_SET       ; 0001    ; Unsigned Binary                  ;
+; DISP_OFF       ; 0010    ; Unsigned Binary                  ;
+; DISP_CLEAR     ; 0011    ; Unsigned Binary                  ;
+; DISP_ON        ; 0100    ; Unsigned Binary                  ;
+; MODE_SET       ; 0101    ; Unsigned Binary                  ;
+; PRINT_STRING   ; 0110    ; Unsigned Binary                  ;
+; LINE2          ; 0111    ; Unsigned Binary                  ;
+; RETURN_HOME    ; 1000    ; Unsigned Binary                  ;
+; T_PW           ; 2499999 ; Signed Integer                   ;
++----------------+---------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "watch:TIME"                                                                           ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; en_day ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW3"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "debouncer_clk:SW2"     ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; out  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW2"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "debouncer_clk:SW1"     ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; out  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW1"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U4"                                                                               ;
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U4"                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -359,7 +361,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U3"                                                                               ;
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U3"                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -369,7 +371,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U2"                                                                               ;
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U2"                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -379,7 +381,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debouncer_clk:SW0|d_ff:U1"                                                                               ;
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U1"                                                          ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                                                  ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -388,13 +390,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "debouncer_clk:SW0"     ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; out  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_display_list:STL|debouncer_clk:SW0"                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "watch_date:TIME1"                                                                                                                                ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; year     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; month    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; day      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; set_date ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; bin_date ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -402,7 +417,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 16                          ;
+; boundary_port         ; 17                          ;
 ; cycloneiii_ff         ; 131                         ;
 ;     CLR               ; 84                          ;
 ;     CLR SLD           ; 22                          ;
@@ -429,7 +444,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -439,71 +454,74 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 30 16:15:10 2021
+    Info: Processing started: Sun May 30 18:00:40 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file digital_clock.v
     Info (12023): Found entity 1: digital_clock File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file date.v
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(27): created implicit net for "rstn" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 27
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(32): created implicit net for "en_1hz" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 32
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(61): created implicit net for "en_day" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 61
-Critical Warning (10846): Verilog HDL Instantiation warning at digital_clock.v(90): instance has no name File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 90
+Info (12021): Found 1 design units, including 1 entities, in source file watch_date.v
+    Info (12023): Found entity 1: watch_date File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(28): created implicit net for "rstn" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(33): created implicit net for "en_1hz" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 33
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(44): created implicit net for "en_day" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 44
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
 Warning (12125): Using design file en_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v Line: 1
-Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 32
-Warning (12125): Using design file debouncer_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: debouncer_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 2
-Info (12128): Elaborating entity "debouncer_clk" for hierarchy "debouncer_clk:SW0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 38
-Warning (12125): Using design file clk_div.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: clk_div File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v Line: 1
-Info (12128): Elaborating entity "clk_div" for hierarchy "debouncer_clk:SW0|clk_div:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 20
-Warning (12125): Using design file d_ff.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: d_ff File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v Line: 1
-Info (12128): Elaborating entity "d_ff" for hierarchy "debouncer_clk:SW0|d_ff:U1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 27
+Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 33
 Warning (12125): Using design file watch.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: watch File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v Line: 1
-Info (12128): Elaborating entity "watch" for hierarchy "watch:TIME" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 61
+Info (12128): Elaborating entity "watch" for hierarchy "watch:TIME0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 44
 Warning (10230): Verilog HDL assignment warning at watch.v(35): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v Line: 35
 Warning (10230): Verilog HDL assignment warning at watch.v(52): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v Line: 52
 Warning (10230): Verilog HDL assignment warning at watch.v(69): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v Line: 69
 Warning (10230): Verilog HDL assignment warning at watch.v(86): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v Line: 86
 Warning (10230): Verilog HDL assignment warning at watch.v(108): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v Line: 108
 Warning (10230): Verilog HDL assignment warning at watch.v(124): truncated value with size 32 to match size of target (2) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch.v Line: 124
+Info (12128): Elaborating entity "watch_date" for hierarchy "watch_date:TIME1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 52
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk_lcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v Line: 1
-Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 66
-Warning (12125): Using design file lcd_display_string.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: lcd_display_string File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_string.v Line: 1
-Info (12128): Elaborating entity "lcd_display_string" for hierarchy "lcd_display_string:STR" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 79
+Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 57
+Warning (12125): Using design file lcd_display_list.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: lcd_display_list File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v Line: 1
+Info (12128): Elaborating entity "lcd_display_list" for hierarchy "lcd_display_list:STL" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 70
+Warning (12125): Using design file debouncer_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: debouncer_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 2
+Info (12128): Elaborating entity "debouncer_clk" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v Line: 35
+Warning (12125): Using design file clk_div.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: clk_div File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v Line: 1
+Info (12128): Elaborating entity "clk_div" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0|clk_div:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 20
+Warning (12125): Using design file d_ff.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: d_ff File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v Line: 1
+Info (12128): Elaborating entity "d_ff" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 27
 Warning (12125): Using design file lcd_driver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: lcd_driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 1
-Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:comb_4" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 90
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 81
 Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 201
 Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 48
-Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 12
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw_in[0]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 15
-    Warning (15610): No output dependent on input pin "sw_in[1]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 15
-    Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 15
-Info (21057): Implemented 258 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "sw_in[0]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
+    Warning (15610): No output dependent on input pin "sw_in[1]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
+    Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
+    Warning (15610): No output dependent on input pin "sw_in[3]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
+Info (21057): Implemented 259 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 242 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4775 megabytes
-    Info: Processing ended: Sun May 30 16:15:37 2021
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:49
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Sun May 30 18:00:52 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+
