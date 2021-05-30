@@ -8,10 +8,10 @@ module watch_date(
 	month,
 	day);
 	
-	input					clk,rst;
-	input					en_day;
-	input					set_date;
-	input		[20:0]	bin_date;
+	input						clk,rst;
+	input						en_day;
+	input						set_date;
+	input		[20:0]		bin_date;
 	
 	output	[11:0]		year;
 	output	[3:0]			month;
@@ -33,7 +33,7 @@ module watch_date(
 				4'd2 :	
 						max_date	<= 5'd28;
 				4'd4, 4'd6, 4'd9, 4'd11	:	
-						max_date	<=	5'd30;	// 윤년일 경우 29일 까지
+						max_date	<=	5'd30;까지
 				default : max_date <= 0;
 		endcase
 		
