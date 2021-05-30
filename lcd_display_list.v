@@ -2,33 +2,35 @@ module	lcd_display_list(
 										clk, 
 										rst,
 										sw_in,
-										hun1,
-										ten1,
-										one1,
-										ten2,
-										one2,
-										ten3,
-										one3,
-										ten4,
-										one4,
-										ten5,
-										one5,
-										ten6,
-										one6,
+										hunYear,
+										tenYear,
+										oneYear,
+										tenMonth,
+										oneMonth,
+										tenDay,
+										oneDay,
+										tenHour,
+										oneHour,
+										tenMinute,
+										oneMinute,
+										tenSecond,
+										oneSecond,
 										index,
 										out);
 	
 	input				clk;
 	input				rst;
 	input		[3:0]	sw_in;
-	input		[3:0] hun1, ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, ten6, one6;
+	input		[3:0] hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
+	input		[3:0]	tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
 	input		[4:0] index;
 
 	output	[7:0] out;
 	
 	wire		[3:0]	sw;
 	wire		[4:0] index;
-	wire		[3:0] hun1, ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, ten6, one6;
+	wire		[3:0] hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
+	wire		[3:0]	tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
 	reg		[7:0] out;
 	
 	integer			i;
@@ -65,7 +67,7 @@ module	lcd_display_list(
 		else
 			case (index)
 				00 : out <= 8'h32;
-				01 : case (hun1)
+				01 : case (hunYear)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -77,7 +79,7 @@ module	lcd_display_list(
 						8 : out	<= 8'h38;
 						9 : out	<= 8'h39;
 					endcase
-				02 : case (ten1)
+				02 : case (tenYear)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -89,7 +91,7 @@ module	lcd_display_list(
 						8 : out	<= 8'h38;
 						9 : out	<= 8'h39;
 					endcase
-				03 : case (one1)
+				03 : case (oneYear)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -102,7 +104,7 @@ module	lcd_display_list(
 						9 : out	<= 8'h39;
 					endcase
 				04 : out	<=	8'h2F;
-				05 : case (ten2)
+				05 : case (tenMonth)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -114,7 +116,7 @@ module	lcd_display_list(
 						8 : out	<= 8'h38;
 						9 : out	<= 8'h39;
 					endcase
-				06 : case (one2)
+				06 : case (oneMonth)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -127,7 +129,7 @@ module	lcd_display_list(
 						9 : out	<= 8'h39;
 					endcase
 				07 : out	<=	8'h2F;
-				08 : case (ten3)
+				08 : case (tenDay)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -139,7 +141,7 @@ module	lcd_display_list(
 						8 : out	<= 8'h38;
 						9 : out	<= 8'h39;
 					endcase
-				09 : case (one3)
+				09 : case (oneDay)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -159,7 +161,7 @@ module	lcd_display_list(
 				15 : out	<=	8'h20;
 				
 				// line2
-				16 : case (ten4)
+				16 : case (tenHour)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -171,7 +173,7 @@ module	lcd_display_list(
 						8 : out	<= 8'h38;
 						9 : out	<= 8'h39;
 					endcase
-				17 : case (one4)
+				17 : case (oneHour)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -184,7 +186,7 @@ module	lcd_display_list(
 						9 : out	<= 8'h39;
 					endcase
 				18 : out	<=	8'h3A;
-				19 : case (ten5)
+				19 : case (tenMinute)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -196,7 +198,7 @@ module	lcd_display_list(
 						8 : out	<= 8'h38;
 						9 : out	<= 8'h39;
 					endcase
-				20 : case (one5)
+				20 : case (oneMinute)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -209,7 +211,7 @@ module	lcd_display_list(
 						9 : out	<= 8'h39;
 					endcase
 				21 : out	<=	8'h3A;
-				22 : case (ten6)
+				22 : case (tenSecond)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;
@@ -221,7 +223,7 @@ module	lcd_display_list(
 						8 : out	<= 8'h38;
 						9 : out	<= 8'h39;
 					endcase
-				23 : case (one6)
+				23 : case (oneSecond)
 						0 : out	<=	8'h30;
 						1 : out	<= 8'h31;
 						2 : out	<= 8'h32;

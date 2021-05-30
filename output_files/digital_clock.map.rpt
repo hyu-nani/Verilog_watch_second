@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Mon May 31 01:27:42 2021
+Mon May 31 01:54:42 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -61,7 +61,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 31 01:27:42 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 31 01:54:42 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
@@ -499,7 +499,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -509,7 +509,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 31 01:27:15 2021
+    Info: Processing started: Mon May 31 01:54:13 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -526,6 +526,8 @@ Warning (12125): Using design file en_clk.v, which is not specified as a design 
     Info (12023): Found entity 1: en_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v Line: 1
 Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 32
 Info (12128): Elaborating entity "watch_date" for hierarchy "watch_date:TIME1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 56
+Critical Warning (10169): Verilog HDL warning at watch_date.v(17): the port and data declarations for array port "bin_time" do not specify the same range for each dimension File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 17
+Warning (10359): HDL warning at watch_date.v(27): see declaration for object "bin_time" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 27
 Warning (10762): Verilog HDL Case Statement warning at watch_date.v(65): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 65
 Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(102): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 102
 Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(111): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 111
@@ -538,7 +540,7 @@ Warning (12125): Using design file lcd_display_list.v, which is not specified as
 Info (12128): Elaborating entity "lcd_display_list" for hierarchy "lcd_display_list:STL" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 131
 Warning (12125): Using design file debouncer_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: debouncer_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 2
-Info (12128): Elaborating entity "debouncer_clk" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v Line: 41
+Info (12128): Elaborating entity "debouncer_clk" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v Line: 43
 Warning (12125): Using design file clk_div.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clk_div File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v Line: 1
 Info (12128): Elaborating entity "clk_div" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0|clk_div:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 20
@@ -570,11 +572,11 @@ Info (21057): Implemented 768 device resources after synthesis - the final resou
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 751 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4766 megabytes
-    Info: Processing ended: Mon May 31 01:27:42 2021
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:45
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Mon May 31 01:54:43 2021
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:50
 
 
 +------------------------------------------+

@@ -16,9 +16,9 @@ module	bin2bcd	(
 							
 	always @ (posedge clk or negedge rst) begin
 		if(!rst) begin
-			hun		= 4'd0;
-			ten		= 4'd0;
-			one		= 4'd0;
+			hun	<= 4'd0;
+			ten	<= 4'd0;
+			one	<= 4'd0;
 		end
 		
 		else begin

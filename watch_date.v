@@ -14,7 +14,7 @@ module watch_date(
 	input						clk,rst;
 	input						clk1sec;
 	input						set_time;
-	input		[41:0]		bin_time;
+	input		[47:0]		bin_time;
 	
 	output	[7:0]			year;
 	output	[7:0]			month;
