@@ -123,8 +123,7 @@ module	digital_clock	(
 										.oneSecond	(one6),
 										.index		(index_char),
 										.out			(data_char)	);
-	
-	
+										
 	
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),

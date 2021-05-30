@@ -10,7 +10,6 @@ module	bin2bcd	(
 	input					clk,rst;
 	output		[3:0] hun, ten, one;
 							
-	wire			[7:0]	bin_bcd;
 	reg			[3:0] hun, ten, one;
 	
 	integer 				i;

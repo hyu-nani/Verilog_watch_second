@@ -1,6 +1,6 @@
 vendor_name = ModelSim
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v
-source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/date.v
+source_file = 1, date.v
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v
 source_file = 1, C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v
