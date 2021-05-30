@@ -22,7 +22,7 @@ module	digital_clock	(
 	wire					en_1hz;
 	wire					en_clk;
 	wire			[3:0]	sw_in;
-	// wire			[3:0] hun1, ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, ten6, one6;
+	wire			[3:0] ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, hun6, ten6, one6;
 	
 	assign		rstn = ~rst;
 	
