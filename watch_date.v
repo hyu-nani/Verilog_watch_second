@@ -14,37 +14,38 @@ module watch_date(
 	input						clk,rst;
 	input						clk1sec;
 	input						set_time;
-	input		[20:0]		bin_time;
+	input		[41:0]		bin_time;
 	
-	output	[11:0]		year;
-	output	[3:0]			month;
-	output	[4:0]			day;
-	output	[4:0]			hour;
-	output	[5:0]			minute;
-	output	[5:0]			second;
+	output	[7:0]			year;
+	output	[7:0]			month;
+	output	[7:0]			day;
+	output	[7:0]			hour;
+	output	[7:0]			minute;
+	output	[7:0]			second;
 	
 	wire						set_time;
-	wire		[37:0]		bin_time;
+	wire		[41:0]		bin_time;
 	
-	reg		[11:0]		year;
-	reg		[3:0]			month;
-	reg		[4:0]			day;
-	reg		[4:0]			hour;
-	reg		[5:0]			minute;
-	reg		[5:0]			second;
+	reg		[7:0]			year;
+	reg		[7:0]			month;
+	reg		[7:0]			day;
+	reg		[7:0]			hour;
+	reg		[7:0]			minute;
+	reg		[7:0]			second;
 	
 	reg		[4:0]			max_date;
 	
 	always @(*)
 		case(month)
-				4'd1, 4'd3, 4'd5, 4'd7, 4'd8, 4'd10, 4'd12 :	
+				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
 						max_date	<= 5'd31;
-				4'd2 :	
+				8'd2 :	
 						max_date	<= 5'd28;
-				4'd4, 4'd6, 4'd9, 4'd11	:
+				8'd4, 8'd6, 8'd9, 8'd11	:
 						max_date <=	5'd30;
 				default : max_date <= 0;
 		endcase
+	
 		
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin
@@ -60,9 +61,9 @@ module watch_date(
 			minute	<=	minute;
 			second	<=	second;
 			
-			if (clk1sec) begin
+			if (clk1sec == 1) begin
 				casez({year, month, day, hour, minute, second})
-					{12'd4095, 4'd12, max_date, 5'd23, 6'd59, 6'd59} : begin
+					{8'd255, 8'd12, max_date, 8'd23, 8'd59, 8'd59} : begin
 						year		<= 1'd1;
 						month 	<= 1'd1;
 						day		<= 1'd1;
@@ -71,7 +72,7 @@ module watch_date(
 						second	<=	1'd0;
 					end
 					
-					{12'd?, 4'd12, max_date, 5'd23, 6'd59, 6'd59} : begin
+					{8'd?, 8'd12, max_date, 8'd23, 8'd59, 8'd59} : begin
 						year		<= year + 1'd1;
 						month 	<= 1'd1;
 						day		<= 1'd1;
@@ -80,7 +81,7 @@ module watch_date(
 						second	<=	1'd0;
 					end
 					
-					{12'd?, 4'd?, max_date, 5'd23, 6'd59, 6'd59} : begin
+					{8'd?, 8'd?, max_date, 8'd23, 8'd59, 8'd59} : begin
 						year		<= year;
 						month 	<= month + 1'd1;
 						day		<= 1'd1;
@@ -89,7 +90,7 @@ module watch_date(
 						second	<=	1'd0;
 					end
 					
-					{12'd?, 4'd?, 5'd?, 5'd23, 6'd59, 6'd59} : begin
+					{8'd?, 8'd?, 8'd?, 8'd23, 8'd59, 8'd59} : begin
 						year		<= year; 
 						month 	<= month;
 						day		<= day + 1'd1;
@@ -98,7 +99,7 @@ module watch_date(
 						second	<=	1'd0;
 					end
 					
-					{12'd?, 4'd?, 5'd?, 5'd?, 6'd59, 6'd59} : begin
+					{8'd?, 8'd?, 8'd?, 8'd?, 8'd59, 8'd59} : begin
 						year		<= year; 
 						month 	<= month;
 						day		<= day;
@@ -107,7 +108,7 @@ module watch_date(
 						second	<=	1'd0;
 					end
 					
-					{12'd?, 4'd?, 5'd?, 5'd?, 6'd?, 6'd59} : begin
+					{8'd?, 8'd?, 8'd?, 8'd?, 8'd?, 8'd59} : begin
 						year		<= year; 
 						month 	<= month;
 						day		<= day;

@@ -3,255 +3,39 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.095
-TNS   : -273.642
-
-Type  : Slow 1200mV 85C Model Setup 'watch:TIME0|en_hour_1'
-Slack : -1.107
-TNS   : -3.052
-
-Type  : Slow 1200mV 85C Model Setup 'en_clk:U0|en_1hz'
-Slack : -0.513
-TNS   : -1.860
-
-Type  : Slow 1200mV 85C Model Setup 'watch:TIME0|en_min_1'
-Slack : -0.425
-TNS   : -1.577
-
-Type  : Slow 1200mV 85C Model Setup 'watch:TIME0|en_sec_10'
-Slack : -0.378
-TNS   : -1.099
-
-Type  : Slow 1200mV 85C Model Setup 'watch:TIME0|en_min_10'
-Slack : -0.358
-TNS   : -1.021
-
-Type  : Slow 1200mV 85C Model Setup 'watch:TIME0|en_hour_10'
-Slack : -0.053
-TNS   : -0.085
+Slack : -7.213
+TNS   : -887.051
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.436
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'en_clk:U0|en_1hz'
-Slack : 0.454
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME0|en_hour_1'
-Slack : 0.454
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME0|en_min_1'
-Slack : 0.454
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME0|en_min_10'
-Slack : 0.454
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME0|en_sec_10'
-Slack : 0.454
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'watch:TIME0|en_hour_10'
-Slack : 0.465
+Slack : 0.431
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -160.622
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'en_clk:U0|en_1hz'
-Slack : -1.487
-TNS   : -7.435
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'watch:TIME0|en_hour_1'
-Slack : -1.487
-TNS   : -7.435
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'watch:TIME0|en_min_1'
-Slack : -1.487
-TNS   : -7.435
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'watch:TIME0|en_min_10'
-Slack : -1.487
-TNS   : -5.948
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'watch:TIME0|en_sec_10'
-Slack : -1.487
-TNS   : -5.948
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'watch:TIME0|en_hour_10'
-Slack : -1.487
-TNS   : -2.974
+TNS   : -309.322
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.834
-TNS   : -247.373
-
-Type  : Slow 1200mV 0C Model Setup 'watch:TIME0|en_hour_1'
-Slack : -0.934
-TNS   : -2.445
-
-Type  : Slow 1200mV 0C Model Setup 'en_clk:U0|en_1hz'
-Slack : -0.407
-TNS   : -1.367
-
-Type  : Slow 1200mV 0C Model Setup 'watch:TIME0|en_min_1'
-Slack : -0.287
-TNS   : -1.015
-
-Type  : Slow 1200mV 0C Model Setup 'watch:TIME0|en_sec_10'
-Slack : -0.237
-TNS   : -0.683
-
-Type  : Slow 1200mV 0C Model Setup 'watch:TIME0|en_min_10'
-Slack : -0.218
-TNS   : -0.609
-
-Type  : Slow 1200mV 0C Model Setup 'watch:TIME0|en_hour_10'
-Slack : 0.048
-TNS   : 0.000
+Slack : -6.666
+TNS   : -815.713
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.385
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'watch:TIME0|en_min_1'
-Slack : 0.402
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'watch:TIME0|en_min_10'
-Slack : 0.402
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'watch:TIME0|en_sec_10'
-Slack : 0.402
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'en_clk:U0|en_1hz'
-Slack : 0.403
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'watch:TIME0|en_hour_1'
-Slack : 0.403
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'watch:TIME0|en_hour_10'
-Slack : 0.418
+Slack : 0.381
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -160.622
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'en_clk:U0|en_1hz'
-Slack : -1.487
-TNS   : -7.435
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_hour_1'
-Slack : -1.487
-TNS   : -7.435
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_min_1'
-Slack : -1.487
-TNS   : -7.435
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_min_10'
-Slack : -1.487
-TNS   : -5.948
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_sec_10'
-Slack : -1.487
-TNS   : -5.948
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_hour_10'
-Slack : -1.487
-TNS   : -2.974
+TNS   : -309.322
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.232
-TNS   : -61.061
-
-Type  : Fast 1200mV 0C Model Setup 'watch:TIME0|en_hour_1'
-Slack : 0.109
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'en_clk:U0|en_1hz'
-Slack : 0.328
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'watch:TIME0|en_min_1'
-Slack : 0.370
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'watch:TIME0|en_sec_10'
-Slack : 0.392
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'watch:TIME0|en_min_10'
-Slack : 0.402
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'watch:TIME0|en_hour_10'
-Slack : 0.543
-TNS   : 0.000
+Slack : -2.620
+TNS   : -269.630
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.179
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'watch:TIME0|en_hour_1'
-Slack : 0.187
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'watch:TIME0|en_min_1'
-Slack : 0.187
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'watch:TIME0|en_min_10'
-Slack : 0.187
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'watch:TIME0|en_sec_10'
-Slack : 0.187
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'en_clk:U0|en_1hz'
-Slack : 0.188
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'watch:TIME0|en_hour_10'
-Slack : 0.194
+Slack : 0.178
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -116.023
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'en_clk:U0|en_1hz'
-Slack : -1.000
-TNS   : -5.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_hour_1'
-Slack : -1.000
-TNS   : -5.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_min_1'
-Slack : -1.000
-TNS   : -5.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_min_10'
-Slack : -1.000
-TNS   : -4.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_sec_10'
-Slack : -1.000
-TNS   : -4.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'watch:TIME0|en_hour_10'
-Slack : -1.000
-TNS   : -2.000
+TNS   : -223.157
 
 ------------------------------------------------------------

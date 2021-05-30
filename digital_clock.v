@@ -14,16 +14,15 @@ module	digital_clock	(
 	output				lcd_e;
 	output		[7:0] lcd_data;
 	
-	wire			[11:0]year;
-	wire			[3:0]	month;
-	wire			[4:0]	day;
-	wire			[3:0] sec_1, min_1, hour_1;
-	wire			[2:0] sec_10, min_10;
-	wire			[1:0] hour_10;
+	wire			[7:0] year;
+	wire			[7:0]	month;
+	wire			[7:0]	day, hour, minute, second;
 	wire			[4:0] index_char;
 	wire			[7:0] data_char;
+	wire					en_1hz;
 	wire					en_clk;
 	wire			[3:0]	sw_in;
+	wire			[3:0] hun1, ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, ten6, one6;
 	
 	assign		rstn = ~rst;
 	
@@ -32,7 +31,7 @@ module	digital_clock	(
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
 										
-	watch						TIME0 (
+	/* watch						TIME0 (
 										.clk			(en_1hz),
 										.rst			(rstn),
 										.sec_1		(sec_1),
@@ -41,7 +40,7 @@ module	digital_clock	(
 										.min_10		(min_10),
 										.hour_1		(hour_1),
 										.hour_10		(hour_10),
-										.en_day		(en_day) );
+										.en_day		(en_day) );*/
 	
 	watch_date				TIME1	(
 										.clk			(clk),
@@ -52,27 +51,92 @@ module	digital_clock	(
 										.year			(year),
 										.month		(month),
 										.day			(day),
-										.hour			(),
-										.minute		(),
-										.second		());
+										.hour			(hour),
+										.minute		(minute),
+										.second		(second));
 										
+										
+										
+	bin2bcd				 CVT_year ( 															// 년도
+										.clk			(clk),
+										.bin_bcd		(year),
+										.rst			(rstn),
+										.hun			(hun1),
+										.ten			(ten1),
+										.one			(one1));
+
+										
+	bin2bcd				CVT_month ( 															// 월
+										.clk			(clk),
+										.bin_bcd		(month),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten2),
+										.one			(one2));
+
+										
+	bin2bcd				  CVT_day ( 															// 일
+										.clk			(clk),
+										.bin_bcd		(day),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten3),
+										.one			(one3));
+
+	
+	bin2bcd				  CVT_hour ( 															// 시간
+										.clk			(clk),
+										.bin_bcd		(hour),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten4),
+										.one			(one4));
+
+										
+	bin2bcd				  CVT_minute ( 															// 분
+										.clk			(clk),
+										.bin_bcd		(minute),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten5),
+										.one			(one5));
+
+	
+	bin2bcd				  CVT_second ( 															// 초
+										.clk			(clk),
+										.bin_bcd		(second),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten6),
+										.one			(one6) );
+										
+	lcd_display_list		STL	( 
+										.clk			(clk), 
+										.rst			(rstn), 
+										.sw_in		(sw_in),
+										.hun1			(hun1),
+										.ten1			(ten1),
+										.one1			(one1),
+										.ten2			(ten2),
+										.one2			(one2),
+										.ten3			(ten3),
+										.one3			(one3),
+										.ten4			(ten4),
+										.one4			(one4),
+										.ten5			(ten5),
+										.one5			(one5),
+										.ten6			(ten6),
+										.one6			(one6),
+										.index		(index_char),
+										.out			(data_char)	);
+	
+	
+	
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),
 										.rst			(rstn),
 										.en_clk		(en_clk) );
 										
-	lcd_display_list		STL	( 
-										.clk			(clk), 
-										.rst			(rstn), 
-										.sw_in		(sw_in), 
-										.sec_1		(sec_1),
-										.sec_10		(sec_10),
-										.min_1		(min_1),
-										.min_10		(min_10),
-										.hour_1		(hour_1),
-										.hour_10		(hour_10),
-										.index		(index_char),
-										.out			(data_char)	);
 										
 	lcd_driver				DRV	(	
 										.clk			(clk),
