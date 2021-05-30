@@ -16,12 +16,12 @@ module	bin2bcd	(
 							
 	always @ (posedge clk or negedge rst) begin
 		if(!rst) begin
-			hun		= 0;
-			ten		= 0;
-			one		= 0;
+			hun		= 4'd0;
+			ten		= 4'd0;
+			one		= 4'd0;
 		end
 		
-		else
+		else begin
 			for(i=7; i>=0; i=i-1) begin
 				if(hun >= 5)
 					hun = hun + 3;
@@ -37,6 +37,10 @@ module	bin2bcd	(
 				one = one << 1;
 				one[0] = bin_bcd[i];
 			end
+			hun <= hun;
+			ten <= ten;
+			one <= one;
+		end
 	end
 
 endmodule				

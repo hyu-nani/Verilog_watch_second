@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Mon May 31 00:52:52 2021
+Mon May 31 01:27:42 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -61,7 +61,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 31 00:52:52 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 31 01:27:42 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
@@ -183,22 +183,22 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v    ;         ;
-; watch_date.v                     ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Quartus_Projects/watch/watch_date.v       ;         ;
-; bin2bcd.v                        ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Quartus_Projects/watch/bin2bcd.v          ;         ;
-; en_clk.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Quartus_Projects/watch/en_clk.v           ;         ;
-; lcd_display_list.v               ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Quartus_Projects/watch/lcd_display_list.v ;         ;
-; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Quartus_Projects/watch/debouncer_clk.v    ;         ;
-; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Quartus_Projects/watch/clk_div.v          ;         ;
-; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Quartus_Projects/watch/d_ff.v             ;         ;
-; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Quartus_Projects/watch/en_clk_lcd.v       ;         ;
-; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Quartus_Projects/watch/lcd_driver.v       ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v    ;         ;
+; watch_date.v                     ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v       ;         ;
+; bin2bcd.v                        ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v          ;         ;
+; en_clk.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v           ;         ;
+; lcd_display_list.v               ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v ;         ;
+; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v    ;         ;
+; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v          ;         ;
+; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v             ;         ;
+; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v       ;         ;
+; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v       ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -499,7 +499,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -509,77 +509,77 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 31 00:52:38 2021
+    Info: Processing started: Mon May 31 01:27:15 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file digital_clock.v
-    Info (12023): Found entity 1: digital_clock File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 1
+    Info (12023): Found entity 1: digital_clock File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 1
 Info (12021): Found 0 design units, including 0 entities, in source file date.v
 Info (12021): Found 1 design units, including 1 entities, in source file watch_date.v
-    Info (12023): Found entity 1: watch_date File: C:/intelFPGA_lite/Quartus_Projects/watch/watch_date.v Line: 1
+    Info (12023): Found entity 1: watch_date File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
-    Info (12023): Found entity 1: bin2bcd File: C:/intelFPGA_lite/Quartus_Projects/watch/bin2bcd.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(27): created implicit net for "rstn" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 27
+    Info (12023): Found entity 1: bin2bcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(27): created implicit net for "rstn" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 27
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
 Warning (12125): Using design file en_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: en_clk File: C:/intelFPGA_lite/Quartus_Projects/watch/en_clk.v Line: 1
-Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 32
-Info (12128): Elaborating entity "watch_date" for hierarchy "watch_date:TIME1" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 56
-Warning (10762): Verilog HDL Case Statement warning at watch_date.v(65): can't check case statement for completeness because the case expression has too many possible states File: C:/intelFPGA_lite/Quartus_Projects/watch/watch_date.v Line: 65
-Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(102): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Quartus_Projects/watch/watch_date.v Line: 102
-Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(111): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Quartus_Projects/watch/watch_date.v Line: 111
-Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:CVT_year" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 66
-Warning (10230): Verilog HDL assignment warning at bin2bcd.v(27): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Quartus_Projects/watch/bin2bcd.v Line: 27
-Warning (10230): Verilog HDL assignment warning at bin2bcd.v(29): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Quartus_Projects/watch/bin2bcd.v Line: 29
-Warning (10230): Verilog HDL assignment warning at bin2bcd.v(31): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Quartus_Projects/watch/bin2bcd.v Line: 31
+    Info (12023): Found entity 1: en_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v Line: 1
+Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 32
+Info (12128): Elaborating entity "watch_date" for hierarchy "watch_date:TIME1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 56
+Warning (10762): Verilog HDL Case Statement warning at watch_date.v(65): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 65
+Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(102): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 102
+Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(111): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 111
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:CVT_year" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 66
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(27): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 27
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(29): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 29
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(31): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 31
 Warning (12125): Using design file lcd_display_list.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: lcd_display_list File: C:/intelFPGA_lite/Quartus_Projects/watch/lcd_display_list.v Line: 1
-Info (12128): Elaborating entity "lcd_display_list" for hierarchy "lcd_display_list:STL" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 131
+    Info (12023): Found entity 1: lcd_display_list File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v Line: 1
+Info (12128): Elaborating entity "lcd_display_list" for hierarchy "lcd_display_list:STL" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 131
 Warning (12125): Using design file debouncer_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: debouncer_clk File: C:/intelFPGA_lite/Quartus_Projects/watch/debouncer_clk.v Line: 2
-Info (12128): Elaborating entity "debouncer_clk" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0" File: C:/intelFPGA_lite/Quartus_Projects/watch/lcd_display_list.v Line: 41
+    Info (12023): Found entity 1: debouncer_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 2
+Info (12128): Elaborating entity "debouncer_clk" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_display_list.v Line: 41
 Warning (12125): Using design file clk_div.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: clk_div File: C:/intelFPGA_lite/Quartus_Projects/watch/clk_div.v Line: 1
-Info (12128): Elaborating entity "clk_div" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0|clk_div:U0" File: C:/intelFPGA_lite/Quartus_Projects/watch/debouncer_clk.v Line: 20
+    Info (12023): Found entity 1: clk_div File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v Line: 1
+Info (12128): Elaborating entity "clk_div" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0|clk_div:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 20
 Warning (12125): Using design file d_ff.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: d_ff File: C:/intelFPGA_lite/Quartus_Projects/watch/d_ff.v Line: 1
-Info (12128): Elaborating entity "d_ff" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U1" File: C:/intelFPGA_lite/Quartus_Projects/watch/debouncer_clk.v Line: 27
+    Info (12023): Found entity 1: d_ff File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v Line: 1
+Info (12128): Elaborating entity "d_ff" for hierarchy "lcd_display_list:STL|debouncer_clk:SW0|d_ff:U1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 27
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: en_clk_lcd File: C:/intelFPGA_lite/Quartus_Projects/watch/en_clk_lcd.v Line: 1
-Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 138
+    Info (12023): Found entity 1: en_clk_lcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v Line: 1
+Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 138
 Warning (12125): Using design file lcd_driver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: lcd_driver File: C:/intelFPGA_lite/Quartus_Projects/watch/lcd_driver.v Line: 1
-Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 150
-Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/intelFPGA_lite/Quartus_Projects/watch/lcd_driver.v Line: 201
-Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/intelFPGA_lite/Quartus_Projects/watch/lcd_driver.v Line: 48
+    Info (12023): Found entity 1: lcd_driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 1
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 150
+Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 201
+Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 48
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 13
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Quartus_Projects/watch/output_files/digital_clock.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw_in[0]" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 11
-    Warning (15610): No output dependent on input pin "sw_in[1]" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 11
-    Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 11
-    Warning (15610): No output dependent on input pin "sw_in[3]" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 11
+    Warning (15610): No output dependent on input pin "sw_in[0]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
+    Warning (15610): No output dependent on input pin "sw_in[1]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
+    Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
+    Warning (15610): No output dependent on input pin "sw_in[3]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
 Info (21057): Implemented 768 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 751 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Mon May 31 00:52:52 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 4766 megabytes
+    Info: Processing ended: Mon May 31 01:27:42 2021
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:45
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/intelFPGA_lite/Quartus_Projects/watch/output_files/digital_clock.map.smsg.
+The suppressed messages can be found in C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg.
 
 
