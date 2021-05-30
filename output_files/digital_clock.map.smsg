@@ -1,3 +1,3 @@
-Warning (10273): Verilog HDL warning at watch_date.v(59): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 59
-Warning (10273): Verilog HDL warning at watch_date.v(65): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 65
-Info (10281): Verilog HDL Declaration information at lcd_driver.v(34): object "state" differs only in case from object "STATE" in the same scope File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 34
+Warning (10273): Verilog HDL warning at watch_date.v(74): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 74
+Warning (10273): Verilog HDL warning at watch_date.v(83): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 83
+Warning (10273): Verilog HDL warning at watch_date.v(92): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 92

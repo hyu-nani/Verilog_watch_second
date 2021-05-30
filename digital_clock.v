@@ -44,12 +44,18 @@ module	digital_clock	(
 										.en_day		(en_day) );
 	
 	watch_date				TIME1	(
-										.clk			(en_day),
+										.clk			(clk),
+										.en_1hz		(en_1hz),
 										.rst			(rstn),
 										.en_day		(en_day),
+										.set_time	(1'b0),
+										.bin_time	(),
 										.year			(year),
 										.month		(month),
-										.day			(day));
+										.day			(day),
+										.hour			(),
+										.minute		(),
+										.second		());
 										
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),

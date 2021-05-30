@@ -1,9 +1,9 @@
 module watch_date(
 	clk,
+	en_1hz,
 	rst,
-	en_day,
-	set_date,
-	bin_date,
+	set_time,
+	bin_time,
 	year,
 	month,
 	day,
@@ -12,9 +12,9 @@ module watch_date(
 	second);
 	
 	input						clk,rst;
-	input						en_day;
-	input						set_date;
-	input		[20:0]		bin_date;
+	input						en_1hz;
+	input						set_time;
+	input		[20:0]		bin_time;
 	
 	output	[11:0]		year;
 	output	[3:0]			month;
@@ -23,9 +23,8 @@ module watch_date(
 	output	[5:0]			minute;
 	output	[5:0]			second;
 	
-	wire						en_day;
-	wire						set_date;
-	wire		[20:0]		bin_date;
+	wire						set_time;
+	wire		[37:0]		bin_time;
 	
 	reg		[11:0]		year;
 	reg		[3:0]			month;
@@ -33,6 +32,7 @@ module watch_date(
 	reg		[4:0]			hour;
 	reg		[5:0]			minute;
 	reg		[5:0]			second;
+	
 	reg		[4:0]			max_date;
 	
 	always @(*)
@@ -41,23 +41,26 @@ module watch_date(
 						max_date	<= 5'd31;
 				4'd2 :	
 						max_date	<= 5'd28;
-				4'd4, 4'd6, 4'd9, 4'd11	:	
-						max_date	<=	5'd30;까지
+				4'd4, 4'd6, 4'd9, 4'd11	:
+						max_date <=	5'd30;
 				default : max_date <= 0;
 		endcase
 		
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin
-			{year, month, day} <= 0;
+			{year, month, day, hour, minute, second} <= 0;
 		end
-		else if (set_date)
-			{year, month, day}	<= bin_date;
+		else if (set_time)
+			{year, month, day, hour, minute, second}	<= bin_time;
 		else begin
-			year 	<= year;
-			month	<= month;
+			year 		<= year;
+			month		<= month;
 			day		<= day;
+			hour		<= hour;
+			minute	<=	minute;
+			second	<=	second;
 			
-			if (en_day) begin
+			if (clk_1hz) begin
 				casez({year, month, day, hour, minute, second})
 					{12'd4095, 4'd12, max_date, 5'd23, 6'd59, 6'd59} : begin
 						year		<= 1'd1;
