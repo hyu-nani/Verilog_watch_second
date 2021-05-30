@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Mon May 31 02:20:50 2021
+Mon May 31 02:54:33 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,15 +63,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 31 02:20:50 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 31 02:54:33 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 706                                         ;
-;     Total combinational functions  ; 692                                         ;
-;     Dedicated logic registers      ; 203                                         ;
-; Total registers                    ; 203                                         ;
+; Total logic elements               ; 466                                         ;
+;     Total combinational functions  ; 452                                         ;
+;     Dedicated logic registers      ; 188                                         ;
+; Total registers                    ; 188                                         ;
 ; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -208,20 +208,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 706       ;
+; Estimated Total logic elements              ; 466       ;
 ;                                             ;           ;
-; Total combinational functions               ; 692       ;
+; Total combinational functions               ; 452       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 490       ;
-;     -- 3 input functions                    ; 43        ;
-;     -- <=2 input functions                  ; 159       ;
+;     -- 4 input functions                    ; 288       ;
+;     -- 3 input functions                    ; 15        ;
+;     -- <=2 input functions                  ; 149       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 576       ;
+;     -- normal mode                          ; 336       ;
 ;     -- arithmetic mode                      ; 116       ;
 ;                                             ;           ;
-; Total registers                             ; 203       ;
-;     -- Dedicated logic registers            ; 203       ;
+; Total registers                             ; 188       ;
+;     -- Dedicated logic registers            ; 188       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 17        ;
@@ -229,9 +229,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 203       ;
-; Total fan-out                               ; 3157      ;
-; Average fan-out                             ; 3.40      ;
+; Maximum fan-out                             ; 188       ;
+; Total fan-out                               ; 2193      ;
+; Average fan-out                             ; 3.25      ;
 +---------------------------------------------+-----------+
 
 
@@ -240,18 +240,18 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name      ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
-; |digital_clock             ; 692 (1)             ; 203 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |digital_clock                      ; digital_clock    ; work         ;
-;    |bin2bcd:CVT_day|       ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_day      ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_hour|      ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_hour     ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_minute|    ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_minute   ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_month|     ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_month    ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_second|    ; 56 (56)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_second   ; bin2bcd          ; work         ;
+; |digital_clock             ; 452 (1)             ; 188 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |digital_clock                      ; digital_clock    ; work         ;
+;    |bin2bcd:CVT_day|       ; 25 (25)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_day      ; bin2bcd          ; work         ;
+;    |bin2bcd:CVT_hour|      ; 25 (25)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_hour     ; bin2bcd          ; work         ;
+;    |bin2bcd:CVT_minute|    ; 25 (25)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_minute   ; bin2bcd          ; work         ;
+;    |bin2bcd:CVT_month|     ; 25 (25)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_month    ; bin2bcd          ; work         ;
+;    |bin2bcd:CVT_second|    ; 25 (25)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_second   ; bin2bcd          ; work         ;
 ;    |bin2bcd:CVT_year|      ; 57 (57)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_year     ; bin2bcd          ; work         ;
 ;    |en_clk:U0|             ; 39 (39)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0            ; en_clk           ; work         ;
 ;    |en_clk_lcd:LCLK|       ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK      ; en_clk_lcd       ; work         ;
-;    |lcd_display_list:STL|  ; 103 (103)           ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_list:STL ; lcd_display_list ; work         ;
-;    |lcd_driver:DRV|        ; 68 (68)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV       ; lcd_driver       ; work         ;
-;    |watch_date:TIME1|      ; 115 (115)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_date:TIME1     ; watch_date       ; work         ;
+;    |lcd_display_list:STL|  ; 20 (20)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_list:STL ; lcd_display_list ; work         ;
+;    |lcd_driver:DRV|        ; 65 (65)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV       ; lcd_driver       ; work         ;
+;    |watch_date:TIME1|      ; 116 (116)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_date:TIME1     ; watch_date       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -296,12 +296,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 203   ;
+; Total registers                              ; 188   ;
 ; Number of registers using Synchronous Clear  ; 18    ;
-; Number of registers using Synchronous Load   ; 23    ;
-; Number of registers using Asynchronous Clear ; 203   ;
+; Number of registers using Synchronous Load   ; 22    ;
+; Number of registers using Asynchronous Clear ; 188   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 76    ;
+; Number of registers using Clock Enable       ; 71    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -311,9 +311,7 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[5] ;
-; 44:1               ; 3 bits    ; 87 LEs        ; 9 LEs                ; 78 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[6]  ;
-; 116:1              ; 3 bits    ; 231 LEs       ; 18 LEs               ; 213 LEs                ; Yes        ; |digital_clock|lcd_display_list:STL|out[3]  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[8] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
@@ -413,13 +411,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "lcd_display_list:STL"                                                                                                                             ;
-+---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                         ;
-+---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; hunYear ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "hunYear[3..1]" will be connected to GND. ;
-+---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_display_list:STL"                                                                                                                                 ;
++-----------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                           ;
++-----------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+; hunYear   ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "hunYear[3..1]" will be connected to GND.   ;
+; tenYear   ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "tenYear[3..1]" will be connected to GND.   ;
+; oneYear   ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "oneYear[3..1]" will be connected to GND.   ;
+; tenMonth  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "tenMonth[3..1]" will be connected to GND.  ;
+; oneMonth  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "oneMonth[3..1]" will be connected to GND.  ;
+; tenDay    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "tenDay[3..1]" will be connected to GND.    ;
+; oneDay    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "oneDay[3..1]" will be connected to GND.    ;
+; tenHour   ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "tenHour[3..1]" will be connected to GND.   ;
+; oneHour   ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "oneHour[3..1]" will be connected to GND.   ;
+; tenMinute ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "tenMinute[3..1]" will be connected to GND. ;
+; oneMinute ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "oneMinute[3..1]" will be connected to GND. ;
+; tenSecond ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "tenSecond[3..1]" will be connected to GND. ;
+; oneSecond ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "oneSecond[3..1]" will be connected to GND. ;
++-----------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -428,52 +438,64 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port ; Type   ; Severity ; Details                                                                                                                ;
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 ; hun  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "hun[3..1]" have no fanouts ;
+; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ten[3..1]" have no fanouts ;
+; one  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "one[3..1]" have no fanouts ;
 +------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_month"     ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_month"                                                                                                     ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                 ;
+; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ten[3..1]" have no fanouts ;
+; one  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "one[3..1]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_day"       ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_day"                                                                                                       ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                 ;
+; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ten[3..1]" have no fanouts ;
+; one  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "one[3..1]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_hour"      ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_hour"                                                                                                      ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                 ;
+; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ten[3..1]" have no fanouts ;
+; one  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "one[3..1]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_minute"    ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_minute"                                                                                                    ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                 ;
+; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ten[3..1]" have no fanouts ;
+; one  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "one[3..1]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_second"    ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_second"                                                                                                    ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                 ;
+; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ten[3..1]" have no fanouts ;
+; one  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "one[3..1]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -492,25 +514,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 17                          ;
-; cycloneiii_ff         ; 203                         ;
-;     CLR               ; 105                         ;
+; cycloneiii_ff         ; 188                         ;
+;     CLR               ; 95                          ;
 ;     CLR SLD           ; 22                          ;
-;     ENA CLR           ; 57                          ;
+;     ENA CLR           ; 53                          ;
 ;     ENA CLR SCLR      ; 18                          ;
-;     ENA CLR SLD       ; 1                           ;
-; cycloneiii_lcell_comb ; 692                         ;
+; cycloneiii_lcell_comb ; 452                         ;
 ;     arith             ; 116                         ;
 ;         2 data inputs ; 113                         ;
 ;         3 data inputs ; 3                           ;
-;     normal            ; 576                         ;
+;     normal            ; 336                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 11                          ;
-;         2 data inputs ; 34                          ;
-;         3 data inputs ; 40                          ;
-;         4 data inputs ; 490                         ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 288                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 5.56                        ;
+; Average LUT depth     ; 4.74                        ;
 +-----------------------+-----------------------------+
 
 
@@ -519,7 +540,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -529,7 +550,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 31 02:20:36 2021
+    Info: Processing started: Mon May 31 02:54:22 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -541,7 +562,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file watch_d
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
     Info (12023): Found entity 1: bin2bcd File: C:/intelFPGA_lite/Quartus_Projects/watch/bin2bcd.v Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(27): created implicit net for "rstn" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 27
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(63): created implicit net for "ten1" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 63
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(64): created implicit net for "one1" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 64
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(71): created implicit net for "ten2" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 71
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(72): created implicit net for "one2" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 72
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(79): created implicit net for "ten3" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 79
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(80): created implicit net for "one3" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 80
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(87): created implicit net for "ten4" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 87
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(88): created implicit net for "one4" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 88
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(95): created implicit net for "ten5" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 95
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(96): created implicit net for "one5" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 96
 Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(102): created implicit net for "hun6" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 102
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(103): created implicit net for "ten6" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 103
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(104): created implicit net for "one6" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 104
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
 Warning (12125): Using design file en_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk File: C:/intelFPGA_lite/Quartus_Projects/watch/en_clk.v Line: 1
@@ -576,7 +609,7 @@ Warning (12125): Using design file lcd_driver.v, which is not specified as a des
 Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 144
 Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/intelFPGA_lite/Quartus_Projects/watch/lcd_driver.v Line: 201
 Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/intelFPGA_lite/Quartus_Projects/watch/lcd_driver.v Line: 48
-Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
@@ -589,14 +622,14 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw_in[1]" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 11
     Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 11
     Warning (15610): No output dependent on input pin "sw_in[3]" File: C:/intelFPGA_lite/Quartus_Projects/watch/digital_clock.v Line: 11
-Info (21057): Implemented 727 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 485 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 710 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4765 megabytes
-    Info: Processing ended: Mon May 31 02:20:50 2021
-    Info: Elapsed time: 00:00:14
+    Info (21061): Implemented 468 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 4763 megabytes
+    Info: Processing ended: Mon May 31 02:54:33 2021
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:23
 
 
