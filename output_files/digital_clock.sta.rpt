@@ -1,5 +1,5 @@
 Timing Analyzer report for digital_clock
-Mon May 31 00:53:03 2021
+Mon May 31 02:21:04 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -98,13 +98,13 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.14        ;
+; Average used               ; 1.10        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.7%      ;
-;     Processors 3-4         ;   2.2%      ;
+;     Processor 2            ;   6.5%      ;
+;     Processors 3-4         ;   1.6%      ;
 +----------------------------+-------------+
 
 
@@ -122,7 +122,7 @@ refer to the applicable agreement for further details.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 121.76 MHz ; 121.76 MHz      ; clk        ;      ;
+; 122.03 MHz ; 122.03 MHz      ; clk        ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -138,7 +138,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; clk   ; -7.213 ; -887.051           ;
+; clk   ; -7.195 ; -854.004           ;
 +-------+--------+--------------------+
 
 
@@ -147,7 +147,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; clk   ; 0.431 ; 0.000              ;
+; clk   ; 0.433 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -168,116 +168,116 @@ No paths to report.
 +-------+--------+----------------------------------+
 ; Clock ; Slack  ; End Point TNS                    ;
 +-------+--------+----------------------------------+
-; clk   ; -3.000 ; -309.322                         ;
+; clk   ; -3.000 ; -304.861                         ;
 +-------+--------+----------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'clk'                                                                                                    ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                  ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; -7.213 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 8.133      ;
-; -7.190 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.110      ;
-; -7.184 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.104      ;
-; -7.182 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 8.102      ;
-; -7.168 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.088      ;
-; -7.162 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.082      ;
-; -7.158 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 8.078      ;
-; -7.153 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.073      ;
-; -7.131 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.051      ;
-; -7.130 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 8.050      ;
-; -7.130 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.575     ; 7.556      ;
-; -7.127 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 8.047      ;
-; -7.122 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 8.043      ;
-; -7.099 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 8.020      ;
-; -7.097 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.080     ; 8.018      ;
-; -7.093 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.013      ;
-; -7.091 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.575     ; 7.517      ;
-; -7.076 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.997      ;
-; -7.075 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.995      ;
-; -7.071 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.991      ;
-; -7.060 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.981      ;
-; -7.055 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.975      ;
-; -7.042 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.962      ;
-; -7.037 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.958      ;
-; -7.030 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.950      ;
-; -7.029 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.949      ;
-; -7.024 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.944      ;
-; -7.017 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.937      ;
-; -7.004 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.924      ;
-; -6.993 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.913      ;
-; -6.955 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.875      ;
-; -6.952 ; bin2bcd:CVT_hour|ten[1]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.872      ;
-; -6.949 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.869      ;
-; -6.941 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.861      ;
-; -6.935 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.856      ;
-; -6.922 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.843      ;
-; -6.918 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.838      ;
-; -6.917 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.838      ;
-; -6.914 ; bin2bcd:CVT_second|one[2]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.091     ; 7.824      ;
-; -6.913 ; bin2bcd:CVT_hour|ten[1]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.833      ;
-; -6.909 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.830      ;
-; -6.904 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.825      ;
-; -6.891 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.812      ;
-; -6.886 ; bin2bcd:CVT_second|ten[3]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.578     ; 7.309      ;
-; -6.884 ; bin2bcd:CVT_hour|ten[0]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.805      ;
-; -6.881 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.801      ;
-; -6.872 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.792      ;
-; -6.859 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.779      ;
-; -6.858 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.778      ;
-; -6.858 ; bin2bcd:CVT_second|ten[1]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.578     ; 7.281      ;
-; -6.858 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.778      ;
-; -6.850 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.770      ;
-; -6.848 ; bin2bcd:CVT_second|one[0]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.091     ; 7.758      ;
-; -6.845 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.765      ;
-; -6.845 ; bin2bcd:CVT_hour|ten[0]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.766      ;
-; -6.842 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.762      ;
-; -6.842 ; bin2bcd:CVT_second|one[3]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.091     ; 7.752      ;
-; -6.838 ; bin2bcd:CVT_hour|ten[3]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.758      ;
-; -6.836 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.757      ;
-; -6.832 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.752      ;
-; -6.825 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.068     ; 7.758      ;
-; -6.820 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.740      ;
-; -6.819 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.068     ; 7.752      ;
-; -6.811 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.731      ;
-; -6.799 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.719      ;
-; -6.799 ; bin2bcd:CVT_hour|ten[3]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.719      ;
-; -6.797 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.718      ;
-; -6.788 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.068     ; 7.721      ;
-; -6.780 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.700      ;
-; -6.777 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.697      ;
-; -6.765 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; 0.382      ; 8.148      ;
-; -6.757 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[2]  ; clk          ; clk         ; 1.000        ; 0.382      ; 8.140      ;
-; -6.757 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.691      ;
-; -6.747 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.394      ; 8.142      ;
-; -6.744 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; 0.382      ; 8.127      ;
-; -6.740 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; -0.101     ; 7.640      ;
-; -6.738 ; watch_date:TIME1|second[7] ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.071     ; 7.668      ;
-; -6.732 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.666      ;
-; -6.728 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.648      ;
-; -6.728 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.068     ; 7.661      ;
-; -6.723 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.643      ;
-; -6.717 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.637      ;
-; -6.716 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|hun[1]   ; clk          ; clk         ; 1.000        ; 0.394      ; 8.111      ;
-; -6.710 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; 0.382      ; 8.093      ;
-; -6.709 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.394      ; 8.104      ;
-; -6.708 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; 0.383      ; 8.092      ;
-; -6.702 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[2]  ; clk          ; clk         ; 1.000        ; 0.382      ; 8.085      ;
-; -6.699 ; bin2bcd:CVT_second|one[1]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.091     ; 7.609      ;
-; -6.696 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.617      ;
-; -6.696 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.616      ;
-; -6.691 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|hun[1]   ; clk          ; clk         ; 1.000        ; 0.394      ; 8.086      ;
-; -6.689 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; 0.382      ; 8.072      ;
-; -6.689 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.395      ; 8.085      ;
-; -6.687 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.607      ;
-; -6.686 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.606      ;
-; -6.686 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.394      ; 8.081      ;
-; -6.685 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.394      ; 8.080      ;
-; -6.684 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.394      ; 8.079      ;
-; -6.683 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.080     ; 7.604      ;
-; -6.671 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.395      ; 8.067      ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clk'                                                                                                   ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -7.195 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.115      ;
+; -7.191 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.111      ;
+; -7.182 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.102      ;
+; -7.178 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.098      ;
+; -7.170 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.090      ;
+; -7.163 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.083      ;
+; -7.157 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.077      ;
+; -7.153 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.073      ;
+; -7.150 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.070      ;
+; -7.149 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.069      ;
+; -7.128 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.048      ;
+; -7.121 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 8.041      ;
+; -7.114 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 8.035      ;
+; -7.070 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.991      ;
+; -7.061 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.982      ;
+; -7.002 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.927      ;
+; -6.993 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.918      ;
+; -6.989 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.914      ;
+; -6.988 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.908      ;
+; -6.980 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.905      ;
+; -6.975 ; bin2bcd:CVT_month|ten[2]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.576     ; 7.400      ;
+; -6.973 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.893      ;
+; -6.969 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.889      ;
+; -6.966 ; bin2bcd:CVT_month|ten[2]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.576     ; 7.391      ;
+; -6.958 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.883      ;
+; -6.953 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.873      ;
+; -6.948 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.868      ;
+; -6.945 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.870      ;
+; -6.941 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.861      ;
+; -6.932 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.853      ;
+; -6.927 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.852      ;
+; -6.922 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.843      ;
+; -6.919 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.840      ;
+; -6.918 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.838      ;
+; -6.918 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.843      ;
+; -6.908 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.829      ;
+; -6.905 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.826      ;
+; -6.905 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.826      ;
+; -6.899 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.087     ; 7.813      ;
+; -6.899 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.087     ; 7.813      ;
+; -6.894 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.815      ;
+; -6.891 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.812      ;
+; -6.883 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.808      ;
+; -6.878 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.799      ;
+; -6.877 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.798      ;
+; -6.869 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.790      ;
+; -6.841 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.762      ;
+; -6.833 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.753      ;
+; -6.822 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.740      ;
+; -6.815 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.735      ;
+; -6.811 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.087     ; 7.725      ;
+; -6.811 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.087     ; 7.725      ;
+; -6.806 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.727      ;
+; -6.806 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.727      ;
+; -6.798 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.718      ;
+; -6.797 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.718      ;
+; -6.793 ; bin2bcd:CVT_month|ten[1]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.080     ; 7.714      ;
+; -6.788 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.709      ;
+; -6.784 ; bin2bcd:CVT_month|ten[1]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.080     ; 7.705      ;
+; -6.780 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.705      ;
+; -6.771 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.696      ;
+; -6.767 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.685      ;
+; -6.763 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.683      ;
+; -6.751 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.672      ;
+; -6.743 ; bin2bcd:CVT_day|one[3]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.661      ;
+; -6.739 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.657      ;
+; -6.736 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.661      ;
+; -6.730 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[3] ; clk          ; clk         ; 1.000        ; 0.394      ; 8.125      ;
+; -6.727 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; -0.081     ; 7.647      ;
+; -6.724 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.642      ;
+; -6.723 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.641      ;
+; -6.722 ; bin2bcd:CVT_minute|one[1] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.643      ;
+; -6.719 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[0]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.640      ;
+; -6.717 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.078     ; 7.640      ;
+; -6.711 ; bin2bcd:CVT_minute|one[1] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.632      ;
+; -6.708 ; bin2bcd:CVT_minute|one[1] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.629      ;
+; -6.699 ; bin2bcd:CVT_month|one[1]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.087     ; 7.613      ;
+; -6.696 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.614      ;
+; -6.694 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; 0.394      ; 8.089      ;
+; -6.690 ; bin2bcd:CVT_month|one[1]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.087     ; 7.604      ;
+; -6.689 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.607      ;
+; -6.688 ; bin2bcd:CVT_day|one[3]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.606      ;
+; -6.685 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[0]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.606      ;
+; -6.684 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.602      ;
+; -6.680 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.601      ;
+; -6.673 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.078     ; 7.596      ;
+; -6.669 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.083     ; 7.587      ;
+; -6.668 ; bin2bcd:CVT_year|ten[0]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.593      ;
+; -6.664 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.078     ; 7.587      ;
+; -6.656 ; bin2bcd:CVT_hour|one[1]   ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.576      ;
+; -6.656 ; bin2bcd:CVT_hour|one[1]   ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.576      ;
+; -6.654 ; bin2bcd:CVT_hour|one[1]   ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.081     ; 7.574      ;
+; -6.652 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|ten[0] ; clk          ; clk         ; 1.000        ; -0.079     ; 7.574      ;
+; -6.646 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|ten[3] ; clk          ; clk         ; 1.000        ; 0.403      ; 8.050      ;
+; -6.638 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[0] ; clk          ; clk         ; 1.000        ; -0.079     ; 7.560      ;
+; -6.634 ; bin2bcd:CVT_day|ten[3]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.080     ; 7.555      ;
+; -6.633 ; bin2bcd:CVT_year|ten[0]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.076     ; 7.558      ;
+; -6.632 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[3] ; clk          ; clk         ; 1.000        ; 0.403      ; 8.036      ;
+; -6.628 ; bin2bcd:CVT_month|ten[3]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.080     ; 7.549      ;
+; -6.626 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|ten[1] ; clk          ; clk         ; 1.000        ; 0.403      ; 8.030      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,106 +285,106 @@ No paths to report.
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.431 ; watch_date:TIME1|day[1]           ; watch_date:TIME1|day[1]           ; clk          ; clk         ; 0.000        ; 0.103      ; 0.746      ;
-; 0.432 ; watch_date:TIME1|month[0]         ; watch_date:TIME1|month[0]         ; clk          ; clk         ; 0.000        ; 0.102      ; 0.746      ;
-; 0.432 ; watch_date:TIME1|month[1]         ; watch_date:TIME1|month[1]         ; clk          ; clk         ; 0.000        ; 0.102      ; 0.746      ;
-; 0.452 ; watch_date:TIME1|month[4]         ; watch_date:TIME1|month[4]         ; clk          ; clk         ; 0.000        ; 0.082      ; 0.746      ;
-; 0.453 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.433 ; watch_date:TIME1|year[1]          ; watch_date:TIME1|year[1]          ; clk          ; clk         ; 0.000        ; 0.101      ; 0.746      ;
+; 0.433 ; watch_date:TIME1|year[2]          ; watch_date:TIME1|year[2]          ; clk          ; clk         ; 0.000        ; 0.101      ; 0.746      ;
+; 0.434 ; watch_date:TIME1|day[0]           ; watch_date:TIME1|day[0]           ; clk          ; clk         ; 0.000        ; 0.100      ; 0.746      ;
+; 0.434 ; watch_date:TIME1|day[1]           ; watch_date:TIME1|day[1]           ; clk          ; clk         ; 0.000        ; 0.100      ; 0.746      ;
 ; 0.453 ; watch_date:TIME1|year[7]          ; watch_date:TIME1|year[7]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|year[5]          ; watch_date:TIME1|year[5]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|year[0]          ; watch_date:TIME1|year[0]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|year[1]          ; watch_date:TIME1|year[1]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|year[2]          ; watch_date:TIME1|year[2]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|year[3]          ; watch_date:TIME1|year[3]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; watch_date:TIME1|year[4]          ; watch_date:TIME1|year[4]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; watch_date:TIME1|year[6]          ; watch_date:TIME1|year[6]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|day[7]           ; watch_date:TIME1|day[7]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|month[2]         ; watch_date:TIME1|month[2]         ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|month[3]         ; watch_date:TIME1|month[3]         ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|month[5]         ; watch_date:TIME1|month[5]         ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|month[6]         ; watch_date:TIME1|month[6]         ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; watch_date:TIME1|year[5]          ; watch_date:TIME1|year[5]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; watch_date:TIME1|year[3]          ; watch_date:TIME1|year[3]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
 ; 0.453 ; watch_date:TIME1|month[7]         ; watch_date:TIME1|month[7]         ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|day[6]           ; watch_date:TIME1|day[6]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|day[5]           ; watch_date:TIME1|day[5]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|day[4]           ; watch_date:TIME1|day[4]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|day[0]           ; watch_date:TIME1|day[0]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|day[2]           ; watch_date:TIME1|day[2]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.453 ; watch_date:TIME1|day[3]           ; watch_date:TIME1|day[3]           ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
-; 0.454 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|state.PRINT_STRING ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
-; 0.454 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
-; 0.491 ; en_clk:U0|cnt_en_1hz[25]          ; en_clk:U0|cnt_en_1hz[25]          ; clk          ; clk         ; 0.000        ; 0.081      ; 0.784      ;
-; 0.510 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.080      ; 0.802      ;
-; 0.517 ; watch_date:TIME1|second[7]        ; watch_date:TIME1|second[7]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.810      ;
-; 0.520 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.100      ; 0.832      ;
-; 0.575 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.080      ; 0.867      ;
-; 0.651 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|data_bus[0]        ; clk          ; clk         ; 0.000        ; 0.080      ; 0.943      ;
-; 0.657 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.080      ; 0.949      ;
-; 0.657 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.080      ; 0.949      ;
-; 0.659 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[3]        ; clk          ; clk         ; 0.000        ; 0.080      ; 0.951      ;
-; 0.691 ; lcd_driver:DRV|state.DISP_OFF     ; lcd_driver:DRV|state.DISP_CLEAR   ; clk          ; clk         ; 0.000        ; 0.080      ; 0.983      ;
-; 0.708 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|state.DISP_ON      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.000      ;
-; 0.717 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|state.MODE_SET     ; clk          ; clk         ; 0.000        ; 0.080      ; 1.009      ;
-; 0.739 ; lcd_driver:DRV|dly_en_clk         ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.081      ; 1.032      ;
-; 0.742 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.034      ;
-; 0.742 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.034      ;
+; 0.453 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|state.PRINT_STRING ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.453 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.081      ; 0.746      ;
+; 0.454 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|year[0]          ; watch_date:TIME1|year[0]          ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|day[7]           ; watch_date:TIME1|day[7]           ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|month[2]         ; watch_date:TIME1|month[2]         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|month[0]         ; watch_date:TIME1|month[0]         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|month[1]         ; watch_date:TIME1|month[1]         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|month[3]         ; watch_date:TIME1|month[3]         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|month[4]         ; watch_date:TIME1|month[4]         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|month[5]         ; watch_date:TIME1|month[5]         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|month[6]         ; watch_date:TIME1|month[6]         ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|day[6]           ; watch_date:TIME1|day[6]           ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|day[5]           ; watch_date:TIME1|day[5]           ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|day[4]           ; watch_date:TIME1|day[4]           ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|day[2]           ; watch_date:TIME1|day[2]           ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.454 ; watch_date:TIME1|day[3]           ; watch_date:TIME1|day[3]           ; clk          ; clk         ; 0.000        ; 0.080      ; 0.746      ;
+; 0.493 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.080      ; 0.785      ;
+; 0.502 ; lcd_driver:DRV|state.RETURN_HOME  ; lcd_driver:DRV|data_bus[7]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.795      ;
+; 0.507 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|state.DISP_ON      ; clk          ; clk         ; 0.000        ; 0.081      ; 0.800      ;
+; 0.510 ; en_clk:U0|cnt_en_1hz[25]          ; en_clk:U0|cnt_en_1hz[25]          ; clk          ; clk         ; 0.000        ; 0.080      ; 0.802      ;
+; 0.522 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.101      ; 0.835      ;
+; 0.540 ; watch_date:TIME1|second[7]        ; watch_date:TIME1|second[7]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.833      ;
+; 0.660 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[3]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.953      ;
+; 0.667 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.081      ; 0.960      ;
+; 0.716 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|state.MODE_SET     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.009      ;
+; 0.725 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.018      ;
+; 0.727 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.020      ;
+; 0.732 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|state.DISP_OFF     ; clk          ; clk         ; 0.000        ; 0.081      ; 1.025      ;
+; 0.734 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.027      ;
+; 0.744 ; lcd_driver:DRV|dly_en_clk         ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.080      ; 1.036      ;
 ; 0.744 ; lcd_driver:DRV|cnt_init[9]        ; lcd_driver:DRV|cnt_init[9]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.036      ;
 ; 0.744 ; lcd_driver:DRV|cnt_init[11]       ; lcd_driver:DRV|cnt_init[11]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.036      ;
-; 0.744 ; lcd_driver:DRV|cnt_en_clk[1]      ; lcd_driver:DRV|cnt_en_clk[1]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.037      ;
-; 0.744 ; en_clk_lcd:LCLK|cnt_en[11]        ; en_clk_lcd:LCLK|cnt_en[11]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.036      ;
 ; 0.744 ; en_clk_lcd:LCLK|cnt_en[3]         ; en_clk_lcd:LCLK|cnt_en[3]         ; clk          ; clk         ; 0.000        ; 0.080      ; 1.036      ;
+; 0.745 ; lcd_driver:DRV|cnt_en_clk[1]      ; lcd_driver:DRV|cnt_en_clk[1]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.037      ;
 ; 0.745 ; lcd_driver:DRV|cnt_init[1]        ; lcd_driver:DRV|cnt_init[1]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.037      ;
 ; 0.745 ; lcd_driver:DRV|cnt_init[8]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.037      ;
-; 0.745 ; en_clk:U0|cnt_en_1hz[18]          ; en_clk:U0|cnt_en_1hz[18]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.038      ;
-; 0.745 ; lcd_driver:DRV|cnt_en_clk[3]      ; lcd_driver:DRV|cnt_en_clk[3]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.038      ;
+; 0.745 ; lcd_driver:DRV|cnt_init[13]       ; lcd_driver:DRV|cnt_init[13]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.037      ;
+; 0.745 ; en_clk_lcd:LCLK|cnt_en[13]        ; en_clk_lcd:LCLK|cnt_en[13]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.037      ;
+; 0.746 ; lcd_driver:DRV|cnt_en_clk[3]      ; lcd_driver:DRV|cnt_en_clk[3]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
 ; 0.746 ; lcd_driver:DRV|cnt_init[0]        ; lcd_driver:DRV|cnt_init[0]        ; clk          ; clk         ; 0.000        ; 0.098      ; 1.056      ;
 ; 0.746 ; lcd_driver:DRV|cnt_init[3]        ; lcd_driver:DRV|cnt_init[3]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
 ; 0.746 ; lcd_driver:DRV|cnt_init[5]        ; lcd_driver:DRV|cnt_init[5]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
 ; 0.746 ; lcd_driver:DRV|cnt_init[6]        ; lcd_driver:DRV|cnt_init[6]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
-; 0.746 ; lcd_driver:DRV|cnt_init[15]       ; lcd_driver:DRV|cnt_init[15]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
 ; 0.746 ; lcd_driver:DRV|cnt_init[17]       ; lcd_driver:DRV|cnt_init[17]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
-; 0.746 ; en_clk:U0|cnt_en_1hz[24]          ; en_clk:U0|cnt_en_1hz[24]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.039      ;
-; 0.746 ; en_clk:U0|cnt_en_1hz[6]           ; en_clk:U0|cnt_en_1hz[6]           ; clk          ; clk         ; 0.000        ; 0.081      ; 1.039      ;
-; 0.746 ; en_clk:U0|cnt_en_1hz[4]           ; en_clk:U0|cnt_en_1hz[4]           ; clk          ; clk         ; 0.000        ; 0.081      ; 1.039      ;
-; 0.746 ; en_clk_lcd:LCLK|cnt_en[8]         ; en_clk_lcd:LCLK|cnt_en[8]         ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
 ; 0.746 ; en_clk_lcd:LCLK|cnt_en[6]         ; en_clk_lcd:LCLK|cnt_en[6]         ; clk          ; clk         ; 0.000        ; 0.080      ; 1.038      ;
-; 0.747 ; lcd_driver:DRV|cnt_init[12]       ; lcd_driver:DRV|cnt_init[12]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
-; 0.747 ; en_clk:U0|cnt_en_1hz[20]          ; en_clk:U0|cnt_en_1hz[20]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; en_clk:U0|cnt_en_1hz[19]          ; en_clk:U0|cnt_en_1hz[19]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; en_clk:U0|cnt_en_1hz[17]          ; en_clk:U0|cnt_en_1hz[17]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; lcd_driver:DRV|cnt_en_clk[2]      ; lcd_driver:DRV|cnt_en_clk[2]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|cnt_en_clk[9]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; lcd_driver:DRV|cnt_en_clk[4]      ; lcd_driver:DRV|cnt_en_clk[4]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; lcd_driver:DRV|cnt_en_clk[5]      ; lcd_driver:DRV|cnt_en_clk[5]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; lcd_driver:DRV|cnt_en_clk[7]      ; lcd_driver:DRV|cnt_en_clk[7]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.040      ;
-; 0.747 ; en_clk_lcd:LCLK|cnt_en[14]        ; en_clk_lcd:LCLK|cnt_en[14]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.747 ; en_clk:U0|cnt_en_1hz[6]           ; en_clk:U0|cnt_en_1hz[6]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.747 ; en_clk:U0|cnt_en_1hz[4]           ; en_clk:U0|cnt_en_1hz[4]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
 ; 0.747 ; en_clk_lcd:LCLK|cnt_en[4]         ; en_clk_lcd:LCLK|cnt_en[4]         ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
-; 0.748 ; lcd_driver:DRV|cnt_en_clk[8]      ; lcd_driver:DRV|cnt_en_clk[8]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.041      ;
+; 0.747 ; en_clk_lcd:LCLK|cnt_en[2]         ; en_clk_lcd:LCLK|cnt_en[2]         ; clk          ; clk         ; 0.000        ; 0.080      ; 1.039      ;
+; 0.748 ; lcd_driver:DRV|cnt_en_clk[2]      ; lcd_driver:DRV|cnt_en_clk[2]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; lcd_driver:DRV|cnt_en_clk[4]      ; lcd_driver:DRV|cnt_en_clk[4]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; lcd_driver:DRV|cnt_en_clk[5]      ; lcd_driver:DRV|cnt_en_clk[5]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; lcd_driver:DRV|cnt_en_clk[7]      ; lcd_driver:DRV|cnt_en_clk[7]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|cnt_en_clk[9]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; en_clk:U0|cnt_en_1hz[22]          ; en_clk:U0|cnt_en_1hz[22]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; en_clk:U0|cnt_en_1hz[20]          ; en_clk:U0|cnt_en_1hz[20]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; lcd_driver:DRV|cnt_init[16]       ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
+; 0.748 ; en_clk_lcd:LCLK|cnt_en[14]        ; en_clk_lcd:LCLK|cnt_en[14]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
 ; 0.748 ; en_clk_lcd:LCLK|cnt_en[12]        ; en_clk_lcd:LCLK|cnt_en[12]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
-; 0.748 ; en_clk_lcd:LCLK|cnt_en[2]         ; en_clk_lcd:LCLK|cnt_en[2]         ; clk          ; clk         ; 0.000        ; 0.080      ; 1.040      ;
 ; 0.749 ; lcd_driver:DRV|cnt_init[19]       ; lcd_driver:DRV|cnt_init[19]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.041      ;
 ; 0.749 ; lcd_driver:DRV|cnt_init[2]        ; lcd_driver:DRV|cnt_init[2]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.041      ;
 ; 0.749 ; lcd_driver:DRV|cnt_init[4]        ; lcd_driver:DRV|cnt_init[4]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.041      ;
-; 0.749 ; en_clk:U0|cnt_en_1hz[23]          ; en_clk:U0|cnt_en_1hz[23]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.042      ;
-; 0.749 ; en_clk:U0|cnt_en_1hz[21]          ; en_clk:U0|cnt_en_1hz[21]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.042      ;
-; 0.749 ; lcd_driver:DRV|cnt_en_clk[6]      ; lcd_driver:DRV|cnt_en_clk[6]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.042      ;
+; 0.750 ; lcd_driver:DRV|cnt_en_clk[6]      ; lcd_driver:DRV|cnt_en_clk[6]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.042      ;
+; 0.750 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|data_bus[0]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.043      ;
+; 0.750 ; en_clk:U0|cnt_en_1hz[21]          ; en_clk:U0|cnt_en_1hz[21]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.042      ;
 ; 0.750 ; lcd_driver:DRV|cnt_init[18]       ; lcd_driver:DRV|cnt_init[18]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.042      ;
-; 0.750 ; lcd_driver:DRV|cnt_init[20]       ; lcd_driver:DRV|cnt_init[20]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.042      ;
-; 0.760 ; en_clk:U0|cnt_en_1hz[12]          ; en_clk:U0|cnt_en_1hz[12]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.053      ;
-; 0.761 ; en_clk:U0|cnt_en_1hz[8]           ; en_clk:U0|cnt_en_1hz[8]           ; clk          ; clk         ; 0.000        ; 0.081      ; 1.054      ;
-; 0.761 ; en_clk:U0|cnt_en_1hz[2]           ; en_clk:U0|cnt_en_1hz[2]           ; clk          ; clk         ; 0.000        ; 0.081      ; 1.054      ;
-; 0.762 ; en_clk:U0|cnt_en_1hz[14]          ; en_clk:U0|cnt_en_1hz[14]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.055      ;
+; 0.751 ; lcd_driver:DRV|cnt_en_clk[8]      ; lcd_driver:DRV|cnt_en_clk[8]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.043      ;
+; 0.761 ; en_clk:U0|cnt_en_1hz[12]          ; en_clk:U0|cnt_en_1hz[12]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.053      ;
+; 0.762 ; en_clk:U0|cnt_en_1hz[8]           ; en_clk:U0|cnt_en_1hz[8]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.054      ;
+; 0.762 ; en_clk:U0|cnt_en_1hz[2]           ; en_clk:U0|cnt_en_1hz[2]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.054      ;
+; 0.762 ; en_clk_lcd:LCLK|cnt_en[11]        ; en_clk_lcd:LCLK|cnt_en[11]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.054      ;
+; 0.763 ; en_clk:U0|cnt_en_1hz[18]          ; en_clk:U0|cnt_en_1hz[18]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.055      ;
+; 0.763 ; en_clk:U0|cnt_en_1hz[14]          ; en_clk:U0|cnt_en_1hz[14]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.055      ;
 ; 0.763 ; lcd_driver:DRV|cnt_init[10]       ; lcd_driver:DRV|cnt_init[10]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.055      ;
-; 0.763 ; en_clk:U0|cnt_en_1hz[13]          ; en_clk:U0|cnt_en_1hz[13]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.056      ;
-; 0.763 ; en_clk:U0|cnt_en_1hz[3]           ; en_clk:U0|cnt_en_1hz[3]           ; clk          ; clk         ; 0.000        ; 0.081      ; 1.056      ;
-; 0.763 ; en_clk_lcd:LCLK|cnt_en[13]        ; en_clk_lcd:LCLK|cnt_en[13]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.055      ;
+; 0.764 ; en_clk:U0|cnt_en_1hz[24]          ; en_clk:U0|cnt_en_1hz[24]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.056      ;
+; 0.764 ; en_clk:U0|cnt_en_1hz[3]           ; en_clk:U0|cnt_en_1hz[3]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.056      ;
 ; 0.764 ; lcd_driver:DRV|cnt_init[7]        ; lcd_driver:DRV|cnt_init[7]        ; clk          ; clk         ; 0.000        ; 0.080      ; 1.056      ;
-; 0.764 ; lcd_driver:DRV|cnt_init[13]       ; lcd_driver:DRV|cnt_init[13]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.056      ;
-; 0.764 ; en_clk:U0|cnt_en_1hz[11]          ; en_clk:U0|cnt_en_1hz[11]          ; clk          ; clk         ; 0.000        ; 0.081      ; 1.057      ;
+; 0.764 ; lcd_driver:DRV|cnt_init[15]       ; lcd_driver:DRV|cnt_init[15]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.056      ;
+; 0.764 ; en_clk_lcd:LCLK|cnt_en[8]         ; en_clk_lcd:LCLK|cnt_en[8]         ; clk          ; clk         ; 0.000        ; 0.080      ; 1.056      ;
+; 0.765 ; en_clk:U0|cnt_en_1hz[19]          ; en_clk:U0|cnt_en_1hz[19]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.057      ;
+; 0.765 ; en_clk:U0|cnt_en_1hz[13]          ; en_clk:U0|cnt_en_1hz[13]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.057      ;
+; 0.765 ; en_clk:U0|cnt_en_1hz[11]          ; en_clk:U0|cnt_en_1hz[11]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.057      ;
+; 0.765 ; lcd_driver:DRV|cnt_init[12]       ; lcd_driver:DRV|cnt_init[12]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.057      ;
+; 0.766 ; en_clk:U0|cnt_en_1hz[17]          ; en_clk:U0|cnt_en_1hz[17]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.058      ;
+; 0.767 ; en_clk:U0|cnt_en_1hz[23]          ; en_clk:U0|cnt_en_1hz[23]          ; clk          ; clk         ; 0.000        ; 0.080      ; 1.059      ;
 ; 0.769 ; watch_date:TIME1|second[1]        ; watch_date:TIME1|second[1]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.062      ;
 ; 0.770 ; watch_date:TIME1|second[3]        ; watch_date:TIME1|second[3]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.063      ;
-; 0.770 ; lcd_driver:DRV|cnt_en_clk[0]      ; lcd_driver:DRV|cnt_en_clk[0]      ; clk          ; clk         ; 0.000        ; 0.081      ; 1.063      ;
+; 0.771 ; lcd_driver:DRV|cnt_en_clk[0]      ; lcd_driver:DRV|cnt_en_clk[0]      ; clk          ; clk         ; 0.000        ; 0.080      ; 1.063      ;
 ; 0.772 ; watch_date:TIME1|second[2]        ; watch_date:TIME1|second[2]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.065      ;
-; 0.772 ; watch_date:TIME1|second[4]        ; watch_date:TIME1|second[4]        ; clk          ; clk         ; 0.000        ; 0.081      ; 1.065      ;
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -399,7 +399,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 130.45 MHz ; 130.45 MHz      ; clk        ;      ;
+; 131.56 MHz ; 131.56 MHz      ; clk        ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -409,7 +409,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -6.666 ; -815.713          ;
+; clk   ; -6.601 ; -787.106          ;
 +-------+--------+-------------------+
 
 
@@ -418,7 +418,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; clk   ; 0.381 ; 0.000             ;
+; clk   ; 0.382 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -439,116 +439,116 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -309.322                        ;
+; clk   ; -3.000 ; -304.861                        ;
 +-------+--------+---------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'clk'                                                                                                     ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                  ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; -6.666 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.596      ;
-; -6.645 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.575      ;
-; -6.644 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.574      ;
-; -6.623 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.553      ;
-; -6.591 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.521      ;
-; -6.588 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.517      ;
-; -6.585 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.514      ;
-; -6.570 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.500      ;
-; -6.558 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.487      ;
-; -6.556 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.485      ;
-; -6.555 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.484      ;
-; -6.538 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.467      ;
-; -6.535 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.465      ;
-; -6.526 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.455      ;
-; -6.525 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.535     ; 6.992      ;
-; -6.512 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.442      ;
-; -6.508 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.437      ;
-; -6.505 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.435      ;
-; -6.486 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.535     ; 6.953      ;
-; -6.484 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.414      ;
-; -6.482 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.412      ;
-; -6.462 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.392      ;
-; -6.462 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.392      ;
-; -6.453 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.382      ;
-; -6.450 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.379      ;
-; -6.443 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.372      ;
-; -6.441 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.370      ;
-; -6.438 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.367      ;
-; -6.431 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.360      ;
-; -6.423 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.353      ;
-; -6.409 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.339      ;
-; -6.384 ; bin2bcd:CVT_hour|ten[1]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.314      ;
-; -6.348 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.278      ;
-; -6.345 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.275      ;
-; -6.345 ; bin2bcd:CVT_hour|ten[1]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.275      ;
-; -6.338 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.268      ;
-; -6.332 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.262      ;
-; -6.329 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.259      ;
-; -6.322 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.252      ;
-; -6.319 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.248      ;
-; -6.316 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.245      ;
-; -6.310 ; bin2bcd:CVT_second|ten[3]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.540     ; 6.772      ;
-; -6.308 ; bin2bcd:CVT_hour|ten[0]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.238      ;
-; -6.306 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.236      ;
-; -6.305 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.060     ; 7.247      ;
-; -6.302 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.060     ; 7.244      ;
-; -6.298 ; bin2bcd:CVT_second|one[2]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.220      ;
-; -6.287 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.216      ;
-; -6.284 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.214      ;
-; -6.283 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.213      ;
-; -6.275 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.204      ;
-; -6.274 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.204      ;
-; -6.273 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.060     ; 7.215      ;
-; -6.272 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.201      ;
-; -6.270 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.199      ;
-; -6.270 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.200      ;
-; -6.269 ; bin2bcd:CVT_hour|ten[0]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.199      ;
-; -6.269 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.198      ;
-; -6.265 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.194      ;
-; -6.257 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.187      ;
-; -6.257 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.186      ;
-; -6.255 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.060     ; 7.197      ;
-; -6.252 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.059     ; 7.195      ;
-; -6.248 ; watch_date:TIME1|second[7] ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.062     ; 7.188      ;
-; -6.245 ; bin2bcd:CVT_second|one[3]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.167      ;
-; -6.244 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.174      ;
-; -6.240 ; bin2bcd:CVT_second|one[0]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.080     ; 7.162      ;
-; -6.235 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.165      ;
-; -6.234 ; bin2bcd:CVT_second|ten[1]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.540     ; 6.696      ;
-; -6.231 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.161      ;
-; -6.229 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.059     ; 7.172      ;
-; -6.219 ; bin2bcd:CVT_hour|ten[3]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.149      ;
-; -6.216 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.145      ;
-; -6.213 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.142      ;
-; -6.212 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.142      ;
-; -6.209 ; watch_date:TIME1|month[7]  ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.085     ; 7.126      ;
-; -6.207 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; 0.361      ; 7.570      ;
-; -6.203 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[2]  ; clk          ; clk         ; 1.000        ; 0.361      ; 7.566      ;
-; -6.199 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.129      ;
-; -6.187 ; watch_date:TIME1|month[7]  ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.085     ; 7.104      ;
-; -6.186 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; 0.361      ; 7.549      ;
-; -6.184 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.113      ;
-; -6.182 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[2]  ; clk          ; clk         ; 1.000        ; 0.361      ; 7.545      ;
-; -6.180 ; bin2bcd:CVT_hour|ten[3]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.110      ;
-; -6.177 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; 0.361      ; 7.540      ;
-; -6.166 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.095      ;
-; -6.158 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.372      ; 7.532      ;
-; -6.156 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; 0.361      ; 7.519      ;
-; -6.147 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|hun[1]   ; clk          ; clk         ; 1.000        ; 0.371      ; 7.520      ;
-; -6.145 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.371      ; 7.518      ;
-; -6.143 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.073      ;
-; -6.140 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.070      ;
-; -6.135 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|hun[1]   ; clk          ; clk         ; 1.000        ; 0.371      ; 7.508      ;
-; -6.134 ; watch_date:TIME1|month[7]  ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.085     ; 7.051      ;
-; -6.133 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.063      ;
-; -6.133 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.072     ; 7.063      ;
-; -6.133 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.371      ; 7.506      ;
-; -6.128 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; -0.091     ; 7.039      ;
-; -6.128 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.372      ; 7.502      ;
-; -6.120 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.049      ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clk'                                                                                                    ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -6.601 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.530      ;
+; -6.597 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.526      ;
+; -6.585 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.514      ;
+; -6.581 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.510      ;
+; -6.581 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.510      ;
+; -6.577 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.507      ;
+; -6.571 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.500      ;
+; -6.565 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.494      ;
+; -6.555 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.484      ;
+; -6.547 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.476      ;
+; -6.545 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.475      ;
+; -6.543 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.472      ;
+; -6.537 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.467      ;
+; -6.527 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.456      ;
+; -6.517 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.446      ;
+; -6.423 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.352      ;
+; -6.419 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.348      ;
+; -6.418 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.353      ;
+; -6.407 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.342      ;
+; -6.405 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.335      ;
+; -6.403 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.332      ;
+; -6.403 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.333      ;
+; -6.402 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.337      ;
+; -6.393 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.322      ;
+; -6.391 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.326      ;
+; -6.389 ; bin2bcd:CVT_month|ten[2]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.535     ; 6.856      ;
+; -6.388 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.317      ;
+; -6.371 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.301      ;
+; -6.366 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.301      ;
+; -6.365 ; bin2bcd:CVT_month|ten[2]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.535     ; 6.832      ;
+; -6.364 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.299      ;
+; -6.363 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.293      ;
+; -6.361 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.291      ;
+; -6.356 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.286      ;
+; -6.353 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.288      ;
+; -6.352 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.282      ;
+; -6.352 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.282      ;
+; -6.351 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.281      ;
+; -6.350 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.285      ;
+; -6.346 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.276      ;
+; -6.342 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.272      ;
+; -6.339 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.077     ; 7.264      ;
+; -6.339 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.077     ; 7.264      ;
+; -6.333 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.263      ;
+; -6.332 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.261      ;
+; -6.320 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.250      ;
+; -6.312 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.247      ;
+; -6.301 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.231      ;
+; -6.297 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.226      ;
+; -6.293 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.222      ;
+; -6.293 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.223      ;
+; -6.285 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; -0.073     ; 7.214      ;
+; -6.277 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.206      ;
+; -6.264 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.194      ;
+; -6.240 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.175      ;
+; -6.237 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.166      ;
+; -6.231 ; bin2bcd:CVT_month|ten[1]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.161      ;
+; -6.229 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.164      ;
+; -6.224 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.153      ;
+; -6.211 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.141      ;
+; -6.207 ; bin2bcd:CVT_month|ten[1]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.072     ; 7.137      ;
+; -6.202 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.131      ;
+; -6.196 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.077     ; 7.121      ;
+; -6.196 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.077     ; 7.121      ;
+; -6.192 ; bin2bcd:CVT_minute|one[1] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.122      ;
+; -6.192 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.121      ;
+; -6.188 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.123      ;
+; -6.187 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[3] ; clk          ; clk         ; 1.000        ; 0.373      ; 7.562      ;
+; -6.187 ; bin2bcd:CVT_minute|one[1] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.117      ;
+; -6.184 ; bin2bcd:CVT_day|one[3]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.113      ;
+; -6.183 ; bin2bcd:CVT_minute|one[1] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.072     ; 7.113      ;
+; -6.179 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.109      ;
+; -6.170 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.099      ;
+; -6.167 ; bin2bcd:CVT_month|one[1]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.077     ; 7.092      ;
+; -6.144 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; 0.373      ; 7.519      ;
+; -6.143 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.070     ; 7.075      ;
+; -6.143 ; bin2bcd:CVT_month|one[1]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.077     ; 7.068      ;
+; -6.142 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; -0.073     ; 7.071      ;
+; -6.131 ; bin2bcd:CVT_day|one[3]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.060      ;
+; -6.127 ; bin2bcd:CVT_day|ten[3]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.057      ;
+; -6.120 ; watch_date:TIME1|month[7] ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.071     ; 7.051      ;
+; -6.117 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|ten[0] ; clk          ; clk         ; 1.000        ; -0.071     ; 7.048      ;
+; -6.117 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.046      ;
+; -6.117 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.046      ;
+; -6.112 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[0]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.042      ;
+; -6.111 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.070     ; 7.043      ;
+; -6.110 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.039      ;
+; -6.107 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[0] ; clk          ; clk         ; 1.000        ; -0.071     ; 7.038      ;
+; -6.105 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[0]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.035      ;
+; -6.103 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.070     ; 7.035      ;
+; -6.102 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[0] ; clk          ; clk         ; 1.000        ; 0.373      ; 7.477      ;
+; -6.099 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.028      ;
+; -6.099 ; bin2bcd:CVT_day|one[3]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.073     ; 7.028      ;
+; -6.098 ; watch_date:TIME1|month[7] ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.071     ; 7.029      ;
+; -6.086 ; bin2bcd:CVT_year|ten[2]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.073     ; 7.015      ;
+; -6.083 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|ten[3] ; clk          ; clk         ; 1.000        ; 0.382      ; 7.467      ;
+; -6.077 ; bin2bcd:CVT_year|ten[0]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.067     ; 7.012      ;
+; -6.074 ; bin2bcd:CVT_day|ten[3]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.072     ; 7.004      ;
+; -6.073 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[3] ; clk          ; clk         ; 1.000        ; 0.382      ; 7.457      ;
+; -6.067 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|ten[1] ; clk          ; clk         ; 1.000        ; 0.382      ; 7.451      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -556,106 +556,106 @@ No paths to report.
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.381 ; watch_date:TIME1|month[0]         ; watch_date:TIME1|month[0]         ; clk          ; clk         ; 0.000        ; 0.093      ; 0.669      ;
-; 0.381 ; watch_date:TIME1|day[1]           ; watch_date:TIME1|day[1]           ; clk          ; clk         ; 0.000        ; 0.093      ; 0.669      ;
-; 0.382 ; watch_date:TIME1|month[1]         ; watch_date:TIME1|month[1]         ; clk          ; clk         ; 0.000        ; 0.092      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[7]          ; watch_date:TIME1|year[7]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[5]          ; watch_date:TIME1|year[5]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[0]          ; watch_date:TIME1|year[0]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[1]          ; watch_date:TIME1|year[1]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[2]          ; watch_date:TIME1|year[2]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[3]          ; watch_date:TIME1|year[3]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[4]          ; watch_date:TIME1|year[4]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|year[6]          ; watch_date:TIME1|year[6]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.401 ; watch_date:TIME1|month[4]         ; watch_date:TIME1|month[4]         ; clk          ; clk         ; 0.000        ; 0.073      ; 0.669      ;
-; 0.402 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|state.PRINT_STRING ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.382 ; watch_date:TIME1|year[1]          ; watch_date:TIME1|year[1]          ; clk          ; clk         ; 0.000        ; 0.092      ; 0.669      ;
+; 0.382 ; watch_date:TIME1|year[2]          ; watch_date:TIME1|year[2]          ; clk          ; clk         ; 0.000        ; 0.092      ; 0.669      ;
+; 0.384 ; watch_date:TIME1|day[0]           ; watch_date:TIME1|day[0]           ; clk          ; clk         ; 0.000        ; 0.090      ; 0.669      ;
+; 0.384 ; watch_date:TIME1|day[1]           ; watch_date:TIME1|day[1]           ; clk          ; clk         ; 0.000        ; 0.090      ; 0.669      ;
 ; 0.402 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|year[7]          ; watch_date:TIME1|year[7]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|year[4]          ; watch_date:TIME1|year[4]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|year[6]          ; watch_date:TIME1|year[6]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|year[5]          ; watch_date:TIME1|year[5]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|year[3]          ; watch_date:TIME1|year[3]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|year[0]          ; watch_date:TIME1|year[0]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|day[7]           ; watch_date:TIME1|day[7]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|month[2]         ; watch_date:TIME1|month[2]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|month[0]         ; watch_date:TIME1|month[0]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|month[1]         ; watch_date:TIME1|month[1]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|month[3]         ; watch_date:TIME1|month[3]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|month[7]         ; watch_date:TIME1|month[7]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; watch_date:TIME1|month[4]         ; watch_date:TIME1|month[4]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|month[5]         ; watch_date:TIME1|month[5]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|month[6]         ; watch_date:TIME1|month[6]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; watch_date:TIME1|month[7]         ; watch_date:TIME1|month[7]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|day[6]           ; watch_date:TIME1|day[6]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|day[5]           ; watch_date:TIME1|day[5]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; watch_date:TIME1|day[4]           ; watch_date:TIME1|day[4]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.402 ; watch_date:TIME1|day[0]           ; watch_date:TIME1|day[0]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|day[2]           ; watch_date:TIME1|day[2]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
 ; 0.402 ; watch_date:TIME1|day[3]           ; watch_date:TIME1|day[3]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
-; 0.457 ; en_clk:U0|cnt_en_1hz[25]          ; en_clk:U0|cnt_en_1hz[25]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.724      ;
-; 0.470 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.737      ;
-; 0.477 ; watch_date:TIME1|second[7]        ; watch_date:TIME1|second[7]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.745      ;
-; 0.479 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.091      ; 0.765      ;
-; 0.539 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.806      ;
-; 0.607 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|data_bus[0]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.874      ;
-; 0.613 ; lcd_driver:DRV|state.DISP_OFF     ; lcd_driver:DRV|state.DISP_CLEAR   ; clk          ; clk         ; 0.000        ; 0.072      ; 0.880      ;
-; 0.613 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.880      ;
-; 0.614 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.881      ;
-; 0.615 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[3]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.882      ;
-; 0.654 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|state.DISP_ON      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.921      ;
-; 0.660 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.927      ;
-; 0.661 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.928      ;
+; 0.402 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|state.PRINT_STRING ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.402 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.669      ;
+; 0.403 ; watch_date:TIME1|day[4]           ; watch_date:TIME1|day[4]           ; clk          ; clk         ; 0.000        ; 0.071      ; 0.669      ;
+; 0.457 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.724      ;
+; 0.470 ; en_clk:U0|cnt_en_1hz[25]          ; en_clk:U0|cnt_en_1hz[25]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.737      ;
+; 0.472 ; lcd_driver:DRV|state.RETURN_HOME  ; lcd_driver:DRV|data_bus[7]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.739      ;
+; 0.477 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.092      ; 0.764      ;
+; 0.478 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|state.DISP_ON      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.745      ;
+; 0.500 ; watch_date:TIME1|second[7]        ; watch_date:TIME1|second[7]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.767      ;
+; 0.617 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[3]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.884      ;
+; 0.620 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.887      ;
+; 0.647 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.914      ;
+; 0.649 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.916      ;
+; 0.654 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.921      ;
 ; 0.664 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|state.MODE_SET     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.931      ;
-; 0.687 ; lcd_driver:DRV|dly_en_clk         ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.072      ; 0.954      ;
-; 0.690 ; en_clk_lcd:LCLK|cnt_en[11]        ; en_clk_lcd:LCLK|cnt_en[11]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.957      ;
+; 0.676 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|state.DISP_OFF     ; clk          ; clk         ; 0.000        ; 0.072      ; 0.943      ;
 ; 0.691 ; lcd_driver:DRV|cnt_en_clk[1]      ; lcd_driver:DRV|cnt_en_clk[1]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.958      ;
+; 0.691 ; lcd_driver:DRV|cnt_init[1]        ; lcd_driver:DRV|cnt_init[1]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.958      ;
 ; 0.691 ; en_clk_lcd:LCLK|cnt_en[3]         ; en_clk_lcd:LCLK|cnt_en[3]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.958      ;
-; 0.692 ; en_clk:U0|cnt_en_1hz[18]          ; en_clk:U0|cnt_en_1hz[18]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.959      ;
-; 0.693 ; lcd_driver:DRV|cnt_init[1]        ; lcd_driver:DRV|cnt_init[1]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.960      ;
+; 0.692 ; lcd_driver:DRV|dly_en_clk         ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.072      ; 0.959      ;
 ; 0.693 ; lcd_driver:DRV|cnt_init[8]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.960      ;
 ; 0.693 ; lcd_driver:DRV|cnt_init[9]        ; lcd_driver:DRV|cnt_init[9]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.960      ;
 ; 0.693 ; lcd_driver:DRV|cnt_init[11]       ; lcd_driver:DRV|cnt_init[11]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.960      ;
-; 0.694 ; lcd_driver:DRV|cnt_init[6]        ; lcd_driver:DRV|cnt_init[6]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
-; 0.694 ; lcd_driver:DRV|cnt_init[17]       ; lcd_driver:DRV|cnt_init[17]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
-; 0.694 ; en_clk:U0|cnt_en_1hz[6]           ; en_clk:U0|cnt_en_1hz[6]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.693 ; en_clk_lcd:LCLK|cnt_en[13]        ; en_clk_lcd:LCLK|cnt_en[13]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.960      ;
 ; 0.694 ; lcd_driver:DRV|cnt_en_clk[3]      ; lcd_driver:DRV|cnt_en_clk[3]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
-; 0.695 ; lcd_driver:DRV|cnt_init[5]        ; lcd_driver:DRV|cnt_init[5]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
-; 0.695 ; lcd_driver:DRV|cnt_init[15]       ; lcd_driver:DRV|cnt_init[15]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
-; 0.695 ; en_clk:U0|cnt_en_1hz[24]          ; en_clk:U0|cnt_en_1hz[24]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
+; 0.694 ; en_clk:U0|cnt_en_1hz[6]           ; en_clk:U0|cnt_en_1hz[6]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; lcd_driver:DRV|cnt_init[6]        ; lcd_driver:DRV|cnt_init[6]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; lcd_driver:DRV|cnt_init[13]       ; lcd_driver:DRV|cnt_init[13]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; lcd_driver:DRV|cnt_init[17]       ; lcd_driver:DRV|cnt_init[17]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
+; 0.694 ; en_clk_lcd:LCLK|cnt_en[14]        ; en_clk_lcd:LCLK|cnt_en[14]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.961      ;
 ; 0.695 ; en_clk:U0|cnt_en_1hz[4]           ; en_clk:U0|cnt_en_1hz[4]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
-; 0.695 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|cnt_en_clk[9]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
-; 0.695 ; en_clk_lcd:LCLK|cnt_en[4]         ; en_clk_lcd:LCLK|cnt_en[4]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
-; 0.696 ; lcd_driver:DRV|cnt_init[19]       ; lcd_driver:DRV|cnt_init[19]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; lcd_driver:DRV|cnt_init[3]        ; lcd_driver:DRV|cnt_init[3]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; lcd_driver:DRV|cnt_init[12]       ; lcd_driver:DRV|cnt_init[12]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; en_clk:U0|cnt_en_1hz[20]          ; en_clk:U0|cnt_en_1hz[20]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; en_clk:U0|cnt_en_1hz[19]          ; en_clk:U0|cnt_en_1hz[19]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.695 ; lcd_driver:DRV|cnt_init[3]        ; lcd_driver:DRV|cnt_init[3]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
+; 0.695 ; lcd_driver:DRV|cnt_init[5]        ; lcd_driver:DRV|cnt_init[5]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.962      ;
 ; 0.696 ; lcd_driver:DRV|cnt_en_clk[4]      ; lcd_driver:DRV|cnt_en_clk[4]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
 ; 0.696 ; lcd_driver:DRV|cnt_en_clk[5]      ; lcd_driver:DRV|cnt_en_clk[5]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
 ; 0.696 ; lcd_driver:DRV|cnt_en_clk[7]      ; lcd_driver:DRV|cnt_en_clk[7]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; en_clk_lcd:LCLK|cnt_en[14]        ; en_clk_lcd:LCLK|cnt_en[14]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; en_clk_lcd:LCLK|cnt_en[8]         ; en_clk_lcd:LCLK|cnt_en[8]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|cnt_en_clk[9]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; en_clk:U0|cnt_en_1hz[20]          ; en_clk:U0|cnt_en_1hz[20]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; lcd_driver:DRV|cnt_init[19]       ; lcd_driver:DRV|cnt_init[19]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; lcd_driver:DRV|cnt_init[16]       ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
 ; 0.696 ; en_clk_lcd:LCLK|cnt_en[6]         ; en_clk_lcd:LCLK|cnt_en[6]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
-; 0.696 ; en_clk_lcd:LCLK|cnt_en[2]         ; en_clk_lcd:LCLK|cnt_en[2]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.696 ; en_clk_lcd:LCLK|cnt_en[4]         ; en_clk_lcd:LCLK|cnt_en[4]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.963      ;
+; 0.697 ; en_clk:U0|cnt_en_1hz[22]          ; en_clk:U0|cnt_en_1hz[22]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.964      ;
 ; 0.697 ; lcd_driver:DRV|cnt_init[4]        ; lcd_driver:DRV|cnt_init[4]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.964      ;
 ; 0.697 ; en_clk_lcd:LCLK|cnt_en[12]        ; en_clk_lcd:LCLK|cnt_en[12]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.964      ;
-; 0.698 ; lcd_driver:DRV|cnt_init[0]        ; lcd_driver:DRV|cnt_init[0]        ; clk          ; clk         ; 0.000        ; 0.089      ; 0.982      ;
-; 0.698 ; lcd_driver:DRV|cnt_init[2]        ; lcd_driver:DRV|cnt_init[2]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.965      ;
-; 0.698 ; en_clk:U0|cnt_en_1hz[17]          ; en_clk:U0|cnt_en_1hz[17]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.965      ;
+; 0.697 ; en_clk_lcd:LCLK|cnt_en[2]         ; en_clk_lcd:LCLK|cnt_en[2]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.964      ;
 ; 0.698 ; lcd_driver:DRV|cnt_en_clk[2]      ; lcd_driver:DRV|cnt_en_clk[2]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.965      ;
-; 0.699 ; en_clk:U0|cnt_en_1hz[21]          ; en_clk:U0|cnt_en_1hz[21]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.966      ;
+; 0.698 ; lcd_driver:DRV|cnt_init[2]        ; lcd_driver:DRV|cnt_init[2]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.965      ;
 ; 0.699 ; lcd_driver:DRV|cnt_en_clk[8]      ; lcd_driver:DRV|cnt_en_clk[8]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.966      ;
-; 0.700 ; lcd_driver:DRV|cnt_init[18]       ; lcd_driver:DRV|cnt_init[18]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.967      ;
-; 0.700 ; lcd_driver:DRV|cnt_init[20]       ; lcd_driver:DRV|cnt_init[20]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.967      ;
-; 0.700 ; en_clk:U0|cnt_en_1hz[23]          ; en_clk:U0|cnt_en_1hz[23]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.967      ;
+; 0.699 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|data_bus[0]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.966      ;
+; 0.699 ; en_clk:U0|cnt_en_1hz[21]          ; en_clk:U0|cnt_en_1hz[21]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.966      ;
+; 0.699 ; lcd_driver:DRV|cnt_init[0]        ; lcd_driver:DRV|cnt_init[0]        ; clk          ; clk         ; 0.000        ; 0.089      ; 0.983      ;
 ; 0.700 ; lcd_driver:DRV|cnt_en_clk[6]      ; lcd_driver:DRV|cnt_en_clk[6]      ; clk          ; clk         ; 0.000        ; 0.072      ; 0.967      ;
-; 0.704 ; en_clk:U0|cnt_en_1hz[12]          ; en_clk:U0|cnt_en_1hz[12]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.971      ;
-; 0.705 ; en_clk:U0|cnt_en_1hz[8]           ; en_clk:U0|cnt_en_1hz[8]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.972      ;
+; 0.700 ; lcd_driver:DRV|cnt_init[18]       ; lcd_driver:DRV|cnt_init[18]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.967      ;
+; 0.705 ; en_clk:U0|cnt_en_1hz[12]          ; en_clk:U0|cnt_en_1hz[12]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.972      ;
 ; 0.705 ; en_clk:U0|cnt_en_1hz[2]           ; en_clk:U0|cnt_en_1hz[2]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.972      ;
-; 0.706 ; en_clk_lcd:LCLK|cnt_en[13]        ; en_clk_lcd:LCLK|cnt_en[13]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.973      ;
+; 0.705 ; en_clk_lcd:LCLK|cnt_en[11]        ; en_clk_lcd:LCLK|cnt_en[11]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.972      ;
+; 0.706 ; en_clk:U0|cnt_en_1hz[18]          ; en_clk:U0|cnt_en_1hz[18]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.973      ;
+; 0.706 ; en_clk:U0|cnt_en_1hz[8]           ; en_clk:U0|cnt_en_1hz[8]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.973      ;
+; 0.707 ; en_clk:U0|cnt_en_1hz[24]          ; en_clk:U0|cnt_en_1hz[24]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.974      ;
 ; 0.707 ; lcd_driver:DRV|cnt_init[10]       ; lcd_driver:DRV|cnt_init[10]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.974      ;
-; 0.707 ; en_clk:U0|cnt_en_1hz[14]          ; en_clk:U0|cnt_en_1hz[14]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.974      ;
-; 0.707 ; en_clk:U0|cnt_en_1hz[3]           ; en_clk:U0|cnt_en_1hz[3]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.974      ;
+; 0.708 ; en_clk:U0|cnt_en_1hz[14]          ; en_clk:U0|cnt_en_1hz[14]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.975      ;
+; 0.708 ; en_clk:U0|cnt_en_1hz[3]           ; en_clk:U0|cnt_en_1hz[3]           ; clk          ; clk         ; 0.000        ; 0.072      ; 0.975      ;
 ; 0.708 ; lcd_driver:DRV|cnt_init[7]        ; lcd_driver:DRV|cnt_init[7]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.975      ;
-; 0.708 ; lcd_driver:DRV|cnt_init[13]       ; lcd_driver:DRV|cnt_init[13]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.975      ;
+; 0.709 ; en_clk:U0|cnt_en_1hz[19]          ; en_clk:U0|cnt_en_1hz[19]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.976      ;
+; 0.709 ; lcd_driver:DRV|cnt_init[15]       ; lcd_driver:DRV|cnt_init[15]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.976      ;
 ; 0.710 ; en_clk:U0|cnt_en_1hz[13]          ; en_clk:U0|cnt_en_1hz[13]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.977      ;
-; 0.710 ; en_clk:U0|cnt_en_1hz[11]          ; en_clk:U0|cnt_en_1hz[11]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.977      ;
-; 0.711 ; watch_date:TIME1|second[1]        ; watch_date:TIME1|second[1]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.979      ;
-; 0.714 ; watch_date:TIME1|second[3]        ; watch_date:TIME1|second[3]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.982      ;
+; 0.710 ; en_clk_lcd:LCLK|cnt_en[8]         ; en_clk_lcd:LCLK|cnt_en[8]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.977      ;
+; 0.711 ; en_clk:U0|cnt_en_1hz[11]          ; en_clk:U0|cnt_en_1hz[11]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.978      ;
+; 0.711 ; lcd_driver:DRV|cnt_init[12]       ; lcd_driver:DRV|cnt_init[12]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.978      ;
+; 0.712 ; en_clk:U0|cnt_en_1hz[17]          ; en_clk:U0|cnt_en_1hz[17]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.979      ;
+; 0.713 ; watch_date:TIME1|second[3]        ; watch_date:TIME1|second[3]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.980      ;
+; 0.713 ; en_clk:U0|cnt_en_1hz[23]          ; en_clk:U0|cnt_en_1hz[23]          ; clk          ; clk         ; 0.000        ; 0.072      ; 0.980      ;
+; 0.714 ; watch_date:TIME1|second[1]        ; watch_date:TIME1|second[1]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.981      ;
 ; 0.715 ; en_clk_lcd:LCLK|cnt_en[1]         ; en_clk_lcd:LCLK|cnt_en[1]         ; clk          ; clk         ; 0.000        ; 0.072      ; 0.982      ;
-; 0.717 ; watch_date:TIME1|second[4]        ; watch_date:TIME1|second[4]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.985      ;
-; 0.717 ; watch_date:TIME1|second[5]        ; watch_date:TIME1|second[5]        ; clk          ; clk         ; 0.000        ; 0.073      ; 0.985      ;
+; 0.718 ; watch_date:TIME1|second[4]        ; watch_date:TIME1|second[4]        ; clk          ; clk         ; 0.000        ; 0.072      ; 0.985      ;
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -670,7 +670,7 @@ No synchronizer chains to report.
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -2.620 ; -269.630          ;
+; clk   ; -2.569 ; -258.839          ;
 +-------+--------+-------------------+
 
 
@@ -700,116 +700,116 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -223.157                        ;
+; clk   ; -3.000 ; -219.724                        ;
 +-------+--------+---------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'clk'                                                                                                     ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                  ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
-; -2.620 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.571      ;
-; -2.619 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.570      ;
-; -2.595 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.546      ;
-; -2.594 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.545      ;
-; -2.571 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.521      ;
-; -2.569 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.520      ;
-; -2.568 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.519      ;
-; -2.565 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.515      ;
-; -2.563 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.236     ; 3.314      ;
-; -2.559 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.509      ;
-; -2.547 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.236     ; 3.298      ;
-; -2.547 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.497      ;
-; -2.542 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.492      ;
-; -2.536 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.486      ;
-; -2.535 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.486      ;
-; -2.532 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.483      ;
-; -2.530 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.480      ;
-; -2.519 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.470      ;
-; -2.518 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.468      ;
-; -2.513 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.463      ;
-; -2.511 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.461      ;
-; -2.510 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.461      ;
-; -2.507 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.457      ;
-; -2.505 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.455      ;
-; -2.503 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.454      ;
-; -2.501 ; bin2bcd:CVT_hour|ten[1]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.452      ;
-; -2.495 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.445      ;
-; -2.493 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.443      ;
-; -2.490 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.441      ;
-; -2.486 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.437      ;
-; -2.486 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.436      ;
-; -2.485 ; bin2bcd:CVT_hour|ten[1]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.436      ;
-; -2.484 ; bin2bcd:CVT_month|one[3]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.435      ;
-; -2.480 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.430      ;
-; -2.474 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.424      ;
-; -2.470 ; bin2bcd:CVT_hour|ten[0]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.421      ;
-; -2.470 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.421      ;
-; -2.462 ; bin2bcd:CVT_hour|one[3]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.412      ;
-; -2.457 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.408      ;
-; -2.454 ; bin2bcd:CVT_hour|ten[0]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.405      ;
-; -2.453 ; bin2bcd:CVT_hour|ten[3]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.404      ;
-; -2.451 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.402      ;
-; -2.448 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.398      ;
-; -2.448 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.399      ;
-; -2.446 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.396      ;
-; -2.440 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.390      ;
-; -2.439 ; bin2bcd:CVT_second|ten[3]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.238     ; 3.188      ;
-; -2.439 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.390      ;
-; -2.438 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.029     ; 3.396      ;
-; -2.437 ; bin2bcd:CVT_hour|ten[3]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.388      ;
-; -2.434 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.384      ;
-; -2.432 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.029     ; 3.390      ;
-; -2.426 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.029     ; 3.384      ;
-; -2.424 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[2]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.560      ;
-; -2.423 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.374      ;
-; -2.423 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[2]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.559      ;
-; -2.422 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.372      ;
-; -2.422 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.373      ;
-; -2.422 ; watch_date:TIME1|month[7]  ; bin2bcd:CVT_month|one[2]  ; clk          ; clk         ; 1.000        ; -0.044     ; 3.365      ;
-; -2.418 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.554      ;
-; -2.418 ; bin2bcd:CVT_hour|ten[2]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; -0.045     ; 3.360      ;
-; -2.417 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.553      ;
-; -2.416 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.367      ;
-; -2.414 ; bin2bcd:CVT_second|one[2]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.041     ; 3.360      ;
-; -2.414 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.029     ; 3.372      ;
-; -2.413 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.549      ;
-; -2.412 ; bin2bcd:CVT_second|ten[1]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.238     ; 3.161      ;
-; -2.412 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.548      ;
-; -2.404 ; bin2bcd:CVT_year|ten[2]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.355      ;
-; -2.402 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.353      ;
-; -2.400 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.351      ;
-; -2.400 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.351      ;
-; -2.400 ; watch_date:TIME1|second[7] ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.027     ; 3.360      ;
-; -2.399 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.028     ; 3.358      ;
-; -2.397 ; bin2bcd:CVT_month|one[0]   ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.348      ;
-; -2.397 ; watch_date:TIME1|month[7]  ; bin2bcd:CVT_month|one[3]  ; clk          ; clk         ; 1.000        ; -0.044     ; 3.340      ;
-; -2.393 ; bin2bcd:CVT_second|one[3]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.041     ; 3.339      ;
-; -2.387 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.338      ;
-; -2.387 ; bin2bcd:CVT_hour|one[2]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.155      ; 3.529      ;
-; -2.386 ; watch_date:TIME1|hour[7]   ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.028     ; 3.345      ;
-; -2.385 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.336      ;
-; -2.385 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.335      ;
-; -2.384 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.335      ;
-; -2.384 ; bin2bcd:CVT_second|one[0]  ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; -0.041     ; 3.330      ;
-; -2.380 ; bin2bcd:CVT_month|one[1]   ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.516      ;
-; -2.379 ; bin2bcd:CVT_month|one[2]   ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; 0.149      ; 3.515      ;
-; -2.379 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.329      ;
-; -2.375 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.326      ;
-; -2.375 ; bin2bcd:CVT_year|one[3]    ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.325      ;
-; -2.373 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.323      ;
-; -2.371 ; watch_date:TIME1|month[7]  ; bin2bcd:CVT_month|one[1]  ; clk          ; clk         ; 1.000        ; -0.044     ; 3.314      ;
-; -2.369 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.320      ;
-; -2.362 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.313      ;
-; -2.361 ; bin2bcd:CVT_hour|one[0]    ; bin2bcd:CVT_hour|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.311      ;
-; -2.360 ; bin2bcd:CVT_year|one[1]    ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.311      ;
-; -2.358 ; bin2bcd:CVT_hour|one[1]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.155      ; 3.500      ;
-; -2.357 ; bin2bcd:CVT_year|ten[1]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.157      ; 3.501      ;
-; -2.357 ; bin2bcd:CVT_year|ten[3]    ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.308      ;
-; -2.356 ; bin2bcd:CVT_hour|ten[1]    ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; 0.155      ; 3.498      ;
-; -2.353 ; bin2bcd:CVT_year|one[2]    ; bin2bcd:CVT_year|hun[2]   ; clk          ; clk         ; 1.000        ; 0.156      ; 3.496      ;
-+--------+----------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clk'                                                                                                    ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
+; -2.569 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.520      ;
+; -2.562 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.512      ;
+; -2.561 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.512      ;
+; -2.557 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.508      ;
+; -2.557 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.507      ;
+; -2.554 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.504      ;
+; -2.552 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.502      ;
+; -2.547 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.498      ;
+; -2.547 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.497      ;
+; -2.547 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.497      ;
+; -2.544 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.494      ;
+; -2.540 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.491      ;
+; -2.538 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.489      ;
+; -2.537 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.487      ;
+; -2.521 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.471      ;
+; -2.516 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.466      ;
+; -2.513 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.463      ;
+; -2.506 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.456      ;
+; -2.498 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.449      ;
+; -2.494 ; bin2bcd:CVT_month|ten[2]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.235     ; 3.246      ;
+; -2.491 ; bin2bcd:CVT_month|ten[2]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.235     ; 3.243      ;
+; -2.486 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.437      ;
+; -2.476 ; bin2bcd:CVT_year|ten[1]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.427      ;
+; -2.462 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[1]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.412      ;
+; -2.457 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[3]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.407      ;
+; -2.454 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[0]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.404      ;
+; -2.454 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.405      ;
+; -2.447 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|one[2]   ; clk          ; clk         ; 1.000        ; -0.037     ; 3.397      ;
+; -2.447 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.398      ;
+; -2.446 ; bin2bcd:CVT_month|ten[1]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.397      ;
+; -2.443 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.394      ;
+; -2.443 ; bin2bcd:CVT_month|ten[1]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.394      ;
+; -2.428 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.040     ; 3.375      ;
+; -2.427 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.040     ; 3.374      ;
+; -2.426 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.377      ;
+; -2.425 ; bin2bcd:CVT_day|ten[2]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.376      ;
+; -2.424 ; bin2bcd:CVT_second|one[1] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.375      ;
+; -2.422 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.377      ;
+; -2.419 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.370      ;
+; -2.414 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.365      ;
+; -2.413 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.368      ;
+; -2.412 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.367      ;
+; -2.412 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.363      ;
+; -2.403 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.358      ;
+; -2.403 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.354      ;
+; -2.401 ; bin2bcd:CVT_year|one[2]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.356      ;
+; -2.400 ; bin2bcd:CVT_year|ten[2]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.351      ;
+; -2.397 ; bin2bcd:CVT_year|ten[0]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.352      ;
+; -2.395 ; watch_date:TIME1|month[7] ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.035     ; 3.347      ;
+; -2.394 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.345      ;
+; -2.393 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.344      ;
+; -2.393 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.343      ;
+; -2.392 ; watch_date:TIME1|month[7] ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.035     ; 3.344      ;
+; -2.391 ; bin2bcd:CVT_year|one[3]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.346      ;
+; -2.391 ; bin2bcd:CVT_second|one[3] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.342      ;
+; -2.388 ; bin2bcd:CVT_year|ten[2]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.339      ;
+; -2.385 ; bin2bcd:CVT_year|ten[0]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.340      ;
+; -2.384 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.334      ;
+; -2.383 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.334      ;
+; -2.382 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.332      ;
+; -2.381 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.336      ;
+; -2.378 ; bin2bcd:CVT_year|ten[2]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.036     ; 3.329      ;
+; -2.375 ; bin2bcd:CVT_year|ten[0]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.330      ;
+; -2.375 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.040     ; 3.322      ;
+; -2.372 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[1]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.327      ;
+; -2.372 ; bin2bcd:CVT_month|one[3]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.040     ; 3.319      ;
+; -2.367 ; bin2bcd:CVT_month|ten[3]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.318      ;
+; -2.365 ; bin2bcd:CVT_day|ten[1]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.316      ;
+; -2.364 ; bin2bcd:CVT_month|ten[3]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.036     ; 3.315      ;
+; -2.364 ; bin2bcd:CVT_day|one[0]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.314      ;
+; -2.363 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[3] ; clk          ; clk         ; 1.000        ; 0.155      ; 3.505      ;
+; -2.360 ; bin2bcd:CVT_year|one[0]   ; bin2bcd:CVT_year|ten[2]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.315      ;
+; -2.355 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.305      ;
+; -2.354 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.305      ;
+; -2.354 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.304      ;
+; -2.352 ; bin2bcd:CVT_month|one[2]  ; bin2bcd:CVT_month|ten[0]  ; clk          ; clk         ; 1.000        ; -0.037     ; 3.302      ;
+; -2.351 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[2] ; clk          ; clk         ; 1.000        ; -0.033     ; 3.305      ;
+; -2.349 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[0] ; clk          ; clk         ; 1.000        ; 0.155      ; 3.491      ;
+; -2.348 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[1] ; clk          ; clk         ; 1.000        ; 0.163      ; 3.498      ;
+; -2.347 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[3] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.298      ;
+; -2.346 ; bin2bcd:CVT_month|one[1]  ; bin2bcd:CVT_month|ten[3]  ; clk          ; clk         ; 1.000        ; -0.040     ; 3.293      ;
+; -2.345 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[2] ; clk          ; clk         ; 1.000        ; 0.163      ; 3.495      ;
+; -2.345 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[1]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.295      ;
+; -2.343 ; bin2bcd:CVT_month|one[1]  ; bin2bcd:CVT_month|ten[1]  ; clk          ; clk         ; 1.000        ; -0.040     ; 3.290      ;
+; -2.342 ; bin2bcd:CVT_second|one[2] ; bin2bcd:CVT_second|ten[2] ; clk          ; clk         ; 1.000        ; 0.155      ; 3.484      ;
+; -2.341 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[3] ; clk          ; clk         ; 1.000        ; 0.163      ; 3.491      ;
+; -2.338 ; bin2bcd:CVT_minute|one[0] ; bin2bcd:CVT_minute|one[2] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.289      ;
+; -2.336 ; bin2bcd:CVT_hour|one[1]   ; bin2bcd:CVT_hour|ten[1]   ; clk          ; clk         ; 1.000        ; -0.038     ; 3.285      ;
+; -2.335 ; bin2bcd:CVT_hour|one[1]   ; bin2bcd:CVT_hour|ten[2]   ; clk          ; clk         ; 1.000        ; -0.038     ; 3.284      ;
+; -2.334 ; bin2bcd:CVT_hour|one[1]   ; bin2bcd:CVT_hour|ten[3]   ; clk          ; clk         ; 1.000        ; -0.038     ; 3.283      ;
+; -2.332 ; bin2bcd:CVT_year|ten[3]   ; bin2bcd:CVT_year|hun[0]   ; clk          ; clk         ; 1.000        ; 0.155      ; 3.474      ;
+; -2.331 ; bin2bcd:CVT_day|one[2]    ; bin2bcd:CVT_day|ten[0]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.282      ;
+; -2.330 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[3] ; clk          ; clk         ; 1.000        ; -0.033     ; 3.284      ;
+; -2.328 ; bin2bcd:CVT_second|one[0] ; bin2bcd:CVT_second|one[1] ; clk          ; clk         ; 1.000        ; -0.033     ; 3.282      ;
+; -2.327 ; bin2bcd:CVT_minute|one[2] ; bin2bcd:CVT_minute|ten[0] ; clk          ; clk         ; 1.000        ; -0.034     ; 3.280      ;
+; -2.327 ; bin2bcd:CVT_minute|one[1] ; bin2bcd:CVT_minute|one[1] ; clk          ; clk         ; 1.000        ; -0.036     ; 3.278      ;
+; -2.326 ; bin2bcd:CVT_day|one[3]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.276      ;
+; -2.325 ; bin2bcd:CVT_day|one[1]    ; bin2bcd:CVT_day|ten[2]    ; clk          ; clk         ; 1.000        ; -0.037     ; 3.275      ;
+; -2.323 ; bin2bcd:CVT_day|ten[3]    ; bin2bcd:CVT_day|ten[3]    ; clk          ; clk         ; 1.000        ; -0.036     ; 3.274      ;
+; -2.322 ; bin2bcd:CVT_year|one[1]   ; bin2bcd:CVT_year|ten[3]   ; clk          ; clk         ; 1.000        ; -0.032     ; 3.277      ;
++--------+---------------------------+---------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -817,106 +817,106 @@ No paths to report.
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.178 ; watch_date:TIME1|month[0]         ; watch_date:TIME1|month[0]         ; clk          ; clk         ; 0.000        ; 0.045      ; 0.307      ;
-; 0.178 ; watch_date:TIME1|month[1]         ; watch_date:TIME1|month[1]         ; clk          ; clk         ; 0.000        ; 0.045      ; 0.307      ;
-; 0.178 ; watch_date:TIME1|day[1]           ; watch_date:TIME1|day[1]           ; clk          ; clk         ; 0.000        ; 0.045      ; 0.307      ;
-; 0.186 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
-; 0.186 ; watch_date:TIME1|month[4]         ; watch_date:TIME1|month[4]         ; clk          ; clk         ; 0.000        ; 0.037      ; 0.307      ;
-; 0.187 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|state.PRINT_STRING ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.178 ; watch_date:TIME1|year[1]          ; watch_date:TIME1|year[1]          ; clk          ; clk         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.178 ; watch_date:TIME1|year[2]          ; watch_date:TIME1|year[2]          ; clk          ; clk         ; 0.000        ; 0.045      ; 0.307      ;
+; 0.179 ; watch_date:TIME1|day[0]           ; watch_date:TIME1|day[0]           ; clk          ; clk         ; 0.000        ; 0.044      ; 0.307      ;
+; 0.179 ; watch_date:TIME1|day[1]           ; watch_date:TIME1|day[1]           ; clk          ; clk         ; 0.000        ; 0.044      ; 0.307      ;
+; 0.187 ; lcd_driver:DRV|lcd_e              ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|year[7]          ; watch_date:TIME1|year[7]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; watch_date:TIME1|year[5]          ; watch_date:TIME1|year[5]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; watch_date:TIME1|year[0]          ; watch_date:TIME1|year[0]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; watch_date:TIME1|year[1]          ; watch_date:TIME1|year[1]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; watch_date:TIME1|year[2]          ; watch_date:TIME1|year[2]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; watch_date:TIME1|year[3]          ; watch_date:TIME1|year[3]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|year[4]          ; watch_date:TIME1|year[4]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|year[6]          ; watch_date:TIME1|year[6]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; watch_date:TIME1|year[5]          ; watch_date:TIME1|year[5]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; watch_date:TIME1|year[3]          ; watch_date:TIME1|year[3]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; watch_date:TIME1|year[0]          ; watch_date:TIME1|year[0]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|day[7]           ; watch_date:TIME1|day[7]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|month[2]         ; watch_date:TIME1|month[2]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; watch_date:TIME1|month[0]         ; watch_date:TIME1|month[0]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; watch_date:TIME1|month[1]         ; watch_date:TIME1|month[1]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|month[3]         ; watch_date:TIME1|month[3]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; watch_date:TIME1|month[7]         ; watch_date:TIME1|month[7]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; watch_date:TIME1|month[4]         ; watch_date:TIME1|month[4]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|month[5]         ; watch_date:TIME1|month[5]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|month[6]         ; watch_date:TIME1|month[6]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; watch_date:TIME1|month[7]         ; watch_date:TIME1|month[7]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|day[6]           ; watch_date:TIME1|day[6]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|day[5]           ; watch_date:TIME1|day[5]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|day[4]           ; watch_date:TIME1|day[4]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.187 ; watch_date:TIME1|day[0]           ; watch_date:TIME1|day[0]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|day[2]           ; watch_date:TIME1|day[2]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
 ; 0.187 ; watch_date:TIME1|day[3]           ; watch_date:TIME1|day[3]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
-; 0.198 ; en_clk:U0|cnt_en_1hz[25]          ; en_clk:U0|cnt_en_1hz[25]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.318      ;
-; 0.205 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.325      ;
-; 0.209 ; watch_date:TIME1|second[7]        ; watch_date:TIME1|second[7]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.329      ;
+; 0.187 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|state.PRINT_STRING ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.187 ; lcd_driver:DRV|state.IDLE         ; lcd_driver:DRV|state.IDLE         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.307      ;
+; 0.196 ; lcd_driver:DRV|state.RETURN_HOME  ; lcd_driver:DRV|data_bus[7]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.316      ;
+; 0.198 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|state.DISP_ON      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.318      ;
+; 0.198 ; lcd_driver:DRV|cnt_init[21]       ; lcd_driver:DRV|cnt_init[21]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.318      ;
+; 0.205 ; en_clk:U0|cnt_en_1hz[25]          ; en_clk:U0|cnt_en_1hz[25]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.325      ;
 ; 0.212 ; lcd_driver:DRV|index_char[4]      ; lcd_driver:DRV|index_char[4]      ; clk          ; clk         ; 0.000        ; 0.044      ; 0.340      ;
-; 0.230 ; lcd_driver:DRV|state.PRINT_STRING ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.350      ;
-; 0.258 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|data_bus[0]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.378      ;
-; 0.261 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.381      ;
-; 0.261 ; lcd_driver:DRV|state.DISP_OFF     ; lcd_driver:DRV|state.DISP_CLEAR   ; clk          ; clk         ; 0.000        ; 0.036      ; 0.381      ;
-; 0.262 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.382      ;
-; 0.263 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[3]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.383      ;
-; 0.272 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|state.DISP_ON      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.392      ;
-; 0.279 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|state.MODE_SET     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.399      ;
-; 0.283 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.035      ; 0.402      ;
-; 0.284 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.035      ; 0.403      ;
-; 0.293 ; lcd_driver:DRV|dly_en_clk         ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.037      ; 0.414      ;
-; 0.296 ; lcd_driver:DRV|cnt_en_clk[1]      ; lcd_driver:DRV|cnt_en_clk[1]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.417      ;
+; 0.221 ; watch_date:TIME1|second[7]        ; watch_date:TIME1|second[7]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.341      ;
+; 0.262 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|data_bus[3]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.382      ;
+; 0.265 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[2]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.385      ;
+; 0.275 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[4]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.395      ;
+; 0.277 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|data_bus[5]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.397      ;
+; 0.278 ; lcd_driver:DRV|state.DISP_ON      ; lcd_driver:DRV|state.MODE_SET     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.398      ;
+; 0.281 ; lcd_driver:DRV|state.MODE_SET     ; lcd_driver:DRV|data_bus[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.401      ;
+; 0.284 ; lcd_driver:DRV|state.FUNC_SET     ; lcd_driver:DRV|state.DISP_OFF     ; clk          ; clk         ; 0.000        ; 0.036      ; 0.404      ;
+; 0.297 ; lcd_driver:DRV|cnt_en_clk[1]      ; lcd_driver:DRV|cnt_en_clk[1]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.417      ;
+; 0.297 ; lcd_driver:DRV|cnt_init[1]        ; lcd_driver:DRV|cnt_init[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.417      ;
 ; 0.297 ; lcd_driver:DRV|cnt_init[11]       ; lcd_driver:DRV|cnt_init[11]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.417      ;
-; 0.297 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|cnt_en_clk[9]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.418      ;
-; 0.297 ; en_clk_lcd:LCLK|cnt_en[11]        ; en_clk_lcd:LCLK|cnt_en[11]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.417      ;
-; 0.298 ; lcd_driver:DRV|cnt_init[1]        ; lcd_driver:DRV|cnt_init[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; lcd_driver:DRV|dly_en_clk         ; lcd_driver:DRV|lcd_e              ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; en_clk:U0|cnt_en_1hz[6]           ; en_clk:U0|cnt_en_1hz[6]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
 ; 0.298 ; lcd_driver:DRV|cnt_init[8]        ; lcd_driver:DRV|cnt_init[8]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
 ; 0.298 ; lcd_driver:DRV|cnt_init[9]        ; lcd_driver:DRV|cnt_init[9]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
-; 0.298 ; lcd_driver:DRV|cnt_init[12]       ; lcd_driver:DRV|cnt_init[12]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
-; 0.298 ; en_clk:U0|cnt_en_1hz[18]          ; en_clk:U0|cnt_en_1hz[18]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
-; 0.298 ; en_clk:U0|cnt_en_1hz[6]           ; en_clk:U0|cnt_en_1hz[6]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
-; 0.298 ; lcd_driver:DRV|cnt_en_clk[3]      ; lcd_driver:DRV|cnt_en_clk[3]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.419      ;
-; 0.298 ; lcd_driver:DRV|cnt_en_clk[7]      ; lcd_driver:DRV|cnt_en_clk[7]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.419      ;
-; 0.298 ; en_clk_lcd:LCLK|cnt_en[8]         ; en_clk_lcd:LCLK|cnt_en[8]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
-; 0.298 ; en_clk_lcd:LCLK|cnt_en[6]         ; en_clk_lcd:LCLK|cnt_en[6]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; en_clk_lcd:LCLK|cnt_en[14]        ; en_clk_lcd:LCLK|cnt_en[14]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.298 ; en_clk_lcd:LCLK|cnt_en[13]        ; en_clk_lcd:LCLK|cnt_en[13]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
 ; 0.298 ; en_clk_lcd:LCLK|cnt_en[3]         ; en_clk_lcd:LCLK|cnt_en[3]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.418      ;
+; 0.299 ; lcd_driver:DRV|cnt_en_clk[3]      ; lcd_driver:DRV|cnt_en_clk[3]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; lcd_driver:DRV|cnt_en_clk[7]      ; lcd_driver:DRV|cnt_en_clk[7]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; lcd_driver:DRV|cnt_en_clk[9]      ; lcd_driver:DRV|cnt_en_clk[9]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; en_clk:U0|cnt_en_1hz[20]          ; en_clk:U0|cnt_en_1hz[20]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; en_clk:U0|cnt_en_1hz[4]           ; en_clk:U0|cnt_en_1hz[4]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
 ; 0.299 ; lcd_driver:DRV|cnt_init[19]       ; lcd_driver:DRV|cnt_init[19]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
 ; 0.299 ; lcd_driver:DRV|cnt_init[3]        ; lcd_driver:DRV|cnt_init[3]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
 ; 0.299 ; lcd_driver:DRV|cnt_init[4]        ; lcd_driver:DRV|cnt_init[4]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
 ; 0.299 ; lcd_driver:DRV|cnt_init[5]        ; lcd_driver:DRV|cnt_init[5]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
 ; 0.299 ; lcd_driver:DRV|cnt_init[6]        ; lcd_driver:DRV|cnt_init[6]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
-; 0.299 ; lcd_driver:DRV|cnt_init[15]       ; lcd_driver:DRV|cnt_init[15]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; lcd_driver:DRV|cnt_init[13]       ; lcd_driver:DRV|cnt_init[13]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
 ; 0.299 ; lcd_driver:DRV|cnt_init[17]       ; lcd_driver:DRV|cnt_init[17]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
-; 0.299 ; en_clk:U0|cnt_en_1hz[24]          ; en_clk:U0|cnt_en_1hz[24]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
-; 0.299 ; en_clk:U0|cnt_en_1hz[20]          ; en_clk:U0|cnt_en_1hz[20]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
-; 0.299 ; en_clk:U0|cnt_en_1hz[4]           ; en_clk:U0|cnt_en_1hz[4]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
-; 0.299 ; lcd_driver:DRV|cnt_en_clk[2]      ; lcd_driver:DRV|cnt_en_clk[2]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.420      ;
-; 0.299 ; lcd_driver:DRV|cnt_en_clk[4]      ; lcd_driver:DRV|cnt_en_clk[4]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.420      ;
-; 0.299 ; lcd_driver:DRV|cnt_en_clk[5]      ; lcd_driver:DRV|cnt_en_clk[5]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.420      ;
-; 0.299 ; en_clk_lcd:LCLK|cnt_en[14]        ; en_clk_lcd:LCLK|cnt_en[14]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
+; 0.299 ; en_clk_lcd:LCLK|cnt_en[6]         ; en_clk_lcd:LCLK|cnt_en[6]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
 ; 0.299 ; en_clk_lcd:LCLK|cnt_en[4]         ; en_clk_lcd:LCLK|cnt_en[4]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
-; 0.299 ; en_clk_lcd:LCLK|cnt_en[2]         ; en_clk_lcd:LCLK|cnt_en[2]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.419      ;
-; 0.300 ; lcd_driver:DRV|cnt_init[0]        ; lcd_driver:DRV|cnt_init[0]        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.427      ;
-; 0.300 ; lcd_driver:DRV|cnt_init[2]        ; lcd_driver:DRV|cnt_init[2]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; lcd_driver:DRV|cnt_en_clk[2]      ; lcd_driver:DRV|cnt_en_clk[2]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; lcd_driver:DRV|cnt_en_clk[4]      ; lcd_driver:DRV|cnt_en_clk[4]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; lcd_driver:DRV|cnt_en_clk[5]      ; lcd_driver:DRV|cnt_en_clk[5]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; en_clk:U0|cnt_en_1hz[22]          ; en_clk:U0|cnt_en_1hz[22]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
 ; 0.300 ; en_clk:U0|cnt_en_1hz[21]          ; en_clk:U0|cnt_en_1hz[21]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
-; 0.300 ; en_clk:U0|cnt_en_1hz[19]          ; en_clk:U0|cnt_en_1hz[19]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
-; 0.300 ; en_clk:U0|cnt_en_1hz[17]          ; en_clk:U0|cnt_en_1hz[17]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
-; 0.300 ; lcd_driver:DRV|cnt_en_clk[6]      ; lcd_driver:DRV|cnt_en_clk[6]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.421      ;
-; 0.300 ; lcd_driver:DRV|cnt_en_clk[8]      ; lcd_driver:DRV|cnt_en_clk[8]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.421      ;
+; 0.300 ; lcd_driver:DRV|cnt_init[2]        ; lcd_driver:DRV|cnt_init[2]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; lcd_driver:DRV|cnt_init[16]       ; lcd_driver:DRV|cnt_init[16]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
 ; 0.300 ; en_clk_lcd:LCLK|cnt_en[12]        ; en_clk_lcd:LCLK|cnt_en[12]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.300 ; en_clk_lcd:LCLK|cnt_en[2]         ; en_clk_lcd:LCLK|cnt_en[2]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.420      ;
+; 0.301 ; lcd_driver:DRV|cnt_en_clk[8]      ; lcd_driver:DRV|cnt_en_clk[8]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.421      ;
+; 0.301 ; lcd_driver:DRV|cnt_en_clk[6]      ; lcd_driver:DRV|cnt_en_clk[6]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.421      ;
+; 0.301 ; lcd_driver:DRV|state.DISP_CLEAR   ; lcd_driver:DRV|data_bus[0]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.421      ;
 ; 0.301 ; lcd_driver:DRV|cnt_init[18]       ; lcd_driver:DRV|cnt_init[18]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.421      ;
-; 0.301 ; lcd_driver:DRV|cnt_init[20]       ; lcd_driver:DRV|cnt_init[20]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.421      ;
-; 0.301 ; en_clk:U0|cnt_en_1hz[23]          ; en_clk:U0|cnt_en_1hz[23]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.421      ;
-; 0.303 ; en_clk:U0|cnt_en_1hz[12]          ; en_clk:U0|cnt_en_1hz[12]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.423      ;
+; 0.302 ; lcd_driver:DRV|cnt_init[0]        ; lcd_driver:DRV|cnt_init[0]        ; clk          ; clk         ; 0.000        ; 0.043      ; 0.429      ;
+; 0.304 ; en_clk:U0|cnt_en_1hz[12]          ; en_clk:U0|cnt_en_1hz[12]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.424      ;
 ; 0.304 ; en_clk:U0|cnt_en_1hz[2]           ; en_clk:U0|cnt_en_1hz[2]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.424      ;
-; 0.305 ; lcd_driver:DRV|cnt_init[10]       ; lcd_driver:DRV|cnt_init[10]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; en_clk:U0|cnt_en_1hz[24]          ; en_clk:U0|cnt_en_1hz[24]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; en_clk:U0|cnt_en_1hz[18]          ; en_clk:U0|cnt_en_1hz[18]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
 ; 0.305 ; en_clk:U0|cnt_en_1hz[14]          ; en_clk:U0|cnt_en_1hz[14]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
 ; 0.305 ; en_clk:U0|cnt_en_1hz[8]           ; en_clk:U0|cnt_en_1hz[8]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
 ; 0.305 ; en_clk:U0|cnt_en_1hz[3]           ; en_clk:U0|cnt_en_1hz[3]           ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
-; 0.305 ; en_clk_lcd:LCLK|cnt_en[13]        ; en_clk_lcd:LCLK|cnt_en[13]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
-; 0.306 ; lcd_driver:DRV|cnt_init[7]        ; lcd_driver:DRV|cnt_init[7]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
-; 0.306 ; lcd_driver:DRV|cnt_init[13]       ; lcd_driver:DRV|cnt_init[13]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
+; 0.305 ; lcd_driver:DRV|cnt_init[10]       ; lcd_driver:DRV|cnt_init[10]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
+; 0.305 ; en_clk_lcd:LCLK|cnt_en[11]        ; en_clk_lcd:LCLK|cnt_en[11]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.425      ;
+; 0.306 ; en_clk:U0|cnt_en_1hz[19]          ; en_clk:U0|cnt_en_1hz[19]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
 ; 0.306 ; en_clk:U0|cnt_en_1hz[13]          ; en_clk:U0|cnt_en_1hz[13]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
 ; 0.306 ; en_clk:U0|cnt_en_1hz[11]          ; en_clk:U0|cnt_en_1hz[11]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
-; 0.308 ; watch_date:TIME1|second[1]        ; watch_date:TIME1|second[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.428      ;
-; 0.310 ; watch_date:TIME1|second[3]        ; watch_date:TIME1|second[3]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.430      ;
-; 0.310 ; lcd_driver:DRV|cnt_en_clk[0]      ; lcd_driver:DRV|cnt_en_clk[0]      ; clk          ; clk         ; 0.000        ; 0.037      ; 0.431      ;
+; 0.306 ; lcd_driver:DRV|cnt_init[7]        ; lcd_driver:DRV|cnt_init[7]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; lcd_driver:DRV|cnt_init[12]       ; lcd_driver:DRV|cnt_init[12]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; lcd_driver:DRV|cnt_init[15]       ; lcd_driver:DRV|cnt_init[15]       ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
+; 0.306 ; en_clk_lcd:LCLK|cnt_en[8]         ; en_clk_lcd:LCLK|cnt_en[8]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.426      ;
+; 0.307 ; en_clk:U0|cnt_en_1hz[17]          ; en_clk:U0|cnt_en_1hz[17]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.427      ;
+; 0.308 ; en_clk:U0|cnt_en_1hz[23]          ; en_clk:U0|cnt_en_1hz[23]          ; clk          ; clk         ; 0.000        ; 0.036      ; 0.428      ;
+; 0.309 ; watch_date:TIME1|second[3]        ; watch_date:TIME1|second[3]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.429      ;
+; 0.309 ; watch_date:TIME1|second[1]        ; watch_date:TIME1|second[1]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.429      ;
 ; 0.310 ; en_clk_lcd:LCLK|cnt_en[1]         ; en_clk_lcd:LCLK|cnt_en[1]         ; clk          ; clk         ; 0.000        ; 0.036      ; 0.430      ;
-; 0.311 ; watch_date:TIME1|second[6]        ; watch_date:TIME1|second[6]        ; clk          ; clk         ; 0.000        ; 0.036      ; 0.431      ;
+; 0.311 ; lcd_driver:DRV|cnt_en_clk[0]      ; lcd_driver:DRV|cnt_en_clk[0]      ; clk          ; clk         ; 0.000        ; 0.036      ; 0.431      ;
 +-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -931,10 +931,10 @@ No synchronizer chains to report.
 +------------------+----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -7.213   ; 0.178 ; N/A      ; N/A     ; -3.000              ;
-;  clk             ; -7.213   ; 0.178 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -887.051 ; 0.0   ; 0.0      ; 0.0     ; -309.322            ;
-;  clk             ; -887.051 ; 0.000 ; N/A      ; N/A     ; -309.322            ;
+; Worst-case Slack ; -7.195   ; 0.178 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -7.195   ; 0.178 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -854.004 ; 0.0   ; 0.0      ; 0.0     ; -304.861            ;
+;  clk             ; -854.004 ; 0.000 ; N/A      ; N/A     ; -304.861            ;
 +------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -1044,7 +1044,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 992253   ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 838675   ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1054,7 +1054,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 992253   ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 838675   ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1079,7 +1079,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 206   ; 206  ;
+; Unconstrained Input Port Paths  ; 203   ; 203  ;
 ; Unconstrained Output Ports      ; 10    ; 10   ;
 ; Unconstrained Output Port Paths ; 10    ; 10   ;
 +---------------------------------+-------+------+
@@ -1154,7 +1154,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 31 00:53:01 2021
+    Info: Processing started: Mon May 31 02:21:01 2021
 Info: Command: quartus_sta digital_clock -c digital_clock
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1171,48 +1171,48 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -7.213
+Info (332146): Worst-case setup slack is -7.195
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.213            -887.051 clk 
-Info (332146): Worst-case hold slack is 0.431
+    Info (332119):    -7.195            -854.004 clk 
+Info (332146): Worst-case hold slack is 0.433
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.431               0.000 clk 
+    Info (332119):     0.433               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -309.322 clk 
+    Info (332119):    -3.000            -304.861 clk 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.666
+Info (332146): Worst-case setup slack is -6.601
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.666            -815.713 clk 
-Info (332146): Worst-case hold slack is 0.381
+    Info (332119):    -6.601            -787.106 clk 
+Info (332146): Worst-case hold slack is 0.382
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.381               0.000 clk 
+    Info (332119):     0.382               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -309.322 clk 
+    Info (332119):    -3.000            -304.861 clk 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.620
+Info (332146): Worst-case setup slack is -2.569
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.620            -269.630 clk 
+    Info (332119):    -2.569            -258.839 clk 
 Info (332146): Worst-case hold slack is 0.178
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -1222,13 +1222,13 @@ Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -223.157 clk 
+    Info (332119):    -3.000            -219.724 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4758 megabytes
-    Info: Processing ended: Mon May 31 00:53:03 2021
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4754 megabytes
+    Info: Processing ended: Mon May 31 02:21:04 2021
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -55,78 +55,72 @@ module	digital_clock	(
 										.minute		(minute),
 										.second		(second));
 										
-										
-										
-	bin2bcd				 CVT_year ( 															// 년도
+	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
-										.bin_bcd		(year),
+										.bin_bcd		(second),
 										.rst			(rstn),
-										.hun			(hun1),
+										.hun			(),
 										.ten			(ten1),
-										.one			(one1));
-
+										.one			(one1) );
 										
-	bin2bcd				CVT_month ( 															// 월
+	bin2bcd			 CVT_minute ( 															// 분
 										.clk			(clk),
-										.bin_bcd		(month),
+										.bin_bcd		(minute),
 										.rst			(rstn),
 										.hun			(),
 										.ten			(ten2),
-										.one			(one2));
-
+										.one			(one2));									
+	
+	bin2bcd				CVT_hour ( 															// 시간
+										.clk			(clk),
+										.bin_bcd		(hour),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten3),
+										.one			(one3));
 										
 	bin2bcd				  CVT_day ( 															// 일
 										.clk			(clk),
 										.bin_bcd		(day),
 										.rst			(rstn),
 										.hun			(),
-										.ten			(ten3),
-										.one			(one3));
-
-	
-	bin2bcd				  CVT_hour ( 															// 시간
-										.clk			(clk),
-										.bin_bcd		(hour),
-										.rst			(rstn),
-										.hun			(),
 										.ten			(ten4),
 										.one			(one4));
-
 										
-	bin2bcd				  CVT_minute ( 															// 분
+	bin2bcd				CVT_month ( 															// 월
 										.clk			(clk),
-										.bin_bcd		(minute),
+										.bin_bcd		(month),
 										.rst			(rstn),
 										.hun			(),
 										.ten			(ten5),
 										.one			(one5));
 
-	
-	bin2bcd				  CVT_second ( 															// 초
+	bin2bcd				 CVT_year ( 															// 년도
 										.clk			(clk),
-										.bin_bcd		(second),
+										.bin_bcd		(year),
 										.rst			(rstn),
-										.hun			(),
+										.hun			(hun6),
 										.ten			(ten6),
-										.one			(one6) );
+										.one			(one6));
+										
 										
 	lcd_display_list		STL	( 
 										.clk			(clk), 
 										.rst			(rstn), 
 										.sw_in		(sw_in),
-										.hunYear		(hun1),
-										.tenYear		(ten1),
-										.oneYear		(one1),
-										.tenMonth	(ten2),
-										.oneMonth	(one2),
-										.tenDay		(ten3),
-										.oneDay		(one3),
-										.tenHour		(ten4),
-										.oneHour		(one4),
-										.tenMinute	(ten5),
-										.oneMinute	(one5),
-										.tenSecond	(ten6),
-										.oneSecond	(one6),
+										.hunYear		(hun6),
+										.tenYear		(ten6),
+										.oneYear		(one6),
+										.tenMonth	(ten5),
+										.oneMonth	(one5),
+										.tenDay		(ten4),
+										.oneDay		(one4),
+										.tenHour		(ten3),
+										.oneHour		(one3),
+										.tenMinute	(ten2),
+										.oneMinute	(one2),
+										.tenSecond	(ten1),
+										.oneSecond	(one1),
 										.index		(index_char),
 										.out			(data_char)	);
 	
