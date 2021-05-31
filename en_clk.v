@@ -15,7 +15,7 @@ module	en_clk	(
 			cnt_en_1hz	<= 0;
 			en_1hz		<= 0;
 		end
-		else if (cnt_en_1hz == 26'd4999) begin
+		else if (cnt_en_1hz == 26'd49999999) begin
 			cnt_en_1hz	<= 0;
 			en_1hz		<= 1;
 		end
