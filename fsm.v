@@ -2,20 +2,63 @@ module	fsm (
 					clk,
 					rst,
 					dip_sw,
-					en_state,
+					sw_in,
+					bin_time,
+					en_time,
 					cursor);
 					
 	input				clk, rst;
-	input		[4:0]	dip_sw;
-	output			en_state;
-	output			cursor;
-	
-	parameter		WATCH		 = 2'd0;
-						SET_WATCH = 2'd0;
+	input		[1:0]	dip_sw;
+	input		[3:0] sw_in;
+	input		[47:0]bin_time;
+	output			en_time;
+	output	[4:0]	cursor;
 						
-	reg		[1:0] state, next;
+	reg				en_time;
+	reg		[4:0] cursor;
+	wire		[7:0] year_set, month_set, day_set, hour_set, minute_set, sec_set;
+	
+	assign			year_set 	= bin_time[47:40];
+	assign			month_set 	= bin_time[39:32];
+	assign			day_set 		= bin_time[31:24];
+	assign			hour_set		= bin_time[23:16];
+	assign			minute_set	= bin_time[15:8];
+	assign			sec_set		= bin_time[7:0];
+	
+	
 	
 	always @ (posedge clk or negedge rst) begin
+		if(!rst) 
+			en_time		<= 0;
+		else if(dip_sw[0] == 1) 
+			en_time		<= 1;
+		else
+			en_time		<= 0;
+	end
+	
+	always @ (en_time) begin
+		if(!rst)
+			cursor		<= 0;
+		else begin
+			if(sw_in[1]==1)
+				if(cursor == 5'd31)
+					cursor	<= 0;
+				else
+					cursor	<= cursor + 5'd1;
+			else if(sw_in[0]==1)
+				if(cursor == 5'd0)
+					cursor	<= 5'd31;
+				else
+					cursor	<= cursor - 5'd1;
+		end
+	end
+endmodule
+		
+		
+			
+		
+	
+/*	always @ (posedge clk or negedge rst) begin
 		if(!rst)
 			state	<= WATCH;
 		else
@@ -39,5 +82,5 @@ module	fsm (
 			end
 	endcase
 	
-	always @ 
+	always @ */ 
 			

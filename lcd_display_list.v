@@ -36,7 +36,7 @@ module	lcd_display_list(
 	integer			i;
 	integer 			mode;
 	
-	debouncer_clk			SW0	(
+/*	debouncer_clk			SW0	(
 										.clk			(clk),
 										.rst			(rst),
 										.in			(sw_in[0]),
@@ -58,7 +58,7 @@ module	lcd_display_list(
 										.clk			(clk),
 										.rst			(rst),
 										.in			(sw_in[3]),
-										.out			(sw[3]));
+										.out			(sw[3])); */
 	
 	
 	always @ ( posedge clk or negedge rst )

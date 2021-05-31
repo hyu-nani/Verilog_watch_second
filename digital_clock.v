@@ -1,6 +1,7 @@
 module	digital_clock	(
 							clk,
 							rst,
+							dip_sw,
 							sw_in,
 							lcd_rs,
 							lcd_rw,
@@ -8,6 +9,7 @@ module	digital_clock	(
 							lcd_data);
 									
 	input					clk, rst;
+	input			[1:0] dip_sw;
 	input			[3:0]	sw_in;
 	output				lcd_rs;
 	output				lcd_rw;
@@ -21,8 +23,11 @@ module	digital_clock	(
 	wire			[7:0] data_char;
 	wire					en_1hz;
 	wire					en_clk;
+	wire					en_time;
 	wire			[3:0]	sw_in;
+	wire			[1:0] dip_sw;
 	wire			[3:0] ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, hun6, ten6, one6;
+	wire			[4:0] cursor;
 	
 	assign		rstn = ~rst;
 	
@@ -46,14 +51,23 @@ module	digital_clock	(
 										.clk			(clk),
 										.clk1sec		(en_1hz),
 										.rst			(rstn),
-										.set_time	(1'b0),
-										.bin_time	(),
+										.set_time	(en_time),
+										.bin_time	(bin_time),
 										.year			(year),
 										.month		(month),
 										.day			(day),
 										.hour			(hour),
 										.minute		(minute),
 										.second		(second));
+										
+	fsm						DIP_SW(
+										.clk			(clk),
+										.rst			(rstn),
+										.dip_sw		(dip_sw),
+										.sw_in		(sw_in),
+										.bin_time	(bin_time),
+										.en_time		(en_time),
+										.cursor		(cursor));
 										
 	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
@@ -121,7 +135,7 @@ module	digital_clock	(
 										.oneMinute	(one2),
 										.tenSecond	(ten1),
 										.oneSecond	(one1),
-										.index		(index_char),
+										.index		(cursor),
 										.out			(data_char)	);
 										
 	
