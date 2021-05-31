@@ -47,7 +47,7 @@ module	digital_clock	(
 										.hour_10		(hour_10),
 										.en_day		(en_day) );*/
 	
-	watch_date				TIME1	(
+	watch_date				TIME	(
 										.clk			(clk),
 										.clk1sec		(en_1hz),
 										.rst			(rstn),
@@ -60,11 +60,17 @@ module	digital_clock	(
 										.minute		(minute),
 										.second		(second));
 										
-	fsm						DIP_SW(
+	watch_set				TIME_SET(
 										.clk			(clk),
 										.rst			(rstn),
 										.dip_sw		(dip_sw),
 										.sw_in		(sw_in),
+										.year			(year),
+										.month		(month),
+										.day			(day),
+										.hour			(hour),
+										.minute		(minute),
+										.second		(second),
 										.bin_time	(bin_time),
 										.en_time		(en_time),
 										.cursor		(cursor));
@@ -135,7 +141,7 @@ module	digital_clock	(
 										.oneMinute	(one2),
 										.tenSecond	(ten1),
 										.oneSecond	(one1),
-										.index		(cursor),
+										.index		(index_char),
 										.out			(data_char)	);
 										
 	
