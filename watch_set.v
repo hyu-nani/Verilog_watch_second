@@ -23,21 +23,26 @@ module	watch_set (
 	output	[4:0]	cursor;
 						
 	reg				en_time;
+	reg		[47:0]bin_time;
 	reg		[4:0] cursor;
+	wire		[7:0]	year,month,day,hour,minute,second;
 	wire		[7:0] year_set, month_set, day_set, hour_set, minute_set, sec_set;
-	
-	assign			year_set 	= bin_time[47:40];
-	assign			month_set 	= bin_time[39:32];
-	assign			day_set 		= bin_time[31:24];
-	assign			hour_set		= bin_time[23:16];
-	assign			minute_set	= bin_time[15:8];
-	assign			sec_set		= bin_time[7:0];
-	
 	
 	
 	always @ (posedge clk or negedge rst) begin
 		if(!rst) begin
 			en_time		<= 0;
+		end
+		else if(active == 0)begin
+			bin_time[7:0] 		<=	second;
+			bin_time[15:8] 	<=	minute;
+			bin_time[23:16] 	<=	hour;
+			bin_time[31:24]	<=	day;
+			bin_time[39:32] 	<=	month;
+			bin_time[47:40] 	<=	year;
+		end	
+		else begin
+			
 		end
 		/*
 		else if(dip_sw[0] == 1) 

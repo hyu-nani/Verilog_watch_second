@@ -1,5 +1,4 @@
-module	lcd_display_list( 
-										clk, 
+ 										clk, 
 										rst,
 										sw_in,
 										hunYear,
