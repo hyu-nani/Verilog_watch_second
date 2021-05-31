@@ -20,35 +20,34 @@ module	digital_clock	(
 	wire			[7:0]	month;
 	wire			[7:0]	day, hour, minute, second;
 	wire			[4:0] index_char;
-	wire			[7:0] data_char;
 	wire					en_1hz;
 	wire					en_clk;
 	wire					en_time;
 	wire			[3:0]	sw_in;
 	wire			[1:0] dip_sw;
-	wire			[3:0] ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, hun6, ten6, one6;
 	wire			[4:0] cursor;
 	
+	reg			[7:0] data_mode0,data_mode1,data_mode2;
+	reg			[7:0]	data_char;
+	
 	assign		rstn = ~rst;
+	
+	always @(*) begin
+		case(dip_sw)
+			2'b00		:	data_char	<=	data_mode0;
+			2'b01		:	data_char	<=	data_mode0;
+			2'b10		:	data_char	<=	data_mode1;
+			default	:	data_char	<=	data_mode0;
+		endcase
+	end
+	
 	
 	en_clk					U0		(
 										.clk			(clk),
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
-										
-	/* watch						TIME0 (
-										.clk			(en_1hz),
-										.rst			(rstn),
-										.sec_1		(sec_1),
-										.sec_10		(sec_10),
-										.min_1		(min_1),
-										.min_10		(min_10),
-										.hour_1		(hour_1),
-										.hour_10		(hour_10),
-										.en_day		(en_day) );*/
 	
-	watch_date				TIME	(
-										.active		(dip_sw[0]),
+	watch_time				TIME	(
 										.clk			(clk),
 										.clk1sec		(en_1hz),
 										.rst			(rstn),
@@ -61,8 +60,20 @@ module	digital_clock	(
 										.minute		(minute),
 										.second		(second));
 										
-	watch_set				TIME_SET(
-										.active		(dip_sw[1]),
+	mode_watch				MODE0	( 	
+										.clk			(clk), 
+										.rst			(rstn), 
+										.sw_in		(sw_in),
+										.year			(year),
+										.month		(month),
+										.day			(day),
+										.hour			(hour),
+										.minute		(minute),
+										.second		(second),
+										.index		(index_char),
+										.out			(data_mode0));
+										
+	mode_watch_set			MODE1(
 										.clk			(clk),
 										.rst			(rstn),
 										.sw_in		(sw_in),
@@ -74,76 +85,8 @@ module	digital_clock	(
 										.second		(second),
 										.bin_time	(bin_time),
 										.en_time		(en_time),
-										.cursor		(cursor));
-										
-	bin2bcd			 CVT_second ( 															// 초
-										.clk			(clk),
-										.bin_bcd		(second),
-										.rst			(rstn),
-										.hun			(),
-										.ten			(ten1),
-										.one			(one1) );
-										
-	bin2bcd			 CVT_minute ( 															// 분
-										.clk			(clk),
-										.bin_bcd		(minute),
-										.rst			(rstn),
-										.hun			(),
-										.ten			(ten2),
-										.one			(one2));									
-	
-	bin2bcd				CVT_hour ( 															// 시간
-										.clk			(clk),
-										.bin_bcd		(hour),
-										.rst			(rstn),
-										.hun			(),
-										.ten			(ten3),
-										.one			(one3));
-										
-	bin2bcd				  CVT_day ( 															// 일
-										.clk			(clk),
-										.bin_bcd		(day),
-										.rst			(rstn),
-										.hun			(),
-										.ten			(ten4),
-										.one			(one4));
-										
-	bin2bcd				CVT_month ( 															// 월
-										.clk			(clk),
-										.bin_bcd		(month),
-										.rst			(rstn),
-										.hun			(),
-										.ten			(ten5),
-										.one			(one5));
-
-	bin2bcd				 CVT_year ( 															// 년도
-										.clk			(clk),
-										.bin_bcd		(year),
-										.rst			(rstn),
-										.hun			(hun6),
-										.ten			(ten6),
-										.one			(one6));
-										
-										
-	lcd_display_list		STL	( 
-										.clk			(clk), 
-										.rst			(rstn), 
-										.sw_in		(sw_in),
-										.hunYear		(hun6),
-										.tenYear		(ten6),
-										.oneYear		(one6),
-										.tenMonth	(ten5),
-										.oneMonth	(one5),
-										.tenDay		(ten4),
-										.oneDay		(one4),
-										.tenHour		(ten3),
-										.oneHour		(one3),
-										.tenMinute	(ten2),
-										.oneMinute	(one2),
-										.tenSecond	(ten1),
-										.oneSecond	(one1),
 										.index		(index_char),
-										.out			(data_char)	);
+										.out			(data_mode1));
 										
 	
 	en_clk_lcd				LCLK	( 

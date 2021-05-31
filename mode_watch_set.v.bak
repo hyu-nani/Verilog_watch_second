@@ -1,4 +1,4 @@
-module	watch_set ( 
+module	mode_watch_set ( 
 					active,	
 					clk,
 					rst,

@@ -50,6 +50,14 @@
 				{
 					"name" : "rst",
 					"strict" : false
+				},
+				{
+					"name" : "dip_sw[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dip_sw[0]",
+					"strict" : false
 				}
 			]
 		}

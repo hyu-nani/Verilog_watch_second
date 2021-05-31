@@ -154,7 +154,7 @@ lcd_data[1]                  : 83        : output : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
 lcd_data[2]                  : 85        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
+dip_sw[1]                    : 87        : input  : 2.5 V             :         : 5         : N              
 sw_in[2]                     : 88        : input  : 2.5 V             :         : 5         : Y              
 sw_in[1]                     : 89        : input  : 2.5 V             :         : 5         : Y              
 sw_in[0]                     : 90        : input  : 2.5 V             :         : 6         : Y              
@@ -166,7 +166,7 @@ GND                          : 95        : gnd    :                   :         
 MSEL1                        : 96        :        :                   :         : 6         :                
 MSEL2                        : 97        :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 98        :        :                   :         : 6         :                
-dip_sw[1]                    : 99        : input  : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 99        :        :                   :         : 6         :                
 lcd_data[7]                  : 100       : output : 2.5 V             :         : 6         : Y              
 ~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : 101       : output : 2.5 V             :         : 6         : N              
 VCCINT                       : 102       : power  :                   : 1.2V    :           :                

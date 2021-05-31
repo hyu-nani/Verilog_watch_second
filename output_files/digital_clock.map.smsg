@@ -1,7 +1,7 @@
-Warning (10273): Verilog HDL warning at watch_date.v(88): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 88
-Warning (10273): Verilog HDL warning at watch_date.v(97): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 97
-Warning (10273): Verilog HDL warning at watch_date.v(106): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 106
-Warning (10273): Verilog HDL warning at watch_date.v(115): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 115
-Warning (10273): Verilog HDL warning at watch_date.v(124): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 124
 Warning (10268): Verilog HDL information at bin2bcd.v(18): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 18
+Warning (10273): Verilog HDL warning at watch_time.v(86): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 86
+Warning (10273): Verilog HDL warning at watch_time.v(95): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 95
+Warning (10273): Verilog HDL warning at watch_time.v(104): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 104
+Warning (10273): Verilog HDL warning at watch_time.v(113): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 113
+Warning (10273): Verilog HDL warning at watch_time.v(122): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 122
 Info (10281): Verilog HDL Declaration information at lcd_driver.v(34): object "state" differs only in case from object "STATE" in the same scope File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 34

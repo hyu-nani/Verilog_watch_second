@@ -1,4 +1,5 @@
- 										clk, 
+ 	module display_list	(
+										clk, 
 										rst,
 										sw_in,
 										hunYear,
