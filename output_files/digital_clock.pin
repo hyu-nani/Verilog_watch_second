@@ -131,7 +131,7 @@ lcd_data[6]                  : 60        : output : 2.5 V             :         
 VCCINT                       : 61        : power  :                   : 1.2V    :           :                
 VCCIO4                       : 62        : power  :                   : 2.5V    : 4         :                
 GND                          : 63        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 64        :        :                   :         : 4         :                
+dip_sw[1]                    : 64        : input  : 2.5 V             :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 65        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 66        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 67        :        :                   :         : 4         :                
@@ -153,7 +153,7 @@ GND                          : 82        : gnd    :                   :         
 lcd_data[1]                  : 83        : output : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
 lcd_data[2]                  : 85        : output : 2.5 V             :         : 5         : Y              
-dip_sw[1]                    : 86        : input  : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 sw_in[2]                     : 88        : input  : 2.5 V             :         : 5         : Y              
 sw_in[1]                     : 89        : input  : 2.5 V             :         : 5         : Y              

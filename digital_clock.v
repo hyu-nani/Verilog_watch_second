@@ -23,6 +23,7 @@ module	digital_clock	(
 	wire					en_1hz;
 	wire					en_clk;
 	wire					en_time;
+	reg			[47:0]bin_time;
 	wire			[3:0]	sw_in;
 	wire			[1:0] dip_sw;
 	wire			[4:0] cursor;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Tue Jun 01 04:29:19 2021
+Tue Jun 01 06:11:12 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -19,17 +19,25 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  11. Inverted Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Parameter Settings for User Entity Instance: lcd_driver:DRV
- 14. Port Connectivity Checks: "mode_watch_set:MODE1"
- 15. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_month"
- 16. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_day"
- 17. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_hour"
- 18. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_minute"
- 19. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_second"
- 20. Port Connectivity Checks: "watch_time:TIME"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
+ 14. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_month"
+ 15. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_day"
+ 16. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_hour"
+ 17. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_minute"
+ 18. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_second"
+ 19. Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U4"
+ 20. Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U3"
+ 21. Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U2"
+ 22. Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U1"
+ 23. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_month"
+ 24. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_day"
+ 25. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_hour"
+ 26. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_minute"
+ 27. Port Connectivity Checks: "mode_watch:MODE0|bin2bcd:CVT_second"
+ 28. Port Connectivity Checks: "watch_time:TIME"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,15 +63,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 01 04:29:19 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 01 06:11:12 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 523                                         ;
-;     Total combinational functions  ; 513                                         ;
-;     Dedicated logic registers      ; 213                                         ;
-; Total registers                    ; 213                                         ;
+; Total logic elements               ; 903                                         ;
+;     Total combinational functions  ; 875                                         ;
+;     Dedicated logic registers      ; 350                                         ;
+; Total registers                    ; 350                                         ;
 ; Total pins                         ; 19                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -188,6 +196,9 @@ refer to the applicable agreement for further details.
 ; watch_time.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v     ;         ;
 ; mode_watch.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v     ;         ;
 ; mode_watch_set.v                 ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v ;         ;
+; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v  ;         ;
+; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v        ;         ;
+; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v           ;         ;
 ; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v     ;         ;
 ; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v     ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
@@ -198,20 +209,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 523       ;
+; Estimated Total logic elements              ; 903       ;
 ;                                             ;           ;
-; Total combinational functions               ; 513       ;
+; Total combinational functions               ; 875       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 284       ;
-;     -- 3 input functions                    ; 40        ;
-;     -- <=2 input functions                  ; 189       ;
+;     -- 4 input functions                    ; 525       ;
+;     -- 3 input functions                    ; 105       ;
+;     -- <=2 input functions                  ; 245       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 397       ;
-;     -- arithmetic mode                      ; 116       ;
+;     -- normal mode                          ; 697       ;
+;     -- arithmetic mode                      ; 178       ;
 ;                                             ;           ;
-; Total registers                             ; 213       ;
-;     -- Dedicated logic registers            ; 213       ;
+; Total registers                             ; 350       ;
+;     -- Dedicated logic registers            ; 350       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 19        ;
@@ -219,31 +230,61 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 212       ;
-; Total fan-out                               ; 2404      ;
-; Average fan-out                             ; 3.15      ;
+; Maximum fan-out                             ; 341       ;
+; Total fan-out                               ; 4113      ;
+; Average fan-out                             ; 3.26      ;
 +---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------+--------------+
-; |digital_clock             ; 513 (1)             ; 213 (0)                   ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |digital_clock                                     ; digital_clock  ; work         ;
-;    |en_clk:U0|             ; 45 (45)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0                           ; en_clk         ; work         ;
-;    |en_clk_lcd:LCLK|       ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK                     ; en_clk_lcd     ; work         ;
-;    |lcd_driver:DRV|        ; 74 (74)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV                      ; lcd_driver     ; work         ;
-;    |mode_watch:MODE0|      ; 230 (76)            ; 57 (7)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0                    ; mode_watch     ; work         ;
-;       |bin2bcd:CVT_day|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_day    ; bin2bcd        ; work         ;
-;       |bin2bcd:CVT_hour|   ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_hour   ; bin2bcd        ; work         ;
-;       |bin2bcd:CVT_minute| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_minute ; bin2bcd        ; work         ;
-;       |bin2bcd:CVT_month|  ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_month  ; bin2bcd        ; work         ;
-;       |bin2bcd:CVT_second| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_second ; bin2bcd        ; work         ;
-;       |bin2bcd:CVT_year|   ; 33 (33)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_year   ; bin2bcd        ; work         ;
-;    |mode_watch_set:MODE1|  ; 20 (20)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1                ; mode_watch_set ; work         ;
-;    |watch_time:TIME|       ; 114 (114)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                     ; watch_time     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+----------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+----------------+--------------+
+; |digital_clock             ; 875 (1)             ; 350 (0)                   ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |digital_clock                                                   ; digital_clock  ; work         ;
+;    |en_clk:U0|             ; 44 (44)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0                                         ; en_clk         ; work         ;
+;    |en_clk_lcd:LCLK|       ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK                                   ; en_clk_lcd     ; work         ;
+;    |lcd_driver:DRV|        ; 75 (75)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV                                    ; lcd_driver     ; work         ;
+;    |mode_watch:MODE0|      ; 230 (76)            ; 57 (7)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0                                  ; mode_watch     ; work         ;
+;       |bin2bcd:CVT_day|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_day                  ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_hour|   ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_hour                 ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_minute| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_minute               ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_month|  ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_month                ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_second| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_second               ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_year|   ; 33 (33)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_year                 ; bin2bcd        ; work         ;
+;    |mode_watch_set:MODE1|  ; 369 (175)           ; 148 (61)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1                              ; mode_watch_set ; work         ;
+;       |bin2bcd:CVT_day|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_day              ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_hour|   ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_hour             ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_minute| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_minute           ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_month|  ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_month            ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_second| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_second           ; bin2bcd        ; work         ;
+;       |bin2bcd:CVT_year|   ; 31 (31)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_year             ; bin2bcd        ; work         ;
+;       |debouncer_clk:sw0|  ; 37 (1)              ; 22 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw0            ; debouncer_clk  ; work         ;
+;          |clk_div:U0|      ; 36 (36)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0 ; clk_div        ; work         ;
+;          |d_ff:U1|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U1    ; d_ff           ; work         ;
+;          |d_ff:U2|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U2    ; d_ff           ; work         ;
+;          |d_ff:U3|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U3    ; d_ff           ; work         ;
+;          |d_ff:U4|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U4    ; d_ff           ; work         ;
+;       |debouncer_clk:sw1|  ; 2 (1)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw1            ; debouncer_clk  ; work         ;
+;          |clk_div:U0|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0 ; clk_div        ; work         ;
+;          |d_ff:U1|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw1|d_ff:U1    ; d_ff           ; work         ;
+;          |d_ff:U2|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw1|d_ff:U2    ; d_ff           ; work         ;
+;          |d_ff:U3|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw1|d_ff:U3    ; d_ff           ; work         ;
+;          |d_ff:U4|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw1|d_ff:U4    ; d_ff           ; work         ;
+;       |debouncer_clk:sw2|  ; 2 (1)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw2            ; debouncer_clk  ; work         ;
+;          |clk_div:U0|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0 ; clk_div        ; work         ;
+;          |d_ff:U1|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw2|d_ff:U1    ; d_ff           ; work         ;
+;          |d_ff:U2|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw2|d_ff:U2    ; d_ff           ; work         ;
+;          |d_ff:U3|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw2|d_ff:U3    ; d_ff           ; work         ;
+;          |d_ff:U4|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw2|d_ff:U4    ; d_ff           ; work         ;
+;       |debouncer_clk:sw3|  ; 2 (1)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3            ; debouncer_clk  ; work         ;
+;          |clk_div:U0|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0 ; clk_div        ; work         ;
+;          |d_ff:U1|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|d_ff:U1    ; d_ff           ; work         ;
+;          |d_ff:U2|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|d_ff:U2    ; d_ff           ; work         ;
+;          |d_ff:U3|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|d_ff:U3    ; d_ff           ; work         ;
+;          |d_ff:U4|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|d_ff:U4    ; d_ff           ; work         ;
+;    |watch_time:TIME|       ; 127 (127)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                                   ; watch_time     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -265,22 +306,96 @@ Encoding Type:  One-Hot
 +--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+--------------------------------------------+----------------------------------------+
-; Register name                              ; Reason for Removal                     ;
-+--------------------------------------------+----------------------------------------+
-; lcd_driver:DRV|lcd_rw                      ; Stuck at GND due to stuck port data_in ;
-; mode_watch_set:MODE1|out[7]                ; Stuck at GND due to stuck port data_in ;
-; mode_watch:MODE0|out[7]                    ; Stuck at GND due to stuck port data_in ;
-; mode_watch:MODE0|bin2bcd:CVT_year|hun[2,3] ; Stuck at GND due to stuck port data_in ;
-; lcd_driver:DRV|state~13                    ; Lost fanout                            ;
-; lcd_driver:DRV|state~14                    ; Lost fanout                            ;
-; lcd_driver:DRV|state~15                    ; Lost fanout                            ;
-; en_clk:U0|cnt_en_1hz[0]                    ; Merged with en_clk_lcd:LCLK|cnt_en[0]  ;
-; en_clk:U0|cnt_en_1hz[1]                    ; Merged with en_clk_lcd:LCLK|cnt_en[1]  ;
-; Total Number of Removed Registers = 10     ;                                        ;
-+--------------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                            ;
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+; Register name                                                   ; Reason for Removal                                                          ;
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+; lcd_driver:DRV|lcd_rw                                           ; Stuck at GND due to stuck port data_in                                      ;
+; mode_watch_set:MODE1|bin2bcd:CVT_year|hun[2,3]                  ; Stuck at GND due to stuck port data_in                                      ;
+; mode_watch:MODE0|out[7]                                         ; Stuck at GND due to stuck port data_in                                      ;
+; mode_watch:MODE0|bin2bcd:CVT_year|hun[2,3]                      ; Stuck at GND due to stuck port data_in                                      ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[21] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[21] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[21] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[21] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[21] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[21] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[18] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[18] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[18] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[18] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[18] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[18] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[17] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[17] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[17] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[17] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[17] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[17] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[13] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[13] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[13] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[13] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[13] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[13] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[10] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[10] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[10] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[10] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[10] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[10] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[8]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[8]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[8]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[7]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[7]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[7]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[4]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[4]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[4]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[3]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[3]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[3]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[2]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[2]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[2]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[1]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[1]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[1]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[0]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[0]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[0]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[20] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[20] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[20] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[20] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[20] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[20] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[19] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[19] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[19] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[19] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[19] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[19] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[16] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[16] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[16] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[16] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[16] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[16] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[15] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[15] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[15] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[15] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[15] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[15] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[14] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[14] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[14] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[14] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[14] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[14] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[12] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[12] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[12] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[12] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[12] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[12] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[11] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[11] ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[11] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[11] ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[11] ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[11] ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[9]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[9]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[9]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[6]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[6]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[6]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw1|clk_div:U0|cnt_myclk[5]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw2|clk_div:U0|cnt_myclk[5]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]  ;
+; mode_watch_set:MODE1|debouncer_clk:sw3|clk_div:U0|cnt_myclk[5]  ; Merged with mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]  ;
+; lcd_driver:DRV|state~13                                         ; Lost fanout                                                                 ;
+; lcd_driver:DRV|state~14                                         ; Lost fanout                                                                 ;
+; lcd_driver:DRV|state~15                                         ; Lost fanout                                                                 ;
+; en_clk:U0|cnt_en_1hz[0]                                         ; Merged with en_clk_lcd:LCLK|cnt_en[0]                                       ;
+; mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]  ; Merged with en_clk_lcd:LCLK|cnt_en[0]                                       ;
+; mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]  ; Merged with en_clk_lcd:LCLK|cnt_en[1]                                       ;
+; en_clk:U0|cnt_en_1hz[1]                                         ; Merged with en_clk_lcd:LCLK|cnt_en[1]                                       ;
+; mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]  ; Merged with en_clk:U0|cnt_en_1hz[2]                                         ;
+; en_clk:U0|cnt_en_1hz[2]                                         ; Merged with en_clk_lcd:LCLK|cnt_en[2]                                       ;
+; mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]  ; Merged with en_clk:U0|cnt_en_1hz[3]                                         ;
+; en_clk:U0|cnt_en_1hz[3]                                         ; Merged with en_clk_lcd:LCLK|cnt_en[3]                                       ;
+; mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]  ; Merged with en_clk:U0|cnt_en_1hz[4]                                         ;
+; en_clk:U0|cnt_en_1hz[4]                                         ; Merged with en_clk_lcd:LCLK|cnt_en[4]                                       ;
+; Total Number of Removed Registers = 85                          ;                                                                             ;
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -288,12 +403,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 213   ;
-; Number of registers using Synchronous Clear  ; 18    ;
+; Total registers                              ; 350   ;
+; Number of registers using Synchronous Clear  ; 49    ;
 ; Number of registers using Synchronous Load   ; 22    ;
-; Number of registers using Asynchronous Clear ; 212   ;
+; Number of registers using Asynchronous Clear ; 300   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 71    ;
+; Number of registers using Clock Enable       ; 121   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -310,22 +425,31 @@ Encoding Type:  One-Hot
 ; watch_time:TIME|year[4]                ; 12      ;
 ; watch_time:TIME|year[2]                ; 9       ;
 ; watch_time:TIME|month[2]               ; 10      ;
-; watch_time:TIME|year[0]                ; 4       ;
-; watch_time:TIME|month[0]               ; 7       ;
+; watch_time:TIME|year[0]                ; 5       ;
+; watch_time:TIME|month[0]               ; 8       ;
 ; Total number of inverted registers = 9 ;         ;
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[6] ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 32 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[3]      ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[0]      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[3]       ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|month[5]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|year_set[5]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|month_set[2]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|day_set[2]    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|hour_set[7]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|second[2]          ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|minute_set[4] ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 32 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[3]            ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[0]            ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|second_set[2] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|day[1]             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +-------------------------------------------------------------+
@@ -347,13 +471,89 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mode_watch_set:MODE1"                                                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                       ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; bin_time ; Output ; Warning  ; Output or bidir port (48 bits) is wider than the port expression (1 bits) it drives; bit(s) "bin_time[47..1]" have no fanouts ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_month" ;
++------+--------+----------+-----------------------------------------+
+; Port ; Type   ; Severity ; Details                                 ;
++------+--------+----------+-----------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                  ;
++------+--------+----------+-----------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_day" ;
++------+--------+----------+---------------------------------------+
+; Port ; Type   ; Severity ; Details                               ;
++------+--------+----------+---------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                ;
++------+--------+----------+---------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_hour" ;
++------+--------+----------+----------------------------------------+
+; Port ; Type   ; Severity ; Details                                ;
++------+--------+----------+----------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                 ;
++------+--------+----------+----------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_minute" ;
++------+--------+----------+------------------------------------------+
+; Port ; Type   ; Severity ; Details                                  ;
++------+--------+----------+------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                   ;
++------+--------+----------+------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_second" ;
++------+--------+----------+------------------------------------------+
+; Port ; Type   ; Severity ; Details                                  ;
++------+--------+----------+------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                   ;
++------+--------+----------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U4"                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; set  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U3"                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; set  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U2"                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; set  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U1"                                                          ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; set  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------+
@@ -401,14 +601,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+--------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "watch_time:TIME"                                                                                                                  ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                       ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; bin_time ; Output ; Warning  ; Output or bidir port (48 bits) is wider than the port expression (1 bits) it drives; bit(s) "bin_time[47..1]" have no fanouts ;
-; bin_time ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                           ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "watch_time:TIME"                                                                        ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; bin_time ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -417,25 +616,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 19                          ;
-; cycloneiii_ff         ; 213                         ;
-;     CLR               ; 119                         ;
+; cycloneiii_ff         ; 350                         ;
+;     CLR               ; 205                         ;
+;     CLR SCLR          ; 1                           ;
 ;     CLR SLD           ; 22                          ;
-;     ENA CLR           ; 53                          ;
-;     ENA CLR SCLR      ; 18                          ;
+;     ENA               ; 49                          ;
+;     ENA CLR           ; 24                          ;
+;     ENA CLR SCLR      ; 48                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 513                         ;
-;     arith             ; 116                         ;
-;         2 data inputs ; 113                         ;
-;         3 data inputs ; 3                           ;
-;     normal            ; 397                         ;
+; cycloneiii_lcell_comb ; 875                         ;
+;     arith             ; 178                         ;
+;         2 data inputs ; 138                         ;
+;         3 data inputs ; 40                          ;
+;     normal            ; 697                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 16                          ;
-;         2 data inputs ; 59                          ;
-;         3 data inputs ; 37                          ;
-;         4 data inputs ; 284                         ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 85                          ;
+;         3 data inputs ; 65                          ;
+;         4 data inputs ; 525                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.73                        ;
+; Average LUT depth     ; 3.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -444,7 +645,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -454,7 +655,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 01 04:29:03 2021
+    Info: Processing started: Tue Jun 01 06:10:53 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -465,40 +666,67 @@ Warning (12019): Can't analyze file -- file watch_date.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
     Info (12023): Found entity 1: bin2bcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 1
 Warning (12019): Can't analyze file -- file fsm.v is missing
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(33): created implicit net for "rstn" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 33
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(55): created implicit net for "bin_time" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 55
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(34): created implicit net for "rstn" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 34
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
 Warning (12125): Using design file en_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v Line: 1
-Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 48
+Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 49
 Warning (12125): Using design file watch_time.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: watch_time File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 1
-Info (12128): Elaborating entity "watch_time" for hierarchy "watch_time:TIME" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 61
+Info (12128): Elaborating entity "watch_time" for hierarchy "watch_time:TIME" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 62
 Warning (10762): Verilog HDL Case Statement warning at watch_time.v(76): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 76
 Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(113): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 113
 Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(122): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 122
 Warning (10030): Net "bin_time" at watch_time.v(18) has no driver or initial value, using a default initial value '0' File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 18
 Warning (12125): Using design file mode_watch.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mode_watch File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 1
-Info (12128): Elaborating entity "mode_watch" for hierarchy "mode_watch:MODE0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 74
+Info (12128): Elaborating entity "mode_watch" for hierarchy "mode_watch:MODE0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 75
 Info (12128): Elaborating entity "bin2bcd" for hierarchy "mode_watch:MODE0|bin2bcd:CVT_second" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 36
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(35): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 35
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(33): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 33
 Warning (12125): Using design file mode_watch_set.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mode_watch_set File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 1
-Info (12128): Elaborating entity "mode_watch_set" for hierarchy "mode_watch_set:MODE1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 90
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(37): truncated value with size 32 to match size of target (1) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 37
-Warning (10240): Verilog HDL Always Construct warning at mode_watch_set.v(39): inferring latch(es) for variable "en_time", which holds its previous value in one or more paths through the always construct File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 39
-Info (10041): Inferred latch for "en_time" at mode_watch_set.v(39) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 39
+Info (12128): Elaborating entity "mode_watch_set" for hierarchy "mode_watch_set:MODE1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 91
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(43): truncated value with size 32 to match size of target (1) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 43
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(182): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 182
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(184): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 184
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(187): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 187
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(189): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 189
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(191): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 191
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(193): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 193
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(195): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 195
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(197): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 197
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(210): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 210
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(212): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 212
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(214): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 214
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(216): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 216
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(218): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 218
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(220): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 220
+Critical Warning (10237): Verilog HDL warning at mode_watch_set.v(223): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 223
+Critical Warning (10237): Verilog HDL warning at mode_watch_set.v(224): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 224
+Critical Warning (10237): Verilog HDL warning at mode_watch_set.v(225): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 225
+Critical Warning (10237): Verilog HDL warning at mode_watch_set.v(226): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 226
+Critical Warning (10237): Verilog HDL warning at mode_watch_set.v(227): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 227
+Critical Warning (10237): Verilog HDL warning at mode_watch_set.v(228): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 228
+Warning (10034): Output port "bin_time" at mode_watch_set.v(23) has no driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 23
+Warning (12125): Using design file debouncer_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: debouncer_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 2
+Info (12128): Elaborating entity "debouncer_clk" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 51
+Warning (12125): Using design file clk_div.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: clk_div File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v Line: 1
+Info (12128): Elaborating entity "clk_div" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 20
+Warning (12125): Using design file d_ff.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: d_ff File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v Line: 1
+Info (12128): Elaborating entity "d_ff" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 27
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk_lcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v Line: 1
-Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 96
+Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 97
 Warning (12125): Using design file lcd_driver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: lcd_driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 1
-Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 108
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 109
 Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 201
 Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 48
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 59
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -508,20 +736,15 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "sw_in[0]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 13
-    Warning (15610): No output dependent on input pin "sw_in[1]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 13
-    Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 13
-    Warning (15610): No output dependent on input pin "sw_in[3]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 13
-Info (21057): Implemented 547 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 928 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 528 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 4763 megabytes
-    Info: Processing ended: Tue Jun 01 04:29:19 2021
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:31
+    Info (21061): Implemented 909 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 4782 megabytes
+    Info: Processing ended: Tue Jun 01 06:11:12 2021
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:36
 
 
 +------------------------------------------+
