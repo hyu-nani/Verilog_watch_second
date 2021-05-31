@@ -1,4 +1,5 @@
 module watch_date(
+	active,
 	clk,
 	clk1sec,
 	rst,
@@ -11,6 +12,7 @@ module watch_date(
 	minute,
 	second);
 	
+	input						active;
 	input						clk,rst;
 	input						clk1sec;
 	input						set_time;

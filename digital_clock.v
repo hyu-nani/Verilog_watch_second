@@ -48,6 +48,7 @@ module	digital_clock	(
 										.en_day		(en_day) );*/
 	
 	watch_date				TIME	(
+										.active		(dip_sw[0]),
 										.clk			(clk),
 										.clk1sec		(en_1hz),
 										.rst			(rstn),
@@ -61,9 +62,9 @@ module	digital_clock	(
 										.second		(second));
 										
 	watch_set				TIME_SET(
+										.active		(dip_sw[1]),
 										.clk			(clk),
 										.rst			(rstn),
-										.dip_sw		(dip_sw),
 										.sw_in		(sw_in),
 										.year			(year),
 										.month		(month),

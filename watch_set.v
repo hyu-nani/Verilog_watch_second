@@ -1,7 +1,7 @@
 module	watch_set ( 
+					active,	
 					clk,
 					rst,
-					dip_sw,
 					sw_in,
 					year,
 					month,
@@ -13,8 +13,8 @@ module	watch_set (
 					en_time,
 					cursor);
 					
+	input				active;
 	input				clk, rst;
-	input		[1:0]	dip_sw;
 	input		[3:0] sw_in;
 	input		[7:0]	year,month,day,hour,minute,second;
 	
@@ -36,14 +36,17 @@ module	watch_set (
 	
 	
 	always @ (posedge clk or negedge rst) begin
-		if(!rst) 
+		if(!rst) begin
 			en_time		<= 0;
+		end
+		/*
 		else if(dip_sw[0] == 1) 
 			en_time		<= 1;
 		else
 			en_time		<= 0;
+		*/
 	end
-	
+	/*
 	always @ (en_time) begin
 		if(!rst)
 			cursor		<= 0;
@@ -60,6 +63,7 @@ module	watch_set (
 					cursor	<= cursor - 5'd1;
 		end
 	end
+	*/
 endmodule
 		
 		
