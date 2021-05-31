@@ -33,25 +33,28 @@ module watch_date(
 	reg		[7:0]			minute;
 	reg		[7:0]			second;
 	
-	reg		[4:0]			max_date;
+	reg		[7:0]			max_date;
 	
 	always @(*)
 		case(month)
 				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
-						max_date	<= 5'd31;
+						max_date	<= 8'd31;
 				8'd2 :	
-						max_date	<= 5'd28;
+						max_date	<= 8'd28;
 				8'd4, 8'd6, 8'd9, 8'd11	:
-						max_date <=	5'd30;
+						max_date <=	8'd30;
 				default : max_date <= 0;
 		endcase
 	
 		
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin
-			{year, month, day}	<=	1;
-			hour<= 8'd23;
-			{minute, second} 		<= 0;
+			year		<=	8'd21;
+			month		<=	8'd5;
+			day		<=	8'd30;
+			hour		<=	8'd0;
+			minute	<=	8'd0;
+			second	<=	8'd0;
 		end
 		else if (set_time)
 			{year, month, day, hour, minute, second}	<= bin_time;
@@ -62,7 +65,6 @@ module watch_date(
 			hour		<= hour;
 			minute	<=	minute;
 			second	<=	second;
-			
 			if (clk1sec == 1) begin
 				casez({year, month, day, hour, minute, second})
 					{8'd255, 8'd12, max_date, 8'd23, 8'd59, 8'd59} : begin

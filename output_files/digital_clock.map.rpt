@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Mon May 31 14:42:44 2021
+Mon May 31 16:20:05 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -62,15 +62,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 31 14:42:44 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 31 16:20:05 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 471                                         ;
-;     Total combinational functions  ; 459                                         ;
-;     Dedicated logic registers      ; 204                                         ;
-; Total registers                    ; 204                                         ;
+; Total logic elements               ; 489                                         ;
+;     Total combinational functions  ; 479                                         ;
+;     Dedicated logic registers      ; 205                                         ;
+; Total registers                    ; 205                                         ;
 ; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -207,20 +207,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 471       ;
+; Estimated Total logic elements              ; 489       ;
 ;                                             ;           ;
-; Total combinational functions               ; 459       ;
+; Total combinational functions               ; 479       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 264       ;
-;     -- 3 input functions                    ; 23        ;
-;     -- <=2 input functions                  ; 172       ;
+;     -- 4 input functions                    ; 262       ;
+;     -- 3 input functions                    ; 37        ;
+;     -- <=2 input functions                  ; 180       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 343       ;
+;     -- normal mode                          ; 363       ;
 ;     -- arithmetic mode                      ; 116       ;
 ;                                             ;           ;
-; Total registers                             ; 204       ;
-;     -- Dedicated logic registers            ; 204       ;
+; Total registers                             ; 205       ;
+;     -- Dedicated logic registers            ; 205       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 17        ;
@@ -228,9 +228,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 204       ;
-; Total fan-out                               ; 2213      ;
-; Average fan-out                             ; 3.18      ;
+; Maximum fan-out                             ; 205       ;
+; Total fan-out                               ; 2266      ;
+; Average fan-out                             ; 3.16      ;
 +---------------------------------------------+-----------+
 
 
@@ -239,18 +239,18 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name      ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
-; |digital_clock             ; 459 (1)             ; 204 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |digital_clock                      ; digital_clock    ; work         ;
-;    |bin2bcd:CVT_day|       ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_day      ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_hour|      ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_hour     ; bin2bcd          ; work         ;
+; |digital_clock             ; 479 (1)             ; 205 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |digital_clock                      ; digital_clock    ; work         ;
+;    |bin2bcd:CVT_day|       ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_day      ; bin2bcd          ; work         ;
+;    |bin2bcd:CVT_hour|      ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_hour     ; bin2bcd          ; work         ;
 ;    |bin2bcd:CVT_minute|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_minute   ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_month|     ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_month    ; bin2bcd          ; work         ;
+;    |bin2bcd:CVT_month|     ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_month    ; bin2bcd          ; work         ;
 ;    |bin2bcd:CVT_second|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_second   ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_year|      ; 31 (31)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_year     ; bin2bcd          ; work         ;
+;    |bin2bcd:CVT_year|      ; 33 (33)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_year     ; bin2bcd          ; work         ;
 ;    |en_clk:U0|             ; 38 (38)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0            ; en_clk           ; work         ;
 ;    |en_clk_lcd:LCLK|       ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK      ; en_clk_lcd       ; work         ;
-;    |lcd_display_list:STL|  ; 57 (57)             ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_list:STL ; lcd_display_list ; work         ;
-;    |lcd_driver:DRV|        ; 64 (64)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV       ; lcd_driver       ; work         ;
-;    |watch_date:TIME1|      ; 117 (117)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_date:TIME1     ; watch_date       ; work         ;
+;    |lcd_display_list:STL|  ; 76 (76)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_list:STL ; lcd_display_list ; work         ;
+;    |lcd_driver:DRV|        ; 66 (66)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV       ; lcd_driver       ; work         ;
+;    |watch_date:TIME1|      ; 115 (115)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_date:TIME1     ; watch_date       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -273,21 +273,21 @@ Encoding Type:  One-Hot
 +--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; lcd_driver:DRV|lcd_rw                  ; Stuck at GND due to stuck port data_in ;
-; lcd_display_list:STL|out[6,7]          ; Stuck at GND due to stuck port data_in ;
-; bin2bcd:CVT_year|hun[2,3]              ; Stuck at GND due to stuck port data_in ;
-; lcd_driver:DRV|state~13                ; Lost fanout                            ;
-; lcd_driver:DRV|state~14                ; Lost fanout                            ;
-; lcd_driver:DRV|state~15                ; Lost fanout                            ;
-; en_clk:U0|cnt_en_1hz[0]                ; Merged with en_clk_lcd:LCLK|cnt_en[0]  ;
-; en_clk:U0|cnt_en_1hz[1]                ; Merged with en_clk_lcd:LCLK|cnt_en[1]  ;
-; Total Number of Removed Registers = 10 ;                                        ;
-+----------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; lcd_driver:DRV|lcd_rw                 ; Stuck at GND due to stuck port data_in ;
+; lcd_display_list:STL|out[7]           ; Stuck at GND due to stuck port data_in ;
+; bin2bcd:CVT_year|hun[2,3]             ; Stuck at GND due to stuck port data_in ;
+; lcd_driver:DRV|state~13               ; Lost fanout                            ;
+; lcd_driver:DRV|state~14               ; Lost fanout                            ;
+; lcd_driver:DRV|state~15               ; Lost fanout                            ;
+; en_clk:U0|cnt_en_1hz[0]               ; Merged with en_clk_lcd:LCLK|cnt_en[0]  ;
+; en_clk:U0|cnt_en_1hz[1]               ; Merged with en_clk_lcd:LCLK|cnt_en[1]  ;
+; Total Number of Removed Registers = 9 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -295,10 +295,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 204   ;
+; Total registers                              ; 205   ;
 ; Number of registers using Synchronous Clear  ; 18    ;
 ; Number of registers using Synchronous Load   ; 22    ;
-; Number of registers using Asynchronous Clear ; 204   ;
+; Number of registers using Asynchronous Clear ; 205   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 71    ;
 ; Number of registers using Preset             ; 0     ;
@@ -310,12 +310,16 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; watch_date:TIME1|day[0]                ; 4       ;
-; watch_date:TIME1|hour[0]               ; 3       ;
-; watch_date:TIME1|hour[2]               ; 6       ;
-; watch_date:TIME1|hour[4]               ; 7       ;
-; watch_date:TIME1|hour[1]               ; 6       ;
-; Total number of inverted registers = 5 ;         ;
+; watch_date:TIME1|day[3]                ; 7       ;
+; watch_date:TIME1|day[4]                ; 8       ;
+; watch_date:TIME1|day[2]                ; 7       ;
+; watch_date:TIME1|day[1]                ; 7       ;
+; watch_date:TIME1|year[4]               ; 12      ;
+; watch_date:TIME1|year[2]               ; 9       ;
+; watch_date:TIME1|month[2]              ; 10      ;
+; watch_date:TIME1|year[0]               ; 4       ;
+; watch_date:TIME1|month[0]              ; 7       ;
+; Total number of inverted registers = 9 ;         ;
 +----------------------------------------+---------+
 
 
@@ -325,8 +329,8 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[3] ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 20 LEs               ; 22 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[3]  ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 20 LEs               ; 22 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[1]  ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 32 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[2]  ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[1]  ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
@@ -487,24 +491,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 17                          ;
-; cycloneiii_ff         ; 204                         ;
-;     CLR               ; 111                         ;
+; cycloneiii_ff         ; 205                         ;
+;     CLR               ; 112                         ;
 ;     CLR SLD           ; 22                          ;
 ;     ENA CLR           ; 53                          ;
 ;     ENA CLR SCLR      ; 18                          ;
-; cycloneiii_lcell_comb ; 459                         ;
+; cycloneiii_lcell_comb ; 479                         ;
 ;     arith             ; 116                         ;
 ;         2 data inputs ; 113                         ;
 ;         3 data inputs ; 3                           ;
-;     normal            ; 343                         ;
+;     normal            ; 363                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 45                          ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 264                         ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 262                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.72                        ;
+; Average LUT depth     ; 3.76                        ;
 +-----------------------+-----------------------------+
 
 
@@ -513,7 +517,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -523,7 +527,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon May 31 14:42:30 2021
+    Info: Processing started: Mon May 31 16:19:47 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -542,9 +546,9 @@ Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Use
 Info (12128): Elaborating entity "watch_date" for hierarchy "watch_date:TIME1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 56
 Critical Warning (10169): Verilog HDL warning at watch_date.v(17): the port and data declarations for array port "bin_time" do not specify the same range for each dimension File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 17
 Warning (10359): HDL warning at watch_date.v(27): see declaration for object "bin_time" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 27
-Warning (10762): Verilog HDL Case Statement warning at watch_date.v(67): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 67
-Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(104): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 104
-Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(113): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 113
+Warning (10762): Verilog HDL Case Statement warning at watch_date.v(69): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 69
+Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(106): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 106
+Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(115): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 115
 Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:CVT_second" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 64
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(35): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 35
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(33): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 33
@@ -569,7 +573,7 @@ Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" Fil
 Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 201
 Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 48
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 56
+Info (13000): Registers with preset signals will power-up high File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_date.v Line: 59
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 13
@@ -583,15 +587,15 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw_in[1]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
     Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
     Warning (15610): No output dependent on input pin "sw_in[3]" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
-Info (21057): Implemented 491 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 510 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 474 logic cells
+    Info (21061): Implemented 493 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
     Info: Peak virtual memory: 4763 megabytes
-    Info: Processing ended: Mon May 31 14:42:44 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Processing ended: Mon May 31 16:20:05 2021
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +------------------------------------------+
