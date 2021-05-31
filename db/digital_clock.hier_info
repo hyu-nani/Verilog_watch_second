@@ -7,17 +7,17 @@ sw_in[0] => sw_in[0].IN2
 sw_in[1] => sw_in[1].IN2
 sw_in[2] => sw_in[2].IN2
 sw_in[3] => sw_in[3].IN2
-lcd_rs <= lcd_driver:DRV.lcd_rs
-lcd_rw <= lcd_driver:DRV.lcd_rw
-lcd_e <= lcd_driver:DRV.lcd_e
-lcd_data[0] <= lcd_driver:DRV.lcd_data
-lcd_data[1] <= lcd_driver:DRV.lcd_data
-lcd_data[2] <= lcd_driver:DRV.lcd_data
-lcd_data[3] <= lcd_driver:DRV.lcd_data
-lcd_data[4] <= lcd_driver:DRV.lcd_data
-lcd_data[5] <= lcd_driver:DRV.lcd_data
-lcd_data[6] <= lcd_driver:DRV.lcd_data
-lcd_data[7] <= lcd_driver:DRV.lcd_data
+lcd_rs << lcd_driver:DRV.lcd_rs
+lcd_rw << lcd_driver:DRV.lcd_rw
+lcd_e << lcd_driver:DRV.lcd_e
+lcd_data[0] << lcd_driver:DRV.lcd_data
+lcd_data[1] << lcd_driver:DRV.lcd_data
+lcd_data[2] << lcd_driver:DRV.lcd_data
+lcd_data[3] << lcd_driver:DRV.lcd_data
+lcd_data[4] << lcd_driver:DRV.lcd_data
+lcd_data[5] << lcd_driver:DRV.lcd_data
+lcd_data[6] << lcd_driver:DRV.lcd_data
+lcd_data[7] << lcd_driver:DRV.lcd_data
 
 
 |digital_clock|en_clk:U0
@@ -884,6 +884,7 @@ clk => bin_time[44]~reg0.CLK
 clk => bin_time[45]~reg0.CLK
 clk => bin_time[46]~reg0.CLK
 clk => bin_time[47]~reg0.CLK
+clk1sec => blink.CLK
 rst => out[0]~reg0.ACLR
 rst => out[1]~reg0.ACLR
 rst => out[2]~reg0.ACLR
@@ -1041,11 +1042,21 @@ bin_time[45] <= bin_time[45]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 bin_time[46] <= bin_time[46]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 bin_time[47] <= bin_time[47]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 en_time <= <GND>
-index[0] => Ram0.RADDR
-index[1] => Ram0.RADDR1
-index[2] => Ram0.RADDR2
-index[3] => Ram0.RADDR3
-index[4] => Ram0.RADDR4
+index[0] => Decoder0.IN4
+index[0] => Mux0.IN22
+index[0] => Mux1.IN35
+index[1] => Decoder0.IN3
+index[1] => Mux0.IN21
+index[1] => Mux1.IN34
+index[2] => Decoder0.IN2
+index[2] => Mux0.IN20
+index[2] => Mux1.IN33
+index[3] => Decoder0.IN1
+index[3] => Mux0.IN19
+index[3] => Mux1.IN32
+index[4] => Decoder0.IN0
+index[4] => Mux0.IN18
+index[4] => Mux1.IN31
 out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

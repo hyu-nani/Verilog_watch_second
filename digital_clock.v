@@ -75,6 +75,7 @@ module	digital_clock	(
 										
 	mode_watch_set			MODE1(
 										.clk			(clk),
+										.clk1sec		(en_1hz),
 										.rst			(rstn),
 										.sw_in		(sw_in),
 										.year			(year),
