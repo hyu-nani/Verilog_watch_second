@@ -49,9 +49,7 @@ module watch_date(
 		
 	always @(posedge clk or negedge rst) begin
 		if (!rst) begin
-			{year, month, day}	<=	1;
-			hour<= 8'd23;
-			{minute, second} 		<= 0;
+			{year, month, day, hour, minute, second} <= 0;
 		end
 		else if (set_time)
 			{year, month, day, hour, minute, second}	<= bin_time;

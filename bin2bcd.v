@@ -23,6 +23,9 @@ module	bin2bcd	(
 		end
 		
 		else begin
+			hun	= 4'd0;
+			ten	= 4'd0;
+			one	= 4'd0;
 			for(i=7; i>=0; i=i-1) begin
 				if(hun >= 5)
 					hun = hun + 3;

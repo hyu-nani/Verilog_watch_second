@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("C:/intelFPGA_lite/Quartus_Projects/watch_my/output_files/") File("digital_clock.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/") File("digital_clock.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
