@@ -25,20 +25,20 @@ module	digital_clock	(
 	wire					en_time;
 	reg			[47:0]bin_time;
 	wire			[3:0]	sw_in;
-	wire			[1:0] dip_sw;
+	wire			[3:0] dip_sw;
 	wire			[4:0] cursor;
 	
-	reg			[7:0] data_mode0,data_mode1,data_mode2;
+	reg			[7:0] data_mode0,data_mode1,data_mode2,data_mode3;
 	reg			[7:0]	data_char;
 	
 	assign		rstn = ~rst;
 	
 	always @(*) begin
 		case(dip_sw)
-			2'b00		:	data_char	<=	data_mode0;
-			2'b01		:	data_char	<=	data_mode0;
-			2'b10		:	data_char	<=	data_mode1;
-			default	:	data_char	<=	data_mode0;
+			4'b0001		:	data_char	<=	data_mode1;
+			4'b0010		:	data_char	<=	data_mode2;
+			4'b0100		:	data_char	<=	data_mode3;
+			default		:	data_char	<=	data_mode0;
 		endcase
 	end
 	

@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jun 01 18:54:11 2021
+Analysis & Synthesis Status : Successful - Tue Jun 01 19:23:44 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : digital_clock
 Top-level Entity Name : digital_clock
 Family : Cyclone IV E
-Total logic elements : 1,011
-    Total combinational functions : 935
+Total logic elements : 1,012
+    Total combinational functions : 936
     Dedicated logic registers : 401
 Total registers : 401
-Total pins : 19
+Total pins : 21
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

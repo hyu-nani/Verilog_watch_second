@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Tue Jun 01 18:54:11 2021
+Tue Jun 01 19:23:44 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -62,16 +62,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 01 18:54:11 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 01 19:23:44 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,011                                       ;
-;     Total combinational functions  ; 935                                         ;
+; Total logic elements               ; 1,012                                       ;
+;     Total combinational functions  ; 936                                         ;
 ;     Dedicated logic registers      ; 401                                         ;
 ; Total registers                    ; 401                                         ;
-; Total pins                         ; 19                                          ;
+; Total pins                         ; 21                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -170,37 +170,38 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
+;     Processors 5-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
-; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v  ;         ;
-; bin2bcd.v                        ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v        ;         ;
-; en_clk.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v         ;         ;
-; watch_time.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v     ;         ;
-; mode_watch.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v     ;         ;
-; mode_watch_set.v                 ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v ;         ;
-; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v  ;         ;
-; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v        ;         ;
-; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v           ;         ;
-; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v     ;         ;
-; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v     ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
+; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v  ;         ;
+; bin2bcd.v                        ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v        ;         ;
+; en_clk.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/en_clk.v         ;         ;
+; watch_time.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/watch_time.v     ;         ;
+; mode_watch.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/mode_watch.v     ;         ;
+; mode_watch_set.v                 ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v ;         ;
+; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/debouncer_clk.v  ;         ;
+; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/clk_div.v        ;         ;
+; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/d_ff.v           ;         ;
+; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/en_clk_lcd.v     ;         ;
+; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v     ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -208,30 +209,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,011     ;
+; Estimated Total logic elements              ; 1,012     ;
 ;                                             ;           ;
-; Total combinational functions               ; 935       ;
+; Total combinational functions               ; 936       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 553       ;
-;     -- 3 input functions                    ; 127       ;
+;     -- 4 input functions                    ; 561       ;
+;     -- 3 input functions                    ; 120       ;
 ;     -- <=2 input functions                  ; 255       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 757       ;
+;     -- normal mode                          ; 758       ;
 ;     -- arithmetic mode                      ; 178       ;
 ;                                             ;           ;
 ; Total registers                             ; 401       ;
 ;     -- Dedicated logic registers            ; 401       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 19        ;
+; I/O pins                                    ; 21        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 392       ;
-; Total fan-out                               ; 4487      ;
-; Average fan-out                             ; 3.27      ;
+; Total fan-out                               ; 4500      ;
+; Average fan-out                             ; 3.26      ;
 +---------------------------------------------+-----------+
 
 
@@ -240,7 +241,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+----------------+--------------+
-; |digital_clock             ; 935 (1)             ; 401 (0)                   ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |digital_clock                                                   ; digital_clock  ; work         ;
+; |digital_clock             ; 936 (2)             ; 401 (0)                   ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |digital_clock                                                   ; digital_clock  ; work         ;
 ;    |en_clk:U0|             ; 44 (44)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0                                         ; en_clk         ; work         ;
 ;    |en_clk_lcd:LCLK|       ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK                                   ; en_clk_lcd     ; work         ;
 ;    |lcd_driver:DRV|        ; 75 (75)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV                                    ; lcd_driver     ; work         ;
@@ -251,7 +252,7 @@ refer to the applicable agreement for further details.
 ;       |bin2bcd:CVT_month|  ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_month                ; bin2bcd        ; work         ;
 ;       |bin2bcd:CVT_second| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_second               ; bin2bcd        ; work         ;
 ;       |bin2bcd:CVT_year|   ; 33 (33)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_year                 ; bin2bcd        ; work         ;
-;    |mode_watch_set:MODE1|  ; 419 (223)           ; 199 (112)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1                              ; mode_watch_set ; work         ;
+;    |mode_watch_set:MODE1|  ; 418 (222)           ; 199 (112)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1                              ; mode_watch_set ; work         ;
 ;       |bin2bcd:CVT_day|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_day              ; bin2bcd        ; work         ;
 ;       |bin2bcd:CVT_hour|   ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_hour             ; bin2bcd        ; work         ;
 ;       |bin2bcd:CVT_minute| ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_minute           ; bin2bcd        ; work         ;
@@ -282,7 +283,7 @@ refer to the applicable agreement for further details.
 ;          |d_ff:U2|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|d_ff:U2    ; d_ff           ; work         ;
 ;          |d_ff:U3|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|d_ff:U3    ; d_ff           ; work         ;
 ;          |d_ff:U4|         ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|debouncer_clk:sw3|d_ff:U4    ; d_ff           ; work         ;
-;    |watch_time:TIME|       ; 137 (137)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                                   ; watch_time     ; work         ;
+;    |watch_time:TIME|       ; 138 (138)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                                   ; watch_time     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -436,19 +437,20 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[2]       ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|year[1]            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|year_set[4]   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|month_set[3]  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|second[2]          ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 32 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[2]            ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[6]       ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|hour[5]            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|year_set[1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|month_set[4]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|second[5]          ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 32 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[3]            ;
 ; 32:1               ; 2 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[1]            ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|day_set[4]    ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|hour_set[6]   ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|minute_set[7] ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|second_set[6] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|month[2]           ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|day_set[2]    ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|hour_set[0]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|minute_set[2] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|second_set[4] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|year[2]            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state               ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; No         ; |digital_clock|Mux6                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -606,7 +608,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 19                          ;
+; boundary_port         ; 21                          ;
 ; cycloneiii_ff         ; 401                         ;
 ;     CLR               ; 205                         ;
 ;     CLR SLD           ; 23                          ;
@@ -615,19 +617,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SCLR      ; 10                          ;
 ;     ENA CLR SLD       ; 30                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 935                         ;
+; cycloneiii_lcell_comb ; 936                         ;
 ;     arith             ; 178                         ;
 ;         2 data inputs ; 138                         ;
 ;         3 data inputs ; 40                          ;
-;     normal            ; 757                         ;
+;     normal            ; 758                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 21                          ;
 ;         2 data inputs ; 95                          ;
-;         3 data inputs ; 87                          ;
-;         4 data inputs ; 553                         ;
+;         3 data inputs ; 80                          ;
+;         4 data inputs ; 561                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.94                        ;
+; Average LUT depth     ; 3.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -636,7 +638,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -646,96 +648,103 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 01 18:53:53 2021
+    Info: Processing started: Tue Jun 01 19:23:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file digital_clock.v
-    Info (12023): Found entity 1: digital_clock File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 1
+    Info (12023): Found entity 1: digital_clock File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 1
 Warning (12019): Can't analyze file -- file date.v is missing
 Warning (12019): Can't analyze file -- file watch_date.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
-    Info (12023): Found entity 1: bin2bcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 1
+    Info (12023): Found entity 1: bin2bcd File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 1
 Warning (12019): Can't analyze file -- file fsm.v is missing
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(34): created implicit net for "rstn" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 34
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(34): created implicit net for "rstn" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 34
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
+Critical Warning (10169): Verilog HDL warning at digital_clock.v(12): the port and data declarations for array port "dip_sw" do not specify the same range for each dimension File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 12
+Warning (10359): HDL warning at digital_clock.v(28): see declaration for object "dip_sw" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 28
+Warning (10858): Verilog HDL warning at digital_clock.v(31): object data_mode2 used but never assigned File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 31
+Warning (10858): Verilog HDL warning at digital_clock.v(31): object data_mode3 used but never assigned File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 31
+Info (10264): Verilog HDL Case Statement information at digital_clock.v(37): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 37
+Warning (10030): Net "data_mode2" at digital_clock.v(31) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 31
+Warning (10030): Net "data_mode3" at digital_clock.v(31) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 31
 Warning (12125): Using design file en_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: en_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk.v Line: 1
-Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 49
+    Info (12023): Found entity 1: en_clk File: C:/intelFPGA_lite/Verilog_watch_second/en_clk.v Line: 1
+Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 49
 Warning (12125): Using design file watch_time.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: watch_time File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 1
-Info (12128): Elaborating entity "watch_time" for hierarchy "watch_time:TIME" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 62
-Warning (10762): Verilog HDL Case Statement warning at watch_time.v(76): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 76
-Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(113): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 113
-Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(122): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 122
+    Info (12023): Found entity 1: watch_time File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 1
+Info (12128): Elaborating entity "watch_time" for hierarchy "watch_time:TIME" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 62
+Warning (10762): Verilog HDL Case Statement warning at watch_time.v(76): can't check case statement for completeness because the case expression has too many possible states File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 76
+Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(113): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 113
+Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(122): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 122
 Warning (12125): Using design file mode_watch.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: mode_watch File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 1
-Info (12128): Elaborating entity "mode_watch" for hierarchy "mode_watch:MODE0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 75
-Info (12128): Elaborating entity "bin2bcd" for hierarchy "mode_watch:MODE0|bin2bcd:CVT_second" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 36
-Warning (10230): Verilog HDL assignment warning at bin2bcd.v(35): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 35
-Warning (10230): Verilog HDL assignment warning at bin2bcd.v(33): truncated value with size 32 to match size of target (4) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 33
+    Info (12023): Found entity 1: mode_watch File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch.v Line: 1
+Info (12128): Elaborating entity "mode_watch" for hierarchy "mode_watch:MODE0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 75
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "mode_watch:MODE0|bin2bcd:CVT_second" File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch.v Line: 36
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(35): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 35
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(33): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 33
 Warning (12125): Using design file mode_watch_set.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: mode_watch_set File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 1
-Info (12128): Elaborating entity "mode_watch_set" for hierarchy "mode_watch_set:MODE1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 91
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(44): truncated value with size 32 to match size of target (1) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 44
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(126): truncated value with size 8 to match size of target (5) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 126
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(128): truncated value with size 8 to match size of target (5) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 128
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(130): truncated value with size 8 to match size of target (5) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 130
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(187): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 187
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(189): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 189
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(192): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 192
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(194): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 194
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(196): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 196
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(198): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 198
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(200): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 200
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(202): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 202
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(209): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 209
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(211): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 211
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(213): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 213
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(215): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 215
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(217): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 217
-Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(219): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 219
+    Info (12023): Found entity 1: mode_watch_set File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 1
+Info (12128): Elaborating entity "mode_watch_set" for hierarchy "mode_watch_set:MODE1" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 91
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(44): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 44
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(126): truncated value with size 8 to match size of target (5) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 126
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(128): truncated value with size 8 to match size of target (5) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 128
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(130): truncated value with size 8 to match size of target (5) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 130
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(187): truncated value with size 32 to match size of target (3) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 187
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(189): truncated value with size 32 to match size of target (3) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 189
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(192): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 192
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(194): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 194
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(196): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 196
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(198): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 198
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(200): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 200
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(202): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 202
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(209): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 209
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(211): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 211
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(213): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 213
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(215): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 215
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(217): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 217
+Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(219): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 219
 Warning (12125): Using design file debouncer_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: debouncer_clk File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 2
-Info (12128): Elaborating entity "debouncer_clk" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 52
+    Info (12023): Found entity 1: debouncer_clk File: C:/intelFPGA_lite/Verilog_watch_second/debouncer_clk.v Line: 2
+Info (12128): Elaborating entity "debouncer_clk" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0" File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 52
 Warning (12125): Using design file clk_div.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: clk_div File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v Line: 1
-Info (12128): Elaborating entity "clk_div" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 20
+    Info (12023): Found entity 1: clk_div File: C:/intelFPGA_lite/Verilog_watch_second/clk_div.v Line: 1
+Info (12128): Elaborating entity "clk_div" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0|clk_div:U0" File: C:/intelFPGA_lite/Verilog_watch_second/debouncer_clk.v Line: 20
 Warning (12125): Using design file d_ff.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: d_ff File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v Line: 1
-Info (12128): Elaborating entity "d_ff" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U1" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v Line: 27
+    Info (12023): Found entity 1: d_ff File: C:/intelFPGA_lite/Verilog_watch_second/d_ff.v Line: 1
+Info (12128): Elaborating entity "d_ff" for hierarchy "mode_watch_set:MODE1|debouncer_clk:sw0|d_ff:U1" File: C:/intelFPGA_lite/Verilog_watch_second/debouncer_clk.v Line: 27
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: en_clk_lcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v Line: 1
-Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 97
+    Info (12023): Found entity 1: en_clk_lcd File: C:/intelFPGA_lite/Verilog_watch_second/en_clk_lcd.v Line: 1
+Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 97
 Warning (12125): Using design file lcd_driver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: lcd_driver File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 1
-Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 109
-Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 201
-Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 48
+    Info (12023): Found entity 1: lcd_driver File: C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v Line: 1
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 109
+Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v Line: 201
+Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v Line: 48
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 59
+Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 59
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 15
+    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 15
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Verilog_watch_second/output_files/digital_clock.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1036 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
+Info (21057): Implemented 1039 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 1017 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 4783 megabytes
-    Info: Processing ended: Tue Jun 01 18:54:11 2021
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:29
+    Info (21061): Implemented 1018 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
+    Info: Peak virtual memory: 4787 megabytes
+    Info: Processing ended: Tue Jun 01 19:23:44 2021
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:38
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg.
+The suppressed messages can be found in C:/intelFPGA_lite/Verilog_watch_second/output_files/digital_clock.map.smsg.
 
 
