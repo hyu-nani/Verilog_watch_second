@@ -1,6 +1,6 @@
 |digital_clock
-clk => clk.IN12
-rst => rstn.IN12
+clk => clk.IN13
+rst => rst.IN1
 dip_sw[0] => Mux0.IN3
 dip_sw[0] => Mux1.IN3
 dip_sw[0] => Mux2.IN3
@@ -41,17 +41,17 @@ sw_in[0] => sw_in[0].IN1
 sw_in[1] => sw_in[1].IN1
 sw_in[2] => sw_in[2].IN1
 sw_in[3] => sw_in[3].IN1
-lcd_rs << lcd_driver:DRV.lcd_rs
-lcd_rw << lcd_driver:DRV.lcd_rw
-lcd_e << lcd_driver:DRV.lcd_e
-lcd_data[0] << lcd_driver:DRV.lcd_data
-lcd_data[1] << lcd_driver:DRV.lcd_data
-lcd_data[2] << lcd_driver:DRV.lcd_data
-lcd_data[3] << lcd_driver:DRV.lcd_data
-lcd_data[4] << lcd_driver:DRV.lcd_data
-lcd_data[5] << lcd_driver:DRV.lcd_data
-lcd_data[6] << lcd_driver:DRV.lcd_data
-lcd_data[7] << lcd_driver:DRV.lcd_data
+lcd_rs <= lcd_driver:DRV.lcd_rs
+lcd_rw <= lcd_driver:DRV.lcd_rw
+lcd_e <= lcd_driver:DRV.lcd_e
+lcd_data[0] <= lcd_driver:DRV.lcd_data
+lcd_data[1] <= lcd_driver:DRV.lcd_data
+lcd_data[2] <= lcd_driver:DRV.lcd_data
+lcd_data[3] <= lcd_driver:DRV.lcd_data
+lcd_data[4] <= lcd_driver:DRV.lcd_data
+lcd_data[5] <= lcd_driver:DRV.lcd_data
+lcd_data[6] <= lcd_driver:DRV.lcd_data
+lcd_data[7] <= lcd_driver:DRV.lcd_data
 
 
 |digital_clock|debouncer_clk:sw0
@@ -498,6 +498,12 @@ rst => cnt_en_1hz[23].ACLR
 rst => cnt_en_1hz[24].ACLR
 rst => cnt_en_1hz[25].ACLR
 en_1hz <= en_1hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|digital_clock|en_clk_1000hz:STOPCLK
+clk => en_100hz~reg0.CLK
+rst => en_100hz~reg0.ACLR
+en_100hz <= en_100hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |digital_clock|watch_time:TIME
@@ -2425,51 +2431,81 @@ one[3] <= one[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |digital_clock|mode_stopwatch:MODE3
-clk => clk.IN4
-rst => rst.IN4
-sw_in[0] => Equal0.IN0
-sw_in[0] => Equal1.IN3
-sw_in[1] => Equal0.IN3
-sw_in[1] => Equal1.IN0
-sw_in[2] => Equal0.IN2
-sw_in[2] => Equal1.IN2
-sw_in[3] => Equal0.IN1
-sw_in[3] => Equal1.IN1
-index[0] => Mux0.IN36
-index[0] => Mux1.IN36
-index[0] => Mux2.IN36
-index[0] => Mux3.IN32
-index[0] => Mux4.IN32
-index[0] => Mux5.IN32
-index[0] => Mux6.IN32
-index[1] => Mux0.IN35
-index[1] => Mux1.IN35
-index[1] => Mux2.IN35
-index[1] => Mux3.IN31
-index[1] => Mux4.IN31
-index[1] => Mux5.IN31
-index[1] => Mux6.IN31
-index[2] => Mux0.IN34
-index[2] => Mux1.IN34
-index[2] => Mux2.IN34
-index[2] => Mux3.IN30
-index[2] => Mux4.IN30
-index[2] => Mux5.IN30
-index[2] => Mux6.IN30
-index[3] => Mux0.IN33
-index[3] => Mux1.IN33
-index[3] => Mux2.IN33
-index[3] => Mux3.IN29
-index[3] => Mux4.IN29
-index[3] => Mux5.IN29
-index[3] => Mux6.IN29
-index[4] => Mux0.IN32
-index[4] => Mux1.IN32
-index[4] => Mux2.IN32
-index[4] => Mux3.IN28
-index[4] => Mux4.IN28
-index[4] => Mux5.IN28
-index[4] => Mux6.IN28
+clk => clk.IN3
+rst => rst.IN3
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => min_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => sec_stop.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+en_100hz => milsec.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => min_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => sec_stop.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+dip_sw => milsec.OUTPUTSELECT
+index[0] => Decoder0.IN4
+index[0] => Mux0.IN30
+index[0] => Mux1.IN30
+index[0] => Mux2.IN30
+index[0] => Mux3.IN30
+index[1] => Decoder0.IN3
+index[1] => Mux0.IN29
+index[1] => Mux1.IN29
+index[1] => Mux2.IN29
+index[1] => Mux3.IN29
+index[2] => Decoder0.IN2
+index[2] => Mux0.IN28
+index[2] => Mux1.IN28
+index[2] => Mux2.IN28
+index[2] => Mux3.IN28
+index[3] => Decoder0.IN1
+index[3] => Mux0.IN27
+index[3] => Mux1.IN27
+index[3] => Mux2.IN27
+index[3] => Mux3.IN27
+index[4] => Decoder0.IN0
+index[4] => Mux0.IN26
+index[4] => Mux1.IN26
+index[4] => Mux2.IN26
+index[4] => Mux3.IN26
 out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -2478,60 +2514,6 @@ out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|digital_clock|mode_stopwatch:MODE3|en_clk_1000hz:STOPCLK
-clk => en_100hz[0]~reg0.CLK
-clk => en_100hz[1]~reg0.CLK
-clk => en_100hz[2]~reg0.CLK
-clk => en_100hz[3]~reg0.CLK
-clk => en_100hz[4]~reg0.CLK
-clk => en_100hz[5]~reg0.CLK
-clk => en_100hz[6]~reg0.CLK
-clk => en_100hz[7]~reg0.CLK
-clk => en_100hz[8]~reg0.CLK
-clk => en_100hz[9]~reg0.CLK
-clk => en_100hz[10]~reg0.CLK
-clk => en_100hz[11]~reg0.CLK
-clk => en_100hz[12]~reg0.CLK
-clk => en_100hz[13]~reg0.CLK
-clk => en_100hz[14]~reg0.CLK
-clk => en_100hz[15]~reg0.CLK
-clk => en_100hz[16]~reg0.CLK
-rst => en_100hz[0]~reg0.ACLR
-rst => en_100hz[1]~reg0.ACLR
-rst => en_100hz[2]~reg0.ACLR
-rst => en_100hz[3]~reg0.ACLR
-rst => en_100hz[4]~reg0.ACLR
-rst => en_100hz[5]~reg0.ACLR
-rst => en_100hz[6]~reg0.ACLR
-rst => en_100hz[7]~reg0.ACLR
-rst => en_100hz[8]~reg0.ACLR
-rst => en_100hz[9]~reg0.ACLR
-rst => en_100hz[10]~reg0.ACLR
-rst => en_100hz[11]~reg0.ACLR
-rst => en_100hz[12]~reg0.ACLR
-rst => en_100hz[13]~reg0.ACLR
-rst => en_100hz[14]~reg0.ACLR
-rst => en_100hz[15]~reg0.ACLR
-rst => en_100hz[16]~reg0.ACLR
-en_100hz[0] <= en_100hz[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[1] <= en_100hz[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[2] <= en_100hz[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[3] <= en_100hz[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[4] <= en_100hz[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[5] <= en_100hz[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[6] <= en_100hz[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[7] <= en_100hz[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[8] <= en_100hz[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[9] <= en_100hz[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[10] <= en_100hz[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[11] <= en_100hz[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[12] <= en_100hz[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[13] <= en_100hz[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[14] <= en_100hz[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[15] <= en_100hz[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-en_100hz[16] <= en_100hz[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |digital_clock|mode_stopwatch:MODE3|bin2bcd:CVT_milsecond

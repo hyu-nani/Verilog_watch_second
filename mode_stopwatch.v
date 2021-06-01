@@ -1,28 +1,23 @@
 module mode_stopwatch(
 							clk,
 							rst,
-							sw_in,
+							en_100hz,
+							dip_sw,
 							index,
 							out);
 							
 	input					clk, rst;
-	input			[3:0]	sw_in;
+	input					en_100hz;
+	input					dip_sw;
 	input			[4:0] index;
 	
 	output		[7:0] out;
 	
-	wire			[4:0] index;
-	wire					en_100hz;	
-	wire			[4:0] tenMilSec, oneMilSec, tenSec_stop, oneSec_stop, tenMin_stop, oneMin_stop;
+	wire			[4:0] index;	
+	wire			[3:0] tenMilSecond, oneMilSecond, tenSec_stop, oneSec_stop, tenMin_stop, oneMin_stop;
 	reg			[7:0]	milsec, sec_stop, min_stop;
 	reg			[7:0] out;
-	wire			[3:0]	sw_in;
 	
-	en_clk_1000hz		STOPCLK (
-									.clk			(clk),
-									.rst			(rst),
-									.en_100hz	(en_100hz)
-									);
 									
 	bin2bcd			 CVT_milsecond ( 															// 밀리초
 										.clk			(clk),
@@ -48,9 +43,13 @@ module mode_stopwatch(
 											
 	
 	always @ ( posedge clk or negedge rst )
-		if(!rst)
-			out	<=	8'h00;
-		else
+		if(!rst) begin
+			out			<=	8'h00;
+			min_stop		<= 8'd00;
+			sec_stop		<= 8'd00;
+			milsec		<= 8'd00;
+		end
+		else begin
 			case (index)
 				00 : out <= 8'h53;//S
 				01 : out	<=	8'h74;//t
@@ -87,44 +86,37 @@ module mode_stopwatch(
 				30 : out	<=	8'h20;
 				31 : out	<=	8'h20;
 			endcase	
-			
-	always @ (posedge en_100hz) begin
-		if(sw_in==4'b0001) begin
-			min_stop			<= 0;
-			sec_stop			<= 0;
-			milsec			<= 0;
-		end
-		else begin
-			if(sw_in==4'b0010)
-				casez({min_stop, sec_stop, milsec})
-					{8'd59, 8'd59, 8'd99} : begin
-											min_stop		<= 0;
-											sec_stop		<= 0;
-											milsec		<= 0;
-					end
-					{8'd?, 8'd59, 8'd99} : begin
-											min_stop		<= min_stop + 1;
-											sec_stop		<= 0;
-											milsec		<= 0;
-					end
-					{8'd?, 8'd?, 8'd99} : begin
-											min_stop		<= min_stop;
-											sec_stop		<= sec_stop + 1;
-											milsec			<= 0;
-					end
-					default				 : begin
-											min_stop		<= min_stop;
-											sec_stop		<= sec_stop;
-											milsec		<= milsec + 1;
-					end
-				endcase
-			else begin
-				min_stop		<= min_stop;
-				sec_stop		<= sec_stop;
-				milsec		<= milsec;
+			if() begin
+				if(en_100hz == 1) 
+					casez({min_stop, sec_stop, milsec})
+						{8'd59, 8'd59, 8'd99} : begin
+												min_stop		<= 0;
+												sec_stop		<= 0;
+												milsec		<= 0;
+						end
+						{8'd?, 8'd59, 8'd99} : begin
+													min_stop		<= min_stop + 1;
+													sec_stop		<= 0;
+													milsec		<= 0;
+						end
+						{8'd?, 8'd?, 8'd99} : begin
+													min_stop		<= min_stop;
+													sec_stop		<= sec_stop + 1;
+													milsec		<= 0;
+						end
+						default				 : begin
+													min_stop		<= min_stop;
+													sec_stop		<= sec_stop;
+													milsec		<= milsec + 1;
+						end
+					endcase
+				else begin
+					min_stop		<= min_stop;
+					sec_stop		<= sec_stop;
+					milsec		<= milsec;
+				end		
 			end
 		end
-	end
 endmodule	
 	
 	

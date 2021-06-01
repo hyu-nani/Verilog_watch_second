@@ -28,7 +28,7 @@ module	digital_clock	(
 	reg			[3:0]	sw_out;
 	wire			[3:0] dip_sw;
 	wire			[4:0] cursor;
-	
+	wire					en_100hz;
 	wire			[7:0] data_mode0,data_mode1,data_mode2,data_mode3;
 	reg			[7:0]	data_char;
 	reg			[3:0]	data_sw0,data_sw1,data_sw2,data_sw3;
@@ -82,6 +82,12 @@ module	digital_clock	(
 										.clk			(clk),
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
+										
+	en_clk_1000hz		STOPCLK (
+									.clk			(clk),
+									.rst			(rst),
+									.en_100hz	(en_100hz)
+									);
 	
 	watch_time				TIME	(
 										.clk			(clk),
@@ -145,7 +151,8 @@ module	digital_clock	(
 	mode_stopwatch			MODE3	(
 										.clk			(clk),
 										.rst			(rstn),
-										.sw_in		(data_sw3),
+										.en_100hz	(en_100hz),
+										.dip_sw		(data_mode3),
 										.index		(index_char),
 										.out			(data_mode3));
 								
