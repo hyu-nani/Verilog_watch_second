@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Tue Jun 01 22:56:26 2021
+Wed Jun 02 00:28:22 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -23,15 +23,15 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  15. Parameter Settings for User Entity Instance: lcd_driver:DRV
  16. Parameter Settings for Inferred Entity Instance: watch_time:TIME|lpm_divide:Mod0
  17. Parameter Settings for Inferred Entity Instance: watch_time:TIME|lpm_divide:Mod1
- 18. Port Connectivity Checks: "mode_stopwatch:MODE3|bin2bcd:CVT_min"
- 19. Port Connectivity Checks: "mode_stopwatch:MODE3|bin2bcd:CVT_second"
- 20. Port Connectivity Checks: "mode_stopwatch:MODE3|bin2bcd:CVT_milsecond"
- 21. Port Connectivity Checks: "mode_stopwatch:MODE3|en_clk_1000hz:STOPCLK"
- 22. Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_month"
- 23. Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_day"
- 24. Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_hour"
- 25. Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_minute"
- 26. Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_second"
+ 18. Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_month"
+ 19. Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_day"
+ 20. Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_hour"
+ 21. Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_minute"
+ 22. Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_second"
+ 23. Port Connectivity Checks: "mode_stopwatch:MODE2|bin2bcd:CVT_min"
+ 24. Port Connectivity Checks: "mode_stopwatch:MODE2|bin2bcd:CVT_second"
+ 25. Port Connectivity Checks: "mode_stopwatch:MODE2|bin2bcd:CVT_milsecond"
+ 26. Port Connectivity Checks: "mode_stopwatch:MODE2|en_clk_100hz:CLK"
  27. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_month"
  28. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_day"
  29. Port Connectivity Checks: "mode_watch_set:MODE1|bin2bcd:CVT_hour"
@@ -75,15 +75,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 01 22:56:26 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 02 00:28:22 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,645                                       ;
-;     Total combinational functions  ; 1,476                                       ;
-;     Dedicated logic registers      ; 615                                         ;
-; Total registers                    ; 615                                         ;
+; Total logic elements               ; 1,641                                       ;
+;     Total combinational functions  ; 1,472                                       ;
+;     Dedicated logic registers      ; 608                                         ;
+; Total registers                    ; 608                                         ;
 ; Total pins                         ; 21                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -191,7 +191,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -205,6 +205,7 @@ refer to the applicable agreement for further details.
 ; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v            ;         ;
 ; bin2bcd.v                        ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v                  ;         ;
 ; mode_stopwatch.v                 ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v           ;         ;
+; en_clk_100hz.v                   ; yes             ; User Verilog HDL File        ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_100hz.v             ;         ;
 ; debouncer_clk.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/debouncer_clk.v            ;         ;
 ; clk_div.v                        ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/clk_div.v                  ;         ;
 ; d_ff.v                           ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/d_ff.v                     ;         ;
@@ -213,7 +214,6 @@ refer to the applicable agreement for further details.
 ; mode_watch.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v               ;         ;
 ; mode_watch_set.v                 ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v           ;         ;
 ; mode_alarm.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v               ;         ;
-; en_clk_1000hz.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_1000hz.v            ;         ;
 ; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v               ;         ;
 ; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v               ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
@@ -236,20 +236,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,645     ;
+; Estimated Total logic elements              ; 1,641     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1476      ;
+; Total combinational functions               ; 1472      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 904       ;
-;     -- 3 input functions                    ; 254       ;
-;     -- <=2 input functions                  ; 318       ;
+;     -- 4 input functions                    ; 903       ;
+;     -- 3 input functions                    ; 249       ;
+;     -- <=2 input functions                  ; 320       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1198      ;
+;     -- normal mode                          ; 1194      ;
 ;     -- arithmetic mode                      ; 278       ;
 ;                                             ;           ;
-; Total registers                             ; 615       ;
-;     -- Dedicated logic registers            ; 615       ;
+; Total registers                             ; 608       ;
+;     -- Dedicated logic registers            ; 608       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 21        ;
@@ -257,8 +257,8 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 606       ;
-; Total fan-out                               ; 7077      ;
+; Maximum fan-out                             ; 599       ;
+; Total fan-out                               ; 7040      ;
 ; Average fan-out                             ; 3.32      ;
 +---------------------------------------------+-----------+
 
@@ -268,7 +268,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |digital_clock                            ; 1476 (33)           ; 615 (0)                   ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |digital_clock                                                                                                                 ; digital_clock       ; work         ;
+; |digital_clock                            ; 1472 (39)           ; 608 (0)                   ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |digital_clock                                                                                                                 ; digital_clock       ; work         ;
 ;    |debouncer_clk:sw0|                    ; 32 (2)              ; 22 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|debouncer_clk:sw0                                                                                               ; debouncer_clk       ; work         ;
 ;       |clk_div:U0|                        ; 30 (30)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|debouncer_clk:sw0|clk_div:U0                                                                                    ; clk_div             ; work         ;
 ;       |d_ff:U1|                           ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|debouncer_clk:sw0|d_ff:U1                                                                                       ; d_ff                ; work         ;
@@ -296,29 +296,29 @@ refer to the applicable agreement for further details.
 ;    |en_clk:U0|                            ; 44 (44)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0                                                                                                       ; en_clk              ; work         ;
 ;    |en_clk_lcd:LCLK|                      ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK                                                                                                 ; en_clk_lcd          ; work         ;
 ;    |lcd_driver:DRV|                       ; 68 (68)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV                                                                                                  ; lcd_driver          ; work         ;
-;    |mode_alarm:MODE2|                     ; 390 (244)           ; 160 (110)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2                                                                                                ; mode_alarm          ; work         ;
-;       |bin2bcd:CVT_day|                   ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_day                                                                                ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_hour|                  ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_hour                                                                               ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_minute|                ; 23 (23)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_minute                                                                             ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_month|                 ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_month                                                                              ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_second|                ; 23 (23)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_second                                                                             ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_year|                  ; 28 (28)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
-;    |mode_stopwatch:MODE3|                 ; 15 (15)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_stopwatch:MODE3                                                                                            ; mode_stopwatch      ; work         ;
-;    |mode_watch:MODE0|                     ; 300 (150)           ; 105 (55)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0                                                                                                ; mode_watch          ; work         ;
+;    |mode_alarm:MODE3|                     ; 393 (247)           ; 160 (110)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE3                                                                                                ; mode_alarm          ; work         ;
+;       |bin2bcd:CVT_day|                   ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_day                                                                                ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_hour|                  ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_hour                                                                               ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_minute|                ; 23 (23)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_minute                                                                             ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_month|                 ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_month                                                                              ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_second|                ; 23 (23)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_second                                                                             ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_year|                  ; 28 (28)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
+;    |mode_stopwatch:MODE2|                 ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_stopwatch:MODE2                                                                                            ; mode_stopwatch      ; work         ;
+;    |mode_watch:MODE0|                     ; 302 (148)           ; 105 (55)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0                                                                                                ; mode_watch          ; work         ;
 ;       |bin2bcd:CVT_day|                   ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_day                                                                                ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_hour|                  ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_hour                                                                               ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_minute|                ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_minute                                                                             ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_month|                 ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_month                                                                              ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_second|                ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_second                                                                             ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_year|                  ; 29 (29)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
-;    |mode_watch_set:MODE1|                 ; 370 (218)           ; 161 (111)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1                                                                                            ; mode_watch_set      ; work         ;
+;       |bin2bcd:CVT_year|                  ; 33 (33)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
+;    |mode_watch_set:MODE1|                 ; 364 (215)           ; 161 (111)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1                                                                                            ; mode_watch_set      ; work         ;
 ;       |bin2bcd:CVT_day|                   ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_day                                                                            ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_hour|                  ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_hour                                                                           ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_minute|                ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_minute                                                                         ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_month|                 ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_month                                                                          ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_second|                ; 23 (23)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_second                                                                         ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_year|                  ; 32 (32)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_year                                                                           ; bin2bcd             ; work         ;
-;    |watch_time:TIME|                      ; 180 (152)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                                                                                                 ; watch_time          ; work         ;
+;       |bin2bcd:CVT_year|                  ; 29 (29)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_year                                                                           ; bin2bcd             ; work         ;
+;    |watch_time:TIME|                      ; 178 (150)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                                                                                                 ; watch_time          ; work         ;
 ;       |lpm_divide:Mod0|                   ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_p9m:auto_generated|  ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated                                                   ; lpm_divide_p9m      ; work         ;
 ;             |sign_div_unsign_ekh:divider| ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
@@ -350,10 +350,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
-; data_sw2[2]                                        ; Decoder0            ; yes                    ;
-; data_sw2[1]                                        ; Decoder0            ; yes                    ;
-; data_sw2[0]                                        ; Decoder0            ; yes                    ;
-; data_sw2[3]                                        ; Decoder0            ; yes                    ;
+; data_sw3[0]                                        ; Decoder0            ; yes                    ;
+; data_sw3[1]                                        ; Decoder0            ; yes                    ;
+; data_sw3[2]                                        ; Decoder0            ; yes                    ;
+; data_sw3[3]                                        ; Decoder0            ; yes                    ;
 ; data_sw1[3]                                        ; Mux0                ; yes                    ;
 ; data_sw1[2]                                        ; Mux0                ; yes                    ;
 ; data_sw1[1]                                        ; Mux0                ; yes                    ;
@@ -363,151 +363,146 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                               ;
-+--------------------------------------------------------+---------------------------------------------------------+
-; Register name                                          ; Reason for Removal                                      ;
-+--------------------------------------------------------+---------------------------------------------------------+
-; lcd_driver:DRV|lcd_rw                                  ; Stuck at GND due to stuck port data_in                  ;
-; mode_stopwatch:MODE3|out[7]                            ; Stuck at GND due to stuck port data_in                  ;
-; mode_stopwatch:MODE3|en_clk_1000hz:STOPCLK|en_100hz[0] ; Stuck at GND due to stuck port data_in                  ;
-; mode_alarm:MODE2|out[7]                                ; Stuck at GND due to stuck port data_in                  ;
-; mode_alarm:MODE2|bin2bcd:CVT_year|hun[2,3]             ; Stuck at GND due to stuck port data_in                  ;
-; mode_watch_set:MODE1|bin2bcd:CVT_year|hun[2,3]         ; Stuck at GND due to stuck port data_in                  ;
-; mode_watch:MODE0|out[7]                                ; Stuck at GND due to stuck port data_in                  ;
-; mode_watch:MODE0|bin2bcd:CVT_year|hun[2,3]             ; Stuck at GND due to stuck port data_in                  ;
-; mode_stopwatch:MODE3|milsec[0..7]                      ; Stuck at GND due to stuck port clock                    ;
-; mode_stopwatch:MODE3|sec_stop[0..7]                    ; Stuck at GND due to stuck port clock                    ;
-; mode_stopwatch:MODE3|min_stop[0..7]                    ; Stuck at GND due to stuck port clock                    ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_min|one[0]            ; Stuck at GND due to stuck port data_in                  ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|one[0]         ; Stuck at GND due to stuck port data_in                  ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_milsecond|one[0]      ; Stuck at GND due to stuck port data_in                  ;
-; mode_watch_set:MODE1|blink                             ; Merged with mode_alarm:MODE2|blink                      ;
-; mode_watch:MODE0|blink                                 ; Merged with mode_alarm:MODE2|blink                      ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|ten[0]         ; Merged with mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[0] ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|ten[1]         ; Merged with mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[1] ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|one[1]         ; Merged with mode_stopwatch:MODE3|bin2bcd:CVT_min|one[1] ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|ten[2]         ; Merged with mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[2] ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|one[2]         ; Merged with mode_stopwatch:MODE3|bin2bcd:CVT_min|one[2] ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|ten[3]         ; Merged with mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[3] ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_second|one[3]         ; Merged with mode_stopwatch:MODE3|bin2bcd:CVT_min|one[3] ;
-; mode_alarm:MODE2|max_date[3,4]                         ; Merged with mode_alarm:MODE2|max_date[2]                ;
-; mode_watch_set:MODE1|max_date[3,4]                     ; Merged with mode_watch_set:MODE1|max_date[2]            ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[21]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[21]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[21]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[21]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[21]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[21]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[18]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[18]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[18]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[18]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[18]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[18]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[17]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[17]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[17]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[17]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[17]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[17]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[13]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[13]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[13]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[13]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[13]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[13]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[10]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[10]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[10]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[10]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[10]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[10]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[8]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[8]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[8]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[7]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[7]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[7]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[4]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[4]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[4]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[3]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[3]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[3]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[2]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[2]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[2]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[1]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[1]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[1]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[0]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[0]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[0]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[20]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[20]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[20]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[20]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[20]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[20]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[19]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[19]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[19]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[19]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[19]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[19]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[16]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[16]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[16]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[16]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[16]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[16]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[15]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[15]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[15]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[15]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[15]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[15]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[14]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[14]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[14]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[14]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[14]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[14]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[12]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[12]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[12]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[12]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[12]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[12]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[11]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[11]  ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[11]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[11]  ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[11]             ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[11]  ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[9]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[9]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[9]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[6]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[6]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[6]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]   ;
-; debouncer_clk:sw1|clk_div:U0|cnt_myclk[5]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]   ;
-; debouncer_clk:sw2|clk_div:U0|cnt_myclk[5]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]   ;
-; debouncer_clk:sw3|clk_div:U0|cnt_myclk[5]              ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]   ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[0..3]         ; Stuck at GND due to stuck port data_in                  ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_min|one[1..3]         ; Stuck at GND due to stuck port data_in                  ;
-; mode_stopwatch:MODE3|bin2bcd:CVT_milsecond|ten[0]      ; Stuck at GND due to stuck port data_in                  ;
-; lcd_driver:DRV|state~13                                ; Lost fanout                                             ;
-; lcd_driver:DRV|state~14                                ; Lost fanout                                             ;
-; lcd_driver:DRV|state~15                                ; Lost fanout                                             ;
-; en_clk:U0|cnt_en_1hz[0]                                ; Merged with en_clk_lcd:LCLK|cnt_en[0]                   ;
-; debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]              ; Merged with en_clk_lcd:LCLK|cnt_en[0]                   ;
-; en_clk:U0|cnt_en_1hz[1]                                ; Merged with en_clk_lcd:LCLK|cnt_en[1]                   ;
-; debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]              ; Merged with en_clk_lcd:LCLK|cnt_en[1]                   ;
-; debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]              ; Merged with en_clk:U0|cnt_en_1hz[2]                     ;
-; en_clk:U0|cnt_en_1hz[2]                                ; Merged with en_clk_lcd:LCLK|cnt_en[2]                   ;
-; debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]              ; Merged with en_clk:U0|cnt_en_1hz[3]                     ;
-; en_clk:U0|cnt_en_1hz[3]                                ; Merged with en_clk_lcd:LCLK|cnt_en[3]                   ;
-; debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]              ; Merged with en_clk:U0|cnt_en_1hz[4]                     ;
-; en_clk:U0|cnt_en_1hz[4]                                ; Merged with en_clk_lcd:LCLK|cnt_en[4]                   ;
-; Total Number of Removed Registers = 138                ;                                                         ;
-+--------------------------------------------------------+---------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                   ;
++------------------------------------------------------+---------------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                            ;
++------------------------------------------------------+---------------------------------------------------------------+
+; lcd_driver:DRV|lcd_rw                                ; Stuck at GND due to stuck port data_in                        ;
+; mode_alarm:MODE3|out[7]                              ; Stuck at GND due to stuck port data_in                        ;
+; mode_alarm:MODE3|bin2bcd:CVT_year|hun[2,3]           ; Stuck at GND due to stuck port data_in                        ;
+; mode_watch_set:MODE1|bin2bcd:CVT_year|hun[2,3]       ; Stuck at GND due to stuck port data_in                        ;
+; mode_watch:MODE0|out[7]                              ; Stuck at GND due to stuck port data_in                        ;
+; mode_watch:MODE0|bin2bcd:CVT_year|hun[2,3]           ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|milsec[0]                       ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|min_stop[0..7]                  ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|sec_stop[0..7]                  ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|milsec[1..7]                    ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|one[0]          ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|one[0]       ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[0]    ; Stuck at GND due to stuck port data_in                        ;
+; mode_watch_set:MODE1|blink                           ; Merged with mode_alarm:MODE3|blink                            ;
+; mode_watch:MODE0|blink                               ; Merged with mode_alarm:MODE3|blink                            ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|ten[0]          ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[0] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|ten[0]       ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[0] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|ten[1]          ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[1] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|ten[1]       ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[1] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|one[1]          ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[1] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|one[1]       ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[1] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|ten[2]          ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[2] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|ten[2]       ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[2] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|one[2]          ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[2] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|one[2]       ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[2] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|ten[3]          ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[3] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|ten[3]       ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[3] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_min|one[3]          ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[3] ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_second|one[3]       ; Merged with mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[3] ;
+; mode_alarm:MODE3|max_date[3,4]                       ; Merged with mode_alarm:MODE3|max_date[2]                      ;
+; mode_watch_set:MODE1|max_date[3,4]                   ; Merged with mode_watch_set:MODE1|max_date[2]                  ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[21]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[21]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[21]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[21]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[21]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[21]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[18]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[18]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[18]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[18]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[18]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[18]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[17]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[17]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[17]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[17]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[17]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[17]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[13]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[13]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[13]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[13]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[13]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[13]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[10]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[10]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[10]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[10]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[10]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[10]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[8]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[8]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[8]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[8]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[7]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[7]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[7]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[7]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[4]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[4]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[4]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[3]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[3]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[3]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[2]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[2]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[2]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[1]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[1]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[1]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[0]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[0]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[0]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[20]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[20]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[20]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[20]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[20]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[20]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[19]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[19]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[19]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[19]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[19]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[19]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[16]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[16]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[16]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[16]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[16]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[16]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[15]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[15]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[15]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[15]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[15]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[15]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[14]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[14]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[14]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[14]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[14]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[14]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[12]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[12]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[12]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[12]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[12]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[12]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[11]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[11]        ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[11]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[11]        ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[11]           ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[11]        ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[9]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[9]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[9]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[9]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[6]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[6]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[6]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[6]         ;
+; debouncer_clk:sw1|clk_div:U0|cnt_myclk[5]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]         ;
+; debouncer_clk:sw2|clk_div:U0|cnt_myclk[5]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]         ;
+; debouncer_clk:sw3|clk_div:U0|cnt_myclk[5]            ; Merged with debouncer_clk:sw0|clk_div:U0|cnt_myclk[5]         ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[0..3] ; Stuck at GND due to stuck port data_in                        ;
+; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[1..3] ; Stuck at GND due to stuck port data_in                        ;
+; lcd_driver:DRV|state~13                              ; Lost fanout                                                   ;
+; lcd_driver:DRV|state~14                              ; Lost fanout                                                   ;
+; lcd_driver:DRV|state~15                              ; Lost fanout                                                   ;
+; debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]            ; Merged with en_clk_lcd:LCLK|cnt_en[0]                         ;
+; en_clk:U0|cnt_en_1hz[0]                              ; Merged with en_clk_lcd:LCLK|cnt_en[0]                         ;
+; en_clk:U0|cnt_en_1hz[1]                              ; Merged with en_clk_lcd:LCLK|cnt_en[1]                         ;
+; debouncer_clk:sw0|clk_div:U0|cnt_myclk[1]            ; Merged with en_clk_lcd:LCLK|cnt_en[1]                         ;
+; debouncer_clk:sw0|clk_div:U0|cnt_myclk[2]            ; Merged with en_clk:U0|cnt_en_1hz[2]                           ;
+; en_clk:U0|cnt_en_1hz[2]                              ; Merged with en_clk_lcd:LCLK|cnt_en[2]                         ;
+; debouncer_clk:sw0|clk_div:U0|cnt_myclk[3]            ; Merged with en_clk:U0|cnt_en_1hz[3]                           ;
+; en_clk:U0|cnt_en_1hz[3]                              ; Merged with en_clk_lcd:LCLK|cnt_en[3]                         ;
+; debouncer_clk:sw0|clk_div:U0|cnt_myclk[4]            ; Merged with en_clk:U0|cnt_en_1hz[4]                           ;
+; en_clk:U0|cnt_en_1hz[4]                              ; Merged with en_clk_lcd:LCLK|cnt_en[4]                         ;
+; Total Number of Removed Registers = 142              ;                                                               ;
++------------------------------------------------------+---------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                              ;
-+--------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
-; Register name                                          ; Reason for Removal        ; Registers Removed due to This Register                              ;
-+--------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
-; mode_stopwatch:MODE3|en_clk_1000hz:STOPCLK|en_100hz[0] ; Stuck at GND              ; mode_stopwatch:MODE3|milsec[4], mode_stopwatch:MODE3|milsec[3],     ;
-;                                                        ; due to stuck port data_in ; mode_stopwatch:MODE3|milsec[2], mode_stopwatch:MODE3|milsec[1],     ;
-;                                                        ;                           ; mode_stopwatch:MODE3|milsec[0], mode_stopwatch:MODE3|milsec[5],     ;
-;                                                        ;                           ; mode_stopwatch:MODE3|milsec[6], mode_stopwatch:MODE3|milsec[7],     ;
-;                                                        ;                           ; mode_stopwatch:MODE3|sec_stop[0], mode_stopwatch:MODE3|sec_stop[1], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|sec_stop[2], mode_stopwatch:MODE3|sec_stop[3], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|sec_stop[4], mode_stopwatch:MODE3|sec_stop[5], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|sec_stop[6], mode_stopwatch:MODE3|sec_stop[7], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|min_stop[0], mode_stopwatch:MODE3|min_stop[1], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|min_stop[2], mode_stopwatch:MODE3|min_stop[3], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|min_stop[4], mode_stopwatch:MODE3|min_stop[5], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|min_stop[6], mode_stopwatch:MODE3|min_stop[7], ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|one[0],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_second|one[0],                     ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_milsecond|one[0],                  ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[3],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[2],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[1],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|ten[0],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|one[3],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|one[2],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_min|one[1],                        ;
-;                                                        ;                           ; mode_stopwatch:MODE3|bin2bcd:CVT_milsecond|ten[0]                   ;
-+--------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                       ;
++----------------------------------+---------------------------+----------------------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register             ;
++----------------------------------+---------------------------+----------------------------------------------------+
+; mode_stopwatch:MODE2|milsec[4]   ; Stuck at GND              ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[0], ;
+;                                  ; due to stuck port data_in ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[3], ;
+;                                  ;                           ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[2], ;
+;                                  ;                           ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[1]  ;
+; mode_stopwatch:MODE2|milsec[7]   ; Stuck at GND              ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[3], ;
+;                                  ; due to stuck port data_in ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[2], ;
+;                                  ;                           ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|ten[1]  ;
+; mode_stopwatch:MODE2|milsec[0]   ; Stuck at GND              ; mode_stopwatch:MODE2|bin2bcd:CVT_milsecond|one[0]  ;
+;                                  ; due to stuck port data_in ;                                                    ;
+; mode_stopwatch:MODE2|min_stop[0] ; Stuck at GND              ; mode_stopwatch:MODE2|bin2bcd:CVT_min|one[0]        ;
+;                                  ; due to stuck port data_in ;                                                    ;
+; mode_stopwatch:MODE2|sec_stop[0] ; Stuck at GND              ; mode_stopwatch:MODE2|bin2bcd:CVT_second|one[0]     ;
+;                                  ; due to stuck port data_in ;                                                    ;
++----------------------------------+---------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -515,10 +510,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 615   ;
-; Number of registers using Synchronous Clear  ; 59    ;
+; Total registers                              ; 608   ;
+; Number of registers using Synchronous Clear  ; 58    ;
 ; Number of registers using Synchronous Load   ; 53    ;
-; Number of registers using Asynchronous Clear ; 367   ;
+; Number of registers using Asynchronous Clear ; 360   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 319   ;
 ; Number of registers using Preset             ; 0     ;
@@ -530,9 +525,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; watch_time:TIME|year[4]                ; 12      ;
-; watch_time:TIME|year[2]                ; 12      ;
-; watch_time:TIME|day[3]                 ; 8       ;
+; watch_time:TIME|year[4]                ; 16      ;
+; watch_time:TIME|year[2]                ; 14      ;
+; watch_time:TIME|day[3]                 ; 9       ;
 ; watch_time:TIME|day[4]                 ; 9       ;
 ; watch_time:TIME|day[2]                 ; 8       ;
 ; watch_time:TIME|day[1]                 ; 8       ;
@@ -552,23 +547,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|hour[1]            ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|year_set[6]   ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|month_set[2]  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |digital_clock|mode_alarm:MODE2|month_alarm[3]    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |digital_clock|mode_alarm:MODE3|month_alarm[3]    ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|second[1]          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|year_alarm[7]     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE3|year_alarm[7]     ;
 ; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|day_set[7]    ;
 ; 6:1                ; 8 bits    ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|hour_set[4]   ;
 ; 33:1               ; 2 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; Yes        ; |digital_clock|mode_watch:MODE0|out[3]            ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|day_alarm[3]      ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|hour_alarm[3]     ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE3|day_alarm[3]      ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE3|hour_alarm[3]     ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|minute_set[2] ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|second_set[4] ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|minute_alarm[0]   ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|second_alarm[0]   ;
-; 44:1               ; 2 bits    ; 58 LEs        ; 44 LEs               ; 14 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|out[2]            ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE3|minute_alarm[0]   ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE3|second_alarm[0]   ;
+; 44:1               ; 2 bits    ; 58 LEs        ; 44 LEs               ; 14 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE3|out[2]            ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|day[1]             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state               ;
 ; 16:1               ; 7 bits    ; 70 LEs        ; 14 LEs               ; 56 LEs                 ; No         ; |digital_clock|Mux6                               ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 30 LEs               ; 12 LEs                 ; No         ; |digital_clock|mode_alarm:MODE2|Mux1              ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 30 LEs               ; 12 LEs                 ; No         ; |digital_clock|mode_alarm:MODE3|Mux1              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -637,50 +632,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mode_stopwatch:MODE3|bin2bcd:CVT_min"                                                                                                                                 ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
-; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; one  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mode_stopwatch:MODE3|bin2bcd:CVT_second"                                                                                                                              ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                                                                ;
-; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; one  ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (5 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mode_stopwatch:MODE3|bin2bcd:CVT_milsecond"                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected                                                                                                 ;
-; ten  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "ten[3..1]" have no fanouts ;
-; one  ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "one[3..1]" have no fanouts ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mode_stopwatch:MODE3|en_clk_1000hz:STOPCLK"                                                                                       ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                       ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; en_100hz ; Output ; Warning  ; Output or bidir port (17 bits) is wider than the port expression (1 bits) it drives; bit(s) "en_100hz[16..1]" have no fanouts ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------------------+
-; Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_month" ;
+; Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_month" ;
 +------+--------+----------+-------------------------------------+
 ; Port ; Type   ; Severity ; Details                             ;
 +------+--------+----------+-------------------------------------+
@@ -689,7 +642,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------+
-; Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_day" ;
+; Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_day" ;
 +------+--------+----------+-----------------------------------+
 ; Port ; Type   ; Severity ; Details                           ;
 +------+--------+----------+-----------------------------------+
@@ -698,7 +651,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------+
-; Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_hour" ;
+; Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_hour" ;
 +------+--------+----------+------------------------------------+
 ; Port ; Type   ; Severity ; Details                            ;
 +------+--------+----------+------------------------------------+
@@ -707,7 +660,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------+
-; Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_minute" ;
+; Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_minute" ;
 +------+--------+----------+--------------------------------------+
 ; Port ; Type   ; Severity ; Details                              ;
 +------+--------+----------+--------------------------------------+
@@ -716,12 +669,48 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------+
-; Port Connectivity Checks: "mode_alarm:MODE2|bin2bcd:CVT_second" ;
+; Port Connectivity Checks: "mode_alarm:MODE3|bin2bcd:CVT_second" ;
 +------+--------+----------+--------------------------------------+
 ; Port ; Type   ; Severity ; Details                              ;
 +------+--------+----------+--------------------------------------+
 ; hun  ; Output ; Info     ; Explicitly unconnected               ;
 +------+--------+----------+--------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_stopwatch:MODE2|bin2bcd:CVT_min" ;
++------+--------+----------+---------------------------------------+
+; Port ; Type   ; Severity ; Details                               ;
++------+--------+----------+---------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                ;
++------+--------+----------+---------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_stopwatch:MODE2|bin2bcd:CVT_second" ;
++------+--------+----------+------------------------------------------+
+; Port ; Type   ; Severity ; Details                                  ;
++------+--------+----------+------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                   ;
++------+--------+----------+------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_stopwatch:MODE2|bin2bcd:CVT_milsecond" ;
++------+--------+----------+---------------------------------------------+
+; Port ; Type   ; Severity ; Details                                     ;
++------+--------+----------+---------------------------------------------+
+; hun  ; Output ; Info     ; Explicitly unconnected                      ;
++------+--------+----------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mode_stopwatch:MODE2|en_clk_100hz:CLK"                                                  ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; en_100hz ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------+
@@ -860,9 +849,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 21                          ;
-; cycloneiii_ff         ; 615                         ;
-;     CLR               ; 271                         ;
-;     CLR SCLR          ; 1                           ;
+; cycloneiii_ff         ; 608                         ;
+;     CLR               ; 265                         ;
 ;     CLR SLD           ; 23                          ;
 ;     ENA               ; 199                         ;
 ;     ENA CLR           ; 32                          ;
@@ -870,19 +858,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SLD       ; 30                          ;
 ;     ENA SCLR          ; 48                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 1476                        ;
+; cycloneiii_lcell_comb ; 1472                        ;
 ;     arith             ; 278                         ;
 ;         2 data inputs ; 149                         ;
 ;         3 data inputs ; 129                         ;
-;     normal            ; 1198                        ;
+;     normal            ; 1194                        ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 31                          ;
-;         2 data inputs ; 135                         ;
-;         3 data inputs ; 125                         ;
-;         4 data inputs ; 904                         ;
+;         2 data inputs ; 137                         ;
+;         3 data inputs ; 120                         ;
+;         4 data inputs ; 903                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.10                       ;
-; Average LUT depth     ; 4.43                        ;
+; Average LUT depth     ; 4.48                        ;
 +-----------------------+-----------------------------+
 
 
@@ -901,7 +889,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 01 22:56:07 2021
+    Info: Processing started: Wed Jun 02 00:28:03 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -913,15 +901,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd
     Info (12023): Found entity 1: bin2bcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 1
 Warning (12019): Can't analyze file -- file fsm.v is missing
 Warning (12019): Can't analyze file -- file mode_aram.v is missing
-Info (12021): Found 1 design units, including 1 entities, in source file stopwatch.v
-    Info (12023): Found entity 1: stopwatch File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/stopwatch.v Line: 1
+Warning (12019): Can't analyze file -- file stopwatch.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file mode_stopwatch.v
     Info (12023): Found entity 1: mode_stopwatch File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file en_clk_100hz.v
+    Info (12023): Found entity 1: en_clk_100hz File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_100hz.v Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(36): created implicit net for "rstn" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 36
-Warning (10236): Verilog HDL Implicit Net warning at stopwatch.v(32): created implicit net for "tenMilSecond" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/stopwatch.v Line: 32
-Warning (10236): Verilog HDL Implicit Net warning at stopwatch.v(33): created implicit net for "oneMilSecond" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/stopwatch.v Line: 33
-Warning (10236): Verilog HDL Implicit Net warning at mode_stopwatch.v(32): created implicit net for "tenMilSecond" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 32
-Warning (10236): Verilog HDL Implicit Net warning at mode_stopwatch.v(33): created implicit net for "oneMilSecond" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 33
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at digital_clock.v(34): object "data_sw0" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 34
 Info (10264): Verilog HDL Case Statement information at digital_clock.v(39): all case item expressions in this case statement are onehot File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 39
@@ -986,9 +971,16 @@ Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(192): trunca
 Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(194): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 194
 Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(196): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 196
 Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(198): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 198
+Info (12128): Elaborating entity "mode_stopwatch" for hierarchy "mode_stopwatch:MODE2" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 135
+Warning (10230): Verilog HDL assignment warning at mode_stopwatch.v(67): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 67
+Warning (10230): Verilog HDL assignment warning at mode_stopwatch.v(73): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 73
+Warning (10230): Verilog HDL assignment warning at mode_stopwatch.v(79): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 79
+Warning (10935): Verilog HDL Casex/Casez warning at mode_stopwatch.v(66): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 66
+Warning (10935): Verilog HDL Casex/Casez warning at mode_stopwatch.v(71): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 71
+Info (12128): Elaborating entity "en_clk_100hz" for hierarchy "mode_stopwatch:MODE2|en_clk_100hz:CLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 23
 Warning (12125): Using design file mode_alarm.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mode_alarm File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 1
-Info (12128): Elaborating entity "mode_alarm" for hierarchy "mode_alarm:MODE2" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 143
+Info (12128): Elaborating entity "mode_alarm" for hierarchy "mode_alarm:MODE3" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 150
 Warning (10036): Verilog HDL or VHDL warning at mode_alarm.v(34): object "set_alarm" assigned a value but never read File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 34
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(42): truncated value with size 32 to match size of target (1) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 42
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(101): truncated value with size 8 to match size of target (5) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 101
@@ -1008,16 +1000,6 @@ Warning (10230): Verilog HDL assignment warning at mode_alarm.v(193): truncated 
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(195): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 195
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(197): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 197
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(199): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 199
-Info (12128): Elaborating entity "mode_stopwatch" for hierarchy "mode_stopwatch:MODE3" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 150
-Warning (10230): Verilog HDL assignment warning at mode_stopwatch.v(106): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 106
-Warning (10230): Verilog HDL assignment warning at mode_stopwatch.v(112): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 112
-Warning (10230): Verilog HDL assignment warning at mode_stopwatch.v(118): truncated value with size 32 to match size of target (8) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 118
-Warning (10935): Verilog HDL Casex/Casez warning at mode_stopwatch.v(105): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 105
-Warning (10935): Verilog HDL Casex/Casez warning at mode_stopwatch.v(110): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 110
-Warning (12125): Using design file en_clk_1000hz.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: en_clk_1000hz File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_1000hz.v Line: 1
-Info (12128): Elaborating entity "en_clk_1000hz" for hierarchy "mode_stopwatch:MODE3|en_clk_1000hz:STOPCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 25
-Warning (10230): Verilog HDL assignment warning at en_clk_1000hz.v(21): truncated value with size 32 to match size of target (1) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_1000hz.v Line: 21
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk_lcd File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/en_clk_lcd.v Line: 1
 Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 155
@@ -1057,7 +1039,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_hkh File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/db/sign_div_unsign_hkh.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m4f.tdf
     Info (12023): Found entity 1: alt_u_div_m4f File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/db/alt_u_div_m4f.tdf Line: 26
-Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 63
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -1067,13 +1049,13 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1672 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1668 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 1651 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Tue Jun 01 22:56:26 2021
+    Info (21061): Implemented 1647 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 4783 megabytes
+    Info: Processing ended: Wed Jun 02 00:28:22 2021
     Info: Elapsed time: 00:00:19
     Info: Total CPU time (on all processors): 00:00:31
 

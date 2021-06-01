@@ -126,12 +126,19 @@ module	digital_clock	(
 										.en_time		(en_time),
 										.index		(index_char),
 										.out			(data_mode1));
+	
+	mode_stopwatch			MODE2	(
+										.clk			(clk),
+										.rst			(rstn),
+										.sw_in		(data_sw2),
+										.index		(index_char),
+										.out			(data_mode2));
 										
-	mode_alarm				MODE2	(
+	mode_alarm				MODE3	(
 										.clk			(clk),
 										.clk1sec		(en_1hz),
 										.rst			(rstn),
-										.sw_in		(data_sw2),
+										.sw_in		(data_sw3),
 										.year			(year),
 										.month		(month),
 										.day			(day),
@@ -139,15 +146,8 @@ module	digital_clock	(
 										.minute		(minute),
 										.second		(second),
 										.index		(index_char),
-										.out			(data_mode2),
+										.out			(data_mode3),
 										.bin_alarm	(bin_alarm));
-
-	mode_stopwatch			MODE3	(
-										.clk			(clk),
-										.rst			(rstn),
-										.sw_in		(data_sw3),
-										.index		(index_char),
-										.out			(data_mode3));
 								
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),

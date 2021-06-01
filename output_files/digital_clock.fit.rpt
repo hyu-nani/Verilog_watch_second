@@ -1,5 +1,5 @@
 Fitter report for digital_clock
-Tue Jun 01 22:56:37 2021
+Wed Jun 02 00:28:33 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -67,17 +67,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Jun 01 22:56:37 2021       ;
+; Fitter Status                      ; Successful - Wed Jun 02 00:28:33 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,597 / 6,272 ( 25 % )                      ;
-;     Total combinational functions  ; 1,476 / 6,272 ( 24 % )                      ;
-;     Dedicated logic registers      ; 615 / 6,272 ( 10 % )                        ;
-; Total registers                    ; 615                                         ;
+; Total logic elements               ; 1,591 / 6,272 ( 25 % )                      ;
+;     Total combinational functions  ; 1,472 / 6,272 ( 23 % )                      ;
+;     Dedicated logic registers      ; 608 / 6,272 ( 10 % )                        ;
+; Total registers                    ; 608                                         ;
 ; Total pins                         ; 21 / 92 ( 23 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
@@ -154,14 +154,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.10        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.6%      ;
-;     Processor 3            ;   3.3%      ;
-;     Processor 4            ;   3.0%      ;
+;     Processor 2            ;   3.3%      ;
+;     Processor 3            ;   3.0%      ;
+;     Processor 4            ;   2.7%      ;
 +----------------------------+-------------+
 
 
@@ -171,8 +171,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 2151 ) ; 0.00 % ( 0 / 2151 )        ; 0.00 % ( 0 / 2151 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 2151 ) ; 0.00 % ( 0 / 2151 )        ; 0.00 % ( 0 / 2151 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 2140 ) ; 0.00 % ( 0 / 2140 )        ; 0.00 % ( 0 / 2140 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 2140 ) ; 0.00 % ( 0 / 2140 )        ; 0.00 % ( 0 / 2140 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -195,7 +195,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 2141 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 2130 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -211,26 +211,26 @@ The pin-out file can be found in C:/Users/cube_/OneDrive/Github/Verilog_watch_se
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 1,597 / 6,272 ( 25 % ) ;
-;     -- Combinational with no register       ; 982                    ;
-;     -- Register only                        ; 121                    ;
-;     -- Combinational with a register        ; 494                    ;
+; Total logic elements                        ; 1,591 / 6,272 ( 25 % ) ;
+;     -- Combinational with no register       ; 983                    ;
+;     -- Register only                        ; 119                    ;
+;     -- Combinational with a register        ; 489                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 904                    ;
-;     -- 3 input functions                    ; 254                    ;
-;     -- <=2 input functions                  ; 318                    ;
-;     -- Register only                        ; 121                    ;
+;     -- 4 input functions                    ; 903                    ;
+;     -- 3 input functions                    ; 249                    ;
+;     -- <=2 input functions                  ; 320                    ;
+;     -- Register only                        ; 119                    ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 1198                   ;
+;     -- normal mode                          ; 1194                   ;
 ;     -- arithmetic mode                      ; 278                    ;
 ;                                             ;                        ;
-; Total registers*                            ; 615 / 6,684 ( 9 % )    ;
-;     -- Dedicated logic registers            ; 615 / 6,272 ( 10 % )   ;
+; Total registers*                            ; 608 / 6,684 ( 9 % )    ;
+;     -- Dedicated logic registers            ; 608 / 6,272 ( 10 % )   ;
 ;     -- I/O registers                        ; 0 / 412 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 120 / 392 ( 31 % )     ;
+; Total LABs:  partially or completely used   ; 114 / 392 ( 29 % )     ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 21 / 92 ( 23 % )       ;
 ;     -- Clock pins                           ; 3 / 3 ( 100 % )        ;
@@ -248,11 +248,11 @@ The pin-out file can be found in C:/Users/cube_/OneDrive/Github/Verilog_watch_se
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 3.7% / 3.7% / 3.6%     ;
-; Peak interconnect usage (total/H/V)         ; 7.2% / 7.7% / 6.5%     ;
-; Maximum fan-out                             ; 606                    ;
-; Highest non-global fan-out                  ; 155                    ;
-; Total fan-out                               ; 7208                   ;
+; Average interconnect usage (total/H/V)      ; 3.8% / 4.1% / 3.6%     ;
+; Peak interconnect usage (total/H/V)         ; 6.8% / 7.0% / 6.4%     ;
+; Maximum fan-out                             ; 599                    ;
+; Highest non-global fan-out                  ; 156                    ;
+; Total fan-out                               ; 7163                   ;
 ; Average fan-out                             ; 3.18                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -266,26 +266,26 @@ The pin-out file can be found in C:/Users/cube_/OneDrive/Github/Verilog_watch_se
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 1597 / 6272 ( 25 % ) ; 0 / 6272 ( 0 % )               ;
-;     -- Combinational with no register       ; 982                  ; 0                              ;
-;     -- Register only                        ; 121                  ; 0                              ;
-;     -- Combinational with a register        ; 494                  ; 0                              ;
+; Total logic elements                        ; 1591 / 6272 ( 25 % ) ; 0 / 6272 ( 0 % )               ;
+;     -- Combinational with no register       ; 983                  ; 0                              ;
+;     -- Register only                        ; 119                  ; 0                              ;
+;     -- Combinational with a register        ; 489                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 904                  ; 0                              ;
-;     -- 3 input functions                    ; 254                  ; 0                              ;
-;     -- <=2 input functions                  ; 318                  ; 0                              ;
-;     -- Register only                        ; 121                  ; 0                              ;
+;     -- 4 input functions                    ; 903                  ; 0                              ;
+;     -- 3 input functions                    ; 249                  ; 0                              ;
+;     -- <=2 input functions                  ; 320                  ; 0                              ;
+;     -- Register only                        ; 119                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 1198                 ; 0                              ;
+;     -- normal mode                          ; 1194                 ; 0                              ;
 ;     -- arithmetic mode                      ; 278                  ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 615                  ; 0                              ;
-;     -- Dedicated logic registers            ; 615 / 6272 ( 10 % )  ; 0 / 6272 ( 0 % )               ;
+; Total registers                             ; 608                  ; 0                              ;
+;     -- Dedicated logic registers            ; 608 / 6272 ( 10 % )  ; 0 / 6272 ( 0 % )               ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 120 / 392 ( 31 % )   ; 0 / 392 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 114 / 392 ( 29 % )   ; 0 / 392 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 21                   ; 0                              ;
@@ -301,8 +301,8 @@ The pin-out file can be found in C:/Users/cube_/OneDrive/Github/Verilog_watch_se
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 7203                 ; 5                              ;
-;     -- Registered Connections               ; 2621                 ; 0                              ;
+;     -- Total Connections                    ; 7158                 ; 5                              ;
+;     -- Registered Connections               ; 2618                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -334,12 +334,12 @@ The pin-out file can be found in C:/Users/cube_/OneDrive/Github/Verilog_watch_se
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; clk       ; 23    ; 1        ; 0            ; 11           ; 7            ; 606                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; dip_sw[0] ; 28    ; 2        ; 0            ; 9            ; 7            ; 10                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; dip_sw[1] ; 31    ; 2        ; 0            ; 7            ; 0            ; 13                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; dip_sw[2] ; 32    ; 2        ; 0            ; 6            ; 14           ; 13                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; dip_sw[3] ; 33    ; 2        ; 0            ; 6            ; 21           ; 10                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; rst       ; 91    ; 6        ; 34           ; 12           ; 0            ; 522                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clk       ; 23    ; 1        ; 0            ; 11           ; 7            ; 599                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; dip_sw[0] ; 28    ; 2        ; 0            ; 9            ; 7            ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; dip_sw[1] ; 31    ; 2        ; 0            ; 7            ; 0            ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; dip_sw[2] ; 32    ; 2        ; 0            ; 6            ; 14           ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; dip_sw[3] ; 33    ; 2        ; 0            ; 6            ; 21           ; 8                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; rst       ; 91    ; 6        ; 34           ; 12           ; 0            ; 516                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw_in[0]  ; 90    ; 6        ; 34           ; 12           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw_in[1]  ; 89    ; 5        ; 34           ; 12           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; sw_in[2]  ; 88    ; 5        ; 34           ; 12           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -592,7 +592,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                            ; Entity Name         ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |digital_clock                            ; 1597 (31)   ; 615 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 21   ; 0            ; 982 (31)     ; 121 (0)           ; 494 (2)          ; |digital_clock                                                                                                                 ; digital_clock       ; work         ;
+; |digital_clock                            ; 1591 (39)   ; 608 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 21   ; 0            ; 983 (39)     ; 119 (0)           ; 489 (0)          ; |digital_clock                                                                                                                 ; digital_clock       ; work         ;
 ;    |debouncer_clk:sw0|                    ; 35 (0)      ; 22 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 3 (0)             ; 19 (2)           ; |digital_clock|debouncer_clk:sw0                                                                                               ; debouncer_clk       ; work         ;
 ;       |clk_div:U0|                        ; 31 (31)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 1 (1)             ; 17 (17)          ; |digital_clock|debouncer_clk:sw0|clk_div:U0                                                                                    ; clk_div             ; work         ;
 ;       |d_ff:U1|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |digital_clock|debouncer_clk:sw0|d_ff:U1                                                                                       ; d_ff                ; work         ;
@@ -605,10 +605,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;       |d_ff:U2|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |digital_clock|debouncer_clk:sw1|d_ff:U2                                                                                       ; d_ff                ; work         ;
 ;       |d_ff:U3|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw1|d_ff:U3                                                                                       ; d_ff                ; work         ;
 ;       |d_ff:U4|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw1|d_ff:U4                                                                                       ; d_ff                ; work         ;
-;    |debouncer_clk:sw2|                    ; 6 (0)       ; 5 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 2 (0)             ; 3 (2)            ; |digital_clock|debouncer_clk:sw2                                                                                               ; debouncer_clk       ; work         ;
+;    |debouncer_clk:sw2|                    ; 6 (0)       ; 5 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 1 (0)             ; 4 (2)            ; |digital_clock|debouncer_clk:sw2                                                                                               ; debouncer_clk       ; work         ;
 ;       |clk_div:U0|                        ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 1 (1)             ; 0 (0)            ; |digital_clock|debouncer_clk:sw2|clk_div:U0                                                                                    ; clk_div             ; work         ;
 ;       |d_ff:U1|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw2|d_ff:U1                                                                                       ; d_ff                ; work         ;
-;       |d_ff:U2|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |digital_clock|debouncer_clk:sw2|d_ff:U2                                                                                       ; d_ff                ; work         ;
+;       |d_ff:U2|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw2|d_ff:U2                                                                                       ; d_ff                ; work         ;
 ;       |d_ff:U3|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw2|d_ff:U3                                                                                       ; d_ff                ; work         ;
 ;       |d_ff:U4|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw2|d_ff:U4                                                                                       ; d_ff                ; work         ;
 ;    |debouncer_clk:sw3|                    ; 12 (0)      ; 5 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 3 (0)             ; 2 (2)            ; |digital_clock|debouncer_clk:sw3                                                                                               ; debouncer_clk       ; work         ;
@@ -617,36 +617,36 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;       |d_ff:U2|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |digital_clock|debouncer_clk:sw3|d_ff:U2                                                                                       ; d_ff                ; work         ;
 ;       |d_ff:U3|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw3|d_ff:U3                                                                                       ; d_ff                ; work         ;
 ;       |d_ff:U4|                           ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |digital_clock|debouncer_clk:sw3|d_ff:U4                                                                                       ; d_ff                ; work         ;
-;    |en_clk:U0|                            ; 45 (45)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 1 (1)             ; 22 (22)          ; |digital_clock|en_clk:U0                                                                                                       ; en_clk              ; work         ;
-;    |en_clk_lcd:LCLK|                      ; 30 (30)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 1 (1)             ; 17 (17)          ; |digital_clock|en_clk_lcd:LCLK                                                                                                 ; en_clk_lcd          ; work         ;
-;    |lcd_driver:DRV|                       ; 72 (72)     ; 57 (57)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 4 (4)             ; 54 (54)          ; |digital_clock|lcd_driver:DRV                                                                                                  ; lcd_driver          ; work         ;
-;    |mode_alarm:MODE2|                     ; 433 (285)   ; 160 (110)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 272 (174)    ; 30 (30)           ; 131 (83)         ; |digital_clock|mode_alarm:MODE2                                                                                                ; mode_alarm          ; work         ;
-;       |bin2bcd:CVT_day|                   ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_day                                                                                ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_hour|                  ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 10 (10)          ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_hour                                                                               ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_minute|                ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_minute                                                                             ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_month|                 ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_month                                                                              ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_second|                ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_second                                                                             ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_year|                  ; 29 (29)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 12 (12)          ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
-;    |mode_stopwatch:MODE3|                 ; 15 (15)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 7 (7)            ; |digital_clock|mode_stopwatch:MODE3                                                                                            ; mode_stopwatch      ; work         ;
-;    |mode_watch:MODE0|                     ; 323 (170)   ; 105 (55)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 206 (104)    ; 23 (23)           ; 94 (46)          ; |digital_clock|mode_watch:MODE0                                                                                                ; mode_watch          ; work         ;
+;    |en_clk:U0|                            ; 45 (45)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 1 (1)             ; 21 (21)          ; |digital_clock|en_clk:U0                                                                                                       ; en_clk              ; work         ;
+;    |en_clk_lcd:LCLK|                      ; 29 (29)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 18 (18)          ; |digital_clock|en_clk_lcd:LCLK                                                                                                 ; en_clk_lcd          ; work         ;
+;    |lcd_driver:DRV|                       ; 73 (73)     ; 57 (57)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 5 (5)             ; 52 (52)          ; |digital_clock|lcd_driver:DRV                                                                                                  ; lcd_driver          ; work         ;
+;    |mode_alarm:MODE3|                     ; 441 (290)   ; 160 (110)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 279 (178)    ; 37 (37)           ; 125 (80)         ; |digital_clock|mode_alarm:MODE3                                                                                                ; mode_alarm          ; work         ;
+;       |bin2bcd:CVT_day|                   ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_day                                                                                ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_hour|                  ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_hour                                                                               ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_minute|                ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_minute                                                                             ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_month|                 ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_month                                                                              ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_second|                ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 9 (9)            ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_second                                                                             ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_year|                  ; 29 (29)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 10 (10)          ; |digital_clock|mode_alarm:MODE3|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
+;    |mode_stopwatch:MODE2|                 ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |digital_clock|mode_stopwatch:MODE2                                                                                            ; mode_stopwatch      ; work         ;
+;    |mode_watch:MODE0|                     ; 327 (169)   ; 105 (55)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 211 (103)    ; 16 (16)           ; 100 (54)         ; |digital_clock|mode_watch:MODE0                                                                                                ; mode_watch          ; work         ;
 ;       |bin2bcd:CVT_day|                   ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_day                                                                                ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_hour|                  ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 9 (9)            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_hour                                                                               ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_hour|                  ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_hour                                                                               ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_minute|                ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_minute                                                                             ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_month|                 ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_month                                                                              ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_second|                ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 9 (9)            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_second                                                                             ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_year|                  ; 29 (29)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 10 (10)          ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
-;    |mode_watch_set:MODE1|                 ; 410 (252)   ; 161 (111)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 249 (142)    ; 34 (34)           ; 127 (82)         ; |digital_clock|mode_watch_set:MODE1                                                                                            ; mode_watch_set      ; work         ;
+;       |bin2bcd:CVT_second|                ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_second                                                                             ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_year|                  ; 33 (33)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 10 (10)          ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_year                                                                               ; bin2bcd             ; work         ;
+;    |mode_watch_set:MODE1|                 ; 410 (254)   ; 161 (111)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 249 (143)    ; 34 (34)           ; 127 (84)         ; |digital_clock|mode_watch_set:MODE1                                                                                            ; mode_watch_set      ; work         ;
 ;       |bin2bcd:CVT_day|                   ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_day                                                                            ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_hour|                  ; 26 (26)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 9 (9)            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_hour                                                                           ; bin2bcd             ; work         ;
+;       |bin2bcd:CVT_hour|                  ; 26 (26)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_hour                                                                           ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_minute|                ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_minute                                                                         ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_month|                 ; 25 (25)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_month                                                                          ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_second|                ; 24 (24)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 8 (8)            ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_second                                                                         ; bin2bcd             ; work         ;
-;       |bin2bcd:CVT_year|                  ; 34 (34)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 11 (11)          ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_year                                                                           ; bin2bcd             ; work         ;
-;    |watch_time:TIME|                      ; 197 (169)   ; 48 (48)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 146 (118)    ; 17 (17)           ; 34 (34)          ; |digital_clock|watch_time:TIME                                                                                                 ; watch_time          ; work         ;
-;       |lpm_divide:Mod0|                   ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_p9m:auto_generated|  ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated                                                   ; lpm_divide_p9m      ; work         ;
-;             |sign_div_unsign_ekh:divider| ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 0 (0)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
-;                |alt_u_div_g4f:divider|    ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 0 (0)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ; alt_u_div_g4f       ; work         ;
+;       |bin2bcd:CVT_year|                  ; 31 (31)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 10 (10)          ; |digital_clock|mode_watch_set:MODE1|bin2bcd:CVT_year                                                                           ; bin2bcd             ; work         ;
+;    |watch_time:TIME|                      ; 194 (166)   ; 48 (48)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 125 (103)    ; 16 (16)           ; 53 (47)          ; |digital_clock|watch_time:TIME                                                                                                 ; watch_time          ; work         ;
+;       |lpm_divide:Mod0|                   ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 6 (0)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_p9m:auto_generated|  ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 6 (0)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated                                                   ; lpm_divide_p9m      ; work         ;
+;             |sign_div_unsign_ekh:divider| ; 28 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 6 (0)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider                       ; sign_div_unsign_ekh ; work         ;
+;                |alt_u_div_g4f:divider|    ; 28 (28)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 6 (6)            ; |digital_clock|watch_time:TIME|lpm_divide:Mod0|lpm_divide_p9m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ; alt_u_div_g4f       ; work         ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -672,10 +672,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dip_sw[2]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dip_sw[3]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dip_sw[0]   ; Input    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
-; dip_sw[1]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; dip_sw[1]   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; sw_in[2]    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; sw_in[1]    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; sw_in[3]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; sw_in[3]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; sw_in[0]    ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -689,58 +689,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; rst                                ;                   ;         ;
 ; dip_sw[2]                          ;                   ;         ;
 ;      - Mux6~0                      ; 0                 ; 6       ;
-;      - Mux7~0                      ; 0                 ; 6       ;
+;      - Mux7~2                      ; 0                 ; 6       ;
 ;      - Mux6~1                      ; 0                 ; 6       ;
-;      - Mux6~2                      ; 0                 ; 6       ;
-;      - Mux6~3                      ; 0                 ; 6       ;
-;      - Mux4~0                      ; 0                 ; 6       ;
-;      - Mux4~1                      ; 0                 ; 6       ;
+;      - Mux5~1                      ; 0                 ; 6       ;
 ;      - Mux3~0                      ; 0                 ; 6       ;
-;      - Mux2~0                      ; 0                 ; 6       ;
-;      - Mux2~1                      ; 0                 ; 6       ;
-;      - Mux1~0                      ; 0                 ; 6       ;
+;      - Mux1~2                      ; 0                 ; 6       ;
 ;      - Mux0~0                      ; 0                 ; 6       ;
 ;      - Decoder0~0                  ; 0                 ; 6       ;
 ; dip_sw[3]                          ;                   ;         ;
 ;      - Mux6~0                      ; 0                 ; 6       ;
-;      - Mux7~1                      ; 0                 ; 6       ;
+;      - Mux7~3                      ; 0                 ; 6       ;
 ;      - Mux6~1                      ; 0                 ; 6       ;
-;      - Mux6~3                      ; 0                 ; 6       ;
-;      - Mux4~1                      ; 0                 ; 6       ;
+;      - Mux5~3                      ; 0                 ; 6       ;
 ;      - Mux3~1                      ; 0                 ; 6       ;
-;      - Mux2~1                      ; 0                 ; 6       ;
-;      - Mux1~1                      ; 0                 ; 6       ;
+;      - Mux1~3                      ; 0                 ; 6       ;
 ;      - Mux0~0                      ; 0                 ; 6       ;
 ;      - Decoder0~0                  ; 0                 ; 6       ;
 ; dip_sw[0]                          ;                   ;         ;
 ;      - Mux6~0                      ; 0                 ; 0       ;
-;      - Mux7~0                      ; 0                 ; 0       ;
+;      - Mux7~2                      ; 0                 ; 0       ;
 ;      - Mux6~1                      ; 0                 ; 0       ;
-;      - Mux6~2                      ; 1                 ; 0       ;
-;      - Mux4~0                      ; 0                 ; 0       ;
+;      - Mux5~3                      ; 1                 ; 0       ;
 ;      - Mux3~0                      ; 0                 ; 0       ;
-;      - Mux2~0                      ; 1                 ; 0       ;
-;      - Mux1~0                      ; 1                 ; 0       ;
+;      - Mux1~2                      ; 1                 ; 0       ;
 ;      - Mux0~0                      ; 1                 ; 0       ;
 ;      - Decoder0~0                  ; 1                 ; 0       ;
 ; dip_sw[1]                          ;                   ;         ;
-;      - Mux6~0                      ; 0                 ; 6       ;
-;      - Mux7~0                      ; 0                 ; 6       ;
-;      - Mux7~1                      ; 0                 ; 6       ;
-;      - Mux6~1                      ; 0                 ; 6       ;
-;      - Mux6~2                      ; 0                 ; 6       ;
-;      - Mux4~0                      ; 0                 ; 6       ;
-;      - Mux3~0                      ; 0                 ; 6       ;
-;      - Mux3~1                      ; 0                 ; 6       ;
-;      - Mux2~0                      ; 0                 ; 6       ;
-;      - Mux1~0                      ; 0                 ; 6       ;
-;      - Mux1~1                      ; 0                 ; 6       ;
-;      - Mux0~0                      ; 0                 ; 6       ;
-;      - Decoder0~0                  ; 0                 ; 6       ;
+;      - Mux6~0                      ; 1                 ; 6       ;
+;      - Mux7~2                      ; 1                 ; 6       ;
+;      - Mux7~3                      ; 1                 ; 6       ;
+;      - Mux6~1                      ; 1                 ; 6       ;
+;      - Mux5~1                      ; 1                 ; 6       ;
+;      - Mux5~2                      ; 1                 ; 6       ;
+;      - Mux3~0                      ; 1                 ; 6       ;
+;      - Mux3~1                      ; 1                 ; 6       ;
+;      - Mux1~2                      ; 1                 ; 6       ;
+;      - Mux1~3                      ; 1                 ; 6       ;
+;      - Mux0~0                      ; 1                 ; 6       ;
+;      - Decoder0~0                  ; 1                 ; 6       ;
 ; sw_in[2]                           ;                   ;         ;
 ; sw_in[1]                           ;                   ;         ;
 ; sw_in[3]                           ;                   ;         ;
-;      - debouncer_clk:sw3|d_ff:U1|q ; 0                 ; 6       ;
+;      - debouncer_clk:sw3|d_ff:U1|q ; 1                 ; 6       ;
 ; sw_in[0]                           ;                   ;         ;
 +------------------------------------+-------------------+---------+
 
@@ -750,59 +740,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                  ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Decoder0~0                            ; LCCOMB_X1_Y9_N0    ; 4       ; Latch enable              ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; Mux0~0                                ; LCCOMB_X1_Y9_N10   ; 4       ; Latch enable              ; yes    ; Global Clock         ; GCLK0            ; --                        ;
-; clk                                   ; PIN_23             ; 606     ; Clock                     ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; debouncer_clk:sw0|clk_div:U0|myclk    ; FF_X33_Y12_N11     ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; debouncer_clk:sw1|clk_div:U0|myclk    ; FF_X33_Y12_N23     ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK8            ; --                        ;
-; debouncer_clk:sw2|clk_div:U0|myclk    ; FF_X33_Y12_N17     ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; debouncer_clk:sw3|clk_div:U0|Equal0~5 ; LCCOMB_X32_Y13_N10 ; 12      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; debouncer_clk:sw3|clk_div:U0|myclk    ; FF_X33_Y12_N27     ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; en_clk:U0|en_1hz                      ; FF_X21_Y16_N1      ; 8       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; en_clk_lcd:LCLK|en_clk                ; FF_X31_Y14_N5      ; 22      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; lcd_driver:DRV|LessThan0~6            ; LCCOMB_X8_Y7_N28   ; 24      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; lcd_driver:DRV|always4~0              ; LCCOMB_X10_Y9_N24  ; 5       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; lcd_driver:DRV|cnt_en_clk[6]~12       ; LCCOMB_X33_Y16_N6  ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; lcd_driver:DRV|index_char[3]          ; FF_X12_Y9_N21      ; 74      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|day_alarm[3]~11      ; LCCOMB_X16_Y10_N0  ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|day_alarm[7]~14      ; LCCOMB_X16_Y10_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|hour_alarm[3]~12     ; LCCOMB_X22_Y9_N30  ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|hour_alarm[7]~16     ; LCCOMB_X22_Y9_N2   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|minute_alarm[0]~11   ; LCCOMB_X19_Y10_N22 ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|minute_alarm[7]~16   ; LCCOMB_X19_Y10_N18 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|month_alarm[7]~15    ; LCCOMB_X21_Y10_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|month_alarm~13       ; LCCOMB_X21_Y10_N6  ; 9       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|second_alarm[0]~29   ; LCCOMB_X19_Y9_N8   ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|second_alarm[7]~34   ; LCCOMB_X18_Y10_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|year_alarm[7]~26     ; LCCOMB_X23_Y10_N6  ; 9       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; mode_alarm:MODE2|year_alarm[7]~28     ; LCCOMB_X23_Y10_N30 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_watch_set:MODE1|day_set[7]~30    ; LCCOMB_X24_Y10_N22 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_watch_set:MODE1|en_time          ; FF_X24_Y12_N5      ; 55      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; mode_watch_set:MODE1|hour_set[7]~14   ; LCCOMB_X24_Y11_N22 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_watch_set:MODE1|minute_set[7]~29 ; LCCOMB_X26_Y10_N0  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_watch_set:MODE1|month_set[7]~14  ; LCCOMB_X24_Y10_N0  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_watch_set:MODE1|second_set[7]~14 ; LCCOMB_X25_Y10_N28 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; mode_watch_set:MODE1|year_set[7]~29   ; LCCOMB_X26_Y14_N18 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; rst                                   ; PIN_91             ; 156     ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; rst                                   ; PIN_91             ; 367     ; Async. clear              ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; watch_time:TIME|year~0                ; LCCOMB_X21_Y16_N20 ; 45      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; Decoder0~0                            ; LCCOMB_X1_Y9_N6    ; 4       ; Latch enable              ; yes    ; Global Clock         ; GCLK1            ; --                        ;
+; Mux0~0                                ; LCCOMB_X1_Y9_N0    ; 4       ; Latch enable              ; yes    ; Global Clock         ; GCLK0            ; --                        ;
+; clk                                   ; PIN_23             ; 599     ; Clock                     ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; debouncer_clk:sw0|clk_div:U0|myclk    ; FF_X33_Y12_N13     ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; debouncer_clk:sw1|clk_div:U0|myclk    ; FF_X33_Y12_N21     ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; debouncer_clk:sw2|clk_div:U0|myclk    ; FF_X33_Y12_N3      ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; debouncer_clk:sw3|clk_div:U0|Equal0~5 ; LCCOMB_X32_Y13_N2  ; 12      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; debouncer_clk:sw3|clk_div:U0|myclk    ; FF_X33_Y12_N11     ; 2       ; Clock                     ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; en_clk:U0|en_1hz                      ; FF_X24_Y10_N29     ; 8       ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; en_clk_lcd:LCLK|en_clk                ; FF_X30_Y10_N23     ; 22      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; lcd_driver:DRV|LessThan0~6            ; LCCOMB_X4_Y9_N24   ; 24      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; lcd_driver:DRV|always4~0              ; LCCOMB_X14_Y9_N12  ; 5       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; lcd_driver:DRV|cnt_en_clk[6]~12       ; LCCOMB_X6_Y10_N2   ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|day_alarm[3]~11      ; LCCOMB_X17_Y12_N22 ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|day_alarm[7]~14      ; LCCOMB_X17_Y12_N26 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|hour_alarm[3]~10     ; LCCOMB_X18_Y12_N30 ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|hour_alarm[7]~15     ; LCCOMB_X18_Y12_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|minute_alarm[0]~13   ; LCCOMB_X14_Y12_N28 ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|minute_alarm[7]~17   ; LCCOMB_X14_Y12_N18 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|month_alarm[7]~15    ; LCCOMB_X16_Y10_N8  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|month_alarm~13       ; LCCOMB_X16_Y10_N12 ; 9       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|second_alarm[0]~29   ; LCCOMB_X21_Y12_N30 ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|second_alarm[7]~33   ; LCCOMB_X21_Y12_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|year_alarm[7]~26     ; LCCOMB_X17_Y9_N30  ; 9       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; mode_alarm:MODE3|year_alarm[7]~28     ; LCCOMB_X17_Y9_N2   ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_watch_set:MODE1|day_set[7]~26    ; LCCOMB_X18_Y13_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_watch_set:MODE1|en_time          ; FF_X19_Y14_N21     ; 55      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; mode_watch_set:MODE1|hour_set[7]~13   ; LCCOMB_X17_Y15_N22 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_watch_set:MODE1|minute_set[7]~31 ; LCCOMB_X19_Y13_N8  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_watch_set:MODE1|month_set[7]~14  ; LCCOMB_X17_Y11_N22 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_watch_set:MODE1|second_set[7]~14 ; LCCOMB_X17_Y13_N30 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; mode_watch_set:MODE1|year_set[7]~28   ; LCCOMB_X18_Y14_N28 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; rst                                   ; PIN_91             ; 157     ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; rst                                   ; PIN_91             ; 360     ; Async. clear              ; yes    ; Global Clock         ; GCLK7            ; --                        ;
+; watch_time:TIME|year~0                ; LCCOMB_X24_Y10_N30 ; 45      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 +---------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                  ;
-+------------------------------------+------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                               ; Location         ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------------------+------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Decoder0~0                         ; LCCOMB_X1_Y9_N0  ; 4       ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
-; Mux0~0                             ; LCCOMB_X1_Y9_N10 ; 4       ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
-; clk                                ; PIN_23           ; 606     ; 113                                  ; Global Clock         ; GCLK2            ; --                        ;
-; debouncer_clk:sw0|clk_div:U0|myclk ; FF_X33_Y12_N11   ; 2       ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
-; debouncer_clk:sw1|clk_div:U0|myclk ; FF_X33_Y12_N23   ; 2       ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
-; debouncer_clk:sw2|clk_div:U0|myclk ; FF_X33_Y12_N17   ; 2       ; 0                                    ; Global Clock         ; GCLK6            ; --                        ;
-; debouncer_clk:sw3|clk_div:U0|myclk ; FF_X33_Y12_N27   ; 2       ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
-; rst                                ; PIN_91           ; 367     ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
-+------------------------------------+------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                 ;
++------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                               ; Location        ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Decoder0~0                         ; LCCOMB_X1_Y9_N6 ; 4       ; 0                                    ; Global Clock         ; GCLK1            ; --                        ;
+; Mux0~0                             ; LCCOMB_X1_Y9_N0 ; 4       ; 0                                    ; Global Clock         ; GCLK0            ; --                        ;
+; clk                                ; PIN_23          ; 599     ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
+; debouncer_clk:sw0|clk_div:U0|myclk ; FF_X33_Y12_N13  ; 2       ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
+; debouncer_clk:sw1|clk_div:U0|myclk ; FF_X33_Y12_N21  ; 2       ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
+; debouncer_clk:sw2|clk_div:U0|myclk ; FF_X33_Y12_N3   ; 2       ; 0                                    ; Global Clock         ; GCLK6            ; --                        ;
+; debouncer_clk:sw3|clk_div:U0|myclk ; FF_X33_Y12_N11  ; 2       ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
+; rst                                ; PIN_91          ; 360     ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
++------------------------------------+-----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +------------------------------------------------+
@@ -810,90 +799,89 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 1,694 / 32,401 ( 5 % ) ;
-; C16 interconnects     ; 7 / 1,326 ( < 1 % )    ;
-; C4 interconnects      ; 796 / 21,816 ( 4 % )   ;
-; Direct links          ; 323 / 32,401 ( < 1 % ) ;
+; Block interconnects   ; 1,625 / 32,401 ( 5 % ) ;
+; C16 interconnects     ; 11 / 1,326 ( < 1 % )   ;
+; C4 interconnects      ; 780 / 21,816 ( 4 % )   ;
+; Direct links          ; 315 / 32,401 ( < 1 % ) ;
 ; Global clocks         ; 8 / 10 ( 80 % )        ;
-; Local interconnects   ; 964 / 10,320 ( 9 % )   ;
+; Local interconnects   ; 942 / 10,320 ( 9 % )   ;
 ; R24 interconnects     ; 34 / 1,289 ( 3 % )     ;
-; R4 interconnects      ; 990 / 28,186 ( 4 % )   ;
+; R4 interconnects      ; 1,094 / 28,186 ( 4 % ) ;
 +-----------------------+------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 13.31) ; Number of LABs  (Total = 120) ;
+; Number of Logic Elements  (Average = 13.96) ; Number of LABs  (Total = 114) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 3                             ;
-; 2                                           ; 2                             ;
-; 3                                           ; 4                             ;
-; 4                                           ; 2                             ;
-; 5                                           ; 1                             ;
-; 6                                           ; 2                             ;
+; 1                                           ; 2                             ;
+; 2                                           ; 0                             ;
+; 3                                           ; 1                             ;
+; 4                                           ; 3                             ;
+; 5                                           ; 0                             ;
+; 6                                           ; 1                             ;
 ; 7                                           ; 0                             ;
-; 8                                           ; 5                             ;
-; 9                                           ; 1                             ;
-; 10                                          ; 0                             ;
-; 11                                          ; 3                             ;
-; 12                                          ; 8                             ;
-; 13                                          ; 6                             ;
-; 14                                          ; 6                             ;
+; 8                                           ; 1                             ;
+; 9                                           ; 0                             ;
+; 10                                          ; 2                             ;
+; 11                                          ; 5                             ;
+; 12                                          ; 6                             ;
+; 13                                          ; 12                            ;
+; 14                                          ; 10                            ;
 ; 15                                          ; 19                            ;
-; 16                                          ; 58                            ;
+; 16                                          ; 52                            ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 2.03) ; Number of LABs  (Total = 120) ;
+; LAB-wide Signals  (Average = 1.89) ; Number of LABs  (Total = 114) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 82                            ;
-; 1 Clock                            ; 104                           ;
-; 1 Clock enable                     ; 36                            ;
-; 1 Sync. clear                      ; 2                             ;
-; 1 Sync. load                       ; 9                             ;
-; 2 Clock enables                    ; 7                             ;
-; 2 Clocks                           ; 4                             ;
+; 1 Async. clear                     ; 74                            ;
+; 1 Clock                            ; 93                            ;
+; 1 Clock enable                     ; 28                            ;
+; 1 Sync. load                       ; 8                             ;
+; 2 Clock enables                    ; 8                             ;
+; 2 Clocks                           ; 5                             ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 17.94) ; Number of LABs  (Total = 120) ;
+; Number of Signals Sourced  (Average = 18.72) ; Number of LABs  (Total = 114) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 1                             ;
-; 2                                            ; 3                             ;
+; 1                                            ; 2                             ;
+; 2                                            ; 0                             ;
 ; 3                                            ; 0                             ;
-; 4                                            ; 1                             ;
+; 4                                            ; 2                             ;
 ; 5                                            ; 0                             ;
-; 6                                            ; 5                             ;
-; 7                                            ; 3                             ;
-; 8                                            ; 5                             ;
-; 9                                            ; 1                             ;
+; 6                                            ; 0                             ;
+; 7                                            ; 4                             ;
+; 8                                            ; 1                             ;
+; 9                                            ; 0                             ;
 ; 10                                           ; 1                             ;
 ; 11                                           ; 0                             ;
-; 12                                           ; 3                             ;
-; 13                                           ; 3                             ;
-; 14                                           ; 2                             ;
+; 12                                           ; 4                             ;
+; 13                                           ; 2                             ;
+; 14                                           ; 3                             ;
 ; 15                                           ; 5                             ;
-; 16                                           ; 6                             ;
-; 17                                           ; 9                             ;
-; 18                                           ; 9                             ;
-; 19                                           ; 7                             ;
-; 20                                           ; 9                             ;
-; 21                                           ; 6                             ;
-; 22                                           ; 7                             ;
-; 23                                           ; 4                             ;
-; 24                                           ; 17                            ;
+; 16                                           ; 11                            ;
+; 17                                           ; 6                             ;
+; 18                                           ; 10                            ;
+; 19                                           ; 10                            ;
+; 20                                           ; 8                             ;
+; 21                                           ; 7                             ;
+; 22                                           ; 6                             ;
+; 23                                           ; 6                             ;
+; 24                                           ; 11                            ;
 ; 25                                           ; 4                             ;
-; 26                                           ; 3                             ;
-; 27                                           ; 2                             ;
-; 28                                           ; 2                             ;
+; 26                                           ; 8                             ;
+; 27                                           ; 0                             ;
+; 28                                           ; 1                             ;
 ; 29                                           ; 0                             ;
 ; 30                                           ; 0                             ;
 ; 31                                           ; 2                             ;
@@ -903,70 +891,74 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 7.28) ; Number of LABs  (Total = 120) ;
+; Number of Signals Sourced Out  (Average = 7.55) ; Number of LABs  (Total = 114) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 1                             ;
-; 1                                               ; 9                             ;
-; 2                                               ; 8                             ;
-; 3                                               ; 10                            ;
-; 4                                               ; 5                             ;
-; 5                                               ; 7                             ;
-; 6                                               ; 15                            ;
-; 7                                               ; 6                             ;
-; 8                                               ; 13                            ;
-; 9                                               ; 13                            ;
-; 10                                              ; 7                             ;
-; 11                                              ; 8                             ;
-; 12                                              ; 5                             ;
+; 1                                               ; 8                             ;
+; 2                                               ; 4                             ;
+; 3                                               ; 6                             ;
+; 4                                               ; 4                             ;
+; 5                                               ; 11                            ;
+; 6                                               ; 11                            ;
+; 7                                               ; 14                            ;
+; 8                                               ; 11                            ;
+; 9                                               ; 8                             ;
+; 10                                              ; 9                             ;
+; 11                                              ; 11                            ;
+; 12                                              ; 6                             ;
 ; 13                                              ; 2                             ;
-; 14                                              ; 4                             ;
-; 15                                              ; 3                             ;
-; 16                                              ; 3                             ;
-; 17                                              ; 1                             ;
+; 14                                              ; 5                             ;
+; 15                                              ; 1                             ;
+; 16                                              ; 0                             ;
+; 17                                              ; 0                             ;
+; 18                                              ; 1                             ;
+; 19                                              ; 0                             ;
+; 20                                              ; 1                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 13.71) ; Number of LABs  (Total = 120) ;
+; Number of Distinct Inputs  (Average = 14.09) ; Number of LABs  (Total = 114) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
 ; 2                                            ; 1                             ;
-; 3                                            ; 2                             ;
-; 4                                            ; 6                             ;
-; 5                                            ; 8                             ;
+; 3                                            ; 1                             ;
+; 4                                            ; 7                             ;
+; 5                                            ; 6                             ;
 ; 6                                            ; 5                             ;
-; 7                                            ; 3                             ;
-; 8                                            ; 12                            ;
-; 9                                            ; 12                            ;
+; 7                                            ; 9                             ;
+; 8                                            ; 6                             ;
+; 9                                            ; 3                             ;
 ; 10                                           ; 6                             ;
-; 11                                           ; 5                             ;
-; 12                                           ; 6                             ;
-; 13                                           ; 4                             ;
-; 14                                           ; 4                             ;
-; 15                                           ; 1                             ;
-; 16                                           ; 5                             ;
-; 17                                           ; 3                             ;
-; 18                                           ; 3                             ;
-; 19                                           ; 3                             ;
+; 11                                           ; 6                             ;
+; 12                                           ; 5                             ;
+; 13                                           ; 2                             ;
+; 14                                           ; 3                             ;
+; 15                                           ; 6                             ;
+; 16                                           ; 6                             ;
+; 17                                           ; 5                             ;
+; 18                                           ; 8                             ;
+; 19                                           ; 4                             ;
 ; 20                                           ; 4                             ;
-; 21                                           ; 4                             ;
-; 22                                           ; 5                             ;
-; 23                                           ; 3                             ;
-; 24                                           ; 1                             ;
-; 25                                           ; 4                             ;
-; 26                                           ; 2                             ;
+; 21                                           ; 5                             ;
+; 22                                           ; 0                             ;
+; 23                                           ; 2                             ;
+; 24                                           ; 3                             ;
+; 25                                           ; 1                             ;
+; 26                                           ; 3                             ;
 ; 27                                           ; 2                             ;
-; 28                                           ; 1                             ;
-; 29                                           ; 1                             ;
-; 30                                           ; 0                             ;
+; 28                                           ; 0                             ;
+; 29                                           ; 0                             ;
+; 30                                           ; 1                             ;
 ; 31                                           ; 0                             ;
-; 32                                           ; 1                             ;
+; 32                                           ; 0                             ;
 ; 33                                           ; 0                             ;
 ; 34                                           ; 1                             ;
 ; 35                                           ; 2                             ;
+; 36                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -1096,11 +1088,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------+----------------------+-------------------+
 ; Source Clock(s)                    ; Destination Clock(s) ; Delay Added in ns ;
 +------------------------------------+----------------------+-------------------+
-; clk                                ; clk                  ; 42.5              ;
-; I/O                                ; clk                  ; 13.7              ;
-; clk                                ; dip_sw[0]            ; 10.4              ;
-; clk,I/O                            ; clk                  ; 9.2               ;
+; clk                                ; clk                  ; 41.4              ;
+; I/O                                ; clk                  ; 16.1              ;
+; clk                                ; dip_sw[0]            ; 11.0              ;
+; clk,I/O                            ; clk                  ; 8.3               ;
 ; debouncer_clk:sw3|clk_div:U0|myclk ; clk                  ; 2.2               ;
+; debouncer_clk:sw1|clk_div:U0|myclk ; clk                  ; 2.2               ;
 ; debouncer_clk:sw2|clk_div:U0|myclk ; clk                  ; 2.2               ;
 ; debouncer_clk:sw0|clk_div:U0|myclk ; clk                  ; 2.2               ;
 +------------------------------------+----------------------+-------------------+
@@ -1113,106 +1106,106 @@ This will disable optimization of problematic paths and expose them for further 
 +------------------------------------+------------------------------------+-------------------+
 ; Source Register                    ; Destination Register               ; Delay Added in ns ;
 +------------------------------------+------------------------------------+-------------------+
-; en_clk:U0|en_1hz                   ; watch_time:TIME|year[0]            ; 3.385             ;
-; debouncer_clk:sw0|clk_div:U0|myclk ; debouncer_clk:sw0|clk_div:U0|myclk ; 3.098             ;
+; dip_sw[0]                          ; lcd_driver:DRV|data_bus[7]         ; 3.194             ;
+; dip_sw[1]                          ; lcd_driver:DRV|data_bus[7]         ; 3.194             ;
+; dip_sw[2]                          ; lcd_driver:DRV|data_bus[7]         ; 3.194             ;
+; dip_sw[3]                          ; lcd_driver:DRV|data_bus[7]         ; 3.194             ;
+; debouncer_clk:sw1|clk_div:U0|myclk ; debouncer_clk:sw1|clk_div:U0|myclk ; 3.098             ;
 ; debouncer_clk:sw3|clk_div:U0|myclk ; debouncer_clk:sw3|clk_div:U0|myclk ; 3.098             ;
-; debouncer_clk:sw2|clk_div:U0|myclk ; debouncer_clk:sw2|clk_div:U0|myclk ; 3.098             ;
-; debouncer_clk:sw1|clk_div:U0|myclk ; debouncer_clk:sw1|clk_div:U0|myclk ; 3.090             ;
-; dip_sw[0]                          ; lcd_driver:DRV|data_bus[0]         ; 2.468             ;
-; dip_sw[1]                          ; lcd_driver:DRV|data_bus[7]         ; 2.329             ;
-; dip_sw[2]                          ; lcd_driver:DRV|data_bus[7]         ; 2.329             ;
-; dip_sw[3]                          ; lcd_driver:DRV|data_bus[7]         ; 2.329             ;
-; debouncer_clk:sw1|d_ff:U3|q        ; data_sw2[1]                        ; 2.004             ;
-; debouncer_clk:sw2|d_ff:U3|q        ; data_sw2[2]                        ; 2.004             ;
-; debouncer_clk:sw1|d_ff:U4|q        ; data_sw2[1]                        ; 1.849             ;
-; debouncer_clk:sw2|d_ff:U4|q        ; data_sw2[2]                        ; 1.849             ;
-; watch_time:TIME|day[0]             ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[7]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[5]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[4]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[6]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[2]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[1]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[0]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[7]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[5]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[4]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[6]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[3]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[1]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[0]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[5]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[4]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[3]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[2]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[1]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[7]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[6]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|minute[2]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|hour[3]            ; watch_time:TIME|day[0]             ; 1.793             ;
-; watch_time:TIME|second[0]          ; watch_time:TIME|day[0]             ; 1.793             ;
-; mode_watch_set:MODE1|en_time       ; watch_time:TIME|year[1]            ; 1.673             ;
-; mode_watch_set:MODE1|out[3]        ; lcd_driver:DRV|data_bus[3]         ; 1.669             ;
-; mode_watch_set:MODE1|bin_time[40]  ; watch_time:TIME|year[0]            ; 1.509             ;
-; watch_time:TIME|year[0]            ; watch_time:TIME|year[0]            ; 1.509             ;
-; mode_watch_set:MODE1|out[0]        ; lcd_driver:DRV|data_bus[0]         ; 1.485             ;
-; watch_time:TIME|year[2]            ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|year[7]            ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|year[6]            ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|year[5]            ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|year[3]            ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[7]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[5]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[4]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|day[7]             ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|day[5]             ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|day[6]             ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[2]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[1]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[0]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[3]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|day[3]             ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|day[2]             ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|day[1]             ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|day[4]             ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|month[6]           ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|year[1]            ; watch_time:TIME|year[0]            ; 1.413             ;
-; watch_time:TIME|year[4]            ; watch_time:TIME|year[0]            ; 1.413             ;
-; mode_watch_set:MODE1|out[1]        ; lcd_driver:DRV|data_bus[1]         ; 1.397             ;
-; mode_watch_set:MODE1|out[4]        ; lcd_driver:DRV|data_bus[4]         ; 1.291             ;
-; mode_watch_set:MODE1|out[5]        ; lcd_driver:DRV|data_bus[5]         ; 1.253             ;
-; debouncer_clk:sw0|d_ff:U3|q        ; data_sw1[0]                        ; 1.167             ;
-; debouncer_clk:sw3|d_ff:U3|q        ; data_sw1[3]                        ; 1.166             ;
-; mode_watch_set:MODE1|out[6]        ; lcd_driver:DRV|data_bus[6]         ; 1.164             ;
-; debouncer_clk:sw3|d_ff:U1|q        ; debouncer_clk:sw3|d_ff:U3|q        ; 1.164             ;
-; debouncer_clk:sw0|d_ff:U1|q        ; debouncer_clk:sw0|d_ff:U3|q        ; 1.158             ;
-; debouncer_clk:sw2|d_ff:U1|q        ; debouncer_clk:sw2|d_ff:U3|q        ; 1.158             ;
-; mode_stopwatch:MODE3|out[3]        ; lcd_driver:DRV|data_bus[3]         ; 1.121             ;
-; mode_watch_set:MODE1|bin_time[32]  ; watch_time:TIME|month[0]           ; 1.083             ;
-; debouncer_clk:sw3|d_ff:U2|q        ; debouncer_clk:sw3|d_ff:U3|q        ; 1.073             ;
-; debouncer_clk:sw0|d_ff:U2|q        ; debouncer_clk:sw0|d_ff:U3|q        ; 1.069             ;
-; debouncer_clk:sw2|d_ff:U2|q        ; debouncer_clk:sw2|d_ff:U3|q        ; 1.069             ;
-; mode_alarm:MODE2|out[0]            ; lcd_driver:DRV|data_bus[0]         ; 1.051             ;
-; debouncer_clk:sw0|d_ff:U4|q        ; data_sw1[0]                        ; 1.013             ;
-; debouncer_clk:sw3|d_ff:U4|q        ; data_sw1[3]                        ; 1.011             ;
-; mode_stopwatch:MODE3|out[1]        ; lcd_driver:DRV|data_bus[1]         ; 0.988             ;
-; mode_alarm:MODE2|out[2]            ; lcd_driver:DRV|data_bus[2]         ; 0.932             ;
-; mode_watch_set:MODE1|out[2]        ; lcd_driver:DRV|data_bus[2]         ; 0.932             ;
-; mode_alarm:MODE2|out[4]            ; lcd_driver:DRV|data_bus[4]         ; 0.915             ;
-; mode_stopwatch:MODE3|out[5]        ; lcd_driver:DRV|data_bus[5]         ; 0.891             ;
-; mode_alarm:MODE2|out[6]            ; lcd_driver:DRV|data_bus[6]         ; 0.830             ;
-; mode_stopwatch:MODE3|out[0]        ; lcd_driver:DRV|data_bus[0]         ; 0.617             ;
-; mode_watch:MODE0|out[0]            ; lcd_driver:DRV|data_bus[0]         ; 0.617             ;
-; mode_alarm:MODE2|out[1]            ; lcd_driver:DRV|data_bus[1]         ; 0.579             ;
-; mode_watch:MODE0|out[1]            ; lcd_driver:DRV|data_bus[1]         ; 0.579             ;
-; mode_alarm:MODE2|out[3]            ; lcd_driver:DRV|data_bus[3]         ; 0.573             ;
-; mode_watch:MODE0|out[3]            ; lcd_driver:DRV|data_bus[3]         ; 0.573             ;
-; mode_watch:MODE0|out[2]            ; lcd_driver:DRV|data_bus[2]         ; 0.559             ;
-; mode_stopwatch:MODE3|out[2]        ; lcd_driver:DRV|data_bus[2]         ; 0.559             ;
-; mode_stopwatch:MODE3|out[4]        ; lcd_driver:DRV|data_bus[4]         ; 0.539             ;
-; mode_watch:MODE0|out[4]            ; lcd_driver:DRV|data_bus[4]         ; 0.539             ;
-; mode_alarm:MODE2|out[5]            ; lcd_driver:DRV|data_bus[5]         ; 0.529             ;
-; mode_watch:MODE0|out[5]            ; lcd_driver:DRV|data_bus[5]         ; 0.529             ;
+; debouncer_clk:sw0|clk_div:U0|myclk ; debouncer_clk:sw0|clk_div:U0|myclk ; 3.096             ;
+; debouncer_clk:sw2|clk_div:U0|myclk ; debouncer_clk:sw2|clk_div:U0|myclk ; 3.096             ;
+; en_clk:U0|en_1hz                   ; watch_time:TIME|day[0]             ; 3.025             ;
+; debouncer_clk:sw2|d_ff:U3|q        ; data_sw3[2]                        ; 2.004             ;
+; debouncer_clk:sw2|d_ff:U4|q        ; data_sw3[2]                        ; 1.849             ;
+; debouncer_clk:sw3|d_ff:U3|q        ; data_sw1[3]                        ; 1.839             ;
+; debouncer_clk:sw3|d_ff:U4|q        ; data_sw1[3]                        ; 1.684             ;
+; mode_watch_set:MODE1|out[0]        ; lcd_driver:DRV|data_bus[0]         ; 1.484             ;
+; mode_watch_set:MODE1|out[2]        ; lcd_driver:DRV|data_bus[2]         ; 1.426             ;
+; lcd_driver:DRV|index_char[4]       ; lcd_driver:DRV|data_bus[2]         ; 1.426             ;
+; lcd_driver:DRV|index_char[3]       ; lcd_driver:DRV|data_bus[2]         ; 1.426             ;
+; lcd_driver:DRV|index_char[1]       ; lcd_driver:DRV|data_bus[2]         ; 1.426             ;
+; lcd_driver:DRV|index_char[2]       ; lcd_driver:DRV|data_bus[2]         ; 1.426             ;
+; lcd_driver:DRV|index_char[0]       ; lcd_driver:DRV|data_bus[2]         ; 1.426             ;
+; mode_watch_set:MODE1|out[4]        ; lcd_driver:DRV|data_bus[4]         ; 1.390             ;
+; mode_watch_set:MODE1|en_time       ; watch_time:TIME|second[0]          ; 1.344             ;
+; debouncer_clk:sw1|d_ff:U3|q        ; data_sw3[1]                        ; 1.332             ;
+; mode_watch_set:MODE1|bin_time[40]  ; watch_time:TIME|year[0]            ; 1.254             ;
+; mode_watch_set:MODE1|bin_time[32]  ; watch_time:TIME|month[0]           ; 1.254             ;
+; watch_time:TIME|month[0]           ; watch_time:TIME|month[0]           ; 1.254             ;
+; watch_time:TIME|year[0]            ; watch_time:TIME|year[0]            ; 1.254             ;
+; mode_watch_set:MODE1|out[6]        ; lcd_driver:DRV|data_bus[6]         ; 1.239             ;
+; debouncer_clk:sw0|d_ff:U3|q        ; data_sw1[0]                        ; 1.187             ;
+; debouncer_clk:sw1|d_ff:U4|q        ; data_sw3[1]                        ; 1.176             ;
+; debouncer_clk:sw1|d_ff:U1|q        ; debouncer_clk:sw1|d_ff:U3|q        ; 1.162             ;
+; debouncer_clk:sw3|d_ff:U1|q        ; debouncer_clk:sw3|d_ff:U3|q        ; 1.162             ;
+; debouncer_clk:sw0|d_ff:U1|q        ; debouncer_clk:sw0|d_ff:U3|q        ; 1.156             ;
+; debouncer_clk:sw2|d_ff:U1|q        ; debouncer_clk:sw2|d_ff:U3|q        ; 1.156             ;
+; debouncer_clk:sw1|d_ff:U2|q        ; debouncer_clk:sw1|d_ff:U3|q        ; 1.071             ;
+; debouncer_clk:sw3|d_ff:U2|q        ; debouncer_clk:sw3|d_ff:U3|q        ; 1.071             ;
+; debouncer_clk:sw0|d_ff:U2|q        ; debouncer_clk:sw0|d_ff:U3|q        ; 1.065             ;
+; debouncer_clk:sw2|d_ff:U2|q        ; debouncer_clk:sw2|d_ff:U3|q        ; 1.065             ;
+; debouncer_clk:sw0|d_ff:U4|q        ; data_sw1[0]                        ; 1.033             ;
+; watch_time:TIME|year[2]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|year[7]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|year[6]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|year[5]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|year[3]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|month[7]           ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|month[5]           ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|month[4]           ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[6]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[5]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[7]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|month[2]           ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|month[1]           ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|month[3]           ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[3]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[2]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[1]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[0]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[7]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[5]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[4]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[6]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[2]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[1]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[0]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[7]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[5]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[4]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[6]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[3]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[1]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[0]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[5]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[4]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[3]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[2]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[1]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[7]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[6]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|minute[2]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|hour[3]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|day[4]             ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|month[6]           ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|year[1]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|year[4]            ; watch_time:TIME|month[0]           ; 0.987             ;
+; watch_time:TIME|second[0]          ; watch_time:TIME|month[0]           ; 0.987             ;
+; mode_alarm:MODE3|out[3]            ; lcd_driver:DRV|data_bus[3]         ; 0.964             ;
+; mode_watch_set:MODE1|out[3]        ; lcd_driver:DRV|data_bus[3]         ; 0.964             ;
+; mode_alarm:MODE3|out[5]            ; lcd_driver:DRV|data_bus[5]         ; 0.885             ;
+; mode_watch_set:MODE1|out[5]        ; lcd_driver:DRV|data_bus[5]         ; 0.885             ;
+; mode_alarm:MODE3|out[1]            ; lcd_driver:DRV|data_bus[1]         ; 0.884             ;
+; mode_watch_set:MODE1|out[1]        ; lcd_driver:DRV|data_bus[1]         ; 0.884             ;
+; mode_alarm:MODE3|out[2]            ; lcd_driver:DRV|data_bus[2]         ; 0.733             ;
+; mode_watch:MODE0|out[2]            ; lcd_driver:DRV|data_bus[2]         ; 0.733             ;
+; mode_alarm:MODE3|out[0]            ; lcd_driver:DRV|data_bus[0]         ; 0.614             ;
+; mode_watch:MODE0|out[0]            ; lcd_driver:DRV|data_bus[0]         ; 0.614             ;
+; mode_alarm:MODE3|out[4]            ; lcd_driver:DRV|data_bus[4]         ; 0.576             ;
+; mode_watch:MODE0|out[4]            ; lcd_driver:DRV|data_bus[4]         ; 0.576             ;
+; mode_watch:MODE0|out[3]            ; lcd_driver:DRV|data_bus[3]         ; 0.576             ;
+; mode_watch:MODE0|out[5]            ; lcd_driver:DRV|data_bus[5]         ; 0.540             ;
+; mode_watch:MODE0|out[1]            ; lcd_driver:DRV|data_bus[1]         ; 0.536             ;
 +------------------------------------+------------------------------------+-------------------+
 Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
@@ -1271,16 +1264,16 @@ Info (176353): Automatically promoted node debouncer_clk:sw3|clk_div:U0|myclk  F
 Info (176353): Automatically promoted node rst~input (placed in PIN 91 (CLK4, DIFFCLK_2p)) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 11
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G7
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[0] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[47] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[46] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[45] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[44] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[43] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[42] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[41] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[40] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
-        Info (176357): Destination node mode_alarm:MODE2|bin_alarm[39] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[0] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[47] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[46] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[45] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[44] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[43] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[42] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[41] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[40] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
+        Info (176357): Destination node mode_alarm:MODE3|bin_alarm[39] File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 99
         Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -1298,7 +1291,7 @@ Info (170195): Router estimated average interconnect usage is 3% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 1.32 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.23 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1306,8 +1299,8 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5512 megabytes
-    Info: Processing ended: Tue Jun 01 22:56:38 2021
+    Info: Peak virtual memory: 5502 megabytes
+    Info: Processing ended: Wed Jun 02 00:28:34 2021
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:16
 
