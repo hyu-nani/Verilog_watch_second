@@ -1,7 +1,10 @@
-Warning (10268): Verilog HDL information at bin2bcd.v(18): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin2bcd.v Line: 18
-Warning (10273): Verilog HDL warning at watch_time.v(91): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 91
-Warning (10273): Verilog HDL warning at watch_time.v(100): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 100
-Warning (10273): Verilog HDL warning at watch_time.v(109): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 109
-Warning (10273): Verilog HDL warning at watch_time.v(118): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 118
-Warning (10273): Verilog HDL warning at watch_time.v(127): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 127
-Info (10281): Verilog HDL Declaration information at lcd_driver.v(34): object "state" differs only in case from object "STATE" in the same scope File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 34
+Warning (10268): Verilog HDL information at bin2bcd.v(18): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 18
+Warning (10273): Verilog HDL warning at stopwatch.v(104): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 104
+Warning (10273): Verilog HDL warning at stopwatch.v(109): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 109
+Warning (10273): Verilog HDL warning at stopwatch.v(114): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 114
+Warning (10273): Verilog HDL warning at watch_time.v(91): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 91
+Warning (10273): Verilog HDL warning at watch_time.v(100): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 100
+Warning (10273): Verilog HDL warning at watch_time.v(109): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 109
+Warning (10273): Verilog HDL warning at watch_time.v(118): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 118
+Warning (10273): Verilog HDL warning at watch_time.v(127): extended using "x" or "z" File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 127
+Info (10281): Verilog HDL Declaration information at lcd_driver.v(34): object "state" differs only in case from object "STATE" in the same scope File: C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v Line: 34

@@ -52,11 +52,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "dip_sw[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dip_sw[3]",
+					"name" : "dip_sw[2]",
 					"strict" : false
 				},
 				{
@@ -64,7 +60,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "dip_sw[2]",
+					"name" : "dip_sw[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dip_sw[0]",
 					"strict" : false
 				},
 				{

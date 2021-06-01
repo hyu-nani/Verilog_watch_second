@@ -1,0 +1,96 @@
+module stopwatch	(
+						clk,
+						rst,
+						sw_in,
+						en_1000hz,
+						);
+						
+	input					clk, rst;
+	input					sw_in;
+	input					en_1000hz;
+	output		[7:0] milsec;
+	output		[4:0] index;
+	output		[7:0] out;
+	
+						
+	reg			[7:0]	milsec;
+	reg			[3:0] cnt;
+	
+	en_clk_100hz		STOPCLK (
+									.clk			(clk),
+									.rst			(rst),
+									.en_1000hz	(en_1000hz)
+									);
+									
+	bin2bcd			 CVT_milsecond ( 															// 밀리초
+										.clk			(clk),
+										.bin_bcd		(milsec),
+										.rst			(rst),
+										.hun			(),
+										.ten			(tenMilSecond),
+										.one			(oneMilSecond) );
+						
+	always @ (posedge clk or negedge rst) begin
+		if(!rst)	begin
+			milsec		<= 0;
+			cnt			<= 0;
+		end
+		else if (en_1000hz==1) begin
+			milsec		<= milsec + 1;
+		end
+		else if (milsec == 99) begin
+			milsec		<= 0;
+			cnt			<= cnt + 1;
+		end
+		else begin
+			milsec		<= 0;
+			cnt			<= cnt;
+		end	
+	end
+	
+	always @ (posedge clk or negedge rst) begin
+		if(!rst) begin
+			min_stop			<= 0;
+			sec_stop			<= 0;
+			milsec_stop		<= 0;
+		end
+		else
+			casex({min_stop, sec_stop, milsec}) begin
+				{8'd59, 8'd59, 8'd99} : begin
+											min_stop		<= 0;
+											sec_stop		<= 0;
+											milsec		<= 0;
+				end
+				{8'dx, 8'd59, 8'd99} : begin
+											min_stop		<= min_stop + 1;
+											sec_stop		<= 0;
+											milsec		<= 0;
+				end
+				{8'dx, 8'dx, 8'd99} : begin
+											min_stop		<= min_stop;
+											sec_stop		<= sec_stop + 1;
+											milsec		<= 0;
+				end
+				{8'dx, 8'dx, 8'dx} : begin
+											min_stop		<= min_stop;
+											sec_stop		<= sec_stop;
+											milsec		<= milsec + 1;
+				end
+				
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
