@@ -2,17 +2,18 @@ module mode_stopwatch(
 							clk,
 							rst,
 							en_100hz,
-							dip_sw,
+							sw_in,
 							index,
 							out);
 							
 	input					clk, rst;
 	input					en_100hz;
-	input					dip_sw;
+	input			[3:0]	sw_in;
 	input			[4:0] index;
 	
 	output		[7:0] out;
 	
+	wire					en_100hz;
 	wire			[4:0] index;	
 	wire			[3:0] tenMilSecond, oneMilSecond, tenSec_stop, oneSec_stop, tenMin_stop, oneMin_stop;
 	reg			[7:0]	milsec, sec_stop, min_stop;
@@ -86,8 +87,8 @@ module mode_stopwatch(
 				30 : out	<=	8'h20;
 				31 : out	<=	8'h20;
 			endcase	
-			if() begin
-				if(en_100hz == 1) 
+			if(en_100hz) begin
+				if(1) 
 					casez({min_stop, sec_stop, milsec})
 						{8'd59, 8'd59, 8'd99} : begin
 												min_stop		<= 0;

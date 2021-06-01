@@ -17,7 +17,7 @@ module	en_clk_100hz	(
 		end
 		else if (cnt_en_100hz == 26'd499999) begin
 			cnt_en_100hz	<= 0;
-			en_100hz			<= 1;
+			en_100hz		<= 1;
 		end
 		else begin
 			cnt_en_100hz	<= cnt_en_100hz + 1'b1;

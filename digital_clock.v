@@ -83,7 +83,7 @@ module	digital_clock	(
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
 										
-	en_clk_1000hz		STOPCLK (
+	en_clk_100hz		STOPCLK (
 									.clk			(clk),
 									.rst			(rst),
 									.en_100hz	(en_100hz)
@@ -152,7 +152,7 @@ module	digital_clock	(
 										.clk			(clk),
 										.rst			(rstn),
 										.en_100hz	(en_100hz),
-										.dip_sw		(data_mode3),
+										.sw_in		(data_mode3),
 										.index		(index_char),
 										.out			(data_mode3));
 								

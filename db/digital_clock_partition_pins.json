@@ -68,19 +68,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "sw_in[1]",
-					"strict" : false
-				},
-				{
 					"name" : "sw_in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "sw_in[0]",
+					"name" : "sw_in[1]",
 					"strict" : false
 				},
 				{
 					"name" : "sw_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sw_in[0]",
 					"strict" : false
 				}
 			]
