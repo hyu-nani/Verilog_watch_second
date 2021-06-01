@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Jun 02 03:40:08 2021
+Fitter Status : Successful - Wed Jun 02 04:19:24 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : digital_clock
 Top-level Entity Name : digital_clock
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 1,777 / 6,272 ( 28 % )
-    Total combinational functions : 1,655 / 6,272 ( 26 % )
-    Dedicated logic registers : 690 / 6,272 ( 11 % )
-Total registers : 690
+Total logic elements : 1,891 / 6,272 ( 30 % )
+    Total combinational functions : 1,768 / 6,272 ( 28 % )
+    Dedicated logic registers : 691 / 6,272 ( 11 % )
+Total registers : 691
 Total pins : 21 / 92 ( 23 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )

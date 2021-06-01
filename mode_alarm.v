@@ -197,6 +197,14 @@ module mode_alarm	(
 					minute_alarm	<=	minute_alarm - 1;
 				else if(cursor == 3'd5 && second_alarm > 0)
 					second_alarm	<=	second_alarm - 1;
+				else begin
+					year_alarm	<=	year;
+					month_alarm	<=	month;
+					day_alarm	<=	day;
+					hour_alarm	<=	hour;
+					minute_alarm<=	minute;
+					second_alarm<=	second;
+				end
 			end
 			bin_alarm		<=	{year_alarm,month_alarm,day_alarm,hour_alarm,minute_alarm,second_alarm};
 		end

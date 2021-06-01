@@ -82,12 +82,7 @@ module	digital_clock	(
 										.clk			(clk),
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
-										
-	en_clk_100hz		STOPCLK (
-									.clk			(clk),
-									.rst			(rst),
-									.en_100hz	(en_100hz)
-									);
+								
 	
 	watch_time				TIME	(
 										.clk			(clk),
@@ -151,8 +146,10 @@ module	digital_clock	(
 	mode_stopwatch			MODE3	(
 										.clk			(clk),
 										.rst			(rstn),
-										.en_100hz	(en_100hz),
-										.sw_in		(data_mode3),
+										.sw0			(sw_in[0]),
+										.sw1			(sw_in[1]),
+										.sw2			(sw_in[2]),
+										.sw3			(sw_in[3]),
 										.index		(index_char),
 										.out			(data_mode3));
 								
