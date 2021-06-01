@@ -9,7 +9,7 @@ module	digital_clock	(
 							lcd_data);
 									
 	input					clk, rst;
-	input			[1:0] dip_sw;
+	input			[3:0] dip_sw;
 	input			[3:0]	sw_in;
 	output				lcd_rs;
 	output				lcd_rw;
@@ -141,6 +141,12 @@ module	digital_clock	(
 										.out			(data_mode2),
 										.bin_alarm	(bin_alarm));
 	
+	stopwatch				MODE3(
+										.clk			(clk),
+										.rst			(rstn),
+										.sw_in		(data_sw3),
+										.index		(index_char),
+										.out			(data_mode3));
 	
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),
