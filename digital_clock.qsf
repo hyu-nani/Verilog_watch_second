@@ -82,4 +82,6 @@ set_location_assignment PIN_31 -to dip_sw[1]
 set_location_assignment PIN_32 -to dip_sw[2]
 set_location_assignment PIN_33 -to dip_sw[3]
 set_global_assignment -name VERILOG_FILE mode_aram.v
+set_global_assignment -name VERILOG_FILE stopwatch.v
+set_global_assignment -name VERILOG_FILE en_100hz.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

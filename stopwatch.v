@@ -7,7 +7,7 @@ module stopwatch	(
 						);
 						
 	input					clk, rst;
-	input			[1:0]	sw_in;
+	input			[3:0]	sw_in;
 	input			[4:0] index;
 	output		[7:0] out;
 	
@@ -17,7 +17,7 @@ module stopwatch	(
 	reg			[7:0]	milsec, sec_stop, min_stop;
 	reg			[7:0] out;
 	
-	en_clk_1000hz		STOPCLK (
+	en_clk_100hz		STOPCLK (
 									.clk			(clk),
 									.rst			(rst),
 									.en_100hz	(en_100hz)
@@ -45,6 +45,44 @@ module stopwatch	(
 										.ten			(tenMin_stop),
 										.one			(oneMin_stop) );
 											
+											
+	always @ (posedge en_100hz or negedge rst) begin
+		if(sw_in[0]) begin
+			min_stop			<= 0;
+			sec_stop			<= 0;
+			milsec			<= 0;
+		end
+		else begin
+			if(sw_in[1])
+				casex({min_stop, sec_stop, milsec})
+					{8'd59, 8'd59, 8'd99} : begin
+											min_stop		<= 0;
+											sec_stop		<= 0;
+											milsec		<= 0;
+					end
+					{8'dx, 8'd59, 8'd99} : begin
+											min_stop		<= min_stop + 1;
+											sec_stop		<= 0;
+											milsec		<= 0;
+					end
+					{8'dx, 8'dx, 8'd99} : begin
+											min_stop		<= min_stop;
+											sec_stop		<= sec_stop + 1;
+											milsec			<= 0;
+					end
+					{8'dx, 8'dx, 8'dx} : begin
+											min_stop		<= min_stop;
+											sec_stop		<= sec_stop;
+											milsec		<= milsec + 1;
+					end
+				endcase
+			else begin
+				min_stop		<= min_stop;
+				sec_stop		<= sec_stop;
+				milsec		<= milsec;
+			end
+		end
+	end
 	
 	always @ ( posedge clk or negedge rst )
 		if(!rst)
@@ -85,8 +123,10 @@ module stopwatch	(
 				29 : out	<=	8'h20;
 				30 : out	<=	8'h20;
 				31 : out	<=	8'h20;
-			endcase	
-			
+			endcase
+endmodule	
+		
+	/*		
 	always @ (posedge en_100hz or negedge rst) begin
 		if(sw_in[0]) begin
 			min_stop			<= 0;
@@ -124,7 +164,8 @@ module stopwatch	(
 			end
 		end
 	end
-endmodule	
+	*/
+
 	
 	
 	

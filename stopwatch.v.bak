@@ -15,7 +15,6 @@ module stopwatch	(
 	wire					en_100hz;	
 	wire			[4:0] tenMilSec, oneMilSec, tenSec_stop, oneSec_stop, tenMin_stop, oneMin_stop;
 	reg			[7:0]	milsec, sec_stop, min_stop;
-	reg			[3:0] cnt;
 	reg			[7:0] out;
 	
 	en_clk_1000hz		STOPCLK (
@@ -89,34 +88,40 @@ module stopwatch	(
 			endcase	
 			
 	always @ (posedge en_100hz or negedge rst) begin
-		if(!rst) begin
+		if(sw_in[0]) begin
 			min_stop			<= 0;
 			sec_stop			<= 0;
 			milsec			<= 0;
 		end
 		else begin
-			casex({min_stop, sec_stop, cnt})
-				{8'd59, 8'd59, 8'd99} : begin
+			if(sw_in[1])
+				casex({min_stop, sec_stop, milsec})
+					{8'd59, 8'd59, 8'd99} : begin
 											min_stop		<= 0;
 											sec_stop		<= 0;
 											milsec		<= 0;
-				end
-				{8'dx, 8'd59, 8'd99} : begin
+					end
+					{8'dx, 8'd59, 8'd99} : begin
 											min_stop		<= min_stop + 1;
 											sec_stop		<= 0;
 											milsec		<= 0;
-				end
-				{8'dx, 8'dx, 8'd99} : begin
+					end
+					{8'dx, 8'dx, 8'd99} : begin
 											min_stop		<= min_stop;
 											sec_stop		<= sec_stop + 1;
 											milsec			<= 0;
-				end
-				{8'dx, 8'dx, 8'dx} : begin
+					end
+					{8'dx, 8'dx, 8'dx} : begin
 											min_stop		<= min_stop;
 											sec_stop		<= sec_stop;
 											milsec		<= milsec + 1;
-				end
-			endcase
+					end
+				endcase
+			else begin
+				min_stop		<= min_stop;
+				sec_stop		<= sec_stop;
+				milsec		<= milsec;
+			end
 		end
 	end
 endmodule	

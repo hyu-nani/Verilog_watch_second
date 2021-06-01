@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Tue Jun 01 22:17:25 2021
+Tue Jun 01 22:44:24 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Jun 01 22:17:25 2021           ;
+; Analysis & Synthesis Status        ; Failed - Tue Jun 01 22:44:24 2021           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
@@ -162,7 +162,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 01 22:17:11 2021
+    Info: Processing started: Tue Jun 01 22:44:09 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -174,28 +174,34 @@ Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd
     Info (12023): Found entity 1: bin2bcd File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 1
 Warning (12019): Can't analyze file -- file fsm.v is missing
 Warning (12019): Can't analyze file -- file mode_aram.v is missing
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(35): created implicit net for "rstn" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file stopwatch.v
+    Info (12023): Found entity 1: stopwatch File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file en_100hz.v
+    Info (12023): Found entity 1: en_clk_100hz File: C:/intelFPGA_lite/Verilog_watch_second/en_100hz.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(36): created implicit net for "rstn" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at stopwatch.v(31): created implicit net for "tenMilSecond" File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 31
+Warning (10236): Verilog HDL Implicit Net warning at stopwatch.v(32): created implicit net for "oneMilSecond" File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 32
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at digital_clock.v(33): object "data_sw0" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 33
-Info (10264): Verilog HDL Case Statement information at digital_clock.v(38): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Warning (10240): Verilog HDL Always Construct warning at digital_clock.v(38): inferring latch(es) for variable "data_sw3", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Warning (10240): Verilog HDL Always Construct warning at digital_clock.v(38): inferring latch(es) for variable "data_sw2", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Warning (10240): Verilog HDL Always Construct warning at digital_clock.v(38): inferring latch(es) for variable "data_sw1", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw1[0]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw1[1]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw1[2]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw1[3]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw2[0]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw2[1]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw2[2]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw2[3]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw3[0]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw3[1]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw3[2]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
-Info (10041): Inferred latch for "data_sw3[3]" at digital_clock.v(38) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
+Warning (10036): Verilog HDL or VHDL warning at digital_clock.v(34): object "data_sw0" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 34
+Info (10264): Verilog HDL Case Statement information at digital_clock.v(39): all case item expressions in this case statement are onehot File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at digital_clock.v(39): inferring latch(es) for variable "data_sw3", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at digital_clock.v(39): inferring latch(es) for variable "data_sw2", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Warning (10240): Verilog HDL Always Construct warning at digital_clock.v(39): inferring latch(es) for variable "data_sw1", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw1[0]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw1[1]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw1[2]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw1[3]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw2[0]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw2[1]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw2[2]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw2[3]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw3[0]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw3[1]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw3[2]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
+Info (10041): Inferred latch for "data_sw3[3]" at digital_clock.v(39) File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 39
 Warning (12125): Using design file debouncer_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: debouncer_clk File: C:/intelFPGA_lite/Verilog_watch_second/debouncer_clk.v Line: 2
-Info (12128): Elaborating entity "debouncer_clk" for hierarchy "debouncer_clk:sw0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 62
+Info (12128): Elaborating entity "debouncer_clk" for hierarchy "debouncer_clk:sw0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 63
 Warning (12125): Using design file clk_div.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: clk_div File: C:/intelFPGA_lite/Verilog_watch_second/clk_div.v Line: 1
 Info (12128): Elaborating entity "clk_div" for hierarchy "debouncer_clk:sw0|clk_div:U0" File: C:/intelFPGA_lite/Verilog_watch_second/debouncer_clk.v Line: 20
@@ -204,23 +210,23 @@ Warning (12125): Using design file d_ff.v, which is not specified as a design fi
 Info (12128): Elaborating entity "d_ff" for hierarchy "debouncer_clk:sw0|d_ff:U1" File: C:/intelFPGA_lite/Verilog_watch_second/debouncer_clk.v Line: 27
 Warning (12125): Using design file en_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: en_clk File: C:/intelFPGA_lite/Verilog_watch_second/en_clk.v Line: 1
-Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 83
+Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 84
 Warning (12125): Using design file watch_time.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: watch_time File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 1
-Info (12128): Elaborating entity "watch_time" for hierarchy "watch_time:TIME" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 96
+Info (12128): Elaborating entity "watch_time" for hierarchy "watch_time:TIME" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 97
 Warning (10762): Verilog HDL Case Statement warning at watch_time.v(80): can't check case statement for completeness because the case expression has too many possible states File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 80
 Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(117): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 117
 Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(126): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/watch_time.v Line: 126
 Warning (12125): Using design file mode_watch.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mode_watch File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch.v Line: 1
-Info (12128): Elaborating entity "mode_watch" for hierarchy "mode_watch:MODE0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 111
+Info (12128): Elaborating entity "mode_watch" for hierarchy "mode_watch:MODE0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 112
 Warning (10230): Verilog HDL assignment warning at mode_watch.v(84): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch.v Line: 84
 Info (12128): Elaborating entity "bin2bcd" for hierarchy "mode_watch:MODE0|bin2bcd:CVT_second" File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch.v Line: 42
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(35): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 35
 Warning (10230): Verilog HDL assignment warning at bin2bcd.v(33): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 33
 Warning (12125): Using design file mode_watch_set.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mode_watch_set File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 1
-Info (12128): Elaborating entity "mode_watch_set" for hierarchy "mode_watch_set:MODE1" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 127
+Info (12128): Elaborating entity "mode_watch_set" for hierarchy "mode_watch_set:MODE1" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 128
 Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(46): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 46
 Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(105): truncated value with size 8 to match size of target (5) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 105
 Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(107): truncated value with size 8 to match size of target (5) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 107
@@ -241,7 +247,7 @@ Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(196): trunca
 Warning (10230): Verilog HDL assignment warning at mode_watch_set.v(198): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_watch_set.v Line: 198
 Warning (12125): Using design file mode_alarm.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mode_alarm File: C:/intelFPGA_lite/Verilog_watch_second/mode_alarm.v Line: 1
-Info (12128): Elaborating entity "mode_alarm" for hierarchy "mode_alarm:MODE2" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 142
+Info (12128): Elaborating entity "mode_alarm" for hierarchy "mode_alarm:MODE2" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 143
 Warning (10036): Verilog HDL or VHDL warning at mode_alarm.v(34): object "set_alarm" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second/mode_alarm.v Line: 34
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(42): truncated value with size 32 to match size of target (1) File: C:/intelFPGA_lite/Verilog_watch_second/mode_alarm.v Line: 42
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(101): truncated value with size 8 to match size of target (5) File: C:/intelFPGA_lite/Verilog_watch_second/mode_alarm.v Line: 101
@@ -261,54 +267,50 @@ Warning (10230): Verilog HDL assignment warning at mode_alarm.v(193): truncated 
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(195): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_alarm.v Line: 195
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(197): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_alarm.v Line: 197
 Warning (10230): Verilog HDL assignment warning at mode_alarm.v(199): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/mode_alarm.v Line: 199
-Warning (12125): Using design file stopwatch.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: stopwatch File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at stopwatch.v(31): created implicit net for "tenMilSecond" File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 31
-Warning (10236): Verilog HDL Implicit Net warning at stopwatch.v(32): created implicit net for "oneMilSecond" File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 32
-Info (12128): Elaborating entity "stopwatch" for hierarchy "stopwatch:MODE3" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 149
-Error (10200): Verilog HDL Conditional Statement error at stopwatch.v(91): cannot match operand(s) in the condition to the corresponding edges in the enclosing event control of the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 91
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(105): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 105
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(111): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 111
-Warning (10230): Verilog HDL assignment warning at stopwatch.v(117): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 117
-Warning (10935): Verilog HDL Casex/Casez warning at stopwatch.v(104): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 104
-Warning (10935): Verilog HDL Casex/Casez warning at stopwatch.v(109): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 109
-Warning (10935): Verilog HDL Casex/Casez warning at stopwatch.v(114): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 114
-Warning (10763): Verilog HDL warning at stopwatch.v(98): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 98
-Warning (10270): Verilog HDL Case Statement warning at stopwatch.v(98): incomplete case statement has no default case item File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 98
-Warning (10240): Verilog HDL Always Construct warning at stopwatch.v(90): inferring latch(es) for variable "min_stop", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Warning (10240): Verilog HDL Always Construct warning at stopwatch.v(90): inferring latch(es) for variable "sec_stop", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Warning (10240): Verilog HDL Always Construct warning at stopwatch.v(90): inferring latch(es) for variable "milsec", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[0]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[1]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[2]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[3]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[4]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[5]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[6]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "milsec[7]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[0]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[1]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[2]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[3]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[4]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[5]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[6]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "sec_stop[7]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[0]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[1]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[2]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[3]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[4]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[5]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[6]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Info (10041): Inferred latch for "min_stop[7]" at stopwatch.v(90) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 90
-Error (12152): Can't elaborate user hierarchy "stopwatch:MODE3" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 149
+Info (12128): Elaborating entity "stopwatch" for hierarchy "stopwatch:MODE3" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 150
+Error (10200): Verilog HDL Conditional Statement error at stopwatch.v(50): cannot match operand(s) in the condition to the corresponding edges in the enclosing event control of the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 50
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(64): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 64
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(70): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 70
+Warning (10230): Verilog HDL assignment warning at stopwatch.v(76): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 76
+Warning (10935): Verilog HDL Casex/Casez warning at stopwatch.v(63): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 63
+Warning (10935): Verilog HDL Casex/Casez warning at stopwatch.v(68): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 68
+Warning (10935): Verilog HDL Casex/Casez warning at stopwatch.v(73): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 73
+Warning (10763): Verilog HDL warning at stopwatch.v(57): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 57
+Warning (10270): Verilog HDL Case Statement warning at stopwatch.v(57): incomplete case statement has no default case item File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 57
+Warning (10240): Verilog HDL Always Construct warning at stopwatch.v(49): inferring latch(es) for variable "min_stop", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Warning (10240): Verilog HDL Always Construct warning at stopwatch.v(49): inferring latch(es) for variable "sec_stop", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Warning (10240): Verilog HDL Always Construct warning at stopwatch.v(49): inferring latch(es) for variable "milsec", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[0]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[1]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[2]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[3]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[4]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[5]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[6]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "milsec[7]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[0]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[1]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[2]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[3]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[4]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[5]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[6]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "sec_stop[7]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[0]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[1]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[2]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[3]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[4]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[5]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[6]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Info (10041): Inferred latch for "min_stop[7]" at stopwatch.v(49) File: C:/intelFPGA_lite/Verilog_watch_second/stopwatch.v Line: 49
+Error (12152): Can't elaborate user hierarchy "stopwatch:MODE3" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 150
 Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Verilog_watch_second/output_files/digital_clock.map.smsg
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 75 warnings
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 74 warnings
     Error: Peak virtual memory: 4712 megabytes
-    Error: Processing ended: Tue Jun 01 22:17:25 2021
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:30
+    Error: Processing ended: Tue Jun 01 22:44:24 2021
+    Error: Elapsed time: 00:00:15
+    Error: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+
