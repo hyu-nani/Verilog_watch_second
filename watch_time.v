@@ -35,12 +35,17 @@ module watch_time(
 	
 	reg		[7:0]			max_date;
 	
+	wire 						leap_year;
+	
+	// 윤년 계산
+	assign leap_year = (((year % 4) == 0 && (year % 100) != 0) || (year % 400) == 0) ? 1'b1 : 1'b0;
+	
 	always @(*)
 		case(month)
 				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
 						max_date	<= 8'd31;
 				8'd2 :	
-						max_date	<= 8'd28;
+						max_date	<= 8'd28+leap_year;
 				8'd4, 8'd6, 8'd9, 8'd11	:
 						max_date <=	8'd30;
 				default : max_date <= 0;
