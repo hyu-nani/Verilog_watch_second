@@ -196,12 +196,12 @@ module	mode_watch_set (
 				else if(cursor == 3'd5)
 					second_set	<=	second_set + 1;
 				else begin
-					bin_time[7:0] 		<=	second_set;
-					bin_time[15:8] 	<=	minute_set;
-					bin_time[23:16] 	<=	hour_set;
-					bin_time[31:24]	<=	day_set;
-					bin_time[39:32] 	<=	month_set;
-					bin_time[47:40] 	<=	year_set;
+					bin_time[7:0] 		<= year_set;
+					bin_time[15:8] 	<= month_set; 
+					bin_time[23:16]	<= day_set;
+					bin_time[31:24]	<= hour_set;
+					bin_time[39:32]	<= minute_set;
+					bin_time[47:40]	<=second_set;
 					en_time				<= 1'b1;
 				end
 			end

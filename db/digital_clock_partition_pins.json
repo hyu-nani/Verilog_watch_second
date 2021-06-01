@@ -52,11 +52,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "dip_sw[1]",
+					"name" : "dip_sw[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dip_sw[0]",
+					"name" : "dip_sw[1]",
 					"strict" : false
 				},
 				{

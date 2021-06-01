@@ -36,8 +36,8 @@ module	digital_clock	(
 	always @(*) begin
 		case(dip_sw)
 			2'b00		:	data_char	<=	data_mode0;
-			2'b01		:	data_char	<=	data_mode0;
-			2'b10		:	data_char	<=	data_mode1;
+			2'b01		:	data_char	<= data_mode1;
+			2'b10		:	data_char	<=	data_mode0;
 			default	:	data_char	<=	data_mode0;
 		endcase
 	end
