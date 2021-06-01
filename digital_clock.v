@@ -29,7 +29,8 @@ module	digital_clock	(
 	wire			[3:0] dip_sw;
 	wire			[4:0] cursor;
 	
-	reg			[7:0] data_char,data_mode0,data_mode1,data_mode2,data_mode3;
+	wire			[7:0] data_mode0,data_mode1,data_mode2,data_mode3;
+	reg			[7:0]	data_char;
 	reg			[3:0]	data_sw0,data_sw1,data_sw2,data_sw3;
 	
 	assign		rstn = ~rst;
@@ -140,14 +141,14 @@ module	digital_clock	(
 										.index		(index_char),
 										.out			(data_mode2),
 										.bin_alarm	(bin_alarm));
-	
-	stopwatch				MODE3(
+
+	mode_stopwatch			MODE3	(
 										.clk			(clk),
 										.rst			(rstn),
 										.sw_in		(data_sw3),
 										.index		(index_char),
 										.out			(data_mode3));
-	
+								
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),
 										.rst			(rstn),

@@ -9,6 +9,7 @@ module stopwatch	(
 	input					clk, rst;
 	input			[1:0]	sw_in;
 	input			[4:0] index;
+	
 	output		[7:0] out;
 	
 	wire			[4:0] index;
@@ -87,7 +88,7 @@ module stopwatch	(
 				31 : out	<=	8'h20;
 			endcase	
 			
-	always @ (posedge en_100hz or negedge rst) begin
+	always @ (posedge en_100hz) begin
 		if(sw_in[0]) begin
 			min_stop			<= 0;
 			sec_stop			<= 0;

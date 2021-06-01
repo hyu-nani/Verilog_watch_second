@@ -1,0 +1,13 @@
+module mode_stopwatch(
+							clk,
+							rst,
+							sw_in,
+							index,
+							out);
+							
+	input					clk,rst;
+	input		[3:0]		sw_in;
+	input		[4:0]		index;
+	output	[7:0]		out;
+	
+endmodule
