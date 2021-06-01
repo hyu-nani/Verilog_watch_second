@@ -40,7 +40,7 @@ module	mode_watch_set (
 	reg		[3:0]	sw_out;
 	
 	always @(posedge clk1sec) begin
-		blink <= 1 - blink;
+		blink 	<= 1 - blink;
 	end
 	
 
@@ -116,8 +116,8 @@ module	mode_watch_set (
 	
 	always @ ( posedge clk or negedge rst )begin
 		if(!rst)begin
-			out	<=	8'h00;
-			cursor <= 3'd0;
+			out	 <=	8'h00;
+			cursor <=	3'd0;
 		end
 		else begin
 			case (index)
@@ -171,13 +171,8 @@ module	mode_watch_set (
 				31 : 	if(blink && cursor == 3'd6)out	<=	8'h20;
 						else	out	<=	8'hAE;//->
 			endcase
-			en_time				<=	1'b0;
-			bin_time[7:0] 		<=	second;
-			bin_time[15:8] 	<=	minute;
-			bin_time[23:16] 	<=	hour;
-			bin_time[31:24]	<=	day;
-			bin_time[39:32] 	<=	month;
-			bin_time[47:40] 	<=	year;
+			//bin_time		<=	{year,month,day,hour,minute,second};
+			en_time		<= 1'b0;
 			if(sw_out == 4'b1000 && cursor < 3'd6)
 				cursor	<=	cursor + 1;
 			else if(sw_out == 4'b0100 && cursor > 3'd0)
@@ -196,13 +191,7 @@ module	mode_watch_set (
 				else if(cursor == 3'd5)
 					second_set	<=	second_set + 1;
 				else begin
-					bin_time[7:0] 		<=	second_set;
-					bin_time[15:8] 	<=	minute_set;
-					bin_time[23:16] 	<=	hour_set;
-					bin_time[31:24]	<=	day_set;
-					bin_time[39:32] 	<=	month_set;
-					bin_time[47:40] 	<=	year_set;
-					en_time				<= 1'b1;
+					en_time		<= 1'b1;
 				end
 			end
 			else if(sw_out == 4'b0001)begin
@@ -216,16 +205,11 @@ module	mode_watch_set (
 					hour_set		<=	hour_set - 1;
 				else if(cursor == 3'd4)
 					minute_set	<=	minute_set - 1;
-				else
+				else 
 					second_set	<=	second_set - 1;
 			end
+			bin_time		<=	{year_set,month_set,day_set,hour_set,minute_set,second_set};
 		end
-		bin_time[7:0] 		<=	bin_time[7:0] ;
-		bin_time[15:8] 	<=	bin_time[15:8] ;
-		bin_time[23:16] 	<=	bin_time[23:16];
-		bin_time[31:24]	<=	bin_time[31:24];
-		bin_time[39:32] 	<= bin_time[39:32];
-		bin_time[47:40] 	<=	bin_time[47:40];
 	end
 endmodule
 		
