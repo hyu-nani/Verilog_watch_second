@@ -20,7 +20,7 @@ module	digital_clock	(
 	wire			[7:0]	month;
 	wire			[7:0]	day, hour, minute, second;
 	wire			[4:0] index_char;
-	wire					en_1hz;
+	wire					en_1hz,en_100hz;
 	wire					en_clk;
 	wire					en_time,set_alarm;
 	reg			[47:0]bin_time,bin_alarm;
@@ -29,32 +29,13 @@ module	digital_clock	(
 	wire			[3:0] dip_sw;
 	wire			[4:0] cursor;
 	
-	wire			[7:0] data_mode0,data_mode1,data_mode2,data_mode3;
+	wire			[7:0] data_mode0,data_mode1,data_mode2,data_mode3,data_mode4;
 	reg			[7:0]	data_char;
-	reg			[3:0]	data_sw0,data_sw1,data_sw2,data_sw3;
+	reg			[3:0]	data_sw0,data_sw1,data_sw2,data_sw3,data_sw4;
 	
 	assign		rstn = ~rst;
 	
-	always @(*) begin
-		case(dip_sw)
-			4'b0001		:	begin
-									data_char	<=	data_mode1;
-									data_sw1		<=	sw_out;
-								end
-			4'b0010		:	begin
-									data_char	<=	data_mode2;
-									data_sw2		<=	sw_out;
-								end
-			4'b0100		:	begin
-									data_char	<=	data_mode3;
-									data_sw3		<=	sw_out;
-								end
-			default		:	begin
-									data_char	<=	data_mode0;
-									data_sw0		<=	sw_out;
-								end
-		endcase
-	end
+	
 	
 	debouncer_clk				sw0	(
 										.clk			(clk),
@@ -77,11 +58,39 @@ module	digital_clock	(
 										.in			(sw_in[3]),
 										.out			(sw_out[3]));
 	
+	always @(*) begin
+		case(dip_sw)
+			4'b0001		:	begin
+									data_char	<=	data_mode1;
+									data_sw1		<=	sw_out;
+								end
+			4'b0010		:	begin
+									data_char	<=	data_mode2;
+									data_sw2		<=	sw_out;
+								end
+			4'b0100		:	begin
+									data_char	<=	data_mode3;
+									data_sw3		<=	sw_out;
+								end
+			4'b1000		:	begin
+									data_char	<=	data_mode4;
+									data_sw4		<=	sw_out;
+								end
+			default		:	begin
+									data_char	<=	data_mode0;
+									data_sw0		<=	sw_out;
+								end
+		endcase
+	end
 	
 	en_clk					U0		(
 										.clk			(clk),
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
+	en_clk_100hz			U1	(
+										.clk			(clk),
+										.rst			(rst),
+										.en_100hz	(en_100hz));
 	
 	watch_time				TIME	(
 										.clk			(clk),
@@ -129,10 +138,14 @@ module	digital_clock	(
 	
 	mode_stopwatch			MODE2	(
 										.clk			(clk),
+										.en_100hz	(en_100hz),
 										.rst			(rstn),
-										.sw_in		(data_sw2),
+										.sw0			(sw_in[0]),
+										.sw1			(sw_in[1]),
+										.sw2			(sw_in[2]),
+										.sw3			(sw_in[3]),
 										.index		(index_char),
-										.out			(data_mode2));
+										.out			(data_mode2) );
 										
 	mode_alarm				MODE3	(
 										.clk			(clk),
@@ -147,7 +160,7 @@ module	digital_clock	(
 										.second		(second),
 										.index		(index_char),
 										.out			(data_mode3),
-										.bin_alarm	(bin_alarm));
+										.bin_alarm	(bin_alarm)	);
 								
 	en_clk_lcd				LCLK	( 
 										.clk			(clk),
