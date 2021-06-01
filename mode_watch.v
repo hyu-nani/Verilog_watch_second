@@ -1,5 +1,6 @@
  	module mode_watch	(			
 										clk, 
+										clk1sec,
 										rst,
 										sw_in,
 										year,
@@ -9,14 +10,18 @@
 										minute,
 										second,
 										index,
-										out);
+										out,
+										bin_alarm,
+										set_alarm);
 	
 	input				clk;
+	input				clk1sec;
 	input				rst;
 	input		[3:0]	sw_in;
 	input		[7:0] year,month,day,hour,minute,second;
 	input		[4:0] index;
-
+	input		[47:0]bin_alarm;
+	input				set_alarm;
 	output	[7:0] out;
 	
 	wire		[3:0]	sw;
@@ -24,7 +29,10 @@
 	wire		[3:0] hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
 	wire		[3:0]	tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
 	reg		[7:0] out;
+	reg				blink;
 	
+	wire		[7:0] year,month,day,hour,minute,second;
+	reg		[47:0]current_time;
 	integer			i;
 	
 	bin2bcd			 CVT_second ( 															// 초
@@ -74,11 +82,14 @@
 										.hun			(hunYear),
 										.ten			(tenYear),
 										.one			(oneYear));
+	always @(posedge clk1sec) begin
+		blink 	<= 1 - blink;
+	end
 	
 	always @ ( posedge clk or negedge rst )
 		if(!rst)
 			out	<=	8'h00;
-		else
+		else begin
 			case (index)
 				00 : out <= 8'h44;//D
 				01 : out	<=	8'h41;//A
@@ -113,9 +124,15 @@
 				28 : out	<=	8'h30+oneSecond;
 				29 : out	<=	8'h20;
 				30 : out	<=	8'h20;
-				31 : out	<=	8'h20;
+				31 : 	if(set_alarm == 1) out	<=	8'h41;//A
+						else	out	<=	8'h20;
 			endcase
-		
+			current_time	<=	{year,month,day,hour,minute,second};
+			if(set_alarm == 1)
+				if(current_time > bin_alarm)
+					if(blink==1)
+						out 	<= 8'h20;
+		end
 endmodule
 				
 				

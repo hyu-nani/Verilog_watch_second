@@ -37,7 +37,6 @@ module watch_time(
 	
 	wire 						leap_year;
 	
-	// 윤년 계산
 	assign leap_year = (((year % 4) == 0 && (year % 100) != 0) || (year % 400) == 0) ? 1'b1 : 1'b0;
 	
 	always @(*)
