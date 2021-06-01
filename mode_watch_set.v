@@ -38,6 +38,7 @@ module	mode_watch_set (
 	reg				blink;
 	reg		[2:0] cursor;
 	reg		[3:0]	sw_out;
+	reg		[4:0]	max_date;
 	
 	always @(posedge clk1sec) begin
 		blink 	<= 1 - blink;
@@ -120,6 +121,15 @@ module	mode_watch_set (
 			cursor <=	3'd0;
 		end
 		else begin
+			case(month_set)
+				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
+						max_date	<= 8'd31;
+				8'd2 :	
+						max_date	<= 8'd28;
+				8'd4, 8'd6, 8'd9, 8'd11	:
+						max_date <=	8'd30;
+				default : max_date <= 0;
+			endcase
 			case (index)
 				00 : out <= 8'h53;//S
 				01 : out	<=	8'h45;//E
@@ -178,34 +188,34 @@ module	mode_watch_set (
 			else if(sw_out == 4'b0100 && cursor > 3'd0)
 				cursor	<=	cursor - 1;
 			else if(sw_out == 4'b0010)begin
-				if(cursor == 3'd0)
+				if(cursor == 3'd0 && year_set < 8'd255)
 					year_set 	<= year_set + 1;
-				else if(cursor == 3'd1)
+				else if(cursor == 3'd1 && month_set < 8'd12)
 					month_set	<= month_set + 1;
-				else if(cursor == 3'd2)
+				else if(cursor == 3'd2 && day_set < max_date)
 					day_set		<=	day_set + 1;
-				else if(cursor == 3'd3)
+				else if(cursor == 3'd3 && hour_set < 8'd23)
 					hour_set		<=	hour_set + 1;
-				else if(cursor == 3'd4)
+				else if(cursor == 3'd4 && minute_set < 8'd59)
 					minute_set	<=	minute_set + 1;
-				else if(cursor == 3'd5)
+				else if(cursor == 3'd5 && hour_set < 8'd59)
 					second_set	<=	second_set + 1;
 				else begin
 					en_time		<= 1'b1;
 				end
 			end
 			else if(sw_out == 4'b0001)begin
-				if(cursor == 3'd0)
+				if(cursor == 3'd0 && year_set > 1)
 					year_set 	<= year_set - 1;
-				else if(cursor == 3'd1)
+				else if(cursor == 3'd1 && month_set > 1)
 					month_set	<= month_set - 1;
-				else if(cursor == 3'd2)
+				else if(cursor == 3'd2 && day_set > 1)
 					day_set		<=	day_set - 1;
-				else if(cursor == 3'd3)
+				else if(cursor == 3'd3 && hour_set > 0)
 					hour_set		<=	hour_set - 1;
-				else if(cursor == 3'd4)
+				else if(cursor == 3'd4 && minute_set > 0)
 					minute_set	<=	minute_set - 1;
-				else 
+				else if(cursor == 3'd5 && second_set > 0)
 					second_set	<=	second_set - 1;
 			end
 			bin_time		<=	{year_set,month_set,day_set,hour_set,minute_set,second_set};

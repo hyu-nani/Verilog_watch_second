@@ -64,7 +64,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "sw_in[3]",
+					"name" : "sw_in[1]",
 					"strict" : false
 				},
 				{
@@ -72,7 +72,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "sw_in[1]",
+					"name" : "sw_in[3]",
 					"strict" : false
 				}
 			]
