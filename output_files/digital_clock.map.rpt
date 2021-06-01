@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Tue Jun 01 00:36:28 2021
+Tue Jun 01 17:41:01 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,28 +10,24 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |digital_clock|lcd_driver:DRV|state
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: lcd_driver:DRV
- 15. Port Connectivity Checks: "lcd_driver:DRV"
- 16. Port Connectivity Checks: "bin2bcd:CVT_month"
- 17. Port Connectivity Checks: "bin2bcd:CVT_day"
- 18. Port Connectivity Checks: "bin2bcd:CVT_hour"
- 19. Port Connectivity Checks: "bin2bcd:CVT_minute"
- 20. Port Connectivity Checks: "bin2bcd:CVT_second"
- 21. Port Connectivity Checks: "fsm:DIP_SW"
- 22. Port Connectivity Checks: "watch_date:TIME1"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+  5. Parameter Settings for User Entity Instance: lcd_driver:DRV
+  6. Port Connectivity Checks: "lcd_display_list:STL"
+  7. Port Connectivity Checks: "bin2bcd:CVT_year"
+  8. Port Connectivity Checks: "bin2bcd:CVT_month"
+  9. Port Connectivity Checks: "bin2bcd:CVT_day"
+ 10. Port Connectivity Checks: "bin2bcd:CVT_hour"
+ 11. Port Connectivity Checks: "bin2bcd:CVT_minute"
+ 12. Port Connectivity Checks: "bin2bcd:CVT_second"
+ 13. Port Connectivity Checks: "bin2bcd:CVT_year_set"
+ 14. Port Connectivity Checks: "bin2bcd:CVT_month_set"
+ 15. Port Connectivity Checks: "bin2bcd:CVT_day_set"
+ 16. Port Connectivity Checks: "bin2bcd:CVT_hour_set"
+ 17. Port Connectivity Checks: "bin2bcd:CVT_minute_set"
+ 18. Port Connectivity Checks: "bin2bcd:CVT_second_set"
+ 19. Port Connectivity Checks: "watch_set:TIME_SET"
+ 20. Port Connectivity Checks: "watch_date:TIME"
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -57,20 +53,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 01 00:36:28 2021       ;
+; Analysis & Synthesis Status        ; Failed - Tue Jun 01 17:41:01 2021           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 505                                         ;
-;     Total combinational functions  ; 494                                         ;
-;     Dedicated logic registers      ; 206                                         ;
-; Total registers                    ; 206                                         ;
-; Total pins                         ; 19                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -169,178 +165,11 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-; digital_clock.v                  ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v    ;         ;
-; watch_date.v                     ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Verilog_watch_second_2/watch_date.v       ;         ;
-; bin2bcd.v                        ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Verilog_watch_second_2/bin2bcd.v          ;         ;
-; fsm.v                            ; yes             ; User Verilog HDL File        ; C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v              ;         ;
-; en_clk.v                         ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second_2/en_clk.v           ;         ;
-; lcd_display_list.v               ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second_2/lcd_display_list.v ;         ;
-; en_clk_lcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second_2/en_clk_lcd.v       ;         ;
-; lcd_driver.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/intelFPGA_lite/Verilog_watch_second_2/lcd_driver.v       ;         ;
-+----------------------------------+-----------------+------------------------------+-------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 505       ;
-;                                             ;           ;
-; Total combinational functions               ; 494       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 260       ;
-;     -- 3 input functions                    ; 47        ;
-;     -- <=2 input functions                  ; 187       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 374       ;
-;     -- arithmetic mode                      ; 120       ;
-;                                             ;           ;
-; Total registers                             ; 206       ;
-;     -- Dedicated logic registers            ; 206       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 19        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; rst~input ;
-; Maximum fan-out                             ; 211       ;
-; Total fan-out                               ; 2307      ;
-; Average fan-out                             ; 3.13      ;
-+---------------------------------------------+-----------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
-; |digital_clock             ; 494 (1)             ; 206 (0)                   ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |digital_clock                      ; digital_clock    ; work         ;
-;    |bin2bcd:CVT_day|       ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_day      ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_hour|      ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_hour     ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_minute|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_minute   ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_month|     ; 25 (25)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_month    ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_second|    ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_second   ; bin2bcd          ; work         ;
-;    |bin2bcd:CVT_year|      ; 33 (33)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|bin2bcd:CVT_year     ; bin2bcd          ; work         ;
-;    |en_clk:U0|             ; 45 (45)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0            ; en_clk           ; work         ;
-;    |en_clk_lcd:LCLK|       ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK      ; en_clk_lcd       ; work         ;
-;    |fsm:DIP_SW|            ; 11 (11)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|fsm:DIP_SW           ; fsm              ; work         ;
-;    |lcd_display_list:STL|  ; 71 (71)             ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_display_list:STL ; lcd_display_list ; work         ;
-;    |lcd_driver:DRV|        ; 66 (66)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV       ; lcd_driver       ; work         ;
-;    |watch_date:TIME1|      ; 117 (117)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_date:TIME1     ; watch_date       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |digital_clock|lcd_driver:DRV|state                                                                                                                          ;
-+--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
-; Name               ; state.LINE2 ; state.PRINT_STRING ; state.MODE_SET ; state.DISP_ON ; state.DISP_CLEAR ; state.DISP_OFF ; state.FUNC_SET ; state.IDLE ; state.RETURN_HOME ;
-+--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
-; state.IDLE         ; 0           ; 0                  ; 0              ; 0             ; 0                ; 0              ; 0              ; 0          ; 0                 ;
-; state.FUNC_SET     ; 0           ; 0                  ; 0              ; 0             ; 0                ; 0              ; 1              ; 1          ; 0                 ;
-; state.DISP_OFF     ; 0           ; 0                  ; 0              ; 0             ; 0                ; 1              ; 0              ; 1          ; 0                 ;
-; state.DISP_CLEAR   ; 0           ; 0                  ; 0              ; 0             ; 1                ; 0              ; 0              ; 1          ; 0                 ;
-; state.DISP_ON      ; 0           ; 0                  ; 0              ; 1             ; 0                ; 0              ; 0              ; 1          ; 0                 ;
-; state.MODE_SET     ; 0           ; 0                  ; 1              ; 0             ; 0                ; 0              ; 0              ; 1          ; 0                 ;
-; state.PRINT_STRING ; 0           ; 1                  ; 0              ; 0             ; 0                ; 0              ; 0              ; 1          ; 0                 ;
-; state.LINE2        ; 1           ; 0                  ; 0              ; 0             ; 0                ; 0              ; 0              ; 1          ; 0                 ;
-; state.RETURN_HOME  ; 0           ; 0                  ; 0              ; 0             ; 0                ; 0              ; 0              ; 1          ; 1                 ;
-+--------------------+-------------+--------------------+----------------+---------------+------------------+----------------+----------------+------------+-------------------+
-
-
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+----------------------------------------------------+----------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal  ; Free of Timing Hazards ;
-+----------------------------------------------------+----------------------+------------------------+
-; fsm:DIP_SW|cursor[0]                               ; fsm:DIP_SW|cursor[4] ; yes                    ;
-; fsm:DIP_SW|cursor[3]                               ; fsm:DIP_SW|cursor[4] ; yes                    ;
-; fsm:DIP_SW|cursor[4]                               ; fsm:DIP_SW|cursor[4] ; yes                    ;
-; fsm:DIP_SW|cursor[1]                               ; fsm:DIP_SW|cursor[4] ; yes                    ;
-; fsm:DIP_SW|cursor[2]                               ; fsm:DIP_SW|cursor[4] ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                      ;                        ;
-+----------------------------------------------------+----------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; lcd_driver:DRV|lcd_rw                 ; Stuck at GND due to stuck port data_in ;
-; lcd_display_list:STL|out[7]           ; Stuck at GND due to stuck port data_in ;
-; bin2bcd:CVT_year|hun[2,3]             ; Stuck at GND due to stuck port data_in ;
-; lcd_driver:DRV|state~13               ; Lost fanout                            ;
-; lcd_driver:DRV|state~14               ; Lost fanout                            ;
-; lcd_driver:DRV|state~15               ; Lost fanout                            ;
-; en_clk:U0|cnt_en_1hz[0]               ; Merged with en_clk_lcd:LCLK|cnt_en[0]  ;
-; en_clk:U0|cnt_en_1hz[1]               ; Merged with en_clk_lcd:LCLK|cnt_en[1]  ;
-; Total Number of Removed Registers = 9 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 206   ;
-; Number of registers using Synchronous Clear  ; 18    ;
-; Number of registers using Synchronous Load   ; 22    ;
-; Number of registers using Asynchronous Clear ; 206   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 71    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; watch_date:TIME1|day[3]                ; 7       ;
-; watch_date:TIME1|day[4]                ; 8       ;
-; watch_date:TIME1|day[2]                ; 7       ;
-; watch_date:TIME1|day[1]                ; 7       ;
-; watch_date:TIME1|year[4]               ; 12      ;
-; watch_date:TIME1|year[2]               ; 9       ;
-; watch_date:TIME1|month[2]              ; 10      ;
-; watch_date:TIME1|year[0]               ; 4       ;
-; watch_date:TIME1|month[0]              ; 7       ;
-; Total number of inverted registers = 9 ;         ;
-+----------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[2] ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 32 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[3]  ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; Yes        ; |digital_clock|lcd_display_list:STL|out[1]  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state         ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |digital_clock|fsm:DIP_SW|cursor[3]         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
 +-------------------------------------------------------------+
@@ -362,112 +191,150 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "lcd_driver:DRV"                                                                           ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; index_char ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lcd_display_list:STL"                                                                                                                          ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; en_time ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_month"     ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_year"                                                                                                                              ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; en_time ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_day"       ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_month"                                                                                                                              ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_hour"      ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_day"                                                                                                                                ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_minute"    ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_hour"                                                                                                                               ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "bin2bcd:CVT_second"    ;
-+------+--------+----------+------------------------+
-; Port ; Type   ; Severity ; Details                ;
-+------+--------+----------+------------------------+
-; hun  ; Output ; Info     ; Explicitly unconnected ;
-+------+--------+----------+------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_minute"                                                                                                                             ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "fsm:DIP_SW"                                                                                                                                           ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                                                                            ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; bin_time ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (48 bits) it drives.  Extra input bit(s) "bin_time[47..1]" will be connected to GND. ;
-+----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_second"                                                                                                                             ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "watch_date:TIME1"                                                                                                                 ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                       ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
-; bin_time ; Output ; Warning  ; Output or bidir port (48 bits) is wider than the port expression (1 bits) it drives; bit(s) "bin_time[47..1]" have no fanouts ;
-+----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_year_set"                                                                                                                          ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; en_time ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 19                          ;
-; cycloneiii_ff         ; 206                         ;
-;     CLR               ; 113                         ;
-;     CLR SLD           ; 22                          ;
-;     ENA CLR           ; 53                          ;
-;     ENA CLR SCLR      ; 18                          ;
-; cycloneiii_lcell_comb ; 494                         ;
-;     arith             ; 120                         ;
-;         2 data inputs ; 114                         ;
-;         3 data inputs ; 6                           ;
-;     normal            ; 374                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 58                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 260                         ;
-;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 3.74                        ;
-+-----------------------+-----------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_month_set"                                                                                                                          ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:03     ;
-+----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_day_set"                                                                                                                                                                 ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                                           ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; bin_bcd ; Input  ; Warning  ; Input port expression (11 bits) is wider than the input port (8 bits) it drives.  The 3 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                                                            ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                                      ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_hour_set"                                                                                                                           ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_minute_set"                                                                                                                         ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd:CVT_second_set"                                                                                                                         ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; hun     ; Output ; Info     ; Explicitly unconnected                                                                                                                       ;
+; en_time ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "watch_set:TIME_SET"                                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; cursor ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "watch_date:TIME"                                                                                ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; bin_time[31..29] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -476,92 +343,350 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jun 01 00:36:15 2021
+    Info: Processing started: Tue Jun 01 17:40:47 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file digital_clock.v
-    Info (12023): Found entity 1: digital_clock File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 1
+    Info (12023): Found entity 1: digital_clock File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 1
 Warning (12019): Can't analyze file -- file date.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file watch_date.v
-    Info (12023): Found entity 1: watch_date File: C:/intelFPGA_lite/Verilog_watch_second_2/watch_date.v Line: 1
+    Info (12023): Found entity 1: watch_date File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
-    Info (12023): Found entity 1: bin2bcd File: C:/intelFPGA_lite/Verilog_watch_second_2/bin2bcd.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
-    Info (12023): Found entity 1: fsm File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(32): created implicit net for "rstn" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 32
-Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(55): created implicit net for "bin_time" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 55
+    Info (12023): Found entity 1: bin2bcd File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 1
+Warning (12019): Can't analyze file -- file fsm.v is missing
+Warning (10236): Verilog HDL Implicit Net warning at digital_clock.v(33): created implicit net for "rstn" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 33
 Info (12127): Elaborating entity "digital_clock" for the top level hierarchy
 Warning (12125): Using design file en_clk.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: en_clk File: C:/intelFPGA_lite/Verilog_watch_second_2/en_clk.v Line: 1
-Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 37
-Info (12128): Elaborating entity "watch_date" for hierarchy "watch_date:TIME1" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 61
-Warning (10762): Verilog HDL Case Statement warning at watch_date.v(75): can't check case statement for completeness because the case expression has too many possible states File: C:/intelFPGA_lite/Verilog_watch_second_2/watch_date.v Line: 75
-Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(112): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second_2/watch_date.v Line: 112
-Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(121): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second_2/watch_date.v Line: 121
-Warning (10034): Output port "bin_time" at watch_date.v(18) has no driver File: C:/intelFPGA_lite/Verilog_watch_second_2/watch_date.v Line: 18
-Info (12128): Elaborating entity "fsm" for hierarchy "fsm:DIP_SW" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 70
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(19): object "year_set" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(19): object "month_set" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(19): object "day_set" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(19): object "hour_set" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(19): object "minute_set" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 19
-Warning (10036): Verilog HDL or VHDL warning at fsm.v(19): object "sec_set" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 19
-Warning (10235): Verilog HDL Always Construct warning at fsm.v(40): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 40
-Warning (10235): Verilog HDL Always Construct warning at fsm.v(43): variable "sw_in" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 43
-Warning (10235): Verilog HDL Always Construct warning at fsm.v(44): variable "cursor" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 44
-Warning (10235): Verilog HDL Always Construct warning at fsm.v(47): variable "cursor" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 47
-Warning (10235): Verilog HDL Always Construct warning at fsm.v(48): variable "sw_in" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 48
-Warning (10235): Verilog HDL Always Construct warning at fsm.v(49): variable "cursor" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 49
-Warning (10235): Verilog HDL Always Construct warning at fsm.v(52): variable "cursor" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 52
-Warning (10240): Verilog HDL Always Construct warning at fsm.v(39): inferring latch(es) for variable "cursor", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 39
-Info (10041): Inferred latch for "cursor[0]" at fsm.v(39) File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 39
-Info (10041): Inferred latch for "cursor[1]" at fsm.v(39) File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 39
-Info (10041): Inferred latch for "cursor[2]" at fsm.v(39) File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 39
-Info (10041): Inferred latch for "cursor[3]" at fsm.v(39) File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 39
-Info (10041): Inferred latch for "cursor[4]" at fsm.v(39) File: C:/intelFPGA_lite/Verilog_watch_second_2/fsm.v Line: 39
-Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:CVT_second" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 78
-Warning (10230): Verilog HDL assignment warning at bin2bcd.v(35): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second_2/bin2bcd.v Line: 35
-Warning (10230): Verilog HDL assignment warning at bin2bcd.v(33): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second_2/bin2bcd.v Line: 33
+    Info (12023): Found entity 1: en_clk File: C:/intelFPGA_lite/Verilog_watch_second/en_clk.v Line: 1
+Info (12128): Elaborating entity "en_clk" for hierarchy "en_clk:U0" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 38
+Info (12128): Elaborating entity "watch_date" for hierarchy "watch_date:TIME" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 63
+Warning (10762): Verilog HDL Case Statement warning at watch_date.v(78): can't check case statement for completeness because the case expression has too many possible states File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 78
+Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(115): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 115
+Warning (10935): Verilog HDL Casex/Casez warning at watch_date.v(124): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 124
+Warning (12125): Using design file watch_set.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: watch_set File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 1
+Info (12128): Elaborating entity "watch_set" for hierarchy "watch_set:TIME_SET" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 78
+Warning (10034): Output port "cursor" at watch_set.v(23) has no driver File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 23
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:CVT_second_set" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 87
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(37): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 37
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(35): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 35
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(61): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 61
+Warning (10230): Verilog HDL assignment warning at bin2bcd.v(59): truncated value with size 32 to match size of target (4) File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 59
 Warning (12125): Using design file lcd_display_list.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: lcd_display_list File: C:/intelFPGA_lite/Verilog_watch_second_2/lcd_display_list.v Line: 1
-Info (12128): Elaborating entity "lcd_display_list" for hierarchy "lcd_display_list:STL" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 139
+    Info (12023): Found entity 1: lcd_display_list File: C:/intelFPGA_lite/Verilog_watch_second/lcd_display_list.v Line: 1
+Info (12128): Elaborating entity "lcd_display_list" for hierarchy "lcd_display_list:STL" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 198
 Warning (12125): Using design file en_clk_lcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: en_clk_lcd File: C:/intelFPGA_lite/Verilog_watch_second_2/en_clk_lcd.v Line: 1
-Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 145
+    Info (12023): Found entity 1: en_clk_lcd File: C:/intelFPGA_lite/Verilog_watch_second/en_clk_lcd.v Line: 1
+Info (12128): Elaborating entity "en_clk_lcd" for hierarchy "en_clk_lcd:LCLK" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 204
 Warning (12125): Using design file lcd_driver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: lcd_driver File: C:/intelFPGA_lite/Verilog_watch_second_2/lcd_driver.v Line: 1
-Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 157
-Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second_2/lcd_driver.v Line: 201
-Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/intelFPGA_lite/Verilog_watch_second_2/lcd_driver.v Line: 48
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/Verilog_watch_second_2/watch_date.v Line: 59
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_rw" is stuck at GND File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 15
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Verilog_watch_second_2/output_files/digital_clock.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "dip_sw[1]" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 12
-    Warning (15610): No output dependent on input pin "sw_in[2]" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 13
-    Warning (15610): No output dependent on input pin "sw_in[3]" File: C:/intelFPGA_lite/Verilog_watch_second_2/digital_clock.v Line: 13
-Info (21057): Implemented 528 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 509 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
-    Info: Peak virtual memory: 4783 megabytes
-    Info: Processing ended: Tue Jun 01 00:36:28 2021
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (12023): Found entity 1: lcd_driver File: C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v Line: 1
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:DRV" File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 216
+Warning (10036): Verilog HDL or VHDL warning at lcd_driver.v(201): object "STATE" assigned a value but never read File: C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v Line: 201
+Warning (10230): Verilog HDL assignment warning at lcd_driver.v(48): truncated value with size 32 to match size of target (22) File: C:/intelFPGA_lite/Verilog_watch_second/lcd_driver.v Line: 48
+Error (12014): Net "bin_time[47]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[7]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[47]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[47]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[46]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[6]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[46]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[46]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[45]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[5]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[45]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[45]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[44]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[4]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[44]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[44]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[43]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[43]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[43]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[42]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[42]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[42]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[41]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[41]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[41]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[40]", which fans out to "bin2bcd:CVT_year_set|bin_bcd[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[40]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[40]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[39]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[7]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[39]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[39]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[38]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[6]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[38]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[38]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[37]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[5]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[37]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[37]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[36]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[4]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[36]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[36]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[35]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[35]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[35]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[34]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[34]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[34]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[33]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[33]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[33]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[32]", which fans out to "bin2bcd:CVT_month_set|bin_bcd[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[32]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[32]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[28]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[7]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[28]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[28]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[27]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[6]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[27]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[27]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[26]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[5]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[26]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[26]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[25]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[4]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[25]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[25]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[24]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[24]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[24]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[23]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[23]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[23]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[22]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[22]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[22]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[21]", which fans out to "bin2bcd:CVT_day_set|bin_bcd[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[21]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[21]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[20]", which fans out to "bin2bcd:CVT_hour_set|bin_bcd[4]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[20]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[20]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[19]", which fans out to "bin2bcd:CVT_hour_set|bin_bcd[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[19]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[19]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[18]", which fans out to "bin2bcd:CVT_hour_set|bin_bcd[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[18]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[18]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[17]", which fans out to "bin2bcd:CVT_hour_set|bin_bcd[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[17]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[17]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[16]", which fans out to "bin2bcd:CVT_hour_set|bin_bcd[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[16]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[16]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[15]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[7]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[15]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[15]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[14]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[6]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[14]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[14]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[13]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[5]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[13]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[13]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[12]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[4]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[12]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[12]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[11]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[11]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[11]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[10]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[10]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[10]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[9]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[9]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[9]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[8]", which fans out to "bin2bcd:CVT_minute_set|bin_bcd[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[8]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[8]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[7]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[7]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[7]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[7]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[6]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[6]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[6]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[6]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[5]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[5]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[5]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[5]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[4]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[4]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[4]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[4]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[3]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[3]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[3]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[2]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[2]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[2]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[1]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[1]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[1]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "bin_time[0]", which fans out to "bin2bcd:CVT_second_set|bin_bcd[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 27
+    Error (12015): Net is fed by "watch_date:TIME|bin_time[0]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_date.v Line: 61
+    Error (12015): Net is fed by "watch_set:TIME_SET|bin_time[0]" File: C:/intelFPGA_lite/Verilog_watch_second/watch_set.v Line: 36
+Error (12014): Net "ten1[3]", which fans out to "lcd_display_list:STL|tenSecond[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten1[2]", which fans out to "lcd_display_list:STL|tenSecond[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten1[1]", which fans out to "lcd_display_list:STL|tenSecond[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten1[0]", which fans out to "lcd_display_list:STL|tenSecond[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one1[3]", which fans out to "lcd_display_list:STL|oneSecond[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one1[2]", which fans out to "lcd_display_list:STL|oneSecond[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one1[1]", which fans out to "lcd_display_list:STL|oneSecond[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one1[0]", which fans out to "lcd_display_list:STL|oneSecond[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_second_set|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_second|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten2[3]", which fans out to "lcd_display_list:STL|tenMinute[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten2[2]", which fans out to "lcd_display_list:STL|tenMinute[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten2[1]", which fans out to "lcd_display_list:STL|tenMinute[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten2[0]", which fans out to "lcd_display_list:STL|tenMinute[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one2[3]", which fans out to "lcd_display_list:STL|oneMinute[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one2[2]", which fans out to "lcd_display_list:STL|oneMinute[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one2[1]", which fans out to "lcd_display_list:STL|oneMinute[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one2[0]", which fans out to "lcd_display_list:STL|oneMinute[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_minute_set|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_minute|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten3[3]", which fans out to "lcd_display_list:STL|tenHour[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten3[2]", which fans out to "lcd_display_list:STL|tenHour[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten3[1]", which fans out to "lcd_display_list:STL|tenHour[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten3[0]", which fans out to "lcd_display_list:STL|tenHour[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one3[3]", which fans out to "lcd_display_list:STL|oneHour[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one3[2]", which fans out to "lcd_display_list:STL|oneHour[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one3[1]", which fans out to "lcd_display_list:STL|oneHour[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one3[0]", which fans out to "lcd_display_list:STL|oneHour[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_hour_set|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_hour|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten4[3]", which fans out to "lcd_display_list:STL|tenDay[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten4[2]", which fans out to "lcd_display_list:STL|tenDay[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten4[1]", which fans out to "lcd_display_list:STL|tenDay[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten4[0]", which fans out to "lcd_display_list:STL|tenDay[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one4[3]", which fans out to "lcd_display_list:STL|oneDay[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one4[2]", which fans out to "lcd_display_list:STL|oneDay[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one4[1]", which fans out to "lcd_display_list:STL|oneDay[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one4[0]", which fans out to "lcd_display_list:STL|oneDay[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_day_set|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_day|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten5[3]", which fans out to "lcd_display_list:STL|tenMonth[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten5[2]", which fans out to "lcd_display_list:STL|tenMonth[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten5[1]", which fans out to "lcd_display_list:STL|tenMonth[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten5[0]", which fans out to "lcd_display_list:STL|tenMonth[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one5[3]", which fans out to "lcd_display_list:STL|oneMonth[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one5[2]", which fans out to "lcd_display_list:STL|oneMonth[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one5[1]", which fans out to "lcd_display_list:STL|oneMonth[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one5[0]", which fans out to "lcd_display_list:STL|oneMonth[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_month_set|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_month|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "hun6[3]", which fans out to "lcd_display_list:STL|hunYear[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|hun[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|hun[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "hun6[2]", which fans out to "lcd_display_list:STL|hunYear[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|hun[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|hun[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "hun6[1]", which fans out to "lcd_display_list:STL|hunYear[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|hun[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|hun[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "hun6[0]", which fans out to "lcd_display_list:STL|hunYear[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|hun[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|hun[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten6[3]", which fans out to "lcd_display_list:STL|tenYear[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|ten[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten6[2]", which fans out to "lcd_display_list:STL|tenYear[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|ten[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten6[1]", which fans out to "lcd_display_list:STL|tenYear[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|ten[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "ten6[0]", which fans out to "lcd_display_list:STL|tenYear[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|ten[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one6[3]", which fans out to "lcd_display_list:STL|oneYear[3]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|one[3]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one6[2]", which fans out to "lcd_display_list:STL|oneYear[2]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|one[2]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one6[1]", which fans out to "lcd_display_list:STL|oneYear[1]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|one[1]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Error (12014): Net "one6[0]", which fans out to "lcd_display_list:STL|oneYear[0]", cannot be assigned more than one value File: C:/intelFPGA_lite/Verilog_watch_second/digital_clock.v Line: 30
+    Error (12015): Net is fed by "bin2bcd:CVT_year_set|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+    Error (12015): Net is fed by "bin2bcd:CVT_year|one[0]" File: C:/intelFPGA_lite/Verilog_watch_second/bin2bcd.v Line: 27
+Warning (12241): 13 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Verilog_watch_second/output_files/digital_clock.map.smsg
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 291 errors, 20 warnings
+    Error: Peak virtual memory: 4709 megabytes
+    Error: Processing ended: Tue Jun 01 17:41:01 2021
+    Error: Elapsed time: 00:00:14
+    Error: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/intelFPGA_lite/Verilog_watch_second_2/output_files/digital_clock.map.smsg.
+The suppressed messages can be found in C:/intelFPGA_lite/Verilog_watch_second/output_files/digital_clock.map.smsg.
 
 

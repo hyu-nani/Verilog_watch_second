@@ -1,4 +1,5 @@
 module watch_date(
+	active,
 	clk,
 	clk1sec,
 	rst,
@@ -11,6 +12,7 @@ module watch_date(
 	minute,
 	second);
 	
+	input						active;
 	input						clk,rst;
 	input						clk1sec;
 	input						set_time;
@@ -24,7 +26,7 @@ module watch_date(
 	output	[7:0]			second;
 	
 	wire						set_time;
-	wire		[47:0]		bin_time;
+	reg		[47:0]		bin_time;
 	
 	reg		[7:0]			year;
 	reg		[7:0]			month;
@@ -63,7 +65,7 @@ module watch_date(
 			hour		<= hour;
 			minute	<=	minute;
 			second	<=	second;
-			{year, month, day, hour, minute, second} <= bin_time;
+			bin_time <= {year, month, day, hour, minute, second};
 		end
 		else begin
 			year 		<= year;

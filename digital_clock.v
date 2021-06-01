@@ -24,9 +24,12 @@ module	digital_clock	(
 	wire					en_1hz;
 	wire					en_clk;
 	wire					en_time;
+	wire			[47:0]bin_time;
 	wire			[3:0]	sw_in;
 	wire			[1:0] dip_sw;
 	wire			[3:0] ten1, one1, ten2, one2, ten3, one3, ten4, one4, ten5, one5, hun6, ten6, one6;
+	wire			[3:0] ten1_set, one1_set, ten2_set, one2_set, ten3_set, one3_set;
+	wire			[3:0] ten4_set, one4_set, ten5_set, one5_set, hun6_set, ten6_set, one6_set;
 	wire			[4:0] cursor;
 	
 	assign		rstn = ~rst;
@@ -47,7 +50,8 @@ module	digital_clock	(
 										.hour_10		(hour_10),
 										.en_day		(en_day) );*/
 	
-	watch_date				TIME1	(
+	watch_date				TIME	(
+										.active		(dip_sw[0]),
 										.clk			(clk),
 										.clk1sec		(en_1hz),
 										.rst			(rstn),
@@ -60,14 +64,71 @@ module	digital_clock	(
 										.minute		(minute),
 										.second		(second));
 										
-	fsm						DIP_SW(
+	watch_set				TIME_SET(
+										.active		(dip_sw[1]),
 										.clk			(clk),
 										.rst			(rstn),
-										.dip_sw		(dip_sw),
 										.sw_in		(sw_in),
-										.bin_time	(bin_time),
+										.year			(year),
+										.month		(month),
+										.day			(day),
+										.hour			(hour),
+										.minute		(minute),
+										.second		(second),
+			/*       	[47:0] */.bin_time	(bin_time),
 										.en_time		(en_time),
 										.cursor		(cursor));
+										
+	
+	bin2bcd		CVT_second_set ( 															// 초
+										.clk			(clk),
+										.bin_bcd		(bin_time[7:0]),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten1_set),
+										.one			(one1_set) );
+										
+	bin2bcd		CVT_minute_set ( 															// 분
+										.clk			(clk),
+										.bin_bcd		(bin_time[15:8]),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten2_set),
+										.one			(one2_set));									
+	
+	bin2bcd			CVT_hour_set ( 															// 시간
+										.clk			(clk),
+										.bin_bcd		(bin_time[23:16]),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten3_set),
+										.one			(one3_set));
+										
+	bin2bcd			 CVT_day_set ( 															// 일
+										.clk			(clk),
+										.bin_bcd		(bin_time[31:21]),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten4_set),
+										.one			(one4_set));
+										
+	bin2bcd			CVT_month_set ( 															// 월
+										.clk			(clk),
+										.bin_bcd		(bin_time[39:32]),
+										.rst			(rstn),
+										.hun			(),
+										.ten			(ten5_set),
+										.one			(one5_set));
+
+	bin2bcd			CVT_year_set ( 															// 년도
+										.clk			(clk),
+										.bin_bcd		(bin_time[47:40]),
+										.rst			(rstn),
+										.hun			(hun6_set),
+										.ten			(ten6_set),
+										.one			(one6_set));
+	
+	
 										
 	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
@@ -122,12 +183,25 @@ module	digital_clock	(
 										.clk			(clk), 
 										.rst			(rstn), 
 										.sw_in		(sw_in),
-										.hunYear		(hun6),
-										.tenYear		(ten6),
-										.oneYear		(one6),
-										.tenMonth	(ten5),
-										.oneMonth	(one5),
-										.tenDay		(ten4),
+										.hunYear_set		(hun6),
+										.tenYear_set		(ten6),
+										.oneYear_set		(one6),
+										.tenMonth_set	(ten5),
+										.oneMonth_set	(one5),
+										.tenDay_set		(ten4),
+										.oneDay_set		(one4),
+										.tenHour_set		(ten3),
+										.oneHour_set		(one3),
+										.tenMinute_set	(ten2),
+										.oneMinute_set	(one2),
+										.tenSecond_set	(ten1),
+										.oneSecond_set	(one1),
+										.hunYear_set		(hun6),
+										.tenYear_set		(ten6),
+										.oneYear_set		(one6),
+										.tenMonth_set	(ten5),
+										.oneMonth_set	(one5),
+										.tenDay_set		(ten4),
 										.oneDay		(one4),
 										.tenHour		(ten3),
 										.oneHour		(one3),
@@ -135,7 +209,7 @@ module	digital_clock	(
 										.oneMinute	(one2),
 										.tenSecond	(ten1),
 										.oneSecond	(one1),
-										.index		(cursor),
+										.index		(index_char),
 										.out			(data_char)	);
 										
 	

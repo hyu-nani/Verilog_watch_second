@@ -1,4 +1,4 @@
-module	fsm ( 
+module	watch_set ( 
 					clk,
 					rst,
 					dip_sw,
@@ -10,7 +10,7 @@ module	fsm (
 	input				clk, rst;
 	input		[1:0]	dip_sw;
 	input		[3:0] sw_in;
-	input		[47:0]bin_time;
+	output	[47:0]bin_time;
 	output			en_time;
 	output	[4:0]	cursor;
 						
