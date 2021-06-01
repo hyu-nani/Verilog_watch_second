@@ -36,7 +36,7 @@ module mode_alarm	(
 	
 	wire					leap_year;
 	
-	assign leap_year = (((year % 4) == 0 && (year % 100) != 0) || (year % 400) == 0) ? 1'b1 : 1'b0;
+	assign leap_year = (((year_alarm % 4) == 0 && (year_alarm % 100) != 0) || (year_alarm % 400) == 0) ? 1'b1 : 1'b0;
 	
 	always @(posedge clk1sec) begin
 		blink 	<= 1 - blink;
@@ -175,7 +175,7 @@ module mode_alarm	(
 					minute_alarm	<=	minute_alarm + 1;
 				else if(cursor == 3'd5 && hour_alarm < 8'd59)
 					second_alarm	<=	second_alarm + 1;
-				else begin
+				else if(cursor == 3'd6)begin
 					year_alarm	<=	8'd0;
 					month_alarm	<=	8'd0;
 					day_alarm	<=	8'd0;
@@ -197,7 +197,7 @@ module mode_alarm	(
 					minute_alarm	<=	minute_alarm - 1;
 				else if(cursor == 3'd5 && second_alarm > 0)
 					second_alarm	<=	second_alarm - 1;
-				else begin
+				else if(cursor == 3'd6)begin
 					year_alarm	<=	year;
 					month_alarm	<=	month;
 					day_alarm	<=	day;
