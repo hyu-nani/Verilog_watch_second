@@ -11,8 +11,7 @@
 										second,
 										index,
 										out,
-										bin_alarm,
-										set_alarm);
+										bin_alarm);
 	
 	input				clk;
 	input				clk1sec;
@@ -21,7 +20,6 @@
 	input		[7:0] year,month,day,hour,minute,second;
 	input		[4:0] index;
 	input		[47:0]bin_alarm;
-	input				set_alarm;
 	output	[7:0] out;
 	
 	wire		[3:0]	sw;
@@ -124,11 +122,11 @@
 				28 : out	<=	8'h30+oneSecond;
 				29 : out	<=	8'h20;
 				30 : out	<=	8'h20;
-				31 : 	if(set_alarm == 1) out	<=	8'h41;//A
+				31 : 	if(bin_alarm > 0) out	<=	8'h41;//A
 						else	out	<=	8'h20;
 			endcase
 			current_time	<=	{year,month,day,hour,minute,second};
-			if(set_alarm == 1)
+			if(bin_alarm > 0)
 				if(current_time > bin_alarm)
 					if(blink==1)
 						out 	<= 8'h20;

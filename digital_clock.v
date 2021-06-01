@@ -108,8 +108,7 @@ module	digital_clock	(
 										.second		(second),
 										.index		(index_char),
 										.out			(data_mode0),
-										.bin_alarm	(bin_alarm),
-										.set_alarm	(set_alarm));
+										.bin_alarm	(bin_alarm));
 										
 	mode_watch_set			MODE1 (
 										.clk			(clk),
@@ -140,8 +139,7 @@ module	digital_clock	(
 										.second		(second),
 										.index		(index_char),
 										.out			(data_mode2),
-										.bin_alarm	(bin_alarm),
-										.set_alarm	(set_alarm));
+										.bin_alarm	(bin_alarm));
 	
 	
 	en_clk_lcd				LCLK	( 

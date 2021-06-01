@@ -11,8 +11,7 @@ module mode_alarm	(
 					second,
 					index,
 					out,
-					bin_alarm,
-					set_alarm);
+					bin_alarm);
 					
 	input					clk,rst;
 	input					clk1sec;
@@ -22,7 +21,6 @@ module mode_alarm	(
 	
 	output	[7:0]		out;
 	output	[47:0]	bin_alarm;
-	output				set_alarm;
 	
 	wire		[4:0]		index;
 	wire		[3:0] 	hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
@@ -156,7 +154,7 @@ module mode_alarm	(
 				29 : out	<=	8'h53;//S
 				30 : out	<=	8'h20;
 				31 : 	if(blink && cursor == 3'd6)out	<=	8'h20;
-						else	out	<=	8'h53;//s
+						else	out	<=	8'h52;//R
 			endcase
 			if(bin_alarm == 0)
 				set_alarm <= 1'b0;
@@ -178,7 +176,12 @@ module mode_alarm	(
 				else if(cursor == 3'd5 && hour_alarm < 8'd59)
 					second_alarm	<=	second_alarm + 1;
 				else begin
-					set_alarm	<=	1'b1;
+					year_alarm	<=	8'd0;
+					month_alarm	<=	8'd0;
+					day_alarm	<=	8'd0;
+					hour_alarm	<=	8'd0;
+					minute_alarm<=	8'd0;
+					second_alarm<=	8'd0;
 				end
 			end
 			else if(sw_in == 4'b0001)begin
