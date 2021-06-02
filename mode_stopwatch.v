@@ -9,21 +9,35 @@ module mode_stopwatch(
 							out);
 							
 	input					clk, rst;
-	input					sw0, sw1, sw2, sw3;
+	input					sw0;
+	input					sw1;
+	input					sw2;
+	input					sw3;
 	input			[4:0] index;
 	
 	output		[7:0] out;
 	
+	wire					en_100hz;
 	wire			[4:0] index;	
 	wire			[3:0] tenMilSecond, oneMilSecond, tenSec_stop, oneSec_stop, tenMin_stop, oneMin_stop;
 	reg			[7:0]	milsec, sec_stop, min_stop;
 	reg			[7:0] out;
+	reg					run,sw_out;
+	
+	debouncer_clk				U0	(
+										.clk			(clk),
+										.rst			(rst),
+										.in			(sw0),
+										.out			(sw_out));
+	
+	always @(posedge sw_out)begin
+		run <= 1- run;
+	end
 	
 	en_clk_100hz		STOPCLK (
 									.clk			(clk),
 									.rst			(rst),
-									.en_100hz	(en_100hz)
-									);
+									.en_100hz	(en_100hz));
 									
 	bin2bcd			 CVT_milsecond ( 															// 밀리초
 										.clk			(clk),
@@ -48,14 +62,14 @@ module mode_stopwatch(
 										.one			(oneMin_stop) );
 											
 	
-	always @ ( posedge clk or negedge rst ) begin
+	always @ ( posedge clk or negedge rst )
 		if(!rst) begin
 			out			<=	8'h00;
 			min_stop		<= 8'd00;
 			sec_stop		<= 8'd00;
 			milsec		<= 8'd00;
 		end
-		else
+		else begin
 			case (index)
 				00 : out <= 8'h53;//S
 				01 : out	<=	8'h74;//t
@@ -69,10 +83,14 @@ module mode_stopwatch(
 				09 : out	<=	8'h68;//h
 				10 : out	<=	8'h20;
 				11 : out	<=	8'h20;
-				12 : out	<=	8'h20;
-				13 : out	<=	8'h20;
-				14 : out	<=	8'h20;
-				15 : out	<=	8'h20;
+				12 : 	if(sw0) 	out	<=	8'h22;
+						else		out	<=	8'h21;
+				13 :	if(sw1) 	out	<=	8'h22;
+						else		out	<=	8'h21;
+				14 :	if(sw2) 	out	<=	8'h22;
+						else		out	<=	8'h21;
+				15 :	if(sw3) 	out	<=	8'h22;
+						else		out	<=	8'h21;
 				
 				// line2
 				16 : out	<=	8'h54;//T
@@ -91,9 +109,9 @@ module mode_stopwatch(
 				29 : out	<=	8'h20;
 				30 : out	<=	8'h20;
 				31 : out	<=	8'h20;
-			endcase
-			if(en_100hz==1) begin
-				if(sw0)
+			endcase	
+			if(run) begin
+				if(en_100hz) 
 					casez({min_stop, sec_stop, milsec})
 						{8'd59, 8'd59, 8'd99} : begin
 												min_stop		<= 0;
@@ -120,9 +138,14 @@ module mode_stopwatch(
 					min_stop		<= min_stop;
 					sec_stop		<= sec_stop;
 					milsec		<= milsec;
-				end	
+				end		
 			end
-	end
+			else if(sw3)begin
+				min_stop		<= 0;
+				sec_stop		<= 0;
+				milsec		<= 0;
+			end
+		end
 endmodule	
 	
 	

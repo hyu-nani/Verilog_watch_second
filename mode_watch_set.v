@@ -40,7 +40,7 @@ module	mode_watch_set (
 	reg		[4:0]	max_date;
 	wire				leap_year;
 	
-	assign leap_year = (((year % 4) == 0 && (year % 100) != 0) || (year % 400) == 0) ? 1'b1 : 1'b0;
+	assign leap_year = (((year_set % 4) == 0 && (year_set % 100) != 0) || (year_set % 400) == 0) ? 1'b1 : 1'b0;
 	
 	always @(posedge clk1sec) begin
 		blink 	<= 1 - blink;
@@ -179,7 +179,7 @@ module	mode_watch_set (
 					minute_set	<=	minute_set + 1;
 				else if(cursor == 3'd5 && hour_set < 8'd59)
 					second_set	<=	second_set + 1;
-				else begin
+				else if(cursor == 3'd6)begin
 					en_time		<= 1'b1;
 				end
 			end
@@ -196,6 +196,14 @@ module	mode_watch_set (
 					minute_set	<=	minute_set - 1;
 				else if(cursor == 3'd5 && second_set > 0)
 					second_set	<=	second_set - 1;
+				else if(cursor == 3'd6)begin
+					year_set		<= year;
+					month_set	<=	month;
+					day_set		<=	day;
+					hour_set		<=	hour;
+					minute_set	<=	minute;
+					second_set	<=	second;
+				end
 			end
 			bin_time		<=	{year_set,month_set,day_set,hour_set,minute_set,second_set};
 		end

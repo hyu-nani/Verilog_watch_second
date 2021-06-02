@@ -82,8 +82,7 @@ module	digital_clock	(
 										.clk			(clk),
 										.rst			(rstn),
 										.en_1hz		(en_1hz) );
-										
-	
+								
 	
 	watch_time				TIME	(
 										.clk			(clk),
