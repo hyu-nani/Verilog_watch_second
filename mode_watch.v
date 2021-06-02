@@ -17,20 +17,22 @@
 	input				clk1sec;
 	input				rst;
 	input		[3:0]	sw_in;
-	input		[7:0] year,month,day,hour,minute,second;
+	input		[11:0]year;
+	input		[7:0] month,day,hour,minute,second;
 	input		[4:0] index;
-	input		[47:0]bin_alarm;
+	input		[51:0]bin_alarm;
 	output	[7:0] out;
 	
 	wire		[3:0]	sw;
 	wire		[4:0] index;
-	wire		[3:0] hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
+	wire		[3:0] thoYear, hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
 	wire		[3:0]	tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
 	reg		[7:0] out;
 	reg				blink;
 	
-	wire		[7:0] year,month,day,hour,minute,second;
-	reg		[47:0]current_time;
+	wire		[11:0]year;
+	wire		[7:0] month,day,hour,minute,second;
+	reg		[51:0]current_time;
 	integer			i;
 	
 	bin2bcd			 CVT_second ( 															// 초
@@ -57,7 +59,7 @@
 										.ten			(tenHour),
 										.one			(oneHour));
 										
-	bin2bcd				  CVT_day ( 															// 일
+	bin2bcd				  CVT_day ( 														// 일
 										.clk			(clk),
 										.bin_bcd		(day),
 										.rst			(rst),
@@ -65,7 +67,7 @@
 										.ten			(tenDay),
 										.one			(oneDay));
 										
-	bin2bcd				CVT_month ( 															// 월
+	bin2bcd				CVT_month ( 														// 월
 										.clk			(clk),
 										.bin_bcd		(month),
 										.rst			(rst),
@@ -73,10 +75,11 @@
 										.ten			(tenMonth),
 										.one			(oneMonth));
 
-	bin2bcd				 CVT_year ( 															// 년도
+	bin3bcd				 CVT_year ( 														// 년도
 										.clk			(clk),
 										.bin_bcd		(year),
 										.rst			(rst),
+										.tho			(thoYear),
 										.hun			(hunYear),
 										.ten			(tenYear),
 										.one			(oneYear));
@@ -94,7 +97,7 @@
 				02 : out	<=	8'h54;//T
 				03 : out	<=	8'h45;//E
 				04 : out	<=	8'h20;// 
-				05 : out	<=	8'h32;//2
+				05 : out	<=	8'h30+thoYear;
 				06 : out	<=	8'h30+hunYear;
 				07 : out	<=	8'h30+tenYear;
 				08 : out	<=	8'h30+oneYear;

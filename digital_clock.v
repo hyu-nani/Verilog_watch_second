@@ -16,14 +16,14 @@ module	digital_clock	(
 	output				lcd_e;
 	output		[7:0] lcd_data;
 	
-	wire			[7:0] year;
+	wire			[11:0] year;
 	wire			[7:0]	month;
 	wire			[7:0]	day, hour, minute, second;
 	wire			[4:0] index_char;
 	wire					en_1hz;
 	wire					en_clk;
 	wire					en_time,set_alarm;
-	reg			[47:0]bin_time,bin_alarm;
+	reg			[51:0]bin_time,bin_alarm;
 	wire			[3:0]	sw_in;
 	reg			[3:0]	sw_out;
 	wire			[3:0] dip_sw;

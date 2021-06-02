@@ -16,21 +16,23 @@ module mode_alarm	(
 	input					clk,rst;
 	input					clk1sec;
 	input		[3:0] 	sw_in;
-	input		[7:0]		year,month,day,hour,minute,second;
+	input		[11:0]	year;
+	input		[7:0]		month,day,hour,minute,second;
 	input		[4:0]		index;
 	
 	output	[7:0]		out;
-	output	[47:0]	bin_alarm;
+	output	[51:0]	bin_alarm;
 	
 	wire		[4:0]		index;
-	wire		[3:0] 	hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
+	wire		[3:0] 	thoYear, hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
 	wire		[3:0]		tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
 	
 	reg		[7:0]		out;
-	reg		[7:0]		year_alarm,month_alarm,day_alarm,hour_alarm,minute_alarm,second_alarm;
+	reg		[11:0]	year_alarm;
+	reg		[7:0]		month_alarm,day_alarm,hour_alarm,minute_alarm,second_alarm;
 	reg					blink;
 	reg		[2:0] 	cursor;
-	reg		[47:0]	bin_alarm;
+	reg		[51:0]	bin_alarm;
 	reg					set_alarm;
 	reg		[4:0]		max_date;
 	
@@ -82,10 +84,11 @@ module mode_alarm	(
 										.ten			(tenMonth),
 										.one			(oneMonth));
 
-	bin2bcd				 CVT_year ( 															// 년도
+	bin3bcd				 CVT_year ( 															// 년도
 										.clk			(clk),
 										.bin_bcd		(year_alarm),
 										.rst			(rst),
+										.tho			(thoYear),
 										.hun			(hunYear),
 										.ten			(tenYear),
 										.one			(oneYear));
@@ -112,7 +115,7 @@ module mode_alarm	(
 				03 : out	<=	8'h52;//R
 				04 : out	<=	8'h4D;//M
 				05 : 	if(blink && cursor == 3'd0)out	<=	8'h20;
-						else	out	<=	8'h32;
+						else	out	<=	8'h30+thoYear;
 				06 :	if(blink && cursor == 3'd0)out	<=	8'h20;
 						else	out	<=	8'h30+hunYear;
 				07 :	if(blink && cursor == 3'd0)out	<=	8'h20;
@@ -163,7 +166,7 @@ module mode_alarm	(
 			else if(sw_in == 4'b0100 && cursor > 3'd0)
 				cursor	<=	cursor - 1;
 			else if(sw_in == 4'b0010)begin
-				if(cursor == 3'd0 && year_alarm < 8'd255)
+				if(cursor == 3'd0 && year_alarm < 12'd4095)
 					year_alarm 	<= year_alarm + 1;
 				else if(cursor == 3'd1 && month_alarm < 8'd12)
 					month_alarm	<= month_alarm + 1;
@@ -176,7 +179,7 @@ module mode_alarm	(
 				else if(cursor == 3'd5 && hour_alarm < 8'd59)
 					second_alarm	<=	second_alarm + 1;
 				else if(cursor == 3'd6)begin
-					year_alarm	<=	8'd0;
+					year_alarm	<=	12'd0;
 					month_alarm	<=	8'd0;
 					day_alarm	<=	8'd0;
 					hour_alarm	<=	8'd0;

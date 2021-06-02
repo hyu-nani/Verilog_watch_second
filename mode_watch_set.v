@@ -17,21 +17,24 @@ module	mode_watch_set (
 	input				clk, rst;
 	input				clk1sec;
 	input		[3:0] sw_in;
-	input		[7:0]	year,month,day,hour,minute,second;
+	input		[11:0]year;
+	input		[7:0]	month,day,hour,minute,second;
 	input		[4:0]	index;
 	
-	output	[47:0]bin_time;
+	output	[51:0]bin_time;
 	output			en_time;
 	output	[7:0]	out;
 						
 	reg				en_time;
-	reg		[47:0]bin_time;
-	reg		[7:0] year_set, month_set, day_set, hour_set, minute_set, second_set;
+	reg		[51:0]bin_time;
+	reg		[11:0]year_set;
+	reg		[7:0] month_set, day_set, hour_set, minute_set, second_set;
 	
 	wire		[4:0]	index;
-	wire		[7:0]	year,month,day,hour,minute,second;
+	wire		[11:0]year;
+	wire		[7:0]	month,day,hour,minute,second;
 	
-	wire		[3:0] hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
+	wire		[3:0] thoYear, hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
 	wire		[3:0]	tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
 	
 	reg		[7:0]	out;
@@ -86,10 +89,11 @@ module	mode_watch_set (
 										.ten			(tenMonth),
 										.one			(oneMonth));
 
-	bin2bcd				 CVT_year ( 															// 년도
+	bin3bcd				 CVT_year ( 															// 년도
 										.clk			(clk),
 										.bin_bcd		(year_set),
 										.rst			(rst),
+										.tho			(thoYear),
 										.hun			(hunYear),
 										.ten			(tenYear),
 										.one			(oneYear));
@@ -116,7 +120,7 @@ module	mode_watch_set (
 				03 : out	<=	8'h20;
 				04 : out	<=	8'h20; 
 				05 : 	if(blink && cursor == 3'd0)out	<=	8'h20;
-						else	out	<=	8'h32;
+						else	out	<=	8'h30+thoYear;
 				06 :	if(blink && cursor == 3'd0)out	<=	8'h20;
 						else	out	<=	8'h30+hunYear;
 				07 :	if(blink && cursor == 3'd0)out	<=	8'h20;
@@ -167,7 +171,7 @@ module	mode_watch_set (
 			else if(sw_in == 4'b0100 && cursor > 3'd0)
 				cursor	<=	cursor - 1;
 			else if(sw_in == 4'b0010)begin
-				if(cursor == 3'd0 && year_set < 8'd255)
+				if(cursor == 3'd0 && year_set < 12'd4095)
 					year_set 	<= year_set + 1;
 				else if(cursor == 3'd1 && month_set < 8'd12)
 					month_set	<= month_set + 1;
