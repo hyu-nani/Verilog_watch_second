@@ -1,24 +1,29 @@
 module mode_stopwatch(
 							clk,
 							rst,
-							en_100hz,
-							sw_in,
+							sw0,
+							sw1,
+							sw2,
+							sw3,
 							index,
 							out);
 							
 	input					clk, rst;
-	input					en_100hz;
-	input			[3:0]	sw_in;
+	input					sw0, sw1, sw2, sw3;
 	input			[4:0] index;
 	
 	output		[7:0] out;
 	
-	wire					en_100hz;
 	wire			[4:0] index;	
 	wire			[3:0] tenMilSecond, oneMilSecond, tenSec_stop, oneSec_stop, tenMin_stop, oneMin_stop;
 	reg			[7:0]	milsec, sec_stop, min_stop;
 	reg			[7:0] out;
 	
+	en_clk_100hz		STOPCLK (
+									.clk			(clk),
+									.rst			(rst),
+									.en_100hz	(en_100hz)
+									);
 									
 	bin2bcd			 CVT_milsecond ( 															// 밀리초
 										.clk			(clk),
@@ -43,14 +48,14 @@ module mode_stopwatch(
 										.one			(oneMin_stop) );
 											
 	
-	always @ ( posedge clk or negedge rst )
+	always @ ( posedge clk or negedge rst ) begin
 		if(!rst) begin
 			out			<=	8'h00;
 			min_stop		<= 8'd00;
 			sec_stop		<= 8'd00;
 			milsec		<= 8'd00;
 		end
-		else begin
+		else
 			case (index)
 				00 : out <= 8'h53;//S
 				01 : out	<=	8'h74;//t
@@ -86,9 +91,9 @@ module mode_stopwatch(
 				29 : out	<=	8'h20;
 				30 : out	<=	8'h20;
 				31 : out	<=	8'h20;
-			endcase	
-			if(en_100hz) begin
-				if(1) 
+			endcase
+			if(en_100hz==1) begin
+				if(sw0)
 					casez({min_stop, sec_stop, milsec})
 						{8'd59, 8'd59, 8'd99} : begin
 												min_stop		<= 0;
@@ -115,9 +120,9 @@ module mode_stopwatch(
 					min_stop		<= min_stop;
 					sec_stop		<= sec_stop;
 					milsec		<= milsec;
-				end		
+				end	
 			end
-		end
+	end
 endmodule	
 	
 	
