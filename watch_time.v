@@ -34,10 +34,19 @@ module watch_time(
 	reg		[7:0]			second;
 	
 	reg		[7:0]			max_date;
+	reg						week;
 	
 	wire 						leap_year;
+
 	
 	assign leap_year = (((year % 4) == 0 && (year % 100) != 0) || (year % 400) == 0) ? 1'b1 : 1'b0;
+	
+	alwas @ (*) begin // 요일 계산
+		if(month<=2)
+			week <= ((21*YY/4) + (5*(yy-1)/4) + 26*(month+1)/10 + day-1) % 7;
+		else
+			week <= ((21*YY/4) + (5*yy/4) + 26*(month+1)/10 + day-1) % 7;
+	end
 	
 	always @(*)
 		case(month)
@@ -47,7 +56,7 @@ module watch_time(
 						max_date	<= 8'd28+leap_year;
 				8'd4, 8'd6, 8'd9, 8'd11	:
 						max_date <=	8'd30;
-				default : max_date <= 0;
+				default : max_date <= 0;  
 		endcase
 
 		
