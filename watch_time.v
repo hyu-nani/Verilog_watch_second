@@ -9,7 +9,8 @@ module watch_time(
 	day,
 	hour,
 	minute,
-	second);
+	second,
+	week);
 	
 	input						clk,rst;
 	input						clk1sec;
@@ -22,6 +23,7 @@ module watch_time(
 	output	[7:0]			hour;
 	output	[7:0]			minute;
 	output	[7:0]			second;
+	output	[2:0]			week;
 	
 	wire						set_time;
 	wire		[51:0]		bin_time;
@@ -34,10 +36,19 @@ module watch_time(
 	reg		[7:0]			second;
 	
 	reg		[7:0]			max_date;
+	reg		[2:0]			week;
 	
 	wire 						leap_year;
 	
+	
 	assign leap_year = (((year % 4) == 0 && (year % 100) != 0) || (year % 400) == 0) ? 1'b1 : 1'b0;
+	
+	always @ (*) begin
+		if(month <= 2) 
+			week <= ((21*(year/100))/4 + 5*((year%100)-1)/4 + 26*(month+1)/10 + day-1) % 7;
+		else
+			week <= ((21*(year/100))/4 + 5*(year%100)/4 + 26*(month+1)/10 + day-1) % 7;
+	end
 	
 	always @(*)
 		case(month)

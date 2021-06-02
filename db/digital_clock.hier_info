@@ -41,17 +41,17 @@ sw_in[0] => sw_in[0].IN2
 sw_in[1] => sw_in[1].IN2
 sw_in[2] => sw_in[2].IN2
 sw_in[3] => sw_in[3].IN2
-lcd_rs <= lcd_driver:DRV.lcd_rs
-lcd_rw <= lcd_driver:DRV.lcd_rw
-lcd_e <= lcd_driver:DRV.lcd_e
-lcd_data[0] <= lcd_driver:DRV.lcd_data
-lcd_data[1] <= lcd_driver:DRV.lcd_data
-lcd_data[2] <= lcd_driver:DRV.lcd_data
-lcd_data[3] <= lcd_driver:DRV.lcd_data
-lcd_data[4] <= lcd_driver:DRV.lcd_data
-lcd_data[5] <= lcd_driver:DRV.lcd_data
-lcd_data[6] <= lcd_driver:DRV.lcd_data
-lcd_data[7] <= lcd_driver:DRV.lcd_data
+lcd_rs << lcd_driver:DRV.lcd_rs
+lcd_rw << lcd_driver:DRV.lcd_rw
+lcd_e << lcd_driver:DRV.lcd_e
+lcd_data[0] << lcd_driver:DRV.lcd_data
+lcd_data[1] << lcd_driver:DRV.lcd_data
+lcd_data[2] << lcd_driver:DRV.lcd_data
+lcd_data[3] << lcd_driver:DRV.lcd_data
+lcd_data[4] << lcd_driver:DRV.lcd_data
+lcd_data[5] << lcd_driver:DRV.lcd_data
+lcd_data[6] << lcd_driver:DRV.lcd_data
+lcd_data[7] << lcd_driver:DRV.lcd_data
 
 
 |digital_clock|debouncer_clk:sw0
@@ -813,6 +813,9 @@ second[4] <= second[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 second[5] <= second[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 second[6] <= second[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 second[7] <= second[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+week[0] <= week.DB_MAX_OUTPUT_PORT_TYPE
+week[1] <= week.DB_MAX_OUTPUT_PORT_TYPE
+week[2] <= week.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |digital_clock|mode_watch:MODE0
@@ -877,39 +880,39 @@ second[6] => second[6].IN1
 second[7] => second[7].IN1
 index[0] => Mux0.IN36
 index[0] => Mux1.IN36
-index[0] => Decoder0.IN4
-index[0] => Mux2.IN22
+index[0] => Mux2.IN36
 index[0] => Mux3.IN22
 index[0] => Mux4.IN22
 index[0] => Mux5.IN22
+index[0] => Mux6.IN22
 index[1] => Mux0.IN35
 index[1] => Mux1.IN35
-index[1] => Decoder0.IN3
-index[1] => Mux2.IN21
+index[1] => Mux2.IN35
 index[1] => Mux3.IN21
 index[1] => Mux4.IN21
 index[1] => Mux5.IN21
+index[1] => Mux6.IN21
 index[2] => Mux0.IN34
 index[2] => Mux1.IN34
-index[2] => Decoder0.IN2
-index[2] => Mux2.IN20
+index[2] => Mux2.IN34
 index[2] => Mux3.IN20
 index[2] => Mux4.IN20
 index[2] => Mux5.IN20
+index[2] => Mux6.IN20
 index[3] => Mux0.IN33
 index[3] => Mux1.IN33
-index[3] => Decoder0.IN1
-index[3] => Mux2.IN19
+index[3] => Mux2.IN33
 index[3] => Mux3.IN19
 index[3] => Mux4.IN19
 index[3] => Mux5.IN19
+index[3] => Mux6.IN19
 index[4] => Mux0.IN32
 index[4] => Mux1.IN32
-index[4] => Decoder0.IN0
-index[4] => Mux2.IN18
+index[4] => Mux2.IN32
 index[4] => Mux3.IN18
 index[4] => Mux4.IN18
 index[4] => Mux5.IN18
+index[4] => Mux6.IN18
 out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1022,6 +1025,24 @@ bin_alarm[50] => LessThan0.IN54
 bin_alarm[50] => LessThan1.IN2
 bin_alarm[51] => LessThan0.IN53
 bin_alarm[51] => LessThan1.IN1
+week[0] => Equal0.IN31
+week[0] => Equal1.IN0
+week[0] => Equal2.IN31
+week[0] => Equal3.IN1
+week[0] => Equal4.IN31
+week[0] => Equal5.IN1
+week[1] => Equal0.IN30
+week[1] => Equal1.IN31
+week[1] => Equal2.IN0
+week[1] => Equal3.IN0
+week[1] => Equal4.IN30
+week[1] => Equal5.IN31
+week[2] => Equal0.IN29
+week[2] => Equal1.IN30
+week[2] => Equal2.IN30
+week[2] => Equal3.IN31
+week[2] => Equal4.IN0
+week[2] => Equal5.IN0
 
 
 |digital_clock|mode_watch:MODE0|bin2bcd:CVT_second

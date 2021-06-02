@@ -11,7 +11,8 @@
 										second,
 										index,
 										out,
-										bin_alarm);
+										bin_alarm,
+										week);
 	
 	input				clk;
 	input				clk1sec;
@@ -21,6 +22,7 @@
 	input		[7:0] month,day,hour,minute,second;
 	input		[4:0] index;
 	input		[51:0]bin_alarm;
+	input		[2:0] week;
 	output	[7:0] out;
 	
 	wire		[3:0]	sw;
@@ -92,22 +94,40 @@
 			out	<=	8'h00;
 		else begin
 			case (index)
-				00 : out <= 8'h44;//D
-				01 : out	<=	8'h41;//A
-				02 : out	<=	8'h54;//T
-				03 : out	<=	8'h45;//E
-				04 : out	<=	8'h20;// 
-				05 : out	<=	8'h30+thoYear;
-				06 : out	<=	8'h30+hunYear;
-				07 : out	<=	8'h30+tenYear;
-				08 : out	<=	8'h30+oneYear;
-				09 : out	<=	8'h2F;///
-				10 : out	<=	8'h30+tenMonth;
-				11 : out	<=	8'h30+oneMonth;
-				12 : out	<=	8'h2F;///
-				13 : out	<=	8'h30+tenDay;
-				14 : out	<=	8'h30+oneDay;
-				15 : out	<=	8'h20;
+				00 : out <= 8'h30+thoYear;
+				01 : out	<=	8'h30+hunYear;
+				02 : out	<=	8'h30+tenYear;
+				03 : out	<=	8'h30+oneYear;
+				04 : out	<=	8'h2F;/// 
+				05 : out	<=	8'h30+tenMonth;
+				06 : out	<=	8'h30+oneMonth;
+				07 : out	<=	8'h2F;///
+				08 : out	<=	8'h30+tenDay;
+				09 : out	<=	8'h30+oneDay;
+				10 : out	<=	8'h20;
+				11 : out	<=	8'h20;
+				12 : out	<=	8'h20;
+				13 : if(week == 0) out <= 8'h53;
+					  else if(week==1) out <= 8'h4D;
+					  else if(week==2) out <= 8'h54;
+					  else if(week==3) out <= 8'h57;
+					  else if(week==4) out <= 8'h54;
+					  else if(week==5) out <= 8'h46;
+					  else out <= 8'h53;
+				14 : if(week == 0) out <= 8'h55;
+					  else if(week==1) out <= 8'h4F;
+					  else if(week==2) out <= 8'h55;
+					  else if(week==3) out <= 8'h45;
+					  else if(week==4) out <= 8'h48;
+					  else if(week==5) out <= 8'h52;
+					  else out <= 8'h41;
+				15 : if(week == 0) out <= 8'h4E;
+					  else if(week==1) out <= 8'h4E;
+					  else if(week==2) out <= 8'h45;
+					  else if(week==3) out <= 8'h4E;
+					  else if(week==4) out <= 8'h55;
+					  else if(week==5) out <= 8'h49;
+					  else out <= 8'h54;
 				
 				// line2
 				16 : out	<=	8'h54;//T
