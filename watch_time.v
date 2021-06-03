@@ -10,7 +10,8 @@ module watch_time(
 	hour,
 	minute,
 	second,
-	week);
+	week,
+	max_date);
 	
 	input						clk,rst;
 	input						clk1sec;
@@ -24,6 +25,7 @@ module watch_time(
 	output	[7:0]			minute;
 	output	[7:0]			second;
 	output	[2:0]			week;
+	output	[4:0]			max_date;
 	
 	wire						set_time;
 	wire		[51:0]		bin_time;

@@ -97,23 +97,26 @@ module	digital_clock	(
 										.hour			(hour),
 										.minute		(minute),
 										.second		(second),
-										.week			(week));
+										.week			(week),
+										.max_date	(max_d));
 										
 	mode_watch				MODE0	( 	
 										.clk			(clk), 
 										.clk1sec		(en_1hz),
 										.rst			(rstn), 
-										.sw_in		(sw_out),
+										.sw_in		(data_sw0),
 										.year			(year),
 										.month		(month),
 										.day			(day),
 										.hour			(hour),
 										.minute		(minute),
 										.second		(second),
+										.max_date	(max_d),
 										.index		(index_char),
 										.out			(data_mode0),
 										.bin_alarm	(bin_alarm),
-										.week			(week));
+										.week			(week),
+										.gmt_out		());
 										
 	mode_watch_set			MODE1 (
 										.clk			(clk),

@@ -9,10 +9,13 @@
 										hour,
 										minute,
 										second,
+										max_date,
 										index,
 										out,
 										bin_alarm,
-										week);
+										week,
+										gmt_out
+								);
 	
 	input				clk;
 	input				clk1sec;
@@ -21,21 +24,25 @@
 	input		[11:0]year;
 	input		[7:0] month,day,hour,minute,second;
 	input		[4:0] index;
+	input		[4:0]	max_date;
 	input		[51:0]bin_alarm;
 	input		[2:0] week;
 	output	[7:0] out;
+	output	[4:0]	gmt_out;
 	
 	wire		[3:0]	sw;
 	wire		[4:0] index;
 	wire		[3:0] thoYear, hunYear, tenYear , oneYear, tenMonth, oneMonth, tenDay, oneDay;
 	wire		[3:0]	tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
-	reg		[7:0] out;
-	reg				blink;
-	
 	wire		[11:0]year;
 	wire		[7:0] month,day,hour,minute,second;
+	reg		[7:0]	cal_day,cal_hour,cal_min;
 	reg		[51:0]current_time;
-	integer			i;
+	reg		[7:0] out;
+	reg				blink;
+	reg		[4:0]	gmt_out;
+	reg		[7:0]	country0,country1,country2;
+	reg		[4:0] gmt_day,gmt_hour,gmt_min;
 	
 	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
@@ -47,7 +54,7 @@
 										
 	bin2bcd			 CVT_minute ( 															// 분
 										.clk			(clk),
-										.bin_bcd		(minute),
+										.bin_bcd		(cal_min),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenMinute),
@@ -55,7 +62,7 @@
 	
 	bin2bcd				CVT_hour ( 															// 시간
 										.clk			(clk),
-										.bin_bcd		(hour),
+										.bin_bcd		(cal_hour),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenHour),
@@ -63,7 +70,7 @@
 										
 	bin2bcd				  CVT_day ( 														// 일
 										.clk			(clk),
-										.bin_bcd		(day),
+										.bin_bcd		(cal_day),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenDay),
@@ -89,10 +96,187 @@
 		blink 	<= 1 - blink;
 	end
 	
-	always @ ( posedge clk or negedge rst )
+	always @ ( posedge clk or negedge rst )begin
 		if(!rst)
 			out	<=	8'h00;
 		else begin
+			if(sw_in == 4'b1000)begin
+				gmt_out <= gmt_out+1;
+				if(gmt_out == 5'd17)
+					gmt_out <= 0;
+			end
+			else if(sw_in == 4'b0100)begin
+				gmt_out <= gmt_out-1;
+				if(gmt_out == 0)
+					gmt_out <= 5'd17;
+			end	
+			///////////////////////////////////////////////////
+			if(minute+gmt_min > 8'd59)begin
+				cal_min <= minute + gmt_min - 8'd60;
+				if(hour+gmt_hour > 8'd22)begin
+					cal_hour <= hour + gmt_hour - 8'd23;
+					cal_day	<=	day + 1'd1;
+				end
+				else
+					cal_hour	<=	hour + gmt_hour + 1'd1;	
+				if(day+gmt_day>max_date)
+					cal_day	<=	0;
+			end
+			else if(hour+gmt_hour > 8'd23)begin
+				if(minute+gmt_min > 8'd59)begin
+					cal_day	<=	day + gmt_day + 1'd1;
+					cal_min 	<= minute + gmt_min - 8'd60;
+					cal_hour	<=	hour + gmt_hour - 8'd23;	
+				end
+				else begin
+					cal_hour	<=	hour + gmt_hour - 6'd24;
+					cal_min 	<= minute + gmt_min;
+				end
+				if(day+gmt_day>max_date)
+					cal_day	<=	0;
+			end
+			else begin
+				cal_day	<=	day + gmt_day;
+				cal_hour	<=	hour + gmt_hour;
+				cal_min	<=	minute + gmt_min;
+			end
+			
+			/////////////////////////////////////////////////////
+			case(gmt_out)
+				0	:	begin
+							country0 <= 8'h4C;//L
+							country1	<=	8'h4F;//O
+							country2 <= 8'h4E;//N 
+							gmt_hour <= 8'd0;
+							gmt_min	<=	8'd0;
+						end
+				1	:	begin
+							country0 <= 8'h50;//P
+							country1	<=	8'h41;//A
+							country2 <= 8'h52;//R 
+							gmt_hour <= 8'd1;
+							gmt_min	<=	8'd0;
+						end
+				2	: 	begin
+							country0 <= 8'h43;//C
+							country1	<=	8'h41;//A
+							country2 <= 8'h49;//I 
+							gmt_hour <= 8'd2;
+							gmt_min	<=	8'd0;
+						end
+				3	: 	begin
+							country0 <= 8'h4A;//J
+							country1	<=	8'h45;//E
+							country2 <= 8'h44;//D 
+							gmt_hour <= 8'd3;
+							gmt_min	<=	8'd0;
+						end
+				4	:	begin
+							country0 <= 8'h54;//T
+							country1	<=	8'h48;//H
+							country2 <= 8'h52;//R 
+							gmt_hour <= 8'd3;
+							gmt_min	<=	8'd30;
+						end
+				5	:	begin
+							country0 <= 8'h44;//D
+							country1	<=	8'h58;//X
+							country2 <= 8'h42;//B 
+							gmt_hour <= 8'd4;
+							gmt_min	<=	8'd0;
+						end
+				6	:	begin
+							country0 <= 8'h4B;//K
+							country1	<=	8'h42;//B
+							country2 <= 8'h4C;//L 
+							gmt_hour <= 8'd4;
+							gmt_min	<=	8'd30;
+						end
+				7	:	begin
+							country0 <= 8'h4B;//K
+							country1	<=	8'h48;//H
+							country2 <= 8'h49;//I 
+							gmt_hour <= 8'd5;
+							gmt_min	<=	8'd0;
+						end
+				8	:	begin
+							country0 <= 8'h44;//D
+							country1	<=	8'h45;//E
+							country2 <= 8'h4C;//L 
+							gmt_hour <= 8'd5;
+							gmt_min	<=	8'd30;
+						end
+				9	:	begin
+							country0 <= 8'h44;//D
+							country1	<=	8'h41;//A
+							country2 <= 8'h43;//C 
+							gmt_hour <= 8'd6;
+							gmt_min	<=	8'd0;
+						end
+				10	:	begin
+							country0 <= 8'h52;//R
+							country1	<=	8'h47;//G
+							country2 <= 8'h4E;//N 
+							gmt_hour <= 8'd6;
+							gmt_min	<=	8'd30;
+						end
+				11	:	begin
+							country0 <= 8'h42;//B
+							country1	<=	8'h4B;//K
+							country2 <= 8'h4B;//K 
+							gmt_hour <= 8'd7;
+							gmt_min	<=	8'd0;
+						end
+				12	:	begin
+							country0 <= 8'h48;//H
+							country1	<=	8'h4B;//K
+							country2 <= 8'h47;//G 
+							gmt_hour <= 8'd8;
+							gmt_min	<=	8'd0;
+						end
+				13	:	begin
+							country0 <= 8'h53;//S
+							country1	<=	8'h45;//E
+							country2 <= 8'h4C;//L 
+							gmt_hour <= 8'd9;
+							gmt_min	<=	8'd0;
+						end
+				14	:	begin
+							country0 <= 8'h41;//A
+							country1	<=	8'h44;//D
+							country2 <= 8'h4C;//L 
+							gmt_hour <= 8'd9;
+							gmt_min	<=	8'd30;
+						end
+				15	:	begin
+							country0 <= 8'h53;//S
+							country1	<=	8'h59;//Y
+							country2 <= 8'h44;//D 
+							gmt_hour <= 8'd10;
+							gmt_min	<=	8'd0;
+						end
+				16	:	begin
+							country0 <= 8'h4E;//N
+							country1	<=	8'h4F;//O
+							country2 <= 8'h55;//U 
+							gmt_hour <= 8'd11;
+							gmt_min	<=	8'd0;
+						end
+				17	:	begin
+							country0 <= 8'h57;//W
+							country1	<=	8'h4C;//L
+							country2 <= 8'h47;//G 
+							gmt_hour <= 8'd12;
+							gmt_min	<=	8'd0;
+						end
+				default: begin
+						country0 <= 8'h20;//
+						country1	<=	8'h20;//
+						country2 <= 8'h20;//
+						gmt_hour <= 8'd0;
+						gmt_min	<=	8'd0;
+						end
+			endcase
 			case (index)
 				00 : out <= 8'h30+thoYear;
 				01 : out	<=	8'h30+hunYear;
@@ -105,7 +289,8 @@
 				08 : out	<=	8'h30+tenDay;
 				09 : out	<=	8'h30+oneDay;
 				10 : out	<=	8'h20;
-				11 : out	<=	8'h20;
+				11 : if(bin_alarm > 0) out	<=	8'h41;//A
+						else	out	<=	8'h20;
 				12 : out	<=	8'h20;
 				13 : if(week == 0) out <= 8'h53;
 					  else if(week==1) out <= 8'h4D;
@@ -143,17 +328,17 @@
 				26 : out	<=	8'h3A;//:
 				27 : out	<=	8'h30+tenSecond;
 				28 : out	<=	8'h30+oneSecond;
-				29 : out	<=	8'h20;
-				30 : out	<=	8'h20;
-				31 : 	if(bin_alarm > 0) out	<=	8'h41;//A
-						else	out	<=	8'h20;
+				29 : out	<=	country0;
+				30 : out	<=	country1;
+				31 : out	<=	country2;
 			endcase
 			current_time	<=	{year,month,day,hour,minute,second};
 			if(bin_alarm > 0)
 				if(current_time > bin_alarm)
 					if(blink==1)
-						out 	<= 8'h20;
+						out 	<= 8'h20;				
 		end
+	end
 endmodule
 				
 				

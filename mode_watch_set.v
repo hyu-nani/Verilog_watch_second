@@ -12,10 +12,12 @@ module	mode_watch_set (
 					bin_time,
 					en_time,
 					index,
-					out);
+					out,
+					GMT);
 					
 	input				clk, rst;
 	input				clk1sec;
+	input		[4:0]	GMT;
 	input		[3:0] sw_in;
 	input		[11:0]year;
 	input		[7:0]	month,day,hour,minute,second;
@@ -201,7 +203,7 @@ module	mode_watch_set (
 				else if(cursor == 3'd5 && second_set > 0)
 					second_set	<=	second_set - 1;
 				else if(cursor == 3'd6)begin
-					year_set		<= year;
+					year_set		<= year+GMT;
 					month_set	<=	month;
 					day_set		<=	day;
 					hour_set		<=	hour;
