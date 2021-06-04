@@ -29,6 +29,7 @@ module	digital_clock	(
 	wire			[3:0] dip_sw;
 	wire			[4:0] cursor;
 	wire			[2:0] week;
+	wire			[4:0]	gmt;
 	wire					en_100hz;
 	wire			[7:0] data_mode0,data_mode1,data_mode2,data_mode3;
 	reg			[7:0]	data_char;
@@ -116,7 +117,7 @@ module	digital_clock	(
 										.out			(data_mode0),
 										.bin_alarm	(bin_alarm),
 										.week			(week),
-										.gmt_out		());
+										.gmt_out		(gmt));
 										
 	mode_watch_set			MODE1 (
 										.clk			(clk),
@@ -132,7 +133,8 @@ module	digital_clock	(
 										.bin_time	(bin_time),
 										.en_time		(en_time),
 										.index		(index_char),
-										.out			(data_mode1));
+										.out			(data_mode1),
+										.GMT			(gmt));
 										
 	mode_alarm				MODE2	(
 										.clk			(clk),

@@ -32,6 +32,7 @@ module	mode_watch_set (
 	reg		[11:0]year_set;
 	reg		[7:0] month_set, day_set, hour_set, minute_set, second_set;
 	
+	wire		[4:0]	GMT;
 	wire		[4:0]	index;
 	wire		[11:0]year;
 	wire		[7:0]	month,day,hour,minute,second;
@@ -43,6 +44,8 @@ module	mode_watch_set (
 	reg				blink;
 	reg		[2:0] cursor;
 	reg		[4:0]	max_date;
+	reg		[7:0]	gmt_hour,gmt_min,gmt_day;
+	reg		[7:0]	cal_hour,cal_min,cal_day;
 	wire				leap_year;
 	
 	assign leap_year = (((year_set % 4) == 0 && (year_set % 100) != 0) || (year_set % 400) == 0) ? 1'b1 : 1'b0;
@@ -61,7 +64,7 @@ module	mode_watch_set (
 										
 	bin2bcd			 CVT_minute ( 															// 분
 										.clk			(clk),
-										.bin_bcd		(minute_set),
+										.bin_bcd		(cal_min),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenMinute),
@@ -69,7 +72,7 @@ module	mode_watch_set (
 	
 	bin2bcd				CVT_hour ( 															// 시간
 										.clk			(clk),
-										.bin_bcd		(hour_set),
+										.bin_bcd		(cal_hour),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenHour),
@@ -77,7 +80,7 @@ module	mode_watch_set (
 										
 	bin2bcd				  CVT_day ( 															// 일
 										.clk			(clk),
-										.bin_bcd		(day_set),
+										.bin_bcd		(cal_day),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenDay),
@@ -117,6 +120,130 @@ module	mode_watch_set (
 						max_date <=	8'd30;
 				default : max_date <= 0;
 			endcase
+			case(GMT)
+				0	:	begin
+							gmt_hour <= 8'd0;
+							gmt_min	<=	8'd0;
+						end
+				1	:	begin
+							gmt_hour <= 8'd1;
+							gmt_min	<=	8'd0;
+						end
+				2	: 	begin
+							gmt_hour <= 8'd2;
+							gmt_min	<=	8'd0;
+						end
+				3	: 	begin
+							gmt_hour <= 8'd3;
+							gmt_min	<=	8'd0;
+						end
+				4	:	begin
+							gmt_hour <= 8'd3;
+							gmt_min	<=	8'd30;
+						end
+				5	:	begin
+							gmt_hour <= 8'd4;
+							gmt_min	<=	8'd0;
+						end
+				6	:	begin
+							gmt_hour <= 8'd4;
+							gmt_min	<=	8'd30;
+						end
+				7	:	begin
+							gmt_hour <= 8'd5;
+							gmt_min	<=	8'd0;
+						end
+				8	:	begin
+							gmt_hour <= 8'd5;
+							gmt_min	<=	8'd30;
+						end
+				9	:	begin
+							gmt_hour <= 8'd6;
+							gmt_min	<=	8'd0;
+						end
+				10	:	begin
+							gmt_hour <= 8'd6;
+							gmt_min	<=	8'd30;
+						end
+				11	:	begin
+							gmt_hour <= 8'd7;
+							gmt_min	<=	8'd0;
+						end
+				12	:	begin
+							gmt_hour <= 8'd8;
+							gmt_min	<=	8'd0;
+						end
+				13	:	begin
+							gmt_hour <= 8'd9;
+							gmt_min	<=	8'd0;
+						end
+				14	:	begin
+							gmt_hour <= 8'd9;
+							gmt_min	<=	8'd30;
+						end
+				15	:	begin
+							gmt_hour <= 8'd10;
+							gmt_min	<=	8'd0;
+						end
+				16	:	begin
+							gmt_hour <= 8'd11;
+							gmt_min	<=	8'd0;
+						end
+				17	:	begin
+							gmt_hour <= 8'd12;
+							gmt_min	<=	8'd0;
+						end
+				default: begin
+						gmt_hour <= 8'd0;
+						gmt_min	<=	8'd0;
+						end
+			endcase
+			/////////////////////////////////////////////////// GMT hour calcultation
+			cal_day	=	day_set + gmt_day;
+			cal_hour	=	hour_set + gmt_hour;
+			cal_min	=	minute_set + gmt_min;
+			if(	  cal_day >= max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin 	//111
+				cal_day	<=	1'd1;
+				cal_hour	<=	hour_set + gmt_hour - 8'd23;
+				cal_min	<=	minute_set +gmt_min - 8'd60;
+			end
+			else if(cal_day >= max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin						//110
+				cal_day	<=	1'd1;
+				cal_hour	<=	hour_set + gmt_hour - 8'd24;
+				cal_min	<=	minute_set +gmt_min;
+			end
+			else if(cal_day >= max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin						//101
+				//cal_day	<=	1'd1;
+				cal_hour	<=	hour_set + gmt_hour + 1'd1;
+				cal_min	<=	minute_set + gmt_min - 8'd60;
+			end
+			else if(cal_day > max_date && cal_hour < 8'd23 && cal_min < 8'd59)begin													//100
+				//cal_day	<=	1'd1;
+				cal_hour	<=	hour_set + gmt_hour;
+				cal_min	<=	minute_set + gmt_min;
+			end
+			else if(cal_day < max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin							//011
+				cal_day	<=	day_set + gmt_day + 1'd1;
+				cal_hour	<=	hour_set + gmt_hour - 8'd23;
+				cal_min	<=	minute_set + gmt_min - 8'd60;
+			end
+			else if(cal_day < max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin													//010
+				cal_day	<=	day_set + gmt_day + 1'd1;
+				cal_hour	<=	hour_set + gmt_hour - 8'd24;
+				cal_min	<=	minute_set + gmt_min;
+			end
+			else if(cal_day < max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin														//001
+				cal_day	<=	day_set + gmt_day;
+				cal_hour	<=	hour_set + gmt_hour + 1'd1;
+				cal_min	<=	minute_set + gmt_min - 8'd60;
+			end
+			else begin
+				cal_day	<=	day_set + gmt_day;
+				cal_hour	<=	hour_set + gmt_hour;
+				cal_min	<=	minute_set + gmt_min;
+			end
+		
+			/////////////////////////////////////////////////////
 			case (index)
 				00 : out <= 8'h53;//S
 				01 : out	<=	8'h45;//E
@@ -205,7 +332,7 @@ module	mode_watch_set (
 				else if(cursor == 3'd5 && second_set > 0)
 					second_set	<=	second_set - 1;
 				else if(cursor == 3'd6)begin
-					year_set		<= year+GMT;
+					year_set		<= year;
 					month_set	<=	month;
 					day_set		<=	day;
 					hour_set		<=	hour;
