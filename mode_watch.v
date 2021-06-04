@@ -43,7 +43,7 @@
 	reg				blink;
 	reg		[4:0]	gmt_out;
 	reg		[7:0]	country0,country1,country2;
-	reg		[4:0] gmt_day,gmt_hour,gmt_min;
+	reg		[7:0] gmt_day,gmt_hour,gmt_min;
 	reg		[4:0] max_date;
 	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
@@ -122,39 +122,7 @@
 				if(gmt_out == 0)
 					gmt_out <= 5'd17;
 			end	
-			///////////////////////////////////////////////////
-			if(minute+gmt_min > 8'd59)begin
-				cal_min <= minute + gmt_min - 8'd60;
-				if(hour+gmt_hour > 8'd22)begin
-					cal_hour <= hour + gmt_hour - 8'd23;
-					cal_day	<=	day + gmt_day + 1'd1;
-				end
-				else
-					cal_hour	<=	hour + gmt_hour + 1'd1;	
-				if(day>max_date)
-					cal_day	<=	1;
-			end
-			else if(hour+gmt_hour > 8'd23)begin
-				cal_day		<= day + gmt_day + 1;
-				if(minute+gmt_min > 8'd59)begin
-					cal_day	<=	day + gmt_day + 1'd1;
-					cal_min 	<= minute + gmt_min - 8'd60;
-					cal_hour	<=	hour + gmt_hour - 8'd23;	
-				end
-				else begin
-					cal_hour	<=	hour + gmt_hour - 6'd24;
-					cal_min 	<= minute + gmt_min;
-				end
-				if(day + gmt_day>max_date)
-					cal_day	<=	1;
-			end
-			else begin
-				cal_day	<=	day + gmt_day;
-				cal_hour	<=	hour + gmt_hour;
-				cal_min	<=	minute + gmt_min;
-			end
 			
-			/////////////////////////////////////////////////////
 			case(gmt_out)
 				0	:	begin
 							country0 <= 8'h4C;//L
@@ -290,6 +258,52 @@
 						gmt_min	<=	8'd0;
 						end
 			endcase
+			/////////////////////////////////////////////////// GMT hour calcultation
+			cal_day	=	day + gmt_day;
+			cal_hour	=	hour + gmt_hour;
+			cal_min	=	minute + gmt_min;
+			if(	  cal_day >= max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin 	//111
+				cal_day	<=	1'd1;
+				cal_hour	<=	hour + gmt_hour - 8'd23;
+				cal_min	<=	minute +gmt_min - 8'd60;
+			end
+			else if(cal_day >= max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin						//110
+				cal_day	<=	1'd1;
+				cal_hour	<=	hour + gmt_hour - 8'd24;
+				cal_min	<=	minute +gmt_min;
+			end
+			else if(cal_day >= max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin						//101
+				//cal_day	<=	1'd1;
+				cal_hour	<=	hour + gmt_hour + 1'd1;
+				cal_min	<=	minute + gmt_min - 8'd60;
+			end
+			else if(cal_day > max_date && cal_hour < 8'd23 && cal_min < 8'd59)begin													//100
+				//cal_day	<=	1'd1;
+				cal_hour	<=	hour + gmt_hour;
+				cal_min	<=	minute + gmt_min;
+			end
+			else if(cal_day < max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin							//011
+				cal_day	<=	day + gmt_day + 1'd1;
+				cal_hour	<=	hour + gmt_hour - 8'd23;
+				cal_min	<=	minute + gmt_min - 8'd60;
+			end
+			else if(cal_day < max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin													//010
+				cal_day	<=	day + gmt_day + 1'd1;
+				cal_hour	<=	hour + gmt_hour - 8'd24;
+				cal_min	<=	minute + gmt_min;
+			end
+			else if(cal_day < max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin														//001
+				cal_day	<=	day + gmt_day;
+				cal_hour	<=	hour + gmt_hour + 1'd1;
+				cal_min	<=	minute + gmt_min - 8'd60;
+			end
+			else begin
+				cal_day	<=	day + gmt_day;
+				cal_hour	<=	hour + gmt_hour;
+				cal_min	<=	minute + gmt_min;
+			end
+		
+			/////////////////////////////////////////////////////
 			case (index)
 				00 : out <= 8'h30+thoYear;
 				01 : out	<=	8'h30+hunYear;
