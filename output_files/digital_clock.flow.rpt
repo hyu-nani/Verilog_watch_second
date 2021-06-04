@@ -1,5 +1,5 @@
 Flow report for digital_clock
-Fri Jun 04 22:10:44 2021
+Sat Jun 05 01:21:00 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 04 22:10:44 2021       ;
+; Flow Status                        ; Successful - Sat Jun 05 01:21:00 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,877 / 6,272 ( 62 % )                      ;
-;     Total combinational functions  ; 3,775 / 6,272 ( 60 % )                      ;
-;     Dedicated logic registers      ; 798 / 6,272 ( 13 % )                        ;
-; Total registers                    ; 798                                         ;
+; Total logic elements               ; 3,850 / 6,272 ( 61 % )                      ;
+;     Total combinational functions  ; 3,753 / 6,272 ( 60 % )                      ;
+;     Dedicated logic registers      ; 793 / 6,272 ( 13 % )                        ;
+; Total registers                    ; 793                                         ;
 ; Total pins                         ; 21 / 92 ( 23 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/04/2021 22:09:46 ;
+; Start date & time ; 06/05/2021 01:20:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; digital_clock       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 174508023526339.162281218620016        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 174508023526339.162282360211916        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -96,12 +96,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:25     ; 1.0                     ; 4817 MB             ; 00:00:37                           ;
-; Fitter               ; 00:00:17     ; 1.1                     ; 5542 MB             ; 00:00:29                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4677 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.5                     ; 4817 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 4684 MB             ; 00:00:05                           ;
-; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:18                           ;
+; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 4812 MB             ; 00:00:38                           ;
+; Fitter               ; 00:00:16     ; 1.1                     ; 5526 MB             ; 00:00:27                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4675 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.2                     ; 4814 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4682 MB             ; 00:00:05                           ;
+; Total                ; 00:00:53     ; --                      ; --                  ; 00:01:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -7,6 +7,6 @@ Warning (10273): Verilog HDL warning at watch_time.v(112): extended using "x" or
 Warning (10273): Verilog HDL warning at watch_time.v(121): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 121
 Warning (10273): Verilog HDL warning at watch_time.v(130): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 130
 Warning (10273): Verilog HDL warning at watch_time.v(139): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 139
-Warning (10268): Verilog HDL information at mode_watch.v(111): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 111
+Warning (10268): Verilog HDL information at mode_watch.v(112): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 112
 Warning (10268): Verilog HDL information at mode_watch_set.v(108): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 108
 Info (10281): Verilog HDL Declaration information at lcd_driver.v(34): object "state" differs only in case from object "STATE" in the same scope File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/lcd_driver.v Line: 34

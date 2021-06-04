@@ -38,6 +38,7 @@
 	wire		[7:0] month,day,hour,minute,second;
 	wire				leap_year;
 	reg		[7:0]	cal_day,cal_hour,cal_min;
+	reg		[2:0]	calweek;
 	reg		[51:0]current_time;
 	reg		[7:0] out;
 	reg				blink;
@@ -259,22 +260,47 @@
 						end
 			endcase
 			/////////////////////////////////////////////////// GMT hour calcultation
+			calweek	=	week;
 			cal_day	=	day + gmt_day;
 			cal_hour	=	hour + gmt_hour;
 			cal_min	=	minute + gmt_min;
+			
+			
+			if(cal_hour	>= 8'd24)begin
+				cal_hour= hour + gmt_hour - 8'd24;
+				cal_day = day + gmt_day + 8'd1;
+				calweek = week + 3'd1;
+			end
+			if(cal_min	>= 8'd59)begin
+				cal_min = minute + gmt_min - 8'd60;
+				cal_hour= hour + gmt_hour + 8'd1;
+				if(cal_hour	>= 8'd24)begin
+					cal_hour= hour + gmt_hour - 8'd23;
+					cal_day = day + gmt_day + 8'd1;
+					calweek = week + 3'd1;
+				end
+			end
+			if(cal_day > max_date)begin
+				cal_day = 8'd1;
+			end
+			
+			
+			/*
 			if(	  cal_day >= max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin 	//111
-				cal_day	<=	1'd1;
+				calweek	<=	week + 3'd1;
+				cal_day	<=	8'd1;
 				cal_hour	<=	hour + gmt_hour - 8'd23;
 				cal_min	<=	minute +gmt_min - 8'd60;
 			end
 			else if(cal_day >= max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin						//110
-				cal_day	<=	1'd1;
+				calweek	<=	week + 3'd1;
+				cal_day	<=	8'd1;
 				cal_hour	<=	hour + gmt_hour - 8'd24;
 				cal_min	<=	minute +gmt_min;
 			end
 			else if(cal_day >= max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin						//101
 				//cal_day	<=	1'd1;
-				cal_hour	<=	hour + gmt_hour + 1'd1;
+				cal_hour	<=	hour + gmt_hour + 8'd1;
 				cal_min	<=	minute + gmt_min - 8'd60;
 			end
 			else if(cal_day > max_date && cal_hour < 8'd23 && cal_min < 8'd59)begin													//100
@@ -282,27 +308,30 @@
 				cal_hour	<=	hour + gmt_hour;
 				cal_min	<=	minute + gmt_min;
 			end
-			else if(cal_day < max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin							//011
-				cal_day	<=	day + gmt_day + 1'd1;
+			else if(cal_day < max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin			//011
+				calweek	<=	week + 3'd1;
+				cal_day	<=	day + gmt_day + 8'd1;
 				cal_hour	<=	hour + gmt_hour - 8'd23;
 				cal_min	<=	minute + gmt_min - 8'd60;
 			end
-			else if(cal_day < max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin													//010
-				cal_day	<=	day + gmt_day + 1'd1;
+			else if(cal_day < max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin				//010
+				calweek	<=	week + 3'd1;
+				cal_day	<=	day + gmt_day + 8'd1;
 				cal_hour	<=	hour + gmt_hour - 8'd24;
 				cal_min	<=	minute + gmt_min;
 			end
 			else if(cal_day < max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin														//001
 				cal_day	<=	day + gmt_day;
-				cal_hour	<=	hour + gmt_hour + 1'd1;
+				cal_hour	<=	hour + gmt_hour;
 				cal_min	<=	minute + gmt_min - 8'd60;
 			end
 			else begin
+				calweek	<=	week;
 				cal_day	<=	day + gmt_day;
 				cal_hour	<=	hour + gmt_hour;
 				cal_min	<=	minute + gmt_min;
 			end
-		
+		*/
 			/////////////////////////////////////////////////////
 			case (index)
 				00 : out <= 8'h30+thoYear;
@@ -319,27 +348,30 @@
 				11 : if(bin_alarm > 0) out	<=	8'h41;//A
 						else	out	<=	8'h20;
 				12 : out	<=	8'h20;
-				13 : if(week == 0) out <= 8'h53;
-					  else if(week==1) out <= 8'h4D;
-					  else if(week==2) out <= 8'h54;
-					  else if(week==3) out <= 8'h57;
-					  else if(week==4) out <= 8'h54;
-					  else if(week==5) out <= 8'h46;
-					  else out <= 8'h53;
-				14 : if(week == 0) out <= 8'h55;
-					  else if(week==1) out <= 8'h4F;
-					  else if(week==2) out <= 8'h55;
-					  else if(week==3) out <= 8'h45;
-					  else if(week==4) out <= 8'h48;
-					  else if(week==5) out <= 8'h52;
-					  else out <= 8'h41;
-				15 : if(week == 0) out <= 8'h4E;
-					  else if(week==1) out <= 8'h4E;
-					  else if(week==2) out <= 8'h45;
-					  else if(week==3) out <= 8'h4E;
-					  else if(week==4) out <= 8'h55;
-					  else if(week==5) out <= 8'h49;
-					  else out <= 8'h54;
+				13 : if(calweek == 3'd0) 	 out <= 8'h53;	//S
+					  else if(calweek==3'd1) out <= 8'h4D;	//M
+					  else if(calweek==3'd2) out <= 8'h54;	//T
+					  else if(calweek==3'd3) out <= 8'h57;	//W
+					  else if(calweek==3'd4) out <= 8'h54;	//T
+					  else if(calweek==3'd5) out <= 8'h46;	//F
+					  else if(calweek==3'd6) out <= 8'h53;	//S
+					  else out <= 8'h20;
+				14 : if(calweek == 3'd0) 	 out <= 8'h55;	//U
+					  else if(calweek==3'd1) out <= 8'h4F;	//O
+					  else if(calweek==3'd2) out <= 8'h55;	//U
+					  else if(calweek==3'd3) out <= 8'h45;	//E
+					  else if(calweek==3'd4) out <= 8'h48;	//H
+					  else if(calweek==3'd5) out <= 8'h52;	//R
+					  else if(calweek==3'd6) out <= 8'h41;	//A
+					  else out <= 8'h20;
+				15 : if(calweek == 3'd0) 	 out <= 8'h4E;	//N
+					  else if(calweek==3'd1) out <= 8'h4E;	//N
+					  else if(calweek==3'd2) out <= 8'h45;	//E
+					  else if(calweek==3'd3) out <= 8'h44;	//D
+					  else if(calweek==3'd4) out <= 8'h55;	//U
+					  else if(calweek==3'd5) out <= 8'h49;	//I
+					  else if(calweek==3'd6) out <= 8'h54;	//T
+					  else out <= 8'h20;
 				
 				// line2
 				16 : out	<=	8'h54;//T
