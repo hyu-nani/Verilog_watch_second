@@ -99,6 +99,8 @@ module	mode_watch_set (
 										.hun			(hunYear),
 										.ten			(tenYear),
 										.one			(oneYear));
+										
+										
 	
 	always @ ( posedge clk or negedge rst )begin
 		if(!rst)begin

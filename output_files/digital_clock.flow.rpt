@@ -1,5 +1,5 @@
 Flow report for digital_clock
-Thu Jun 03 23:35:09 2021
+Fri Jun 04 17:12:59 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun 03 23:35:09 2021       ;
+; Flow Status                        ; Successful - Fri Jun 04 17:12:59 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,783 / 6,272 ( 60 % )                      ;
-;     Total combinational functions  ; 3,667 / 6,272 ( 58 % )                      ;
+; Total logic elements               ; 3,787 / 6,272 ( 60 % )                      ;
+;     Total combinational functions  ; 3,692 / 6,272 ( 59 % )                      ;
 ;     Dedicated logic registers      ; 780 / 6,272 ( 12 % )                        ;
 ; Total registers                    ; 780                                         ;
 ; Total pins                         ; 21 / 92 ( 23 % )                            ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/03/2021 23:34:13 ;
+; Start date & time ; 06/04/2021 17:12:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; digital_clock       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 174508023526339.162273085321968        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 145253504022273.162279432600288        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -96,12 +96,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 4810 MB             ; 00:00:35                           ;
-; Fitter               ; 00:00:16     ; 1.1                     ; 5528 MB             ; 00:00:27                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4678 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.6                     ; 4820 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4682 MB             ; 00:00:04                           ;
-; Total                ; 00:00:50     ; --                      ; --                  ; 00:01:13                           ;
+; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 4829 MB             ; 00:00:33                           ;
+; Fitter               ; 00:00:16     ; 1.2                     ; 5657 MB             ; 00:00:27                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4677 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 4815 MB             ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 4679 MB             ; 00:00:04                           ;
+; Total                ; 00:00:50     ; --                      ; --                  ; 00:01:10                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -110,11 +110,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-1NF2LJ4  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-1NF2LJ4  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-1NF2LJ4  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-1NF2LJ4  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-1NF2LJ4  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-1MEJRST  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-1MEJRST  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-1MEJRST  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-1MEJRST  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-1MEJRST  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

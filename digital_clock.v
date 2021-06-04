@@ -111,7 +111,7 @@ module	digital_clock	(
 										.hour			(hour),
 										.minute		(minute),
 										.second		(second),
-										.max_date	(max_d),
+										//.max_date	(max_d),
 										.index		(index_char),
 										.out			(data_mode0),
 										.bin_alarm	(bin_alarm),

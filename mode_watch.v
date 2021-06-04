@@ -9,7 +9,7 @@
 										hour,
 										minute,
 										second,
-										max_date,
+										//max_date,
 										index,
 										out,
 										bin_alarm,
@@ -24,7 +24,7 @@
 	input		[11:0]year;
 	input		[7:0] month,day,hour,minute,second;
 	input		[4:0] index;
-	input		[4:0]	max_date;
+	//input		[4:0]	max_date;
 	input		[51:0]bin_alarm;
 	input		[2:0] week;
 	output	[7:0] out;
@@ -36,6 +36,7 @@
 	wire		[3:0]	tenHour, oneHour, tenMinute, oneMinute, tenSecond, oneSecond;
 	wire		[11:0]year;
 	wire		[7:0] month,day,hour,minute,second;
+	wire				leap_year;
 	reg		[7:0]	cal_day,cal_hour,cal_min;
 	reg		[51:0]current_time;
 	reg		[7:0] out;
@@ -43,7 +44,7 @@
 	reg		[4:0]	gmt_out;
 	reg		[7:0]	country0,country1,country2;
 	reg		[4:0] gmt_day,gmt_hour,gmt_min;
-	
+	reg		[4:0] max_date;
 	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
 										.bin_bcd		(second),
@@ -96,6 +97,17 @@
 		blink 	<= 1 - blink;
 	end
 	
+	always @(*)
+		case(month)
+				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
+						max_date	<= 8'd31;
+				8'd2 :	
+						max_date	<= 8'd28+leap_year;
+				8'd4, 8'd6, 8'd9, 8'd11	:
+						max_date <=	8'd30;
+				default : max_date <= 0;
+		endcase
+	
 	always @ ( posedge clk or negedge rst )begin
 		if(!rst)
 			out	<=	8'h00;
@@ -115,14 +127,15 @@
 				cal_min <= minute + gmt_min - 8'd60;
 				if(hour+gmt_hour > 8'd22)begin
 					cal_hour <= hour + gmt_hour - 8'd23;
-					cal_day	<=	day + 1'd1;
+					cal_day	<=	day + gmt_day + 1'd1;
 				end
 				else
 					cal_hour	<=	hour + gmt_hour + 1'd1;	
-				if(day+gmt_day>max_date)
-					cal_day	<=	0;
+				if(day>max_date)
+					cal_day	<=	1;
 			end
 			else if(hour+gmt_hour > 8'd23)begin
+				cal_day		<= day + gmt_day + 1;
 				if(minute+gmt_min > 8'd59)begin
 					cal_day	<=	day + gmt_day + 1'd1;
 					cal_min 	<= minute + gmt_min - 8'd60;
@@ -132,8 +145,8 @@
 					cal_hour	<=	hour + gmt_hour - 6'd24;
 					cal_min 	<= minute + gmt_min;
 				end
-				if(day+gmt_day>max_date)
-					cal_day	<=	0;
+				if(day + gmt_day>max_date)
+					cal_day	<=	1;
 			end
 			else begin
 				cal_day	<=	day + gmt_day;
