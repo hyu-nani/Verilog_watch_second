@@ -33,30 +33,25 @@ module	digital_clock	(
 	wire					en_100hz;
 	wire			[7:0] data_mode0,data_mode1,data_mode2,data_mode3;
 	reg			[7:0]	data_char;
-	reg			[3:0]	data_sw0,data_sw1,data_sw2,data_sw3;
+	wire			[3:0]	data_sw0,data_sw1,data_sw2,data_sw3;
 	
 	assign		rstn = ~rst;
 	
-	always @(*) begin
-		case(dip_sw)
-			4'b0001		:	begin
-									data_char	<=	data_mode1;
-									data_sw1		<=	sw_out;
-								end
-			4'b0010		:	begin
-									data_char	<=	data_mode2;
-									data_sw2		<=	sw_out;
-								end
-			4'b0100		:	begin
-									data_char	<=	data_mode3;
-									data_sw3		<=	sw_out;
-								end
-			default		:	begin
-									data_char	<=	data_mode0;
-									data_sw0		<=	sw_out;
-								end
-		endcase
-	end
+	sw_mux						M0	(
+										.adress		(dip_sw),
+										.in			(sw_out),
+										.out0			(data_sw0),
+										.out1			(data_sw1),
+										.out2			(data_sw2),
+										.out3			(data_sw3));
+										
+	data_demux					M1	(
+										.adress		(dip_sw),
+										.in0			(data_mode0),
+										.in1			(data_mode1),
+										.in2			(data_mode2),
+										.in3			(data_mode3),
+										.out			(data_char));
 	
 	debouncer_clk				sw0	(
 										.clk			(clk),
@@ -154,10 +149,7 @@ module	digital_clock	(
 	mode_stopwatch			MODE3	(
 										.clk			(clk),
 										.rst			(rstn),
-										.sw0			(sw_in[0]),
-										.sw1			(sw_in[1]),
-										.sw2			(sw_in[2]),
-										.sw3			(sw_in[3]),
+										.sw_in		(data_sw3),
 										.index		(index_char),
 										.out			(data_mode3));
 								

@@ -1,39 +1,34 @@
 module mode_stopwatch(
 							clk,
 							rst,
-							sw0,
-							sw1,
-							sw2,
-							sw3,
+							sw_in,
 							index,
 							out);
 							
 	input					clk, rst;
-	input					sw0;
-	input					sw1;
-	input					sw2;
-	input					sw3;
+	input			[3:0]	sw_in;
 	input			[4:0] index;
 	
 	output		[7:0] out;
 	
 	wire					en_100hz;
+	wire			[3:0]	sw_in;	
 	wire			[4:0] index;	
 	wire			[3:0] tenMilSecond, oneMilSecond, tenSec_stop, oneSec_stop, tenMin_stop, oneMin_stop;
 	reg			[7:0]	milsec, sec_stop, min_stop;
 	reg			[7:0] out;
 	reg					run,sw_out;
-	
+	/*
 	debouncer_clk				U0	(
 										.clk			(clk),
 										.rst			(rst),
-										.in			(sw0),
+										.in			(),
 										.out			(sw_out));
 	
-	always @(posedge sw_out)begin
+	always @(posedge sw_in)begin
 		run <= 1- run;
 	end
-	
+	*/
 	en_clk_100hz		STOPCLK (
 									.clk			(clk),
 									.rst			(rst),
@@ -83,13 +78,13 @@ module mode_stopwatch(
 				09 : out	<=	8'h68;//h
 				10 : out	<=	8'h20;
 				11 : out	<=	8'h20;
-				12 : 	if(sw0) 	out	<=	8'h22;
+				12 : 	if(sw_in[0]) 	out	<=	8'h22;
 						else		out	<=	8'h21;
-				13 :	if(sw1) 	out	<=	8'h22;
+				13 :	if(sw_in[1]) 	out	<=	8'h22;
 						else		out	<=	8'h21;
-				14 :	if(sw2) 	out	<=	8'h22;
+				14 :	if(sw_in[2]) 	out	<=	8'h22;
 						else		out	<=	8'h21;
-				15 :	if(sw3) 	out	<=	8'h22;
+				15 :	if(sw_in[3]) 	out	<=	8'h22;
 						else		out	<=	8'h21;
 				
 				// line2
@@ -140,10 +135,13 @@ module mode_stopwatch(
 					milsec		<= milsec;
 				end		
 			end
-			else if(sw3)begin
+			if(sw_in==4'b1000)begin
 				min_stop		<= 0;
 				sec_stop		<= 0;
 				milsec		<= 0;
+			end
+			else if(sw_in==4'b0001)begin
+				run <= 1- run;
 			end
 		end
 endmodule	

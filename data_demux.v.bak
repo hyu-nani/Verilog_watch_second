@@ -1,0 +1,35 @@
+module data_demux(
+		clk,
+		rst,
+		adress,
+		in0,
+		in1,
+		in2,
+		in3,
+		in4,
+		out);
+		
+		input			clk,rst;
+		input	[3:0]	adress;
+		input	[3:0]	in0,in1,in2,in3,in4;
+		
+		output[3:0]	out;
+		
+		wire	[3:0]	in0,in1,in2,in3,in4;
+		reg	[3:0]	out;
+		
+		always @(posedge clk or negedge rst)begin
+			if(!rst)
+				out	<=	4'd0;
+			else
+				case(adress)
+					4'b0001	:	out	<=	in1;
+					4'b0010	:	out	<=	in2;
+					4'b0100	:	out	<=	in3;
+					4'b1000	:	out	<=	in4;
+					default	:	out	<=	in0;
+				endcase
+		end
+		
+		
+endmodule

@@ -1,0 +1,10 @@
+module DEMUX(
+		clk,
+		rst,
+		adress,
+		in0,
+		in1,
+		in2,
+		in3,
+		in4,
+		out);
