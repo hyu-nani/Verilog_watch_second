@@ -13,8 +13,10 @@
 										index,
 										out,
 										bin_alarm,
+										rst_alarm,
 										week,
-										gmt_out
+										gmt_out,
+										alarmLED
 								);
 	
 	input				clk;
@@ -29,6 +31,8 @@
 	input		[2:0] week;
 	output	[7:0] out;
 	output	[4:0]	gmt_out;
+	output	[7:0]	alarmLED;
+	output			rst_alarm;
 	
 	wire		[3:0]	sw;
 	wire		[4:0] index;
@@ -42,10 +46,12 @@
 	reg		[51:0]current_time;
 	reg		[7:0] out;
 	reg				blink;
+	reg				rst_alarm;
 	reg		[4:0]	gmt_out;
 	reg		[7:0]	country0,country1,country2;
 	reg		[7:0] gmt_day,gmt_hour,gmt_min;
 	reg		[4:0] max_date;
+	reg		[7:0]	alarmLED;
 	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
 										.bin_bcd		(second),
@@ -110,8 +116,11 @@
 		endcase
 	
 	always @ ( posedge clk or negedge rst )begin
-		if(!rst)
+		if(!rst)begin
 			out	<=	8'h00;
+			alarmLED<=8'hFF;
+			rst_alarm<=1'b0;
+		end
 		else begin
 			if(sw_in == 4'b1000)begin
 				gmt_out <= gmt_out+1;
@@ -123,7 +132,11 @@
 				if(gmt_out == 0)
 					gmt_out <= 5'd17;
 			end	
-			
+			if(sw_in == 4'b0010&&bin_alarm > 0&&current_time > bin_alarm)
+				rst_alarm <= 1'b1;
+			else
+				rst_alarm <= 1'b0;
+					
 			case(gmt_out)
 				0	:	begin
 							country0 <= 8'h4C;//L
@@ -271,7 +284,7 @@
 				cal_day = day + gmt_day + 8'd1;
 				calweek = week + 3'd1;
 			end
-			if(cal_min	>= 8'd59)begin
+			if(cal_min	>= 8'd60)begin
 				cal_min = minute + gmt_min - 8'd60;
 				cal_hour= hour + gmt_hour + 8'd1;
 				if(cal_hour	>= 8'd24)begin
@@ -344,10 +357,12 @@
 				07 : out	<=	8'h2F;///
 				08 : out	<=	8'h30+tenDay;
 				09 : out	<=	8'h30+oneDay;
-				10 : out	<=	8'h20;
+				10 : if(bin_alarm > 0) out	<=	8'h5B;//[
+						else	out	<=	8'h20;
 				11 : if(bin_alarm > 0) out	<=	8'h41;//A
 						else	out	<=	8'h20;
-				12 : out	<=	8'h20;
+				12 : if(bin_alarm > 0) out	<=	8'h5D;//]
+						else	out	<=	8'h20;
 				13 : if(calweek == 3'd0) 	 out <= 8'h53;	//S
 					  else if(calweek==3'd1) out <= 8'h4D;	//M
 					  else if(calweek==3'd2) out <= 8'h54;	//T
@@ -392,10 +407,16 @@
 				31 : out	<=	country2;
 			endcase
 			current_time	<=	{year,month,day,hour,minute,second};
-			if(bin_alarm > 0)
-				if(current_time > bin_alarm)
-					if(blink==1)
-						out 	<= 8'h20;				
+			if(bin_alarm > 0&&current_time > bin_alarm)begin
+				if(blink==1)begin
+					out 	<= 8'h20;
+					alarmLED<=8'hFF;
+				end
+				else
+					alarmLED<=8'h00;
+			end
+			else
+				alarmLED<=8'hFF;
 		end
 	end
 endmodule

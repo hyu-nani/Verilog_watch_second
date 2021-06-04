@@ -67,10 +67,10 @@ module watch_time(
 	always @ (posedge clk or negedge rst) begin
 		if (!rst) begin
 			year		<=	12'd2021;
-			month		<=	8'd5;
-			day		<=	8'd30;
-			hour		<=	8'd18;
-			minute	<=	8'd32;
+			month		<=	8'd6;
+			day		<=	8'd2;
+			hour		<=	8'd6;
+			minute	<=	8'd0;
 			second	<=	8'd0;
 		end
 		else if(set_time==1) begin

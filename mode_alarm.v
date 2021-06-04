@@ -11,7 +11,8 @@ module mode_alarm	(
 					second,
 					index,
 					out,
-					bin_alarm);
+					bin_alarm,
+					rst_alarm);
 					
 	input					clk,rst;
 	input					clk1sec;
@@ -19,7 +20,8 @@ module mode_alarm	(
 	input		[11:0]	year;
 	input		[7:0]		month,day,hour,minute,second;
 	input		[4:0]		index;
-	
+	input					rst_alarm;
+		
 	output	[7:0]		out;
 	output	[51:0]	bin_alarm;
 	
@@ -208,6 +210,14 @@ module mode_alarm	(
 					minute_alarm<=	minute;
 					second_alarm<=	second;
 				end
+			end
+			if(rst_alarm == 1'b1)begin
+				year_alarm	<=	12'd0;
+				month_alarm	<=	8'd0;
+				day_alarm	<=	8'd0;
+				hour_alarm	<=	8'd0;
+				minute_alarm<=	8'd0;
+				second_alarm<=	8'd0;
 			end
 			bin_alarm		<=	{year_alarm,month_alarm,day_alarm,hour_alarm,minute_alarm,second_alarm};
 		end

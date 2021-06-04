@@ -6,7 +6,8 @@ module	digital_clock	(
 							lcd_rs,
 							lcd_rw,
 							lcd_e,
-							lcd_data);
+							lcd_data,
+							led);
 									
 	input					clk, rst;
 	input			[3:0] dip_sw;
@@ -15,6 +16,7 @@ module	digital_clock	(
 	output				lcd_rw;
 	output				lcd_e;
 	output		[7:0] lcd_data;
+	output		[7:0]	led;
 	
 	wire			[11:0] year;
 	wire			[7:0]	month;
@@ -34,7 +36,7 @@ module	digital_clock	(
 	wire			[7:0] data_mode0,data_mode1,data_mode2,data_mode3;
 	reg			[7:0]	data_char;
 	wire			[3:0]	data_sw0,data_sw1,data_sw2,data_sw3;
-	
+	reg			[7:0]	led;
 	assign		rstn = ~rst;
 	
 	sw_mux						M0	(
@@ -112,7 +114,9 @@ module	digital_clock	(
 										.out			(data_mode0),
 										.bin_alarm	(bin_alarm),
 										.week			(week),
-										.gmt_out		(gmt));
+										.gmt_out		(gmt),
+										.alarmLED	(led),
+										.rst_alarm	(rst_alarm));
 										
 	mode_watch_set			MODE1 (
 										.clk			(clk),
@@ -144,7 +148,8 @@ module	digital_clock	(
 										.second		(second),
 										.index		(index_char),
 										.out			(data_mode2),
-										.bin_alarm	(bin_alarm));
+										.bin_alarm	(bin_alarm),
+										.rst_alarm	(rst_alarm));
 
 	mode_stopwatch			MODE3	(
 										.clk			(clk),
