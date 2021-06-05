@@ -283,6 +283,8 @@
 				cal_hour= hour + gmt_hour - 8'd24;
 				cal_day = day + gmt_day + 8'd1;
 				calweek = week + 3'd1;
+				if(calweek == 3'd7)
+					calweek = 3'd0;
 			end
 			if(cal_min	>= 8'd60)begin
 				cal_min = minute + gmt_min - 8'd60;
@@ -291,6 +293,8 @@
 					cal_hour= hour + gmt_hour - 8'd23;
 					cal_day = day + gmt_day + 8'd1;
 					calweek = week + 3'd1;
+					if(calweek == 3'd7)
+						calweek = 3'd0;
 				end
 			end
 			if(cal_day > max_date)begin
