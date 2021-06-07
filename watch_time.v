@@ -68,8 +68,8 @@ module watch_time(
 		if (!rst) begin
 			year		<=	12'd2021;
 			month		<=	8'd6;
-			day		<=	8'd2;
-			hour		<=	8'd6;
+			day		<=	8'd9;
+			hour		<=	8'd0;
 			minute	<=	8'd0;
 			second	<=	8'd0;
 		end
