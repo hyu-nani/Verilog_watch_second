@@ -108,7 +108,7 @@
 	always @(posedge clk1sec) begin
 		blink 	<= 1 - blink;
 	end
-	/*
+	
 	always @(*)
 		case(month)
 				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
@@ -119,7 +119,7 @@
 						max_date <=	8'd30;
 				default : max_date <= 0;
 		endcase
-	*/
+	
 	always @ ( posedge clk or negedge rst )begin
 		if(!rst)begin
 			out		<= 8'h00;
