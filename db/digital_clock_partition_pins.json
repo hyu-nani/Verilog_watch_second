@@ -100,11 +100,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "sw_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "sw_in[0]",
+					"name" : "sw_in[3]",
 					"strict" : false
 				},
 				{
@@ -112,7 +108,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "sw_in[3]",
+					"name" : "sw_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sw_in[0]",
 					"strict" : false
 				}
 			]

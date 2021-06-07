@@ -52,6 +52,11 @@
 	reg		[7:0] gmt_day,gmt_hour,gmt_min;
 	reg		[4:0] max_date;
 	reg		[7:0]	alarmLED;
+	reg				h12or24;
+	reg		[7:0]	HmodeChar;		
+		
+	assign leap_year = (((year % 4) == 0 && (year % 100) != 0) || (year % 400) == 0) ? 1'b1 : 1'b0;
+	
 	bin2bcd			 CVT_second ( 															// 초
 										.clk			(clk),
 										.bin_bcd		(second),
@@ -103,7 +108,7 @@
 	always @(posedge clk1sec) begin
 		blink 	<= 1 - blink;
 	end
-	
+	/*
 	always @(*)
 		case(month)
 				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
@@ -114,12 +119,13 @@
 						max_date <=	8'd30;
 				default : max_date <= 0;
 		endcase
-	
+	*/
 	always @ ( posedge clk or negedge rst )begin
 		if(!rst)begin
-			out	<=	8'h00;
-			alarmLED<=8'hFF;
-			rst_alarm<=1'b0;
+			out		<= 8'h00;
+			alarmLED	<= 8'hFF;
+			rst_alarm<= 1'b0;
+			h12or24	<= 1'b0;
 		end
 		else begin
 			if(sw_in == 4'b1000)begin
@@ -136,7 +142,9 @@
 				rst_alarm <= 1'b1;
 			else
 				rst_alarm <= 1'b0;
-					
+			if(sw_in	==	4'b0001)
+				h12or24	=	1 - h12or24;
+				
 			case(gmt_out)
 				0	:	begin
 							country0 <= 8'h4C;//L
@@ -300,55 +308,18 @@
 			if(cal_day > max_date)begin
 				cal_day = 8'd1;
 			end
+			////////////////////////////////////////////////12 or 24
+			if(h12or24 == 1'b1)begin
+				if(cal_hour > 8'd11)begin
+					HmodeChar <= 8'h50;//P
+					if(cal_hour > 8'd12)
+						cal_hour = cal_hour - 8'd12;
+				end
+				else
+					HmodeChar <= 8'h41;//A	
+			end
 			
 			
-			/*
-			if(	  cal_day >= max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin 	//111
-				calweek	<=	week + 3'd1;
-				cal_day	<=	8'd1;
-				cal_hour	<=	hour + gmt_hour - 8'd23;
-				cal_min	<=	minute +gmt_min - 8'd60;
-			end
-			else if(cal_day >= max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin						//110
-				calweek	<=	week + 3'd1;
-				cal_day	<=	8'd1;
-				cal_hour	<=	hour + gmt_hour - 8'd24;
-				cal_min	<=	minute +gmt_min;
-			end
-			else if(cal_day >= max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin						//101
-				//cal_day	<=	1'd1;
-				cal_hour	<=	hour + gmt_hour + 8'd1;
-				cal_min	<=	minute + gmt_min - 8'd60;
-			end
-			else if(cal_day > max_date && cal_hour < 8'd23 && cal_min < 8'd59)begin													//100
-				//cal_day	<=	1'd1;
-				cal_hour	<=	hour + gmt_hour;
-				cal_min	<=	minute + gmt_min;
-			end
-			else if(cal_day < max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin			//011
-				calweek	<=	week + 3'd1;
-				cal_day	<=	day + gmt_day + 8'd1;
-				cal_hour	<=	hour + gmt_hour - 8'd23;
-				cal_min	<=	minute + gmt_min - 8'd60;
-			end
-			else if(cal_day < max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin				//010
-				calweek	<=	week + 3'd1;
-				cal_day	<=	day + gmt_day + 8'd1;
-				cal_hour	<=	hour + gmt_hour - 8'd24;
-				cal_min	<=	minute + gmt_min;
-			end
-			else if(cal_day < max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin														//001
-				cal_day	<=	day + gmt_day;
-				cal_hour	<=	hour + gmt_hour;
-				cal_min	<=	minute + gmt_min - 8'd60;
-			end
-			else begin
-				calweek	<=	week;
-				cal_day	<=	day + gmt_day;
-				cal_hour	<=	hour + gmt_hour;
-				cal_min	<=	minute + gmt_min;
-			end
-		*/
 			/////////////////////////////////////////////////////
 			case (index)
 				00 : out <= 8'h30+thoYear;
@@ -393,10 +364,17 @@
 					  else out <= 8'h20;
 				
 				// line2
-				16 : out	<=	8'h54;//T
-				17 : out	<=	8'h49;//I
-				18 : out	<=	8'h4D;//M
-				19 : out	<=	8'h45;//E
+				16 : 	if(h12or24) 
+							out <= HmodeChar;
+						else 
+							out <= 8'h20;
+				17 : 	if(h12or24)	out <= 8'h4D;//M
+						else 			out <= 8'h20;//
+				18 : out <=	8'h20;//
+				19 : 	if(leap_year == 1'b1)//'L'Leapyear
+							out <=	8'h4C;//L
+						else
+							out <=	8'h20;//
 				20 : out	<=	8'h20;//
 				21 : out	<=	8'h30+tenHour;
 				22 : out	<=	8'h30+oneHour;
