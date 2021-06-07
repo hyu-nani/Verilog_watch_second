@@ -11,6 +11,7 @@ module mode_alarm	(
 					second,
 					index,
 					out,
+					GMT,
 					bin_alarm,
 					rst_alarm);
 					
@@ -21,7 +22,8 @@ module mode_alarm	(
 	input		[7:0]		month,day,hour,minute,second;
 	input		[4:0]		index;
 	input					rst_alarm;
-		
+	input		[4:0]		GMT;
+	
 	output	[7:0]		out;
 	output	[51:0]	bin_alarm;
 	
@@ -37,6 +39,8 @@ module mode_alarm	(
 	reg		[51:0]	bin_alarm;
 	reg					set_alarm;
 	reg		[4:0]		max_date;
+	reg		[7:0]		gmt_hour,gmt_min,gmt_day;
+	reg		[7:0]		cal_hour,cal_min,cal_day;
 	
 	wire					leap_year;
 	
@@ -56,7 +60,7 @@ module mode_alarm	(
 										
 	bin2bcd			 CVT_minute ( 															// 분
 										.clk			(clk),
-										.bin_bcd		(minute_alarm),
+										.bin_bcd		(cal_min),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenMinute),
@@ -64,7 +68,7 @@ module mode_alarm	(
 	
 	bin2bcd				CVT_hour ( 															// 시간
 										.clk			(clk),
-										.bin_bcd		(hour_alarm),
+										.bin_bcd		(cal_hour),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenHour),
@@ -72,7 +76,7 @@ module mode_alarm	(
 										
 	bin2bcd				  CVT_day ( 															// 일
 										.clk			(clk),
-										.bin_bcd		(day_alarm),
+										.bin_bcd		(cal_day),
 										.rst			(rst),
 										.hun			(),
 										.ten			(tenDay),
@@ -110,6 +114,106 @@ module mode_alarm	(
 						max_date <=	8'd30;
 				default : max_date <= 0;
 			endcase
+			//////////////////////////////////////////GMT_time set
+			case(GMT)
+				0	:	begin
+							gmt_hour <= 8'd0;
+							gmt_min	<=	8'd0;
+						end
+				1	:	begin
+							gmt_hour <= 8'd1;
+							gmt_min	<=	8'd0;
+						end
+				2	: 	begin
+							gmt_hour <= 8'd2;
+							gmt_min	<=	8'd0;
+						end
+				3	: 	begin
+							gmt_hour <= 8'd3;
+							gmt_min	<=	8'd0;
+						end
+				4	:	begin
+							gmt_hour <= 8'd3;
+							gmt_min	<=	8'd30;
+						end
+				5	:	begin
+							gmt_hour <= 8'd4;
+							gmt_min	<=	8'd0;
+						end
+				6	:	begin
+							gmt_hour <= 8'd4;
+							gmt_min	<=	8'd30;
+						end
+				7	:	begin
+							gmt_hour <= 8'd5;
+							gmt_min	<=	8'd0;
+						end
+				8	:	begin
+							gmt_hour <= 8'd5;
+							gmt_min	<=	8'd30;
+						end
+				9	:	begin
+							gmt_hour <= 8'd6;
+							gmt_min	<=	8'd0;
+						end
+				10	:	begin
+							gmt_hour <= 8'd6;
+							gmt_min	<=	8'd30;
+						end
+				11	:	begin
+							gmt_hour <= 8'd7;
+							gmt_min	<=	8'd0;
+						end
+				12	:	begin
+							gmt_hour <= 8'd8;
+							gmt_min	<=	8'd0;
+						end
+				13	:	begin
+							gmt_hour <= 8'd9;
+							gmt_min	<=	8'd0;
+						end
+				14	:	begin
+							gmt_hour <= 8'd9;
+							gmt_min	<=	8'd30;
+						end
+				15	:	begin
+							gmt_hour <= 8'd10;
+							gmt_min	<=	8'd0;
+						end
+				16	:	begin
+							gmt_hour <= 8'd11;
+							gmt_min	<=	8'd0;
+						end
+				17	:	begin
+							gmt_hour <= 8'd12;
+							gmt_min	<=	8'd0;
+						end
+				default: begin
+						gmt_hour <= 8'd0;
+						gmt_min	<=	8'd0;
+						end
+			endcase
+			/////////////////////////////////////////////////// GMT hour calcultation
+			cal_day	=	day_alarm + gmt_day;
+			cal_hour	=	hour_alarm + gmt_hour;
+			cal_min	=	minute_alarm + gmt_min;
+			if(cal_hour	>= 8'd24)begin
+				cal_hour= hour_alarm + gmt_hour - 8'd24;
+				cal_day = day_alarm + gmt_day + 8'd1;
+			end
+			if(cal_min	>= 8'd60)begin
+				cal_min = minute_alarm + gmt_min - 8'd60;
+				cal_hour= hour_alarm + gmt_hour + 8'd1;
+				if(cal_hour	>= 8'd24)begin
+					cal_hour= hour_alarm + gmt_hour - 8'd23;
+					cal_day = day_alarm + gmt_day + 8'd1;
+				end
+			end
+			if(cal_day > max_date)begin
+				cal_day = 8'd1;
+			end
+		
+			/////////////////////////////////////////////////////
 			case (index)
 				00 : out <= 8'h41;//A
 				01 : out	<=	8'h4C;//L

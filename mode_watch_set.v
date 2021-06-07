@@ -111,6 +111,7 @@ module	mode_watch_set (
 			cursor <=	3'd0;
 		end
 		else begin
+			/////////////////////////////////////////date
 			case(month_set)
 				8'd1, 8'd3, 8'd5, 8'd7, 8'd8, 8'd10, 8'd12 :	
 						max_date	<= 8'd31;
@@ -120,6 +121,7 @@ module	mode_watch_set (
 						max_date <=	8'd30;
 				default : max_date <= 0;
 			endcase
+			//////////////////////////////////////////GMT_time set
 			case(GMT)
 				0	:	begin
 							gmt_hour <= 8'd0;
@@ -202,45 +204,20 @@ module	mode_watch_set (
 			cal_day	=	day_set + gmt_day;
 			cal_hour	=	hour_set + gmt_hour;
 			cal_min	=	minute_set + gmt_min;
-			if(	  cal_day >= max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin 	//111
-				cal_day	<=	1'd1;
-				cal_hour	<=	hour_set + gmt_hour - 8'd23;
-				cal_min	<=	minute_set +gmt_min - 8'd60;
+			if(cal_hour	>= 8'd24)begin
+				cal_hour= hour_set + gmt_hour - 8'd24;
+				cal_day = day_set + gmt_day + 8'd1;
 			end
-			else if(cal_day >= max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin						//110
-				cal_day	<=	1'd1;
-				cal_hour	<=	hour_set + gmt_hour - 8'd24;
-				cal_min	<=	minute_set +gmt_min;
+			if(cal_min	>= 8'd60)begin
+				cal_min = minute_set + gmt_min - 8'd60;
+				cal_hour= hour_set + gmt_hour + 8'd1;
+				if(cal_hour	>= 8'd24)begin
+					cal_hour= hour_set + gmt_hour - 8'd23;
+					cal_day = day_set + gmt_day + 8'd1;
+				end
 			end
-			else if(cal_day >= max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin						//101
-				//cal_day	<=	1'd1;
-				cal_hour	<=	hour_set + gmt_hour + 1'd1;
-				cal_min	<=	minute_set + gmt_min - 8'd60;
-			end
-			else if(cal_day > max_date && cal_hour < 8'd23 && cal_min < 8'd59)begin													//100
-				//cal_day	<=	1'd1;
-				cal_hour	<=	hour_set + gmt_hour;
-				cal_min	<=	minute_set + gmt_min;
-			end
-			else if(cal_day < max_date && cal_hour >= 8'd23 && cal_min >= 8'd59)begin							//011
-				cal_day	<=	day_set + gmt_day + 1'd1;
-				cal_hour	<=	hour_set + gmt_hour - 8'd23;
-				cal_min	<=	minute_set + gmt_min - 8'd60;
-			end
-			else if(cal_day < max_date && cal_hour > 8'd23 && cal_min < 8'd59)begin													//010
-				cal_day	<=	day_set + gmt_day + 1'd1;
-				cal_hour	<=	hour_set + gmt_hour - 8'd24;
-				cal_min	<=	minute_set + gmt_min;
-			end
-			else if(cal_day < max_date && cal_hour < 8'd23 && cal_min >= 8'd59)begin														//001
-				cal_day	<=	day_set + gmt_day;
-				cal_hour	<=	hour_set + gmt_hour + 1'd1;
-				cal_min	<=	minute_set + gmt_min - 8'd60;
-			end
-			else begin
-				cal_day	<=	day_set + gmt_day;
-				cal_hour	<=	hour_set + gmt_hour;
-				cal_min	<=	minute_set + gmt_min;
+			if(cal_day > max_date)begin
+				cal_day = 8'd1;
 			end
 		
 			/////////////////////////////////////////////////////
