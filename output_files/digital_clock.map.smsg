@@ -2,11 +2,12 @@ Warning (10268): Verilog HDL information at bin2bcd.v(17): always construct cont
 Warning (10273): Verilog HDL warning at mode_stopwatch.v(116): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 116
 Warning (10273): Verilog HDL warning at mode_stopwatch.v(121): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_stopwatch.v Line: 121
 Warning (10268): Verilog HDL information at bin3bcd.v(19): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/bin3bcd.v Line: 19
-Warning (10273): Verilog HDL warning at watch_time.v(103): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 103
-Warning (10273): Verilog HDL warning at watch_time.v(112): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 112
-Warning (10273): Verilog HDL warning at watch_time.v(121): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 121
-Warning (10273): Verilog HDL warning at watch_time.v(130): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 130
-Warning (10273): Verilog HDL warning at watch_time.v(139): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 139
+Warning (10273): Verilog HDL warning at watch_time.v(102): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 102
+Warning (10273): Verilog HDL warning at watch_time.v(110): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 110
+Warning (10273): Verilog HDL warning at watch_time.v(119): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 119
+Warning (10273): Verilog HDL warning at watch_time.v(128): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 128
+Warning (10273): Verilog HDL warning at watch_time.v(137): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 137
+Warning (10273): Verilog HDL warning at watch_time.v(146): extended using "x" or "z" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 146
 Warning (10268): Verilog HDL information at mode_watch.v(123): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 123
 Warning (10268): Verilog HDL information at mode_watch_set.v(108): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch_set.v Line: 108
 Warning (10268): Verilog HDL information at mode_alarm.v(102): always construct contains both blocking and non-blocking assignments File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_alarm.v Line: 102

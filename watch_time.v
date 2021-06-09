@@ -67,11 +67,11 @@ module watch_time(
 	always @ (posedge clk or negedge rst) begin
 		if (!rst) begin
 			year		<=	12'd2021;
-			month		<=	8'd6;
-			day		<=	8'd9;
-			hour		<=	8'd0;
-			minute	<=	8'd0;
-			second	<=	8'd0;
+			month		<=	8'd12;
+			day		<=	8'd31;
+			hour		<=	8'd23;
+			minute	<=	8'd59;
+			second	<=	8'd50;
 		end
 		else if(set_time==1) begin
 			year 		<= year;
@@ -99,8 +99,15 @@ module watch_time(
 						minute	<=	1'd0;
 						second	<=	1'd0;
 					end
-					
-					{8'd?, 8'd12, max_date, 8'd23, 8'd59, 8'd59} : begin
+					{12'd?, 8'd12, 8'd1, 8'd23, 8'd59, 8'd59} : begin
+						year		<= year + 1'd1;
+						month 	<= 1'd1;
+						day		<= 1'd1;
+						hour		<=	1'd0;
+						minute	<=	1'd0;
+						second	<=	1'd0;
+					end
+					{12'd?, 8'd12, max_date, 8'd23, 8'd59, 8'd59} : begin
 						year		<= year + 1'd1;
 						month 	<= 1'd1;
 						day		<= 1'd1;
@@ -109,7 +116,7 @@ module watch_time(
 						second	<=	1'd0;
 					end
 					
-					{8'd?, 8'd?, max_date, 8'd23, 8'd59, 8'd59} : begin
+					{12'd?, 8'd?, max_date, 8'd23, 8'd59, 8'd59} : begin
 						year		<= year;
 						month 	<= month + 1'd1;
 						day		<= 1'd1;
@@ -118,7 +125,7 @@ module watch_time(
 						second	<=	1'd0;
 					end
 					
-					{8'd?, 8'd?, 8'd?, 8'd23, 8'd59, 8'd59} : begin
+					{12'd?, 8'd?, 8'd?, 8'd23, 8'd59, 8'd59} : begin
 						year		<= year; 
 						month 	<= month;
 						day		<= day + 1'd1;
@@ -127,7 +134,7 @@ module watch_time(
 						second	<=	1'd0;
 					end
 					
-					{8'd?, 8'd?, 8'd?, 8'd?, 8'd59, 8'd59} : begin
+					{12'd?, 8'd?, 8'd?, 8'd?, 8'd59, 8'd59} : begin
 						year		<= year; 
 						month 	<= month;
 						day		<= day;
@@ -136,7 +143,7 @@ module watch_time(
 						second	<=	1'd0;
 					end
 					
-					{8'd?, 8'd?, 8'd?, 8'd?, 8'd?, 8'd59} : begin
+					{12'd?, 8'd?, 8'd?, 8'd?, 8'd?, 8'd59} : begin
 						year		<= year; 
 						month 	<= month;
 						day		<= day;

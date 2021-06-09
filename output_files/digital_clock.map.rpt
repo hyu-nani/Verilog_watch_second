@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digital_clock
-Mon Jun 07 16:38:12 2021
+Wed Jun 09 16:24:14 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -88,13 +88,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 07 16:38:12 2021       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jun 09 16:24:14 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; digital_clock                               ;
 ; Top-level Entity Name              ; digital_clock                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 3,915                                       ;
-;     Total combinational functions  ; 3,726                                       ;
+; Total logic elements               ; 3,931                                       ;
+;     Total combinational functions  ; 3,757                                       ;
 ;     Dedicated logic registers      ; 818                                         ;
 ; Total registers                    ; 818                                         ;
 ; Total pins                         ; 29                                          ;
@@ -205,8 +205,8 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -281,16 +281,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 3,915     ;
+; Estimated Total logic elements              ; 3,931     ;
 ;                                             ;           ;
-; Total combinational functions               ; 3726      ;
+; Total combinational functions               ; 3757      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1499      ;
-;     -- 3 input functions                    ; 832       ;
-;     -- <=2 input functions                  ; 1395      ;
+;     -- 4 input functions                    ; 1514      ;
+;     -- 3 input functions                    ; 828       ;
+;     -- <=2 input functions                  ; 1415      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2667      ;
+;     -- normal mode                          ; 2698      ;
 ;     -- arithmetic mode                      ; 1059      ;
 ;                                             ;           ;
 ; Total registers                             ; 818       ;
@@ -303,8 +303,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 809       ;
-; Total fan-out                               ; 14043     ;
-; Average fan-out                             ; 3.05      ;
+; Total fan-out                               ; 14070     ;
+; Average fan-out                             ; 3.04      ;
 +---------------------------------------------+-----------+
 
 
@@ -313,7 +313,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                   ; Entity Name         ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |digital_clock                                    ; 3726 (1)            ; 818 (0)                   ; 0           ; 0            ; 0       ; 0         ; 29   ; 0            ; |digital_clock                                                                                                                                        ; digital_clock       ; work         ;
+; |digital_clock                                    ; 3757 (1)            ; 818 (0)                   ; 0           ; 0            ; 0       ; 0         ; 29   ; 0            ; |digital_clock                                                                                                                                        ; digital_clock       ; work         ;
 ;    |data_demux:M1|                                ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|data_demux:M1                                                                                                                          ; data_demux          ; work         ;
 ;    |debouncer_clk:sw0|                            ; 38 (2)              ; 22 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|debouncer_clk:sw0                                                                                                                      ; debouncer_clk       ; work         ;
 ;       |clk_div:U0|                                ; 36 (36)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|debouncer_clk:sw0|clk_div:U0                                                                                                           ; clk_div             ; work         ;
@@ -342,7 +342,7 @@ refer to the applicable agreement for further details.
 ;    |en_clk:U0|                                    ; 44 (44)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk:U0                                                                                                                              ; en_clk              ; work         ;
 ;    |en_clk_lcd:LCLK|                              ; 29 (29)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|en_clk_lcd:LCLK                                                                                                                        ; en_clk_lcd          ; work         ;
 ;    |lcd_driver:DRV|                               ; 69 (69)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|lcd_driver:DRV                                                                                                                         ; lcd_driver          ; work         ;
-;    |mode_alarm:MODE2|                             ; 707 (325)           ; 196 (143)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2                                                                                                                       ; mode_alarm          ; work         ;
+;    |mode_alarm:MODE2|                             ; 708 (326)           ; 196 (143)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2                                                                                                                       ; mode_alarm          ; work         ;
 ;       |bin2bcd:CVT_day|                           ; 5 (5)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_day                                                                                                       ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_hour|                          ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_hour                                                                                                      ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_minute|                        ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_alarm:MODE2|bin2bcd:CVT_minute                                                                                                    ; bin2bcd             ; work         ;
@@ -362,7 +362,7 @@ refer to the applicable agreement for further details.
 ;       |bin2bcd:CVT_min|                           ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_stopwatch:MODE3|bin2bcd:CVT_min                                                                                                   ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_second|                        ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_stopwatch:MODE3|bin2bcd:CVT_second                                                                                                ; bin2bcd             ; work         ;
 ;       |en_clk_100hz:STOPCLK|                      ; 39 (39)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_stopwatch:MODE3|en_clk_100hz:STOPCLK                                                                                              ; en_clk_100hz        ; work         ;
-;    |mode_watch:MODE0|                             ; 687 (422)           ; 166 (113)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0                                                                                                                       ; mode_watch          ; work         ;
+;    |mode_watch:MODE0|                             ; 701 (436)           ; 166 (113)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0                                                                                                                       ; mode_watch          ; work         ;
 ;       |bin2bcd:CVT_day|                           ; 5 (5)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_day                                                                                                       ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_hour|                          ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_hour                                                                                                      ; bin2bcd             ; work         ;
 ;       |bin2bcd:CVT_minute|                        ; 24 (24)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch:MODE0|bin2bcd:CVT_minute                                                                                                    ; bin2bcd             ; work         ;
@@ -389,7 +389,7 @@ refer to the applicable agreement for further details.
 ;             |sign_div_unsign_rlh:divider|         ; 90 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|lpm_divide:Mod1|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider                                         ; sign_div_unsign_rlh ; work         ;
 ;                |alt_u_div_a7f:divider|            ; 90 (90)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|mode_watch_set:MODE1|lpm_divide:Mod1|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider                   ; alt_u_div_a7f       ; work         ;
 ;    |sw_mux:M0|                                    ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|sw_mux:M0                                                                                                                              ; sw_mux              ; work         ;
-;    |watch_time:TIME|                              ; 1223 (332)          ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                                                                                                                        ; watch_time          ; work         ;
+;    |watch_time:TIME|                              ; 1239 (348)          ; 52 (52)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME                                                                                                                        ; watch_time          ; work         ;
 ;       |lpm_divide:Div0|                           ; 113 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME|lpm_divide:Div0                                                                                                        ; lpm_divide          ; work         ;
 ;          |lpm_divide_1jm:auto_generated|          ; 113 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME|lpm_divide:Div0|lpm_divide_1jm:auto_generated                                                                          ; lpm_divide_1jm      ; work         ;
 ;             |sign_div_unsign_plh:divider|         ; 113 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |digital_clock|watch_time:TIME|lpm_divide:Div0|lpm_divide_1jm:auto_generated|sign_div_unsign_plh:divider                                              ; sign_div_unsign_plh ; work         ;
@@ -591,10 +591,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; lcd_driver:DRV|state~13                                   ; Lost fanout                                            ;
 ; lcd_driver:DRV|state~14                                   ; Lost fanout                                            ;
 ; lcd_driver:DRV|state~15                                   ; Lost fanout                                            ;
-; mode_watch:MODE0|gmt_hour[3]                              ; Merged with mode_alarm:MODE2|gmt_hour[3]               ;
 ; mode_watch:MODE0|gmt_hour[2]                              ; Merged with mode_alarm:MODE2|gmt_hour[2]               ;
 ; mode_watch:MODE0|gmt_hour[1]                              ; Merged with mode_alarm:MODE2|gmt_hour[1]               ;
 ; mode_watch:MODE0|gmt_hour[0]                              ; Merged with mode_alarm:MODE2|gmt_hour[0]               ;
+; mode_watch:MODE0|gmt_hour[3]                              ; Merged with mode_alarm:MODE2|gmt_hour[3]               ;
 ; mode_watch:MODE0|gmt_min[1]                               ; Merged with mode_alarm:MODE2|gmt_min[1]                ;
 ; debouncer_clk:sw0|clk_div:U0|cnt_myclk[0]                 ; Merged with en_clk_lcd:LCLK|cnt_en[0]                  ;
 ; en_clk:U0|cnt_en_1hz[0]                                   ; Merged with en_clk_lcd:LCLK|cnt_en[0]                  ;
@@ -641,10 +641,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Total registers                              ; 818   ;
 ; Number of registers using Synchronous Clear  ; 81    ;
-; Number of registers using Synchronous Load   ; 192   ;
+; Number of registers using Synchronous Load   ; 176   ;
 ; Number of registers using Asynchronous Clear ; 460   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 456   ;
+; Number of registers using Clock Enable       ; 457   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -662,19 +662,34 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; mode_watch:MODE0|alarmLED[5]            ; 1       ;
 ; mode_watch:MODE0|alarmLED[6]            ; 1       ;
 ; mode_watch:MODE0|alarmLED[7]            ; 1       ;
+; watch_time:TIME|hour[4]                 ; 5       ;
+; watch_time:TIME|hour[2]                 ; 5       ;
+; watch_time:TIME|hour[1]                 ; 5       ;
+; watch_time:TIME|hour[0]                 ; 5       ;
+; watch_time:TIME|minute[1]               ; 5       ;
+; watch_time:TIME|minute[3]               ; 5       ;
+; watch_time:TIME|minute[4]               ; 5       ;
+; watch_time:TIME|minute[5]               ; 5       ;
+; watch_time:TIME|month[3]                ; 14      ;
 ; watch_time:TIME|month[2]                ; 13      ;
-; watch_time:TIME|month[1]                ; 13      ;
+; watch_time:TIME|day[4]                  ; 8       ;
 ; watch_time:TIME|day[3]                  ; 8       ;
-; watch_time:TIME|day[0]                  ; 9       ;
-; watch_time:TIME|year[10]                ; 22      ;
-; watch_time:TIME|year[9]                 ; 22      ;
-; watch_time:TIME|year[8]                 ; 19      ;
-; watch_time:TIME|year[7]                 ; 19      ;
-; watch_time:TIME|year[6]                 ; 22      ;
-; watch_time:TIME|year[5]                 ; 22      ;
-; watch_time:TIME|year[2]                 ; 19      ;
-; watch_time:TIME|year[0]                 ; 9       ;
-; Total number of inverted registers = 20 ;         ;
+; watch_time:TIME|day[2]                  ; 8       ;
+; watch_time:TIME|day[1]                  ; 8       ;
+; watch_time:TIME|day[0]                  ; 8       ;
+; watch_time:TIME|year[10]                ; 20      ;
+; watch_time:TIME|year[9]                 ; 20      ;
+; watch_time:TIME|year[8]                 ; 18      ;
+; watch_time:TIME|year[7]                 ; 18      ;
+; watch_time:TIME|year[6]                 ; 21      ;
+; watch_time:TIME|year[5]                 ; 21      ;
+; watch_time:TIME|year[2]                 ; 18      ;
+; watch_time:TIME|year[0]                 ; 12      ;
+; watch_time:TIME|minute[0]               ; 4       ;
+; watch_time:TIME|second[5]               ; 10      ;
+; watch_time:TIME|second[4]               ; 9       ;
+; watch_time:TIME|second[1]               ; 8       ;
+; Total number of inverted registers = 35 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -683,32 +698,35 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[0]       ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|hour[2]            ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |digital_clock|mode_stopwatch:MODE3|sec_stop[7]   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |digital_clock|mode_watch_set:MODE1|cal_hour[1]   ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |digital_clock|mode_alarm:MODE2|cal_hour[2]       ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|year_set[11]  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|second[4]          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |digital_clock|mode_stopwatch:MODE3|milsec[1]     ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|lcd_driver:DRV|cnt_en_clk[8]       ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|month[7]           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |digital_clock|mode_stopwatch:MODE3|min_stop[3]   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |digital_clock|mode_watch_set:MODE1|cal_hour[0]   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |digital_clock|mode_alarm:MODE2|cal_hour[0]       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|year_set[1]   ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|second[3]          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |digital_clock|mode_stopwatch:MODE3|milsec[2]     ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|mode_watch_set:MODE1|cal_hour[4]   ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|mode_alarm:MODE2|cal_hour[4]       ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |digital_clock|mode_watch:MODE0|gmt_out[0]        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |digital_clock|mode_alarm:MODE2|cal_hour[7]       ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |digital_clock|mode_watch:MODE0|gmt_out[1]        ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|month_set[1]  ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 26 LEs               ; 16 LEs                 ; Yes        ; |digital_clock|mode_stopwatch:MODE3|out[2]        ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 26 LEs               ; 16 LEs                 ; Yes        ; |digital_clock|mode_stopwatch:MODE3|out[3]        ;
 ; 32:1               ; 2 bits    ; 42 LEs        ; 30 LEs               ; 12 LEs                 ; Yes        ; |digital_clock|mode_stopwatch:MODE3|out[1]        ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|day_set[3]    ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|year[1]            ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|day_set[0]    ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|hour_set[5]   ;
-; 9:1                ; 12 bits   ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|year_alarm[1]     ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|minute_set[4] ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|second_set[5] ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|day_alarm[1]      ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|month_alarm[2]    ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|minute_alarm[6]   ;
-; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|hour_alarm[7]     ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 16 LEs               ; 56 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|second_alarm[4]   ;
+; 9:1                ; 12 bits   ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|year_alarm[6]     ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|minute_set[5] ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 8 LEs                ; 40 LEs                 ; Yes        ; |digital_clock|mode_watch_set:MODE1|second_set[3] ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|day_alarm[3]      ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|month_alarm[3]    ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|minute_alarm[0]   ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|hour_alarm[5]     ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 16 LEs               ; 56 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|second_alarm[6]   ;
 ; 46:1               ; 2 bits    ; 60 LEs        ; 48 LEs               ; 12 LEs                 ; Yes        ; |digital_clock|mode_alarm:MODE2|out[0]            ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|year[9]            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|minute[0]          ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |digital_clock|watch_time:TIME|second[1]          ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |digital_clock|watch_time:TIME|year[8]            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |digital_clock|lcd_driver:DRV|state               ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |digital_clock|mode_watch:MODE0|cal_day           ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |digital_clock|mode_watch:MODE0|cal_hour          ;
@@ -1309,31 +1327,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 29                          ;
 ; cycloneiii_ff         ; 818                         ;
-;     CLR               ; 335                         ;
+;     CLR               ; 334                         ;
 ;     CLR SLD           ; 25                          ;
 ;     ENA               ; 225                         ;
-;     ENA CLR           ; 43                          ;
+;     ENA CLR           ; 60                          ;
 ;     ENA CLR SCLR      ; 18                          ;
 ;     ENA CLR SCLR SLD  ; 8                           ;
-;     ENA CLR SLD       ; 31                          ;
+;     ENA CLR SLD       ; 15                          ;
 ;     ENA SCLR          ; 3                           ;
 ;     ENA SCLR SLD      ; 52                          ;
 ;     ENA SLD           ; 76                          ;
 ;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 3734                        ;
+; cycloneiii_lcell_comb ; 3765                        ;
 ;     arith             ; 1059                        ;
 ;         1 data inputs ; 8                           ;
 ;         2 data inputs ; 449                         ;
 ;         3 data inputs ; 602                         ;
-;     normal            ; 2675                        ;
+;     normal            ; 2706                        ;
 ;         0 data inputs ; 105                         ;
-;         1 data inputs ; 81                          ;
-;         2 data inputs ; 760                         ;
-;         3 data inputs ; 230                         ;
-;         4 data inputs ; 1499                        ;
+;         1 data inputs ; 111                         ;
+;         2 data inputs ; 750                         ;
+;         3 data inputs ; 226                         ;
+;         4 data inputs ; 1514                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 111.20                      ;
-; Average LUT depth     ; 32.89                       ;
+; Average LUT depth     ; 32.77                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1342,7 +1360,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:14     ;
+; Top            ; 00:00:22     ;
 +----------------+--------------+
 
 
@@ -1352,7 +1370,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Jun 07 16:37:45 2021
+    Info: Processing started: Wed Jun 09 16:23:31 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digital_clock -c digital_clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1430,8 +1448,9 @@ Warning (10359): HDL warning at watch_time.v(40): see declaration for object "ma
 Warning (10230): Verilog HDL assignment warning at watch_time.v(50): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 50
 Warning (10230): Verilog HDL assignment warning at watch_time.v(52): truncated value with size 32 to match size of target (3) File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 52
 Warning (10762): Verilog HDL Case Statement warning at watch_time.v(93): can't check case statement for completeness because the case expression has too many possible states File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 93
-Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(130): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 130
-Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(139): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 139
+Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(128): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 128
+Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(137): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 137
+Warning (10935): Verilog HDL Casex/Casez warning at watch_time.v(146): casex/casez item expression overlaps with a previous casex/casez item expression File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/watch_time.v Line: 146
 Warning (12125): Using design file mode_watch.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mode_watch File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/mode_watch.v Line: 1
 Info (12128): Elaborating entity "mode_watch" for hierarchy "mode_watch:MODE0" File: C:/Users/cube_/OneDrive/Github/Verilog_watch_second/digital_clock.v Line: 120
@@ -1632,15 +1651,15 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/cube_/OneDrive/Github/Verilog_watch_second/output_files/digital_clock.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3955 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3971 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 3926 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 101 warnings
-    Info: Peak virtual memory: 4810 megabytes
-    Info: Processing ended: Mon Jun 07 16:38:12 2021
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:39
+    Info (21061): Implemented 3942 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 102 warnings
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Wed Jun 09 16:24:14 2021
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:01:05
 
 
 +------------------------------------------+
